@@ -57,7 +57,7 @@ export default function CaseStudyDetailPage() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-fedsec-gray-100 pt-20">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-fedsec-gray-900 mb-4 font-[family-name:var(--font-heading)]">
+          <h1 className="text-4xl font-normal text-fedsec-gray-900 mb-4 font-[family-name:var(--font-heading)]">
             Case Study Not Found
           </h1>
           <Link
@@ -90,7 +90,7 @@ export default function CaseStudyDetailPage() {
                 </Badge>
               ))}
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-fedsec-white leading-tight mb-8 font-[family-name:var(--font-heading)]">
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-normal text-fedsec-white leading-tight mb-8 font-[family-name:var(--font-heading)]">
               {study.title}
             </h1>
           </motion.div>
@@ -123,7 +123,7 @@ export default function CaseStudyDetailPage() {
               <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-purple font-[family-name:var(--font-accent)]">
                 Project Overview
               </span>
-              <h2 className="text-2xl md:text-3xl font-bold text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
+              <h2 className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
                 The Challenge
               </h2>
               <p className="text-lg text-fedsec-gray-600 leading-relaxed mb-8">
@@ -189,7 +189,7 @@ export default function CaseStudyDetailPage() {
               <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-purple font-[family-name:var(--font-accent)]">
                 Our Solution
               </span>
-              <h2 className="text-2xl md:text-3xl font-bold text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
+              <h2 className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
                 Security Results
               </h2>
               <p className="text-lg text-fedsec-gray-600 leading-relaxed">
@@ -220,11 +220,11 @@ export default function CaseStudyDetailPage() {
               >
                 <div className={index % 2 !== 0 ? "lg:order-2" : ""}>
                   <div className="w-14 h-14 rounded-xl bg-fedsec-purple/10 flex items-center justify-center mb-6">
-                    <span className="text-2xl font-bold text-fedsec-purple font-[family-name:var(--font-heading)]">
+                    <span className="text-2xl font-normal text-fedsec-purple font-[family-name:var(--font-heading)]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-fedsec-gray-900 mb-4 font-[family-name:var(--font-heading)]">
+                  <h3 className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 mb-4 font-[family-name:var(--font-heading)]">
                     {section.title}
                   </h3>
                   <p className="text-lg text-fedsec-gray-600 leading-relaxed">
@@ -263,7 +263,7 @@ export default function CaseStudyDetailPage() {
               <span className="inline-block mb-2 text-xs font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">
                 Company
               </span>
-              <p className="text-xl font-bold text-fedsec-white font-[family-name:var(--font-heading)]">
+              <p className="text-xl font-normal text-fedsec-white font-[family-name:var(--font-heading)]">
                 {study.company}
               </p>
             </div>
@@ -271,7 +271,7 @@ export default function CaseStudyDetailPage() {
               <span className="inline-block mb-2 text-xs font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">
                 Date
               </span>
-              <p className="text-xl font-bold text-fedsec-white font-[family-name:var(--font-heading)]">
+              <p className="text-xl font-normal text-fedsec-white font-[family-name:var(--font-heading)]">
                 {study.date}
               </p>
             </div>
@@ -279,7 +279,7 @@ export default function CaseStudyDetailPage() {
               <span className="inline-block mb-2 text-xs font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">
                 Category
               </span>
-              <p className="text-xl font-bold text-fedsec-white font-[family-name:var(--font-heading)]">
+              <p className="text-xl font-normal text-fedsec-white font-[family-name:var(--font-heading)]">
                 {study.category}
               </p>
             </div>
@@ -302,7 +302,7 @@ export default function CaseStudyDetailPage() {
             }
             transition={{ type: "spring", damping: 40, stiffness: 200 }}
           >
-            <div className="text-6xl font-bold text-fedsec-purple/20 mb-4 font-[family-name:var(--font-heading)]">
+            <div className="text-6xl font-normal text-fedsec-purple/20 mb-4 font-[family-name:var(--font-heading)]">
               &ldquo;
             </div>
             <blockquote className="text-xl md:text-2xl text-fedsec-gray-700 leading-relaxed mb-6 italic font-[family-name:var(--font-heading)]">
@@ -311,11 +311,11 @@ export default function CaseStudyDetailPage() {
               expertise and ongoing support throughout the entire engagement.
             </blockquote>
             <div className="flex items-center justify-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-fedsec-purple/20 flex items-center justify-center text-fedsec-purple font-bold font-[family-name:var(--font-heading)]">
+              <div className="w-10 h-10 rounded-full bg-fedsec-purple/20 flex items-center justify-center text-fedsec-purple font-normal font-[family-name:var(--font-heading)]">
                 {study.client.charAt(0)}
               </div>
               <div className="text-left">
-                <p className="text-sm font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
+                <p className="text-sm font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
                   {study.client}
                 </p>
                 <p className="text-xs text-fedsec-gray-400 font-[family-name:var(--font-accent)]">
@@ -378,7 +378,7 @@ export default function CaseStudyDetailPage() {
                         </Badge>
                       ))}
                     </div>
-                    <h3 className="text-xl font-bold text-fedsec-gray-900 mb-3 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">
+                    <h3 className="text-xl font-normal text-fedsec-gray-900 mb-3 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">
                       {relatedStudy.title}
                     </h3>
                     <p className="text-sm text-fedsec-gray-500 leading-relaxed line-clamp-3">

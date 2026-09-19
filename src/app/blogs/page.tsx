@@ -21,8 +21,8 @@ export default function BlogsPage() {
             <span className="inline-block mb-4 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-fedsec-purple bg-fedsec-purple/10 rounded-full font-[family-name:var(--font-accent)]">
               Our blogs
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
-              Staying ahead of evolving threats
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
+              Latest cybersecurity news updates
             </h1>
             <p className="text-lg md:text-xl text-fedsec-gray-400 max-w-3xl leading-relaxed">
               Articles, research, security awareness content, and technical
@@ -66,7 +66,7 @@ export default function BlogsPage() {
                       })}
                     </span>
                   </div>
-                  <h3 className="text-base font-bold text-fedsec-gray-900 mb-3 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors leading-snug">
+                  <h3 className="text-base md:text-lg font-normal text-fedsec-gray-900 mb-3 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors leading-snug">
                     {blog.title}
                   </h3>
                   <span className="inline-flex items-center gap-2 text-sm font-semibold text-fedsec-purple font-[family-name:var(--font-accent)] group-hover:gap-3 transition-all">

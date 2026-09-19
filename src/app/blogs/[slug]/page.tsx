@@ -29,7 +29,7 @@ export default function BlogDetailPage() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-fedsec-gray-100 pt-20">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-fedsec-gray-900 mb-4 font-[family-name:var(--font-heading)]">
+          <h1 className="text-4xl font-normal text-fedsec-gray-900 mb-4 font-[family-name:var(--font-heading)]">
             Post Not Found
           </h1>
           <Link
@@ -57,7 +57,7 @@ export default function BlogDetailPage() {
             <div className="flex items-center gap-3 mb-6">
               <Badge variant="purple">{blog.category}</Badge>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
               {blog.title}
             </h1>
             <div className="flex items-center gap-4 text-sm text-fedsec-gray-400 font-[family-name:var(--font-accent)]">
@@ -143,7 +143,7 @@ export default function BlogDetailPage() {
             }
             transition={{ type: "spring", damping: 40, stiffness: 200 }}
           >
-            <div className="text-6xl font-bold text-fedsec-purple/20 mb-4 font-[family-name:var(--font-heading)]">
+            <div className="text-6xl font-normal text-fedsec-purple/20 mb-4 font-[family-name:var(--font-heading)]">
               &ldquo;
             </div>
             <blockquote className="text-xl md:text-2xl text-fedsec-gray-700 leading-relaxed mb-6 italic font-[family-name:var(--font-heading)]">
@@ -152,11 +152,11 @@ export default function BlogDetailPage() {
               provided ongoing support throughout the entire engagement.
             </blockquote>
             <div className="flex items-center justify-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-fedsec-purple/20 flex items-center justify-center text-fedsec-purple font-bold font-[family-name:var(--font-heading)]">
+              <div className="w-10 h-10 rounded-full bg-fedsec-purple/20 flex items-center justify-center text-fedsec-purple font-normal font-[family-name:var(--font-heading)]">
                 {blog.author.charAt(0)}
               </div>
               <div className="text-left">
-                <p className="text-sm font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
+                <p className="text-sm font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
                   {blog.author}
                 </p>
                 <p className="text-xs text-fedsec-gray-400 font-[family-name:var(--font-accent)]">
@@ -216,7 +216,7 @@ export default function BlogDetailPage() {
                   </div>
                   <div className="p-5">
                     <Badge variant="purple">{relatedBlog.category}</Badge>
-                    <h3 className="text-base font-bold text-fedsec-gray-900 mt-3 mb-2 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors line-clamp-2">
+                    <h3 className="text-base font-normal text-fedsec-gray-900 mt-3 mb-2 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors line-clamp-2">
                       {relatedBlog.title}
                     </h3>
                     <p className="text-xs text-fedsec-gray-400 font-[family-name:var(--font-accent)]">

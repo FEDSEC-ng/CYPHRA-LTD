@@ -65,7 +65,7 @@ export default function AwardCarousel() {
           <p className="text-sm font-semibold uppercase tracking-widest text-fedsec-pink mb-4 font-[family-name:var(--font-accent)]">
             Our achievements
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
+          <h2 className="text-4xl md:text-5xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
             Honoring innovation in cybersecurity solutions
           </h2>
         </motion.div>
@@ -98,7 +98,7 @@ export default function AwardCarousel() {
                     {award.year}
                   </span>
                 </div>
-                <h3 className="text-lg font-bold text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)]">
+                <h3 className="text-lg md:text-xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)]">
                   {award.name}
                 </h3>
                 <p className="text-sm text-fedsec-gray-500 leading-relaxed">

@@ -48,8 +48,8 @@ export default function ServicesPage() {
             <span className="inline-block mb-4 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-fedsec-purple bg-fedsec-purple/10 rounded-full font-[family-name:var(--font-accent)]">
               Our services
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
-              Security services we provide
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
+              Modern business security solutions
             </h1>
             <p className="text-lg md:text-xl text-fedsec-gray-400 max-w-3xl leading-relaxed">
               Comprehensive cybersecurity solutions designed to protect your
@@ -88,7 +88,7 @@ export default function ServicesPage() {
                       <span className="inline-block text-xs font-bold uppercase tracking-wider text-fedsec-purple mb-2 font-[family-name:var(--font-accent)]">
                         {serviceCategories[service.slug] || "Service"}
                       </span>
-                      <h3 className="text-lg font-bold text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">
+                      <h3 className="text-xl md:text-2xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">
                         {service.title}
                       </h3>
                       <p className="text-fedsec-gray-500 text-sm leading-relaxed">

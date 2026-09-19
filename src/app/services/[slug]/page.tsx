@@ -31,7 +31,7 @@ export default function ServiceDetailPage() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-fedsec-gray-100 pt-20">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-fedsec-gray-900 mb-4 font-[family-name:var(--font-heading)]">
+          <h1 className="text-4xl font-normal text-fedsec-gray-900 mb-4 font-[family-name:var(--font-heading)]">
             Service Not Found
           </h1>
           <Link
@@ -67,7 +67,7 @@ export default function ServiceDetailPage() {
               <ArrowLeft size={16} />
               All Services
             </Link>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
               {service.title}
             </h1>
           </motion.div>
@@ -93,7 +93,7 @@ export default function ServiceDetailPage() {
               <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-purple font-[family-name:var(--font-accent)]">
                 Overview
               </span>
-              <h2 className="text-3xl font-bold text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
+              <h2 className="text-3xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
                 About This Service
               </h2>
               <p className="text-lg text-fedsec-gray-500 leading-relaxed mb-8">
@@ -147,7 +147,7 @@ export default function ServiceDetailPage() {
             <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-purple font-[family-name:var(--font-accent)]">
               Benefits
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
+            <h2 className="text-3xl md:text-4xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
               Key Benefits
             </h2>
           </motion.div>
@@ -168,7 +168,7 @@ export default function ServiceDetailPage() {
                 <div className="w-12 h-12 rounded-xl bg-fedsec-purple/10 flex items-center justify-center text-fedsec-purple mb-5">
                   <CheckCircle2 size={24} />
                 </div>
-                <h3 className="text-lg font-bold text-fedsec-gray-900 mb-3 font-[family-name:var(--font-heading)]">
+                <h3 className="text-lg font-normal text-fedsec-gray-900 mb-3 font-[family-name:var(--font-heading)]">
                   {benefit.title}
                 </h3>
                 <p className="text-sm text-fedsec-gray-500 leading-relaxed font-[family-name:var(--font-body)]">
@@ -208,7 +208,7 @@ export default function ServiceDetailPage() {
                   <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">
                     Feature {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h2 className="text-3xl font-bold text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
+                  <h2 className="text-3xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
                     {feature.title}
                   </h2>
                   <p className="text-lg text-fedsec-gray-500 leading-relaxed font-[family-name:var(--font-body)]">
@@ -253,7 +253,7 @@ export default function ServiceDetailPage() {
               <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-purple font-[family-name:var(--font-accent)]">
                 Contact
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
+              <h2 className="text-3xl md:text-4xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
                 Have Questions About Our Security Services?
               </h2>
               <p className="text-lg text-fedsec-gray-500 leading-relaxed mb-8 font-[family-name:var(--font-body)]">
@@ -271,7 +271,7 @@ export default function ServiceDetailPage() {
                   />
                 </div>
                 <div>
-                  <p className="font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
+                  <p className="font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
                     Ethan Brooks
                   </p>
                   <p className="text-sm text-fedsec-gray-500 font-[family-name:var(--font-accent)]">
@@ -314,7 +314,7 @@ export default function ServiceDetailPage() {
             <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-purple font-[family-name:var(--font-accent)]">
               Process
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
+            <h2 className="text-3xl md:text-4xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
               Intelligence behind every decision
             </h2>
           </motion.div>
@@ -332,10 +332,10 @@ export default function ServiceDetailPage() {
                 variants={fadeInUp}
                 className="text-center"
               >
-                <div className="w-16 h-16 rounded-full bg-fedsec-purple text-fedsec-white flex items-center justify-center font-bold text-xl mx-auto mb-6 font-[family-name:var(--font-heading)]">
+                <div className="w-16 h-16 rounded-full bg-fedsec-purple text-fedsec-white flex items-center justify-center font-normal text-xl mx-auto mb-6 font-[family-name:var(--font-heading)]">
                   {i + 1}
                 </div>
-                <h3 className="text-xl font-bold text-fedsec-gray-900 mb-3 font-[family-name:var(--font-heading)]">
+                <h3 className="text-xl font-normal text-fedsec-gray-900 mb-3 font-[family-name:var(--font-heading)]">
                   {step.title}
                 </h3>
                 <p className="text-fedsec-gray-500 leading-relaxed font-[family-name:var(--font-body)]">
@@ -362,7 +362,7 @@ export default function ServiceDetailPage() {
             <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-purple font-[family-name:var(--font-accent)]">
               Related
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
+            <h2 className="text-3xl md:text-4xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
               Related Services
             </h2>
           </motion.div>
@@ -380,7 +380,7 @@ export default function ServiceDetailPage() {
                   href={`/services/${related.slug}`}
                   className="group block bg-fedsec-white border border-fedsec-gray-200 rounded-2xl p-8 hover:border-fedsec-purple/30 hover:shadow-lg hover:shadow-fedsec-purple/5 transition-all duration-300"
                 >
-                  <h3 className="text-xl font-bold text-fedsec-gray-900 mb-4 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">
+                  <h3 className="text-xl font-normal text-fedsec-gray-900 mb-4 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">
                     {related.title}
                   </h3>
                   <div className="space-y-3">

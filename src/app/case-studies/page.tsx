@@ -45,8 +45,8 @@ export default function CaseStudiesPage() {
             <span className="inline-block mb-4 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-fedsec-purple bg-fedsec-purple/10 rounded-full font-[family-name:var(--font-accent)]">
               Our case studies
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
-              Securing businesses with confidence
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
+              Trusted protection for every business
             </h1>
             <p className="text-lg md:text-xl text-fedsec-gray-400 max-w-3xl leading-relaxed">
               Real engagements, real outcomes. Explore how FEDSEC has helped
@@ -82,7 +82,7 @@ export default function CaseStudiesPage() {
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <h3 className="text-xl font-bold text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">
+                    <h3 className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">
                       {study.title}
                     </h3>
                     <p className="text-sm text-fedsec-gray-500 leading-relaxed mb-4 line-clamp-2">
@@ -95,7 +95,7 @@ export default function CaseStudiesPage() {
                       <div className="grid grid-cols-2 gap-4 mt-6">
                         {stats.map((stat) => (
                           <div key={stat.label}>
-                            <p className="text-2xl font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">{stat.value}</p>
+                            <p className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">{stat.value}</p>
                             <p className="text-xs text-fedsec-gray-400 font-[family-name:var(--font-accent)]">{stat.label}</p>
                           </div>
                         ))}

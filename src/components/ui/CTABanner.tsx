@@ -23,7 +23,7 @@ export default function CTABanner() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ type: "spring", damping: 40, stiffness: 200, mass: 1 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
             Build a resilient security strategy for the future
           </h2>
           <p className="text-lg text-fedsec-gray-300 mb-8 max-w-2xl mx-auto font-[family-name:var(--font-accent)]">

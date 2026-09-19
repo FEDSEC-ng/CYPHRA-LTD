@@ -45,12 +45,12 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={springTransition}>
               <span className="inline-block mb-4 px-4 py-1.5 rounded-full bg-fedsec-purple/10 border border-fedsec-purple/20 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Contact Us</span>
-              <WordByWordReveal text="Get in touch with security experts" className="text-4xl md:text-5xl lg:text-6xl font-bold text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]" tag="h1" />
+              <WordByWordReveal text="Get in touch with security experts" className="text-5xl md:text-6xl lg:text-7xl font-normal text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]" tag="h1" />
               <p className="text-lg md:text-xl text-fedsec-gray-400 max-w-3xl leading-relaxed">Whether you have a specific security challenge or want to explore how FEDSEC can help your organization, we&apos;d love to hear from you.</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ ...springTransition, delay: 0.2 }} className="relative">
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-                <Image src="/images/protexy/contact/contact-main.png" alt="Contact our security experts" fill className="object-cover" />
+                <Image src="/images/protexy/contact/contact-main.png" alt="Contact our security experts" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-fedsec-gray-900/60 via-transparent to-transparent" />
               </div>
             </motion.div>
@@ -83,12 +83,12 @@ export default function ContactPage() {
                   <div className="w-12 h-12 rounded-xl bg-fedsec-purple/20 flex items-center justify-center text-fedsec-purple"><Calendar size={24} /></div>
                   <div className="w-12 h-12 rounded-xl bg-fedsec-pink/20 flex items-center justify-center text-fedsec-pink"><Clock size={24} /></div>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-fedsec-white leading-tight mb-4 font-[family-name:var(--font-heading)]">Book Security Call</h2>
+                <h2 className="text-3xl md:text-4xl font-normal text-fedsec-white leading-tight mb-4 font-[family-name:var(--font-heading)]">Book Security Call</h2>
                 <p className="text-lg text-fedsec-gray-300 leading-relaxed mb-8">Schedule a free consultation call with our cybersecurity experts. Discuss your security challenges, explore solutions, and get expert recommendations tailored to your organization.</p>
                 <div><Button href="#" size="lg">Book Free Call <Calendar className="ml-2" size={18} /></Button></div>
               </div>
               <div className="relative hidden lg:block min-h-[400px]">
-                <Image src="/images/protexy/contact/contact-call.png" alt="Book a security consultation" fill className="object-cover" />
+                <Image src="/images/protexy/contact/contact-call.png" alt="Book a security consultation" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-fedsec-gray-900 via-fedsec-gray-900/50 to-transparent" />
               </div>
             </div>
@@ -101,10 +101,10 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             <motion.div variants={slideInLeft} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="lg:col-span-2">
               <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-purple font-[family-name:var(--font-accent)]">Send a Message</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-fedsec-gray-900 leading-tight mb-6 font-[family-name:var(--font-heading)]">Let&apos;s Start a Conversation</h2>
+              <h2 className="text-3xl md:text-4xl font-normal text-fedsec-gray-900 leading-tight mb-6 font-[family-name:var(--font-heading)]">Let&apos;s Start a Conversation</h2>
               <p className="text-lg text-fedsec-gray-500 leading-relaxed mb-8">Fill out the form and our team will get back to you within 24 hours. We are committed to helping you find the right security solutions for your organization.</p>
               <div className="p-6 bg-fedsec-gray-900 rounded-2xl">
-                <h3 className="text-lg font-bold text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">{SITE.founder}</h3>
+                <h3 className="text-lg font-normal text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">{SITE.founder}</h3>
                 <p className="text-sm text-fedsec-purple font-semibold mb-2 font-[family-name:var(--font-accent)]">{SITE.founderRole}</p>
                 <p className="text-sm text-fedsec-gray-400 leading-relaxed">Built on the principle of trust, FEDSEC is committed to professionalism, confidentiality, continuous learning, and responsible security practices.</p>
               </div>
@@ -146,7 +146,7 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold uppercase tracking-widest text-fedsec-pink mb-4 font-[family-name:var(--font-accent)]">FAQ</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Frequently asked questions</h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Frequently asked questions</h2>
           </div>
           <Accordion items={faqItems} />
         </div>

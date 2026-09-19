@@ -98,15 +98,15 @@ function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(102,47,144,0.15),transparent_70%)]" />
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-20">
         <WordByWordReveal
-          text="High-Impact Security Capabilities Engineered to Protect What Matters"
+          text="AI-powered protection for modern organizations"
           tag="h1"
-          className="text-4xl md:text-5xl lg:text-7xl font-bold text-fedsec-white leading-[1.1] mb-8 font-[family-name:var(--font-heading)]"
+          className="text-5xl md:text-6xl lg:text-7xl font-normal text-fedsec-white leading-[1.1] mb-8 font-[family-name:var(--font-heading)]"
         />
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...springTransition, delay: 0.6 }}
-          className="text-lg md:text-xl text-fedsec-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed font-[family-name:var(--font-body)]"
+          className="text-lg md:text-xl lg:text-2xl text-fedsec-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed font-[family-name:var(--font-body)]"
         >
           Protect your organization with proactive cybersecurity solutions
           designed to detect threats, secure critical systems, and reduce risk
@@ -137,7 +137,7 @@ function AboutPreview() {
           <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">
             About us
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
             Advancing cyber security for modern organizations
           </h2>
         </div>
@@ -150,7 +150,7 @@ function AboutPreview() {
             className="relative"
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-              <Image src="/images/protexy/about/about-main.png" alt="About FEDSEC" fill className="object-cover" />
+              <Image src="/images/protexy/about/about-main.png" alt="About FEDSEC" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-fedsec-purple/10 rounded-2xl -z-10" />
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-fedsec-pink/10 rounded-2xl -z-10" />
@@ -202,7 +202,7 @@ function ServicesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div ref={ref} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={springTransition} className="text-center mb-16">
           <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Our services</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Security that never sleeps</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Security that never sleeps</h2>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((service, i) => (
@@ -214,7 +214,7 @@ function ServicesSection() {
                   </div>
                   <div className="flex-1">
                     <span className="inline-block text-xs font-bold uppercase tracking-wider text-fedsec-purple mb-2 font-[family-name:var(--font-accent)]">{service.category}</span>
-                    <h3 className="text-lg font-bold text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">{service.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">{service.title}</h3>
                     <p className="text-fedsec-gray-500 text-sm leading-relaxed">{service.description}</p>
                   </div>
                 </div>
@@ -245,15 +245,15 @@ function TrustedProcess() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div ref={ref} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={springTransition} className="text-center mb-16">
           <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Our trusted process</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Intelligence behind every decision</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Intelligence behind every decision</h2>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, i) => (
             <motion.div key={step.num} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ ...springTransition, delay: i * 0.15 }} className="text-center">
               <div className="w-16 h-16 rounded-2xl bg-fedsec-purple/10 flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-fedsec-purple font-[family-name:var(--font-heading)]">{step.num}</span>
+                <span className="text-2xl font-normal text-fedsec-purple font-[family-name:var(--font-heading)]">{step.num}</span>
               </div>
-              <h3 className="text-xl font-bold text-fedsec-gray-900 mb-3 font-[family-name:var(--font-heading)]">{step.title}</h3>
+              <h3 className="text-xl md:text-2xl font-normal text-fedsec-gray-900 mb-3 font-[family-name:var(--font-heading)]">{step.title}</h3>
               <p className="text-fedsec-gray-500 text-sm leading-relaxed max-w-sm mx-auto">{step.description}</p>
             </motion.div>
           ))}
@@ -273,7 +273,7 @@ function CaseStudiesSection() {
         <motion.div ref={ref} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={springTransition} className="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
           <div>
             <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Our case studies</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Securing businesses with confidence</h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Securing businesses with confidence</h2>
           </div>
           <Link href="/case-studies" className="mt-4 md:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-fedsec-purple hover:gap-3 transition-all font-[family-name:var(--font-accent)]">
             View all <span className="text-lg">&rarr;</span>
@@ -284,15 +284,15 @@ function CaseStudiesSection() {
             <motion.div key={cs.slug} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ ...springTransition, delay: i * 0.15 }}>
               <Link href={`/case-studies/${cs.slug}`} className="group block">
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] mb-6">
-                  <Image src={cs.image} alt={cs.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={cs.image} alt={cs.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
-                <h3 className="text-xl font-bold text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">{cs.name}</h3>
+                <h3 className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">{cs.name}</h3>
                 <p className="text-sm text-fedsec-gray-500 leading-relaxed mb-4">{cs.description}</p>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-fedsec-purple font-[family-name:var(--font-accent)] group-hover:gap-3 transition-all">View details <span className="text-lg">&rarr;</span></span>
                 <div className="grid grid-cols-2 gap-4 mt-6">
                   {cs.stats.map((stat) => (
                     <div key={stat.label}>
-                      <p className="text-2xl font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">{stat.value}</p>
+                      <p className="text-2xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">{stat.value}</p>
                       <p className="text-xs text-fedsec-gray-400 font-[family-name:var(--font-accent)]">{stat.label}</p>
                     </div>
                   ))}
@@ -315,7 +315,7 @@ function IndustriesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div ref={ref} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={springTransition} className="text-center mb-16">
           <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Industries we served</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Trusted across sectors</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Trusted across sectors</h2>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.map((industry, i) => (
@@ -323,7 +323,7 @@ function IndustriesSection() {
               <div className="w-14 h-14 rounded-2xl bg-fedsec-purple/10 flex items-center justify-center mx-auto mb-5">
                 <Image src={industry.icon} alt={industry.name} width={28} height={28} className="w-7 h-7" />
               </div>
-              <h3 className="text-lg font-bold text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)]">{industry.name}</h3>
+              <h3 className="text-xl md:text-2xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)]">{industry.name}</h3>
               <p className="text-sm text-fedsec-gray-500">{industry.description}</p>
             </motion.div>
           ))}
@@ -342,24 +342,24 @@ function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div ref={ref} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={springTransition} className="text-center mb-16">
           <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Why choose us</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Where protection meets innovation</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Where protection meets innovation</h2>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <motion.div initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ ...springTransition, delay: 0 }} className="text-center p-8 bg-fedsec-gray-50 border border-fedsec-gray-200 rounded-2xl">
-            <p className="text-4xl md:text-5xl font-bold text-fedsec-purple mb-2 font-[family-name:var(--font-heading)]">99.9%</p>
-            <p className="text-lg font-bold text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)]">Risk Reduction</p>
+            <p className="text-3xl md:text-4xl font-normal text-fedsec-purple mb-2 font-[family-name:var(--font-heading)]">99.9%</p>
+            <p className="text-xl md:text-2xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)]">Risk Reduction</p>
             <p className="text-sm text-fedsec-gray-500">Accuracy in identifying and responding to emerging cyber threats</p>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ ...springTransition, delay: 0.15 }} className="text-center p-8 bg-fedsec-purple text-fedsec-white rounded-2xl">
             <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-4">
               <Shield size={32} />
             </div>
-            <p className="text-lg font-bold mb-2 font-[family-name:var(--font-heading)]">Protection</p>
+            <p className="text-xl md:text-2xl font-normal mb-2 font-[family-name:var(--font-heading)]">Protection</p>
             <p className="text-sm text-fedsec-gray-300">Layers of protection across your security infrastructure</p>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ ...springTransition, delay: 0.3 }} className="text-center p-8 bg-fedsec-gray-50 border border-fedsec-gray-200 rounded-2xl">
-            <p className="text-4xl md:text-5xl font-bold text-fedsec-purple mb-2 font-[family-name:var(--font-heading)]">500M+</p>
-            <p className="text-lg font-bold text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)]">Analytics</p>
+            <p className="text-3xl md:text-4xl font-normal text-fedsec-purple mb-2 font-[family-name:var(--font-heading)]">500M+</p>
+            <p className="text-xl md:text-2xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)]">Analytics</p>
             <p className="text-sm text-fedsec-gray-500">Security events analyzed across monitored environments monthly</p>
           </motion.div>
         </div>
@@ -378,7 +378,7 @@ function BlogsSection() {
         <motion.div ref={ref} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={springTransition} className="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
           <div>
             <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Our blogs</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Staying ahead of evolving threats</h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Staying ahead of evolving threats</h2>
           </div>
           <Link href="/blogs" className="mt-4 md:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-fedsec-purple hover:gap-3 transition-all font-[family-name:var(--font-accent)]">
             View all <span className="text-lg">&rarr;</span>
@@ -389,14 +389,14 @@ function BlogsSection() {
             <motion.div key={post.slug} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ ...springTransition, delay: i * 0.1 }}>
               <Link href={`/blogs/${post.slug}`} className="group block">
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] mb-4">
-                  <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={post.image} alt={post.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-xs text-fedsec-gray-400 font-[family-name:var(--font-accent)]">{post.author}</span>
                   <span className="w-1 h-1 rounded-full bg-fedsec-gray-300" />
                   <span className="text-xs text-fedsec-gray-400 font-[family-name:var(--font-accent)]">{post.date}</span>
                 </div>
-                <h3 className="text-base font-bold text-fedsec-gray-900 mb-3 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors leading-snug">{post.title}</h3>
+                <h3 className="text-base md:text-lg font-normal text-fedsec-gray-900 mb-3 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors leading-snug">{post.title}</h3>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-fedsec-purple font-[family-name:var(--font-accent)] group-hover:gap-3 transition-all">View details <span className="text-lg">&rarr;</span></span>
               </Link>
             </motion.div>

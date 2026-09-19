@@ -42,7 +42,8 @@ export default function Header() {
               alt="FEDSEC"
               width={120}
               height={40}
-              className="h-8 md:h-10 w-auto"
+              style={{ height: "auto" }}
+              className="h-8 md:h-10"
               priority
             />
           </Link>

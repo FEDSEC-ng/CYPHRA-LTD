@@ -3,17 +3,17 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
 import { caseStudies } from "@/lib/data/case-studies";
 import CTABanner from "@/components/ui/CTABanner";
 
 const caseImages: Record<string, string> = {
-  finsecure: "/images/protexy/case-studies/case-hero.png",
-  vireon: "/images/protexy/case-studies/case-overview1.png",
-  "medicore-systems": "/images/protexy/case-studies/case-overview2.png",
-  nexabank: "/images/protexy/case-studies/case-results1.png",
-  cloudsync: "/images/protexy/case-studies/case-results2.png",
-  vertexhealth: "/images/protexy/case-studies/case-content1.png",
+  finsecure: "/images/protexy/cases/case-hero.png",
+  vireon: "/images/protexy/cases/case-overview1.png",
+  "medicore-systems": "/images/protexy/cases/case-overview2.png",
+  nexabank: "/images/protexy/cases/case-results1.png",
+  cloudsync: "/images/protexy/cases/case-results2.png",
+  vertexhealth: "/images/protexy/cases/case-content1.png",
 };
 
 const caseStats: Record<string, { value: string; label: string }[]> = {
@@ -31,84 +31,78 @@ const caseStats: Record<string, { value: string; label: string }[]> = {
   ],
 };
 
-export default function CaseStudiesPage() {
+export default function CaseStudiesListPage() {
   return (
     <>
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-fedsec-gray-900 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-fedsec-purple/20 via-transparent to-fedsec-pink/10" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", damping: 40, stiffness: 200 }}
-          >
-            <span className="inline-block mb-4 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-fedsec-purple bg-fedsec-purple/10 rounded-full font-[family-name:var(--font-accent)]">
-              Our case studies
-            </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
-              Trusted protection for every business
-            </h1>
-            <p className="text-lg md:text-xl text-fedsec-gray-400 max-w-3xl leading-relaxed">
-              Real engagements, real outcomes. Explore how FEDSEC has helped
-              organizations strengthen their security posture.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-28 bg-fedsec-white">
+      <section className="py-20 md:py-28 bg-fedsec-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="text-center mb-16"
+          >
+            <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
+              Trusted protection for every business
+            </motion.h1>
+            <motion.p variants={fadeInUp} className="text-lg text-fedsec-gray-500 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
+              See how organizations across industries strengthened security
+              and reduced risk using our proactive defense solutions
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {caseStudies.map((study) => {
-              const stats = caseStats[study.slug] || [];
-              const img = caseImages[study.slug] || study.image;
-              return (
-                <motion.div key={study.slug} variants={fadeInUp}>
-                  <Link
-                    href={`/case-studies/${study.slug}`}
-                    className="group block h-full"
-                  >
-                    <div className="relative rounded-2xl overflow-hidden aspect-[4/3] mb-6">
-                      <Image
-                        src={img}
-                        alt={study.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
+            {caseStudies.map((cs) => (
+              <motion.div key={cs.slug} variants={scaleIn}>
+                <Link
+                  href={`/case-studies/${cs.slug}`}
+                  className="group block"
+                >
+                  <div className="relative rounded-2xl overflow-hidden aspect-[4/3] mb-6">
+                    <Image
+                      src={caseImages[cs.slug] || "/images/protexy/cases/case1.png"}
+                      alt={cs.client}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">
+                    {cs.client}
+                  </h3>
+                  <p className="text-sm text-fedsec-gray-500 leading-relaxed mb-4">
+                    {cs.title}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-fedsec-purple font-[family-name:var(--font-accent)] group-hover:gap-3 transition-all">
+                    View details <span className="text-lg">&rarr;</span>
+                  </span>
+                  {caseStats[cs.slug] && (
+                    <div className="grid grid-cols-2 gap-4 mt-6">
+                      {caseStats[cs.slug].map((stat) => (
+                        <div key={stat.label}>
+                          <p className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
+                            {stat.value}
+                          </p>
+                          <p className="text-xs text-fedsec-gray-400 font-[family-name:var(--font-accent)]">
+                            {stat.label}
+                          </p>
+                        </div>
+                      ))}
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">
-                      {study.title}
-                    </h3>
-                    <p className="text-sm text-fedsec-gray-500 leading-relaxed mb-4 line-clamp-2">
-                      {study.challenge}
-                    </p>
-                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-fedsec-purple font-[family-name:var(--font-accent)] group-hover:gap-3 transition-all">
-                      View details <span className="text-lg">&rarr;</span>
-                    </span>
-                    {stats.length > 0 && (
-                      <div className="grid grid-cols-2 gap-4 mt-6">
-                        {stats.map((stat) => (
-                          <div key={stat.label}>
-                            <p className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">{stat.value}</p>
-                            <p className="text-xs text-fedsec-gray-400 font-[family-name:var(--font-accent)]">{stat.label}</p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </Link>
-                </motion.div>
-              );
-            })}
+                  )}
+                </Link>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
-
       <CTABanner />
     </>
   );

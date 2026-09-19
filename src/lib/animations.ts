@@ -15,15 +15,9 @@ export const springTransition: Transition = {
 export const springFast: Transition = {
   type: "spring",
   damping: 50,
-  stiffness: 200,
+  stiffness: 300,
   mass: 1,
-};
-
-export const springSmooth: Transition = {
-  type: "spring",
-  damping: 60,
-  stiffness: 200,
-  mass: 1,
+  delay: 0.05,
 };
 
 export const fadeInUp: Variants = {

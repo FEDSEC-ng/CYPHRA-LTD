@@ -10,8 +10,14 @@ import PartnerLogos from "@/components/ui/PartnerLogos";
 import TestimonialsCarousel from "@/components/ui/TestimonialsCarousel";
 import CTABanner from "@/components/ui/CTABanner";
 import Button from "@/components/ui/Button";
-
-const springTransition = { type: "spring" as const, damping: 40, stiffness: 200, mass: 1 };
+import {
+  fadeInUp,
+  scaleIn,
+  slideInLeft,
+  slideInRight,
+  staggerContainer,
+  springTransition,
+} from "@/lib/animations";
 
 const services = [
   {
@@ -49,7 +55,7 @@ const caseStudies = [
     slug: "nexabank",
     name: "NexaBank",
     description: "NexaBank strengthened its digital infrastructure by deploying AI-powered threat detection and continuous network monitoring across critical systems",
-    image: "/images/protexy/case-studies/case1.png",
+    image: "/images/protexy/cases/case1.png",
     stats: [
       { value: "3.2M+", label: "Threats Blocked Annually" },
       { value: "1.8B+", label: "Risks Mitigated Globally" },
@@ -59,7 +65,7 @@ const caseStudies = [
     slug: "cloudsync",
     name: "CloudSync",
     description: "CloudSync reduced security risks across distributed cloud environments through automated vulnerability assessments and real-time alerts",
-    image: "/images/protexy/case-studies/case2.png",
+    image: "/images/protexy/cases/case2.png",
     stats: [
       { value: "06Y", label: "Security Partnership" },
       { value: "3.2M+", label: "Threats Blocked Annually" },
@@ -69,7 +75,7 @@ const caseStudies = [
     slug: "vertexhealth",
     name: "VertexHealth",
     description: "Vertex Health improved compliance and safeguarded sensitive records by implementing intelligent monitoring and rapid incident response systems",
-    image: "/images/protexy/case-studies/case3.png",
+    image: "/images/protexy/cases/case3.png",
     stats: [
       { value: "99.9%", label: "System Uptime Maintained" },
       { value: "08Y", label: "Security Success Timeline" },
@@ -133,20 +139,26 @@ function AboutPreview() {
   return (
     <section className="py-20 md:py-28 bg-fedsec-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">
+        <motion.div
+          ref={ref}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={staggerContainer}
+          className="text-center mb-16"
+        >
+          <motion.span variants={fadeInUp} className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">
             About us
-          </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
+          </motion.span>
+          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
             Advancing cyber security for modern organizations
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
-            ref={ref}
-            initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={springTransition}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={slideInLeft}
             className="relative"
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
@@ -156,9 +168,10 @@ function AboutPreview() {
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-fedsec-pink/10 rounded-2xl -z-10" />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ ...springTransition, delay: 0.2 }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={slideInRight}
           >
             <div className="bg-fedsec-white border border-fedsec-gray-200 rounded-2xl p-8 mb-8">
               <p className="text-lg text-fedsec-gray-600 leading-relaxed mb-6 italic font-[family-name:var(--font-body)]">
@@ -194,19 +207,28 @@ function AboutPreview() {
 }
 
 function ServicesSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
     <section className="py-20 md:py-28 bg-fedsec-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div ref={ref} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={springTransition} className="text-center mb-16">
-          <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Our services</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Security that never sleeps</h2>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="text-center mb-16"
+        >
+          <motion.span variants={fadeInUp} className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Our services</motion.span>
+          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Security that never sleeps</motion.h2>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {services.map((service, i) => (
-            <motion.div key={service.slug} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ ...springTransition, delay: i * 0.1 }}>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          {services.map((service) => (
+            <motion.div key={service.slug} variants={fadeInUp}>
               <Link href={`/services/${service.slug}`} className="group block h-full bg-fedsec-gray-50 border border-fedsec-gray-200 rounded-2xl p-8 hover:border-fedsec-purple/30 hover:shadow-lg hover:shadow-fedsec-purple/5 transition-all duration-300">
                 <div className="flex items-start gap-5">
                   <div className="w-14 h-14 rounded-xl bg-fedsec-purple/10 flex items-center justify-center shrink-0 group-hover:bg-fedsec-purple group-hover:text-fedsec-white transition-all duration-300">
@@ -221,7 +243,7 @@ function ServicesSection() {
               </Link>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
         <div className="mt-12 text-center">
           <p className="text-lg text-fedsec-gray-500 mb-6 max-w-2xl mx-auto">Protect your organization with intelligent security solutions designed to detect threats, reduce risk, and strengthen resilience.</p>
           <Button href="/services" variant="outline" size="lg">More services</Button>
@@ -232,8 +254,6 @@ function ServicesSection() {
 }
 
 function TrustedProcess() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const steps = [
     { num: "1", title: "Predict Threats", description: "Use AI-driven intelligence to identify risks before they escalate." },
     { num: "2", title: "Detect Anomalies", description: "Monitor activity continuously to uncover unusual behavior and threats" },
@@ -243,13 +263,25 @@ function TrustedProcess() {
   return (
     <section className="py-20 md:py-28 bg-fedsec-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div ref={ref} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={springTransition} className="text-center mb-16">
-          <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Our trusted process</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Intelligence behind every decision</h2>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="text-center mb-16"
+        >
+          <motion.span variants={fadeInUp} className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Our trusted process</motion.span>
+          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Intelligence behind every decision</motion.h2>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {steps.map((step, i) => (
-            <motion.div key={step.num} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ ...springTransition, delay: i * 0.15 }} className="text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
+          {steps.map((step) => (
+            <motion.div key={step.num} variants={scaleIn} className="text-center">
               <div className="w-16 h-16 rounded-2xl bg-fedsec-purple/10 flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-normal text-fedsec-purple font-[family-name:var(--font-heading)]">{step.num}</span>
               </div>
@@ -257,31 +289,40 @@ function TrustedProcess() {
               <p className="text-fedsec-gray-500 text-sm leading-relaxed max-w-sm mx-auto">{step.description}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
 
 function CaseStudiesSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
     <section className="py-20 md:py-28 bg-fedsec-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div ref={ref} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={springTransition} className="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="flex flex-col md:flex-row md:items-end md:justify-between mb-16"
+        >
           <div>
-            <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Our case studies</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Securing businesses with confidence</h2>
+            <motion.span variants={fadeInUp} className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Our case studies</motion.span>
+            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Securing businesses with confidence</motion.h2>
           </div>
           <Link href="/case-studies" className="mt-4 md:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-fedsec-purple hover:gap-3 transition-all font-[family-name:var(--font-accent)]">
             View all <span className="text-lg">&rarr;</span>
           </Link>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {caseStudies.map((cs, i) => (
-            <motion.div key={cs.slug} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ ...springTransition, delay: i * 0.15 }}>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
+          {caseStudies.map((cs) => (
+            <motion.div key={cs.slug} variants={scaleIn}>
               <Link href={`/case-studies/${cs.slug}`} className="group block">
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] mb-6">
                   <Image src={cs.image} alt={cs.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -292,7 +333,7 @@ function CaseStudiesSection() {
                 <div className="grid grid-cols-2 gap-4 mt-6">
                   {cs.stats.map((stat) => (
                     <div key={stat.label}>
-                      <p className="text-2xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">{stat.value}</p>
+                      <p className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">{stat.value}</p>
                       <p className="text-xs text-fedsec-gray-400 font-[family-name:var(--font-accent)]">{stat.label}</p>
                     </div>
                   ))}
@@ -300,26 +341,35 @@ function CaseStudiesSection() {
               </Link>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
 
 function IndustriesSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
     <section className="py-20 md:py-28 bg-fedsec-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div ref={ref} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={springTransition} className="text-center mb-16">
-          <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Industries we served</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Trusted across sectors</h2>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="text-center mb-16"
+        >
+          <motion.span variants={fadeInUp} className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Industries we served</motion.span>
+          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Trusted across sectors</motion.h2>
         </motion.div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {industries.map((industry, i) => (
-            <motion.div key={industry.name} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ ...springTransition, delay: i * 0.1 }} className="bg-fedsec-white border border-fedsec-gray-200 rounded-2xl p-8 text-center hover:border-fedsec-purple/30 hover:shadow-lg transition-all duration-300">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {industries.map((industry) => (
+            <motion.div key={industry.name} variants={scaleIn} className="bg-fedsec-white border border-fedsec-gray-200 rounded-2xl p-8 text-center hover:border-fedsec-purple/30 hover:shadow-lg transition-all duration-300">
               <div className="w-14 h-14 rounded-2xl bg-fedsec-purple/10 flex items-center justify-center mx-auto mb-5">
                 <Image src={industry.icon} alt={industry.name} width={28} height={28} className="w-7 h-7" />
               </div>
@@ -327,66 +377,84 @@ function IndustriesSection() {
               <p className="text-sm text-fedsec-gray-500">{industry.description}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
 
 function WhyChooseUs() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
     <section className="py-20 md:py-28 bg-fedsec-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div ref={ref} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={springTransition} className="text-center mb-16">
-          <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Why choose us</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Where protection meets innovation</h2>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="text-center mb-16"
+        >
+          <motion.span variants={fadeInUp} className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Why choose us</motion.span>
+          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Where protection meets innovation</motion.h2>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <motion.div initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ ...springTransition, delay: 0 }} className="text-center p-8 bg-fedsec-gray-50 border border-fedsec-gray-200 rounded-2xl">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
+          <motion.div variants={fadeInUp} className="text-center p-8 bg-fedsec-gray-50 border border-fedsec-gray-200 rounded-2xl">
             <p className="text-3xl md:text-4xl font-normal text-fedsec-purple mb-2 font-[family-name:var(--font-heading)]">99.9%</p>
             <p className="text-xl md:text-2xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)]">Risk Reduction</p>
             <p className="text-sm text-fedsec-gray-500">Accuracy in identifying and responding to emerging cyber threats</p>
           </motion.div>
-          <motion.div initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ ...springTransition, delay: 0.15 }} className="text-center p-8 bg-fedsec-purple text-fedsec-white rounded-2xl">
+          <motion.div variants={fadeInUp} className="text-center p-8 bg-fedsec-purple text-fedsec-white rounded-2xl">
             <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-4">
               <Shield size={32} />
             </div>
             <p className="text-xl md:text-2xl font-normal mb-2 font-[family-name:var(--font-heading)]">Protection</p>
             <p className="text-sm text-fedsec-gray-300">Layers of protection across your security infrastructure</p>
           </motion.div>
-          <motion.div initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ ...springTransition, delay: 0.3 }} className="text-center p-8 bg-fedsec-gray-50 border border-fedsec-gray-200 rounded-2xl">
+          <motion.div variants={fadeInUp} className="text-center p-8 bg-fedsec-gray-50 border border-fedsec-gray-200 rounded-2xl">
             <p className="text-3xl md:text-4xl font-normal text-fedsec-purple mb-2 font-[family-name:var(--font-heading)]">500M+</p>
             <p className="text-xl md:text-2xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)]">Analytics</p>
             <p className="text-sm text-fedsec-gray-500">Security events analyzed across monitored environments monthly</p>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
 
 function BlogsSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
     <section className="py-20 md:py-28 bg-fedsec-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div ref={ref} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={springTransition} className="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="flex flex-col md:flex-row md:items-end md:justify-between mb-16"
+        >
           <div>
-            <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Our blogs</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Staying ahead of evolving threats</h2>
+            <motion.span variants={fadeInUp} className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Our blogs</motion.span>
+            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Staying ahead of evolving threats</motion.h2>
           </div>
           <Link href="/blogs" className="mt-4 md:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-fedsec-purple hover:gap-3 transition-all font-[family-name:var(--font-accent)]">
             View all <span className="text-lg">&rarr;</span>
           </Link>
         </motion.div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {blogPosts.map((post, i) => (
-            <motion.div key={post.slug} initial={{ opacity: 0, y: 50 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ ...springTransition, delay: i * 0.1 }}>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {blogPosts.map((post) => (
+            <motion.div key={post.slug} variants={scaleIn}>
               <Link href={`/blogs/${post.slug}`} className="group block">
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] mb-4">
                   <Image src={post.image} alt={post.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -401,7 +469,7 @@ function BlogsSection() {
               </Link>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

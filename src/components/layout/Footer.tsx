@@ -131,6 +131,11 @@ export default function Footer() {
           </p>
         </div>
       </div>
+      <div className="overflow-hidden pb-8">
+        <p className="text-[120px] md:text-[160px] lg:text-[200px] font-normal text-fedsec-gray-800/30 leading-none text-center whitespace-nowrap font-[family-name:var(--font-heading)] select-none pointer-events-none">
+          Active Defense
+        </p>
+      </div>
     </footer>
   );
 }

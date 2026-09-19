@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fedsec-purple: #662f90;
+  --color-fedsec-purple-light: #7b3aab;
+  --color-fedsec-purple-dark: #4e2370;
+  --color-fedsec-pink: #dd1a5d;
+  --color-fedsec-pink-light: #e8457a;
+  --color-fedsec-pink-dark: #b8144d;
+  --color-fedsec-black: #000000;
+  --color-fedsec-white: #ffffff;
+  --color-fedsec-gray-50: #f8f9fa;
+  --color-fedsec-gray-100: #eceef0;
+  --color-fedsec-gray-200: #e4e4e4;
+  --color-fedsec-gray-300: #d1d5db;
+  --color-fedsec-gray-400: #9ca3af;
+  --color-fedsec-gray-500: #575757;
+  --color-fedsec-gray-600: #373737;
+  --color-fedsec-gray-700: #323232;
+  --color-fedsec-gray-800: #262626;
+  --color-fedsec-gray-900: #111111;
+  --font-heading: "Inter Tight", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-accent: "Manrope", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-fedsec-gray-100);
+  color: var(--color-fedsec-gray-900);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-fedsec-purple);
+  color: var(--color-fedsec-white);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-fedsec-purple), var(--color-fedsec-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--color-fedsec-purple), var(--color-fedsec-pink));
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(102, 47, 144, 0.3), 0 0 60px rgba(102, 47, 144, 0.1);
+}
+
+.glow-pink {
+  box-shadow: 0 0 20px rgba(221, 26, 93, 0.3), 0 0 60px rgba(221, 26, 93, 0.1);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+  will-change: transform;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(102, 47, 144, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(102, 47, 144, 0.4); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}

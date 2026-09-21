@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Shield,
   ArrowRight,
@@ -260,18 +261,21 @@ const testimonials = [
       "FEDSEC transformed our approach to security. Their team identified critical vulnerabilities we had missed for years and provided a clear roadmap for remediation.",
     author: "CTO",
     company: "FinSecure Capital",
+    avatar: "/images/protexy/team/avatar-olivia.png",
   },
   {
     quote:
       "The penetration testing engagement was thorough, professional, and delivered actionable results. FEDSEC's team went above and beyond to help us understand and prioritize findings.",
     author: "Head of Engineering",
     company: "CloudSync Technologies",
+    avatar: "/images/protexy/team/avatar-james.png",
   },
   {
     quote:
       "Their GRC advisory services helped us achieve ISO 27001 certification in record time. The team understood our business needs and designed a program that actually works for us.",
     author: "CISO",
     company: "NexaBank",
+    avatar: "/images/protexy/team/avatar-emma.png",
   },
 ];
 
@@ -295,8 +299,11 @@ function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center bg-fedsec-black overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(102,47,144,0.15),transparent_70%)]" />
       <div className="absolute inset-0 grid-pattern opacity-[0.04]" />
+      <div className="absolute right-0 top-0 w-1/2 h-full opacity-[0.06] pointer-events-none hidden lg:block">
+        <Image src="/images/protexy/hero/home-hero-image.png" alt="" fill className="object-contain object-right" />
+      </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 md:pt-40 md:pb-28">
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28">
         <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -304,8 +311,8 @@ function HeroSection() {
             transition={{ duration: 0.6 }}
             className="mb-6"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-fedsec-purple text-sm font-medium font-[family-name:var(--font-accent)]">
-              <Shield size={16} />
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-fedsec-purple text-xs sm:text-sm font-medium font-[family-name:var(--font-accent)]">
+              <Shield size={14} />
               KNOW YOUR RISK
             </span>
           </motion.div>
@@ -314,16 +321,17 @@ function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-6xl lg:text-[80px] font-bold text-fedsec-white leading-[1.1] mb-8 font-[family-name:var(--font-heading)]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-bold text-fedsec-white leading-[1.08] mb-6 sm:mb-8 font-[family-name:var(--font-heading)] tracking-tight"
           >
-            Cybersecurity that Delivers Results
+            Cybersecurity{" "}
+            <span className="gradient-text">that Delivers Results</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl lg:text-2xl text-white/40 max-w-2xl mb-10 leading-relaxed font-[family-name:var(--font-body)]"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/40 max-w-2xl mb-8 sm:mb-10 leading-relaxed font-[family-name:var(--font-body)]"
           >
             We build security strategies that protect your organization, reduce
             risk, and strengthen resilience. From VAPT and GRC advisory to
@@ -334,14 +342,19 @@ function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-start gap-4 mb-14"
+            className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 mb-12 sm:mb-16"
           >
             <Link href="/contact" className="grow-pill">
-              Know Your Risk
-              <ArrowRight className="ml-2" size={18} />
+              <span className="pill-label">Know Your Risk</span>
+              <span className="pill-icon">
+                <ArrowRight size={18} />
+              </span>
             </Link>
-            <Link href="/services" className="grow-pill-outline">
-              Our Services
+            <Link href="/services" className="grow-pill grow-pill-outline">
+              <span className="pill-label">Our Services</span>
+              <span className="pill-icon">
+                <ArrowRight size={18} />
+              </span>
             </Link>
           </motion.div>
 
@@ -349,7 +362,7 @@ function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap gap-3 sm:gap-4"
           >
             {trustBadges.map((badge) => (
               <div
@@ -446,8 +459,8 @@ function ServicesGrid() {
                 href={`/services/${service.slug}`}
                 className="group block h-full p-8 glass card-glow rounded-2xl"
               >
-                <div className="w-12 h-12 rounded-xl bg-fedsec-purple/10 flex items-center justify-center mb-6">
-                  <service.icon size={24} className="text-fedsec-purple" />
+                <div className="w-12 h-12 rounded-xl bg-fedsec-purple/10 flex items-center justify-center mb-6 group-hover:bg-fedsec-purple transition-all duration-300">
+                  <service.icon size={24} className="text-fedsec-purple group-hover:text-white transition-colors duration-300" />
                 </div>
                 <span className="inline-block text-[11px] font-bold uppercase tracking-[0.2em] text-fedsec-pink mb-3 font-[family-name:var(--font-accent)]">
                   {service.category}
@@ -528,8 +541,13 @@ function ClientPartnerships() {
           className="max-w-3xl mx-auto"
         >
           <div className="glass-strong rounded-2xl p-8 md:p-10">
-            <div className="aspect-[16/6] bg-gradient-to-br from-fedsec-purple/20 to-fedsec-pink/10 rounded-xl mb-8 flex items-center justify-center">
-              <Shield size={56} className="text-fedsec-purple/30" />
+            <div className="aspect-[16/6] rounded-xl mb-8 relative overflow-hidden">
+              <Image
+                src="/images/protexy/services/service1.png"
+                alt={partnershipTabs[activeTab].caseStudy.name}
+                fill
+                className="object-cover"
+              />
             </div>
             <h3 className="text-2xl font-bold text-fedsec-white mb-4 font-[family-name:var(--font-heading)]">
               {partnershipTabs[activeTab].caseStudy.name}
@@ -615,13 +633,16 @@ function CaseStudiesSection() {
           variants={staggerContainer}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {caseStudies.map((cs) => (
+          {caseStudies.map((cs, i) => (
             <motion.div key={cs.name} variants={fadeInUp}>
               <div className="group glass card-glow rounded-2xl overflow-hidden h-full">
-                <div className="aspect-[16/10] bg-gradient-to-br from-fedsec-purple/20 to-fedsec-pink/10 relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Shield size={48} className="text-fedsec-purple/30" />
-                  </div>
+                <div className="aspect-[16/10] relative overflow-hidden">
+                  <Image
+                    src={`/images/protexy/cases/case${i + 1}.png`}
+                    alt={cs.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
@@ -819,15 +840,23 @@ function ProcessSection() {
             What Happens After Engagement?
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {postEngagement.map((item) => (
+            {postEngagement.map((item, i) => (
               <div
                 key={item.title}
-                className="flex items-start gap-4 p-6 glass rounded-xl"
+                className="relative flex items-start gap-4 p-5 sm:p-6 glass rounded-xl overflow-hidden"
               >
-                <div className="w-10 h-10 rounded-lg bg-fedsec-purple/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
+                  <Image
+                    src={`/images/protexy/services/feature${i + 1}.png`}
+                    alt=""
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative w-10 h-10 rounded-lg bg-fedsec-purple/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <CheckCircle size={20} className="text-fedsec-purple" />
                 </div>
-                <div>
+                <div className="relative">
                   <h4 className="font-bold text-fedsec-white mb-2 font-[family-name:var(--font-heading)]">
                     {item.title}
                   </h4>
@@ -890,13 +919,24 @@ function TestimonialsSection() {
               <p className="text-fedsec-gray-700 leading-relaxed mb-6 flex-1 italic font-[family-name:var(--font-body)]">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
-              <div className="border-t border-fedsec-gray-200 pt-4">
-                <p className="font-bold text-fedsec-gray-900 text-sm font-[family-name:var(--font-heading)]">
-                  {testimonial.author}
-                </p>
-                <p className="text-sm text-fedsec-gray-500 font-[family-name:var(--font-body)]">
-                  {testimonial.company}
-                </p>
+              <div className="border-t border-fedsec-gray-200 pt-4 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-fedsec-gray-100">
+                  <Image
+                    src={testimonial.avatar}
+                    alt={testimonial.author}
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-bold text-fedsec-gray-900 text-sm font-[family-name:var(--font-heading)]">
+                    {testimonial.author}
+                  </p>
+                  <p className="text-sm text-fedsec-gray-500 font-[family-name:var(--font-body)]">
+                    {testimonial.company}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -969,8 +1009,12 @@ function IndustriesSection() {
 
 function CTASection() {
   return (
-    <section className="py-24 md:py-32 bg-fedsec-black">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="relative py-24 md:py-32 bg-fedsec-black overflow-hidden">
+      <div className="absolute inset-0">
+        <Image src="/images/protexy/cta/cta-bg.png" alt="" fill className="object-cover opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-fedsec-black/80 via-fedsec-black/60 to-fedsec-black" />
+      </div>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -999,14 +1043,19 @@ function CTASection() {
           </motion.p>
           <motion.div
             variants={fadeInUp}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
           >
             <Link href="/contact" className="grow-pill">
-              Contact Us
-              <ArrowRight className="ml-2" size={18} />
+              <span className="pill-label">Contact Us</span>
+              <span className="pill-icon">
+                <ArrowRight size={18} />
+              </span>
             </Link>
-            <Link href="/services" className="grow-pill-outline">
-              View Services
+            <Link href="/services" className="grow-pill grow-pill-outline">
+              <span className="pill-label">View Services</span>
+              <span className="pill-icon">
+                <ArrowRight size={18} />
+              </span>
             </Link>
           </motion.div>
         </motion.div>

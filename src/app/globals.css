@@ -78,6 +78,7 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
 }
 
 .glass-strong {
@@ -85,6 +86,7 @@ body {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
 }
 
 .glass-dark {
@@ -191,34 +193,49 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  min-width: 180px;
-  height: 56px;
-  padding: 6px 6px 6px 24px;
+  min-width: 160px;
+  height: 52px;
+  padding: 6px 6px 6px 22px;
   background: var(--color-fedsec-purple);
   border-radius: 999px;
   overflow: hidden;
-  transition: min-width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: min-width 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
   cursor: pointer;
   text-decoration: none;
   color: white;
   font-family: var(--font-accent);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .grow-pill:hover {
-  min-width: 220px;
+  min-width: 195px;
+  box-shadow: 0 0 30px rgba(102, 47, 144, 0.35);
+}
+
+@media (min-width: 640px) {
+  .grow-pill {
+    min-width: 180px;
+    height: 56px;
+    padding-left: 24px;
+    font-size: 15px;
+  }
+  .grow-pill:hover {
+    min-width: 220px;
+  }
 }
 
 .grow-pill-outline {
   background: transparent;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
 }
 
 .grow-pill-outline:hover {
   border-color: var(--color-fedsec-purple);
   background: rgba(102, 47, 144, 0.1);
+  box-shadow: 0 0 20px rgba(102, 47, 144, 0.15);
 }
 
 .grow-pill .pill-label {

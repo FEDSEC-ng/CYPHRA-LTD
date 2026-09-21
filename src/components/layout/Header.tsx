@@ -2,20 +2,23 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Shield } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 import { headerSlideDown } from "@/lib/animations";
 
 function FedsecLogo({ className = "" }: { className?: string }) {
   return (
     <Link href="/" className={`inline-flex items-center gap-2.5 ${className}`}>
-      <div className="w-9 h-9 rounded-xl bg-fedsec-purple flex items-center justify-center shadow-[0_0_20px_rgba(102,47,144,0.3)]">
-        <Shield size={18} className="text-white" strokeWidth={2.5} />
-      </div>
-      <span className="text-xl font-bold text-white font-[family-name:var(--font-heading)] tracking-tight">
-        FEDSEC
-      </span>
+      <Image
+        src="/images/fedsec-logo-white.png"
+        alt="FEDSEC"
+        width={36}
+        height={36}
+        className="h-9 w-auto"
+        priority
+      />
     </Link>
   );
 }

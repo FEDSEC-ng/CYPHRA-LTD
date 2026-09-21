@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Shield } from "lucide-react";
+import Image from "next/image";
 import { SITE, SOCIAL_LINKS } from "@/lib/constants";
 
 const serviceLinks = [
@@ -68,12 +68,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-2.5 mb-5">
-              <div className="w-9 h-9 rounded-xl gradient-bg flex items-center justify-center shadow-[0_0_20px_rgba(102,47,144,0.3)]">
-                <Shield size={18} className="text-white" strokeWidth={2.5} />
-              </div>
-              <span className="text-xl font-bold text-white font-[family-name:var(--font-heading)] tracking-tight">
-                FEDSEC
-              </span>
+              <Image
+                src="/images/fedsec-logo-white.png"
+                alt="FEDSEC"
+                width={36}
+                height={36}
+                className="h-9 w-auto"
+              />
             </Link>
             <p className="text-sm text-white/40 leading-relaxed mb-6 max-w-xs font-[family-name:var(--font-body)]">
               {SITE.description}

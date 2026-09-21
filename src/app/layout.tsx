@@ -23,21 +23,24 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "FEDSEC — Trusted Security Solutions",
+  title: "FEDSEC — Multidisciplinary Cybersecurity Firm",
   description:
-    "FEDSEC is a multidisciplinary cybersecurity firm built around trust, expertise, and collaboration. We help organizations identify risks, strengthen their security posture, and build resilience against evolving cyber threats.",
+    "FEDSEC is a multidisciplinary cybersecurity firm built on trust, expertise, and collaboration. We deliver VAPT, GRC advisory, network security, software security, security operations, and incident response services.",
   keywords: [
     "cybersecurity",
     "penetration testing",
-    "security assessment",
-    "GRC",
+    "vulnerability assessment",
+    "VAPT",
+    "GRC advisory",
     "network security",
+    "software security",
     "incident response",
+    "security operations",
   ],
   openGraph: {
-    title: "FEDSEC — Trusted Security Solutions",
+    title: "FEDSEC — Multidisciplinary Cybersecurity Firm",
     description:
-      "Multidisciplinary cybersecurity firm built around trust, expertise, and collaboration.",
+      "Different expertise. One collective. Secure by trust.",
     type: "website",
     siteName: "FEDSEC",
   },

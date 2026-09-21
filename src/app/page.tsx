@@ -22,79 +22,79 @@ import {
 const services = [
   {
     icon: "/images/protexy/icons/hEdInb3mCJe8MyL1oTSA35AmZY.svg",
-    category: "Detection",
-    title: "AI-powered threat detection system",
-    description: "Detect suspicious activity before it becomes a security threat",
-    slug: "ai-powered-threat-detection-system",
+    category: "Assessment",
+    title: "Vulnerability Assessment & Penetration Testing",
+    description: "Identify and remediate security vulnerabilities across your digital infrastructure",
+    slug: "vulnerability-assessment-and-penetration-testing",
   },
   {
     icon: "/images/protexy/icons/qh9WSzmiZO49WPjU5MLP5yjGNnQ.svg",
-    category: "Analysis",
-    title: "Rapid incident response management",
-    description: "Contain cyber incidents quickly and reduce disruption",
-    slug: "rapid-incident-response-management",
+    category: "Governance",
+    title: "GRC Advisory",
+    description: "Strategic governance, risk management, and compliance advisory",
+    slug: "grc-advisory",
   },
   {
     icon: "/images/protexy/icons/SIb2C40P2SYrdZDpd43ru9IWG2M.svg",
-    category: "Prevention",
-    title: "Intelligent Threat Monitoring",
-    description: "Detect suspicious activity before it becomes a security threat",
-    slug: "intelligent-threat-monitoring",
+    category: "Defense",
+    title: "Network Security",
+    description: "Protect your infrastructure from unauthorized access and network-based attacks",
+    slug: "network-security",
   },
   {
     icon: "/images/protexy/icons/BiLwEGhOv1EUnb8FqA8ZzcGg.svg",
-    category: "Recovery",
-    title: "Advanced cloud security protection",
-    description: "Secure cloud environments, applications, and sensitive data",
-    slug: "advanced-cloud-security-protection",
+    category: "Response",
+    title: "Incident Response",
+    description: "Rapid breach containment, forensic investigation, and recovery",
+    slug: "incident-response",
   },
 ];
 
 const caseStudies = [
   {
-    slug: "nexabank",
-    name: "NexaBank",
-    description: "NexaBank strengthened its digital infrastructure by deploying AI-powered threat detection and continuous network monitoring across critical systems",
+    slug: "fintech-vapt",
+    name: "FinTech Security Assessment",
+    description: "Comprehensive VAPT engagement for a financial technology platform, identifying critical vulnerabilities across web applications and APIs",
     image: "/images/protexy/cases/case1.png",
     stats: [
-      { value: "3.2M+", label: "Threats Blocked Annually" },
-      { value: "1.8B+", label: "Risks Mitigated Globally" },
+      { value: "47", label: "Vulnerabilities Identified" },
+      { value: "12", label: "Critical Findings Remediated" },
     ],
   },
   {
-    slug: "cloudsync",
-    name: "CloudSync",
-    description: "CloudSync reduced security risks across distributed cloud environments through automated vulnerability assessments and real-time alerts",
+    slug: "healthcare-compliance",
+    name: "Healthcare Compliance Program",
+    description: "GRC advisory engagement for a healthcare provider, establishing ISO 27001-aligned security governance and achieving regulatory compliance",
     image: "/images/protexy/cases/case2.png",
     stats: [
-      { value: "06Y", label: "Security Partnership" },
-      { value: "3.2M+", label: "Threats Blocked Annually" },
+      { value: "ISO", label: "27001 Compliance Achieved" },
+      { value: "100%", label: "Audit Pass Rate" },
     ],
   },
   {
-    slug: "vertexhealth",
-    name: "VertexHealth",
-    description: "Vertex Health improved compliance and safeguarded sensitive records by implementing intelligent monitoring and rapid incident response systems",
+    slug: "enterprise-network",
+    name: "Enterprise Network Hardening",
+    description: "Network security assessment and remediation for a large enterprise, implementing zero trust architecture and continuous monitoring",
     image: "/images/protexy/cases/case3.png",
     stats: [
       { value: "99.9%", label: "System Uptime Maintained" },
-      { value: "08Y", label: "Security Success Timeline" },
+      { value: "60%", label: "Reduction in Attack Surface" },
     ],
   },
 ];
 
 const industries = [
-  { icon: "/images/protexy/industries/education.svg", name: "Education", description: "Securing learning environments." },
-  { icon: "/images/protexy/industries/government.svg", name: "Government", description: "Protecting public systems" },
-  { icon: "/images/protexy/industries/sports.svg", name: "Sports", description: "Safeguarding digital operations" },
-  { icon: "/images/protexy/industries/transport.svg", name: "Transport", description: "Securing connected networks" },
+  { icon: "/images/protexy/industries/education.svg", name: "Finance", description: "Securing financial systems and data." },
+  { icon: "/images/protexy/industries/government.svg", name: "Healthcare", description: "Protecting sensitive patient data" },
+  { icon: "/images/protexy/industries/sports.svg", name: "Technology", description: "Securing software and cloud platforms" },
+  { icon: "/images/protexy/industries/transport.svg", name: "Enterprise", description: "Securing complex infrastructure" },
 ];
 
 const blogPosts = [
-  { author: "Olivia Bennett", date: "Jan 22, 2026", title: "Securing cloud environments for modern enterprises", slug: "securing-cloud-environments-for-modern-enterprises", image: "/images/protexy/blogs/blog1.png" },
-  { author: "Daniel Foster", date: "Feb 15, 2025", title: "How AI improves threat detection and response time", slug: "how-ai-improves-threat-detection-and-response-time", image: "/images/protexy/blogs/blog2.png" },
-  { author: "Sophia Turner", date: "Apr 27, 2026", title: "Preventing Threats Through Early Detection", slug: "preventing-threats-through-early-detection", image: "/images/protexy/blogs/blog3.png" },
-  { author: "James Walker", date: "May 17, 2026", title: "Why zero trust security matters today", slug: "why-zero-trust-security-matters-today", image: "/images/protexy/blogs/blog4.png" },
+  { author: "Francis Buchi", date: "Jan 22, 2026", title: "Understanding VAPT: Why your organization needs it", slug: "understanding-vapt-why-your-organization-needs-it", image: "/images/protexy/blogs/blog1.png" },
+  { author: "Nwachukwu Francis O.", date: "Feb 15, 2025", title: "Building a cybersecurity governance framework from scratch", slug: "building-a-cybersecurity-governance-framework", image: "/images/protexy/blogs/blog2.png" },
+  { author: "Francis Buchi", date: "Apr 27, 2026", title: "Incident response planning: A step-by-step guide", slug: "incident-response-planning-step-by-step-guide", image: "/images/protexy/blogs/blog3.png" },
+  { author: "Nwachukwu Francis O.", date: "May 17, 2026", title: "Why zero trust security matters for modern organizations", slug: "why-zero-trust-security-matters-today", image: "/images/protexy/blogs/blog4.png" },
 ];
 
 function HeroSection() {
@@ -104,7 +104,7 @@ function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(102,47,144,0.15),transparent_70%)]" />
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-20">
         <WordByWordReveal
-          text="AI-powered protection for modern organizations"
+          text="Different Expertise. One Collective. Secure by Trust."
           tag="h1"
           className="text-5xl md:text-6xl lg:text-7xl font-normal text-fedsec-white leading-[1.1] mb-8 font-[family-name:var(--font-heading)]"
         />
@@ -116,7 +116,7 @@ function HeroSection() {
         >
           Protect your organization with proactive cybersecurity solutions
           designed to detect threats, secure critical systems, and reduce risk
-          across your digital infrastructure
+          across your digital infrastructure.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -150,7 +150,7 @@ function AboutPreview() {
             About us
           </motion.span>
           <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
-            Advancing cyber security for modern organizations
+            Advancing cybersecurity for modern organizations
           </motion.h2>
         </motion.div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -175,18 +175,19 @@ function AboutPreview() {
           >
             <div className="bg-fedsec-white border border-fedsec-gray-200 rounded-2xl p-8 mb-8">
               <p className="text-lg text-fedsec-gray-600 leading-relaxed mb-6 italic font-[family-name:var(--font-body)]">
-                &ldquo;Security is not just about responding to threats-it&apos;s
-                about preventing them. Our AI-driven approach helps organizations
-                protect critical systems, safeguard data, and build long-term
+                &ldquo;Security is not just about responding to threats — it&apos;s
+                about knowing your risk before they become incidents. Our
+                multidisciplinary approach helps organizations identify
+                vulnerabilities, strengthen defenses, and build lasting
                 resilience.&rdquo;
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden bg-fedsec-gray-200">
-                  <Image src="/images/protexy/about/about-avatar.png" alt="Nathan Brooks" width={48} height={48} className="w-full h-full object-cover" />
+                  <Image src="/images/protexy/about/about-avatar.png" alt="Francis Buchi" width={48} height={48} className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <p className="font-semibold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Francis Buchi</p>
-                  <p className="text-sm text-fedsec-gray-500">Chief Executive Officer</p>
+                  <p className="text-sm text-fedsec-gray-500">Founder / Tech Lead</p>
                 </div>
               </div>
             </div>
@@ -255,9 +256,9 @@ function ServicesSection() {
 
 function TrustedProcess() {
   const steps = [
-    { num: "1", title: "Predict Threats", description: "Use AI-driven intelligence to identify risks before they escalate." },
-    { num: "2", title: "Detect Anomalies", description: "Monitor activity continuously to uncover unusual behavior and threats" },
-    { num: "3", title: "Automate Defense", description: "Respond instantly with intelligent protection and rapid threat containment" },
+    { num: "1", title: "Know Your Risk", description: "We assess your security posture to identify vulnerabilities, gaps, and threats across your environment." },
+    { num: "2", title: "Strengthen Defenses", description: "Implement targeted security controls, policies, and procedures to address identified risks." },
+    { num: "3", title: "Build Resilience", description: "Establish continuous monitoring and response capabilities to maintain long-term security." },
   ];
 
   return (
@@ -395,7 +396,7 @@ function WhyChooseUs() {
           className="text-center mb-16"
         >
           <motion.span variants={fadeInUp} className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Why choose us</motion.span>
-          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Where protection meets innovation</motion.h2>
+          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Where expertise meets trust</motion.h2>
         </motion.div>
         <motion.div
           initial="hidden"
@@ -407,19 +408,19 @@ function WhyChooseUs() {
           <motion.div variants={fadeInUp} className="text-center p-8 bg-fedsec-gray-50 border border-fedsec-gray-200 rounded-2xl">
             <p className="text-3xl md:text-4xl font-normal text-fedsec-purple mb-2 font-[family-name:var(--font-heading)]">99.9%</p>
             <p className="text-xl md:text-2xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)]">Risk Reduction</p>
-            <p className="text-sm text-fedsec-gray-500">Accuracy in identifying and responding to emerging cyber threats</p>
+            <p className="text-sm text-fedsec-gray-500">Accuracy in identifying and remediating critical security vulnerabilities</p>
           </motion.div>
           <motion.div variants={fadeInUp} className="text-center p-8 bg-fedsec-purple text-fedsec-white rounded-2xl">
             <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-4">
               <Shield size={32} />
             </div>
             <p className="text-xl md:text-2xl font-normal mb-2 font-[family-name:var(--font-heading)]">Protection</p>
-            <p className="text-sm text-fedsec-gray-300">Layers of protection across your security infrastructure</p>
+            <p className="text-sm text-fedsec-gray-300">Multidisciplinary team covering VAPT, GRC, network, and software security</p>
           </motion.div>
           <motion.div variants={fadeInUp} className="text-center p-8 bg-fedsec-gray-50 border border-fedsec-gray-200 rounded-2xl">
-            <p className="text-3xl md:text-4xl font-normal text-fedsec-purple mb-2 font-[family-name:var(--font-heading)]">500M+</p>
-            <p className="text-xl md:text-2xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)]">Analytics</p>
-            <p className="text-sm text-fedsec-gray-500">Security events analyzed across monitored environments monthly</p>
+            <p className="text-3xl md:text-4xl font-normal text-fedsec-purple mb-2 font-[family-name:var(--font-heading)]">500+</p>
+            <p className="text-xl md:text-2xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)]">Assessments</p>
+            <p className="text-sm text-fedsec-gray-500">Security assessments and engagements completed across industries</p>
           </motion.div>
         </motion.div>
       </div>

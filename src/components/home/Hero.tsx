@@ -37,7 +37,7 @@ export default function Hero() {
           <motion.div variants={fadeInUp} className="mb-6">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fedsec-purple/20 border border-fedsec-purple/30 text-fedsec-purple text-sm font-medium font-[family-name:var(--font-accent)]">
               <Shield size={16} />
-              Trusted Security Solutions
+              KNOW YOUR RISK
             </span>
           </motion.div>
 
@@ -45,19 +45,19 @@ export default function Hero() {
             variants={fadeInUp}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-fedsec-white leading-[1.1] mb-6 font-[family-name:var(--font-heading)]"
           >
-            Securing Your
-            <span className="block gradient-text">Digital World</span>
-            with Trust
+            Different Expertise.
+            <span className="block gradient-text">One Collective.</span>
+            Secure by Trust.
           </motion.h1>
 
           <motion.p
             variants={fadeInUp}
             className="text-lg md:text-xl text-fedsec-gray-400 max-w-2xl mb-10 leading-relaxed"
           >
-            FEDSEC is a multidisciplinary cybersecurity firm built around trust,
-            expertise, and collaboration. We help organizations identify risks,
-            strengthen their security posture, and build greater resilience
-            against evolving cyber threats.
+            FEDSEC is a multidisciplinary cybersecurity firm built on trust,
+            expertise, and collaboration. We deliver vulnerability assessments,
+            penetration testing, GRC advisory, and incident response services
+            that help organizations know their risk and build resilience.
           </motion.p>
 
           <motion.div

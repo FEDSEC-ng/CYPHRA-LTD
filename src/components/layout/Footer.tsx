@@ -50,8 +50,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-fedsec-gray-400 text-sm leading-relaxed mb-8 max-w-sm font-[family-name:var(--font-body)]">
-              AI-powered cybersecurity solutions built to secure modern digital
-              environments
+              Multidisciplinary cybersecurity firm — VAPT, GRC advisory, network security, software security, security operations, and incident response.
             </p>
             <form onSubmit={handleSubmit} className="flex gap-2 max-w-sm">
               <input
@@ -127,13 +126,13 @@ export default function Footer() {
       <div className="border-t border-fedsec-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-fedsec-gray-500 font-[family-name:var(--font-body)]">
-            Copyright &amp; Design by FEDSEC &mdash; {new Date().getFullYear()} Active Defense
+            Copyright &amp; Design by FEDSEC &mdash; {new Date().getFullYear()} KNOW YOUR RISK
           </p>
         </div>
       </div>
       <div className="overflow-hidden pb-8">
         <p className="text-[120px] md:text-[160px] lg:text-[200px] font-normal text-fedsec-gray-800/30 leading-none text-center whitespace-nowrap font-[family-name:var(--font-heading)] select-none pointer-events-none">
-          Active Defense
+          KNOW YOUR RISK
         </p>
       </div>
     </footer>

@@ -1,13 +1,15 @@
 export const SITE = {
   name: "FEDSEC",
-  title: "FEDSEC — Trusted Security Solutions",
+  title: "FEDSEC — Multidisciplinary Cybersecurity Firm",
   description:
-    "FEDSEC is a modern cybersecurity firm designed for organizations seeking to showcase security solutions, expertise, and protection services with a professional digital presence.",
+    "FEDSEC is a multidisciplinary cybersecurity firm built on trust, expertise, and collaboration. We deliver VAPT, GRC advisory, network security, software security, security operations, and incident response services.",
+  tagline: "KNOW YOUR RISK",
   url: "https://fedsec.tech.io",
   email: "Buchi@fadsec.io",
   phone: "+2349021530382",
-  founder: "NWACHUKWU FRANCIS O.",
+  founder: "Nwachukwu Francis O.",
   founderRole: "Founder / Tech Lead",
+  ceo: "Francis Buchi",
 } as const;
 
 export const NAV_LINKS = [

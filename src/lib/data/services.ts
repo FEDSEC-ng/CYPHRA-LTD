@@ -14,607 +14,607 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    slug: "advanced-cloud-security-protection",
-    title: "Advanced cloud security protection",
+    slug: "vulnerability-assessment-and-penetration-testing",
+    title: "Vulnerability Assessment & Penetration Testing",
     shortDescription:
-      "Comprehensive cloud infrastructure protection with AI-powered threat detection and continuous monitoring.",
+      "Comprehensive VAPT services to identify, analyze, and remediate security vulnerabilities across your digital infrastructure.",
     fullDescription:
-      "NexaBank partnered with our cybersecurity team to strengthen its digital infrastructure and improve protection across critical banking systems. The organization faced increasing risks from evolving cyber threats, unauthorized access attempts, and network vulnerabilities affecting operational security and customer trust. Our goal was to implement a scalable cybersecurity strategy powered by AI-driven threat detection, continuous monitoring, and rapid incident response systems.",
-    icon: "Cloud",
-    marqueeBadges: [
-      "Rapid Cyber Incident Recovery",
-      "Advanced System Damage Control",
-      "Secure Business Continuity Support",
-    ],
-    overview:
-      "NexaBank partnered with our cybersecurity team to strengthen its digital infrastructure and improve protection across critical banking systems. The organization faced increasing risks from evolving cyber threats, unauthorized access attempts, and network vulnerabilities affecting operational security and customer trust. Our goal was to implement a scalable cybersecurity strategy powered by AI-driven threat detection, continuous monitoring, and rapid incident response systems.",
-    benefits: [
-      {
-        title: "Advanced Threat Protection",
-        description:
-          "Detect and prevent cyber threats through intelligent monitoring and AI-powered security systems.",
-      },
-      {
-        title: "Real-Time Monitoring",
-        description:
-          "Monitor networks and digital infrastructure continuously to identify suspicious activities instantly.",
-      },
-      {
-        title: "Secure Data Protection",
-        description:
-          "Protect sensitive business and customer information with advanced encryption and access control systems.",
-      },
-      {
-        title: "Rapid Incident Response",
-        description:
-          "Respond quickly to security incidents and minimize operational risks through automated defense strategies.",
-      },
-    ],
-    features: [
-      {
-        title: "Threat Monitoring",
-        description:
-          "Our AI-powered threat detection system continuously monitors digital environments to identify suspicious activities before they become major security risks. Using advanced machine learning algorithms and intelligent behavioral analysis, the system detects unusual network activity, unauthorized access attempts, and evolving cyber threats in real time. This proactive monitoring approach helps businesses reduce vulnerabilities, improve visibility across critical systems, and strengthen overall cybersecurity performance.",
-        image: "/images/protexy/services/feature1.png",
-      },
-      {
-        title: "Risk Prevention",
-        description:
-          "Our AI-powered security technology helps organizations prevent cyber attacks by identifying vulnerabilities and suspicious behaviors before they impact critical systems. Intelligent threat detection engines analyze network patterns, user activity, and system performance to uncover hidden risks and potential security breaches in real time. This proactive approach reduces the chances of unauthorized access, malware infections, ransomware attacks, and operational downtime.",
-        image: "/images/protexy/services/feature2.png",
-      },
-      {
-        title: "Security Intelligence",
-        description:
-          "AI-powered threat detection systems provide businesses with intelligent cybersecurity insights that improve decision-making and strengthen digital defense strategies. Through real-time monitoring, automated analysis, and predictive threat identification, organizations gain deeper visibility into network activity and potential security vulnerabilities across critical infrastructure.",
-        image: "/images/protexy/services/feature3.png",
-      },
-      {
-        title: "Intelligent Defense",
-        description:
-          "Our AI-powered threat detection system strengthens cybersecurity operations through intelligent automation, predictive analysis, and continuous infrastructure monitoring. The solution is designed to identify suspicious activities, unusual behavior patterns, and hidden vulnerabilities before they develop into serious security incidents.",
-        image: "/images/protexy/services/feature4.png",
-      },
-    ],
-    processSteps: [
-      {
-        title: "Predict Threats",
-        description:
-          "Use AI-driven intelligence to identify risks before they escalate.",
-      },
-      {
-        title: "Detect Anomalies",
-        description:
-          "Monitor activity continuously to uncover unusual behavior and threats",
-      },
-      {
-        title: "Automate Defense",
-        description:
-          "Respond instantly with intelligent protection and rapid threat containment",
-      },
-    ],
-    relatedServices: [
-      {
-        slug: "end-to-end-data-encryption-service",
-        title: "End-to-end data encryption service",
-        features: [
-          "Secure End-to-End Data Encryption",
-          "Protected User Access Control",
-          "Advanced End-to-End Security",
-        ],
-      },
-      {
-        slug: "intelligent-network-firewall-protection",
-        title: "Intelligent network firewall protection",
-        features: [
-          "Intelligent Network Firewall Protection",
-          "Real-Time Network Traffic Monitoring",
-          "Advanced Digital Firewall Defense",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "ai-powered-threat-detection-system",
-    title: "AI-powered threat detection system",
-    shortDescription:
-      "Advanced AI-driven threat detection with real-time monitoring and automated response capabilities.",
-    fullDescription:
-      "Our AI-powered threat detection system continuously monitors digital environments to identify suspicious activities before they become major security risks. Using advanced machine learning algorithms and intelligent behavioral analysis, the system detects unusual network activity, unauthorized access attempts, and evolving cyber threats in real time.",
-    icon: "Brain",
-    marqueeBadges: [
-      "Real-Time Threat Monitoring",
-      "Smart Cyber Threat Alerts",
-      "AI-Powered Security Analysis",
-    ],
-    overview:
-      "Our AI-powered threat detection system continuously monitors digital environments to identify suspicious activities before they become major security risks. Using advanced machine learning algorithms and intelligent behavioral analysis, the system detects unusual network activity, unauthorized access attempts, and evolving cyber threats in real time.",
-    benefits: [
-      {
-        title: "Advanced Threat Protection",
-        description:
-          "Detect and prevent cyber threats through intelligent monitoring and AI-powered security systems.",
-      },
-      {
-        title: "Real-Time Monitoring",
-        description:
-          "Monitor networks and digital infrastructure continuously to identify suspicious activities instantly.",
-      },
-      {
-        title: "Secure Data Protection",
-        description:
-          "Protect sensitive business and customer information with advanced encryption and access control systems.",
-      },
-      {
-        title: "Rapid Incident Response",
-        description:
-          "Respond quickly to security incidents and minimize operational risks through automated defense strategies.",
-      },
-    ],
-    features: [
-      {
-        title: "Threat Monitoring",
-        description:
-          "Our AI-powered threat detection system continuously monitors digital environments to identify suspicious activities before they become major security risks.",
-        image: "/images/protexy/services/feature1.png",
-      },
-      {
-        title: "Risk Prevention",
-        description:
-          "Our AI-powered security technology helps organizations prevent cyber attacks by identifying vulnerabilities and suspicious behaviors before they impact critical systems.",
-        image: "/images/protexy/services/feature2.png",
-      },
-      {
-        title: "Security Intelligence",
-        description:
-          "AI-powered threat detection systems provide businesses with intelligent cybersecurity insights that improve decision-making and strengthen digital defense strategies.",
-        image: "/images/protexy/services/feature3.png",
-      },
-      {
-        title: "Intelligent Defense",
-        description:
-          "Our AI-powered threat detection system strengthens cybersecurity operations through intelligent automation, predictive analysis, and continuous infrastructure monitoring.",
-        image: "/images/protexy/services/feature4.png",
-      },
-    ],
-    processSteps: [
-      {
-        title: "Predict Threats",
-        description:
-          "Use AI-driven intelligence to identify risks before they escalate.",
-      },
-      {
-        title: "Detect Anomalies",
-        description:
-          "Monitor activity continuously to uncover unusual behavior and threats",
-      },
-      {
-        title: "Automate Defense",
-        description:
-          "Respond instantly with intelligent protection and rapid threat containment",
-      },
-    ],
-    relatedServices: [
-      {
-        slug: "intelligent-network-firewall-protection",
-        title: "Intelligent network firewall protection",
-        features: [
-          "Intelligent Network Firewall Protection",
-          "Real-Time Network Traffic Monitoring",
-          "Advanced Digital Firewall Defense",
-        ],
-      },
-      {
-        slug: "end-to-end-data-encryption-service",
-        title: "End-to-end data encryption service",
-        features: [
-          "Secure End-to-End Data Encryption",
-          "Protected User Access Control",
-          "Advanced End-to-End Security",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "end-to-end-data-encryption-service",
-    title: "End-to-end data encryption service",
-    shortDescription:
-      "Secure end-to-end data encryption with protected user access control and advanced security.",
-    fullDescription:
-      "End-to-end data encryption ensures that sensitive information remains protected throughout its entire lifecycle — from creation to storage to transmission. Our encryption services implement industry-leading algorithms and key management practices to safeguard your critical data assets.",
-    icon: "Lock",
-    marqueeBadges: [
-      "Secure Data Encryption",
-      "Protected Access Control",
-      "Advanced Security Systems",
-    ],
-    overview:
-      "End-to-end data encryption ensures that sensitive information remains protected throughout its entire lifecycle. Our encryption services implement industry-leading algorithms and key management practices to safeguard your critical data assets.",
-    benefits: [
-      {
-        title: "Advanced Threat Protection",
-        description:
-          "Detect and prevent cyber threats through intelligent monitoring and AI-powered security systems.",
-      },
-      {
-        title: "Real-Time Monitoring",
-        description:
-          "Monitor networks and digital infrastructure continuously to identify suspicious activities instantly.",
-      },
-      {
-        title: "Secure Data Protection",
-        description:
-          "Protect sensitive business and customer information with advanced encryption and access control systems.",
-      },
-      {
-        title: "Rapid Incident Response",
-        description:
-          "Respond quickly to security incidents and minimize operational risks through automated defense strategies.",
-      },
-    ],
-    features: [
-      {
-        title: "Threat Monitoring",
-        description:
-          "Our AI-powered threat detection system continuously monitors digital environments to identify suspicious activities before they become major security risks.",
-        image: "/images/protexy/services/feature1.png",
-      },
-      {
-        title: "Risk Prevention",
-        description:
-          "Our AI-powered security technology helps organizations prevent cyber attacks by identifying vulnerabilities and suspicious behaviors before they impact critical systems.",
-        image: "/images/protexy/services/feature2.png",
-      },
-      {
-        title: "Security Intelligence",
-        description:
-          "AI-powered threat detection systems provide businesses with intelligent cybersecurity insights that improve decision-making and strengthen digital defense strategies.",
-        image: "/images/protexy/services/feature3.png",
-      },
-      {
-        title: "Intelligent Defense",
-        description:
-          "Our AI-powered threat detection system strengthens cybersecurity operations through intelligent automation, predictive analysis, and continuous infrastructure monitoring.",
-        image: "/images/protexy/services/feature4.png",
-      },
-    ],
-    processSteps: [
-      {
-        title: "Predict Threats",
-        description:
-          "Use AI-driven intelligence to identify risks before they escalate.",
-      },
-      {
-        title: "Detect Anomalies",
-        description:
-          "Monitor activity continuously to uncover unusual behavior and threats",
-      },
-      {
-        title: "Automate Defense",
-        description:
-          "Respond instantly with intelligent protection and rapid threat containment",
-      },
-    ],
-    relatedServices: [
-      {
-        slug: "advanced-cloud-security-protection",
-        title: "Advanced cloud security protection",
-        features: [
-          "Advanced Cloud Security Protection",
-          "Secure Business Continuity",
-          "Rapid Incident Recovery",
-        ],
-      },
-      {
-        slug: "intelligent-network-firewall-protection",
-        title: "Intelligent network firewall protection",
-        features: [
-          "Intelligent Network Firewall Protection",
-          "Real-Time Network Traffic Monitoring",
-          "Advanced Digital Firewall Defense",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "intelligent-network-firewall-protection",
-    title: "Intelligent network firewall protection",
-    shortDescription:
-      "Advanced network firewall protection with real-time traffic monitoring and intelligent defense.",
-    fullDescription:
-      "Intelligent network firewall protection provides comprehensive defense against unauthorized access, malware propagation, and network-based attacks. Our solutions combine traditional firewall capabilities with AI-driven analysis for superior threat detection.",
+      "Our VAPT services provide a thorough evaluation of your organization's security posture. We combine automated scanning with manual testing to identify vulnerabilities that automated tools miss, delivering actionable remediation guidance aligned with industry standards.",
     icon: "Shield",
     marqueeBadges: [
-      "Network Security Defense",
-      "Real-Time Traffic Analysis",
-      "Intelligent Firewall Protection",
+      "Vulnerability Scanning",
+      "Penetration Testing",
+      "Security Auditing",
     ],
     overview:
-      "Intelligent network firewall protection provides comprehensive defense against unauthorized access, malware propagation, and network-based attacks. Our solutions combine traditional firewall capabilities with AI-driven analysis for superior threat detection.",
+      "We identify and validate security weaknesses before attackers can exploit them. Our VAPT methodology combines automated scanning with expert manual testing to deliver comprehensive coverage.",
     benefits: [
       {
-        title: "Advanced Threat Protection",
+        title: "Identify Hidden Vulnerabilities",
         description:
-          "Detect and prevent cyber threats through intelligent monitoring and AI-powered security systems.",
+          "Discover security gaps across applications, networks, and infrastructure that automated tools often miss.",
       },
       {
-        title: "Real-Time Monitoring",
+        title: "Reduce Attack Surface",
         description:
-          "Monitor networks and digital infrastructure continuously to identify suspicious activities instantly.",
+          "Prioritize and remediate critical vulnerabilities to minimize the pathways available to attackers.",
       },
       {
-        title: "Secure Data Protection",
+        title: "Regulatory Compliance",
         description:
-          "Protect sensitive business and customer information with advanced encryption and access control systems.",
+          "Meet compliance requirements for PCI DSS, ISO 27001, SOC 2, and other security standards.",
       },
       {
-        title: "Rapid Incident Response",
+        title: "Actionable Remediation",
         description:
-          "Respond quickly to security incidents and minimize operational risks through automated defense strategies.",
+          "Receive detailed, prioritized findings with clear guidance on how to fix each vulnerability.",
       },
     ],
     features: [
       {
-        title: "Threat Monitoring",
+        title: "Network Penetration Testing",
         description:
-          "Our AI-powered threat detection system continuously monitors digital environments to identify suspicious activities before they become major security risks.",
+          "We simulate real-world attacks against your network infrastructure to identify weaknesses in firewalls, routers, switches, and network configurations. Our testing covers both internal and external network segments.",
         image: "/images/protexy/services/feature1.png",
       },
       {
-        title: "Risk Prevention",
+        title: "Web Application Testing",
         description:
-          "Our AI-powered security technology helps organizations prevent cyber attacks by identifying vulnerabilities and suspicious behaviors before they impact critical systems.",
+          "Comprehensive security testing of web applications covering OWASP Top 10 vulnerabilities, business logic flaws, API security, and authentication mechanisms.",
         image: "/images/protexy/services/feature2.png",
       },
       {
-        title: "Security Intelligence",
+        title: "Mobile Application Testing",
         description:
-          "AI-powered threat detection systems provide businesses with intelligent cybersecurity insights that improve decision-making and strengthen digital defense strategies.",
+          "Security assessment of iOS and Android applications covering data storage, communication security, authentication, and platform-specific vulnerabilities.",
         image: "/images/protexy/services/feature3.png",
       },
       {
-        title: "Intelligent Defense",
+        title: "Cloud Infrastructure Testing",
         description:
-          "Our AI-powered threat detection system strengthens cybersecurity operations through intelligent automation, predictive analysis, and continuous infrastructure monitoring.",
+          "Evaluation of cloud environments across AWS, Azure, and GCP covering misconfigurations, access controls, and cloud-native security risks.",
         image: "/images/protexy/services/feature4.png",
       },
     ],
     processSteps: [
       {
-        title: "Predict Threats",
+        title: "Scope & Plan",
         description:
-          "Use AI-driven intelligence to identify risks before they escalate.",
+          "Define testing scope, objectives, and rules of engagement with your team.",
       },
       {
-        title: "Detect Anomalies",
+        title: "Discover & Exploit",
         description:
-          "Monitor activity continuously to uncover unusual behavior and threats",
+          "Identify vulnerabilities and attempt controlled exploitation to validate real-world impact.",
       },
       {
-        title: "Automate Defense",
+        title: "Report & Remediate",
         description:
-          "Respond instantly with intelligent protection and rapid threat containment",
+          "Deliver detailed findings with prioritized remediation steps and support your team through fixes.",
       },
     ],
     relatedServices: [
       {
-        slug: "advanced-cloud-security-protection",
-        title: "Advanced cloud security protection",
+        slug: "grc-advisory",
+        title: "GRC Advisory",
         features: [
-          "Advanced Cloud Security Protection",
-          "Secure Business Continuity",
-          "Rapid Incident Recovery",
+          "Risk Assessment",
+          "Policy Development",
+          "Compliance Management",
         ],
       },
       {
-        slug: "end-to-end-data-encryption-service",
-        title: "End-to-end data encryption service",
+        slug: "incident-response",
+        title: "Incident Response",
         features: [
-          "Secure End-to-End Data Encryption",
-          "Protected User Access Control",
-          "Advanced End-to-End Security",
+          "Breach Investigation",
+          "Forensic Analysis",
+          "Recovery Planning",
         ],
       },
     ],
   },
   {
-    slug: "intelligent-threat-monitoring",
-    title: "Intelligent threat monitoring",
+    slug: "grc-advisory",
+    title: "GRC Advisory",
     shortDescription:
-      "Continuous intelligent threat monitoring with AI-powered analysis and real-time alerting.",
+      "Strategic governance, risk, and compliance advisory to align your security program with business objectives and regulatory requirements.",
     fullDescription:
-      "Intelligent threat monitoring provides continuous surveillance of your digital infrastructure, using AI and machine learning to identify threats in real time. Our monitoring solutions reduce alert fatigue while improving detection accuracy.",
+      "Our GRC advisory services help organizations build mature governance frameworks, manage risk effectively, and maintain compliance with industry regulations. We provide strategic guidance that connects security investments to business outcomes.",
+    icon: "Lock",
+    marqueeBadges: [
+      "Governance Frameworks",
+      "Risk Management",
+      "Compliance Strategy",
+    ],
+    overview:
+      "We help organizations establish robust governance, risk management, and compliance programs that protect business value and meet regulatory obligations.",
+    benefits: [
+      {
+        title: "Strategic Alignment",
+        description:
+          "Align security investments and risk management with your organization's business objectives.",
+      },
+      {
+        title: "Regulatory Compliance",
+        description:
+          "Navigate complex regulatory requirements including ISO 27001, PCI DSS, GDPR, and local data protection laws.",
+      },
+      {
+        title: "Risk Quantification",
+        description:
+          "Translate cyber risk into business terms that leadership and board members can understand and act on.",
+      },
+      {
+        title: "Policy Development",
+        description:
+          "Create practical, enforceable security policies and procedures tailored to your organization.",
+      },
+    ],
+    features: [
+      {
+        title: "Risk Assessment",
+        description:
+          "Systematic identification and evaluation of cybersecurity risks across your organization, providing a clear picture of your risk landscape and prioritized remediation roadmap.",
+        image: "/images/protexy/services/feature1.png",
+      },
+      {
+        title: "Compliance Management",
+        description:
+          "End-to-end compliance management from gap analysis through certification, ensuring your organization meets all applicable regulatory and industry standards.",
+        image: "/images/protexy/services/feature2.png",
+      },
+      {
+        title: "Policy & Procedure Development",
+        description:
+          "Development of comprehensive security policies, standards, and procedures that establish clear guidelines for protecting organizational assets.",
+        image: "/images/protexy/services/feature3.png",
+      },
+      {
+        title: "Audit Support",
+        description:
+          "Expert guidance and preparation support for security audits, helping your organization demonstrate compliance and address auditor findings effectively.",
+        image: "/images/protexy/services/feature4.png",
+      },
+    ],
+    processSteps: [
+      {
+        title: "Assess",
+        description:
+          "Evaluate your current governance, risk, and compliance posture against industry frameworks.",
+      },
+      {
+        title: "Design",
+        description:
+          "Develop tailored GRC strategies, policies, and control frameworks for your organization.",
+      },
+      {
+        title: "Implement",
+        description:
+          "Deploy governance structures, risk registers, and compliance programs with ongoing support.",
+      },
+    ],
+    relatedServices: [
+      {
+        slug: "vulnerability-assessment-and-penetration-testing",
+        title: "Vulnerability Assessment & Penetration Testing",
+        features: [
+          "Network Testing",
+          "Application Testing",
+          "Cloud Testing",
+        ],
+      },
+      {
+        slug: "security-operations",
+        title: "Security Operations",
+        features: [
+          "SOC Monitoring",
+          "Threat Detection",
+          "Incident Handling",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "network-security",
+    title: "Network Security",
+    shortDescription:
+      "End-to-end network security solutions to protect your infrastructure from unauthorized access, malware, and network-based attacks.",
+    fullDescription:
+      "Our network security services provide comprehensive protection for your network infrastructure. We design, implement, and monitor security controls that defend against unauthorized access, data exfiltration, and network-based attacks.",
+    icon: "Cloud",
+    marqueeBadges: [
+      "Network Defense",
+      "Firewall Management",
+      "Traffic Monitoring",
+    ],
+    overview:
+      "We protect your network infrastructure with layered security controls, continuous monitoring, and intelligent threat detection to prevent unauthorized access and data breaches.",
+    benefits: [
+      {
+        title: "Perimeter Defense",
+        description:
+          "Deploy and manage firewalls, IDS/IPS systems, and network segmentation to protect your perimeter.",
+      },
+      {
+        title: "Traffic Analysis",
+        description:
+          "Monitor network traffic patterns to detect anomalies, unauthorized access, and potential data exfiltration.",
+      },
+      {
+        title: "Zero Trust Architecture",
+        description:
+          "Implement zero trust principles to verify every access request regardless of source location.",
+      },
+      {
+        title: "Continuous Monitoring",
+        description:
+          "24/7 network monitoring to detect and respond to threats in real time across all network segments.",
+      },
+    ],
+    features: [
+      {
+        title: "Firewall & IDS/IPS Management",
+        description:
+          "Configuration, management, and optimization of firewalls, intrusion detection, and prevention systems to create robust perimeter defenses.",
+        image: "/images/protexy/services/feature1.png",
+      },
+      {
+        title: "Network Segmentation",
+        description:
+          "Strategic network segmentation and micro-segmentation to contain threats and limit lateral movement within your infrastructure.",
+        image: "/images/protexy/services/feature2.png",
+      },
+      {
+        title: "VPN & Remote Access Security",
+        description:
+          "Secure remote access solutions with multi-factor authentication and encrypted tunnels for distributed workforces.",
+        image: "/images/protexy/services/feature3.png",
+      },
+      {
+        title: "Network Monitoring & Alerting",
+        description:
+          "Real-time network visibility with automated alerting for suspicious traffic patterns, unauthorized devices, and potential security incidents.",
+        image: "/images/protexy/services/feature4.png",
+      },
+    ],
+    processSteps: [
+      {
+        title: "Assess",
+        description:
+          "Evaluate your network architecture and identify security gaps and improvement opportunities.",
+      },
+      {
+        title: "Harden",
+        description:
+          "Implement security controls, segmentation, and monitoring across your network infrastructure.",
+      },
+      {
+        title: "Monitor",
+        description:
+          "Provide continuous monitoring and threat detection to maintain network security posture.",
+      },
+    ],
+    relatedServices: [
+      {
+        slug: "vulnerability-assessment-and-penetration-testing",
+        title: "Vulnerability Assessment & Penetration Testing",
+        features: [
+          "Network Testing",
+          "Application Testing",
+          "Cloud Testing",
+        ],
+      },
+      {
+        slug: "security-operations",
+        title: "Security Operations",
+        features: [
+          "SOC Monitoring",
+          "Threat Detection",
+          "Incident Handling",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "software-security",
+    title: "Software Security",
+    shortDescription:
+      "Secure software development practices and application security testing to build resilience into your applications from design through deployment.",
+    fullDescription:
+      "Our software security services help organizations integrate security throughout the software development lifecycle. From secure code review to DevSecOps implementation, we help you build applications that are secure by design.",
+    icon: "Brain",
+    marqueeBadges: [
+      "Secure Development",
+      "Code Review",
+      "DevSecOps",
+    ],
+    overview:
+      "We embed security into your development process, from threat modeling and secure design to code review and automated security testing in your CI/CD pipeline.",
+    benefits: [
+      {
+        title: "Shift-Left Security",
+        description:
+          "Integrate security early in the development lifecycle to reduce costs and catch vulnerabilities before production.",
+      },
+      {
+        title: "Secure Code Review",
+        description:
+          "Expert manual and automated code review to identify security flaws in application source code.",
+      },
+      {
+        title: "DevSecOps Integration",
+        description:
+          "Automate security testing within your CI/CD pipeline for continuous security validation.",
+      },
+      {
+        title: "Developer Training",
+        description:
+          "Equip your development team with secure coding knowledge and best practices.",
+      },
+    ],
+    features: [
+      {
+        title: "Secure Code Review",
+        description:
+          "Thorough manual and automated review of application source code to identify security vulnerabilities, logic flaws, and insecure coding patterns.",
+        image: "/images/protexy/services/feature1.png",
+      },
+      {
+        title: "Threat Modeling",
+        description:
+          "Systematic identification of threats and attack vectors during the design phase to build security into applications from the start.",
+        image: "/images/protexy/services/feature2.png",
+      },
+      {
+        title: "DevSecOps Implementation",
+        description:
+          "Integration of security tools and practices into your CI/CD pipeline for automated security testing, dependency scanning, and container security.",
+        image: "/images/protexy/services/feature3.png",
+      },
+      {
+        title: "API Security Testing",
+        description:
+          "Comprehensive security testing of REST, GraphQL, and SOAP APIs covering authentication, authorization, data validation, and rate limiting.",
+        image: "/images/protexy/services/feature4.png",
+      },
+    ],
+    processSteps: [
+      {
+        title: "Design",
+        description:
+          "Threat model your application architecture and define security requirements.",
+      },
+      {
+        title: "Develop",
+        description:
+          "Implement secure coding practices with integrated code review and security testing.",
+      },
+      {
+        title: "Deploy",
+        description:
+          "Validate security through penetration testing and establish ongoing monitoring.",
+      },
+    ],
+    relatedServices: [
+      {
+        slug: "vulnerability-assessment-and-penetration-testing",
+        title: "Vulnerability Assessment & Penetration Testing",
+        features: [
+          "Application Testing",
+          "API Testing",
+          "Cloud Testing",
+        ],
+      },
+      {
+        slug: "grc-advisory",
+        title: "GRC Advisory",
+        features: [
+          "Risk Assessment",
+          "Policy Development",
+          "Compliance Management",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "security-operations",
+    title: "Security Operations",
+    shortDescription:
+      "Managed security operations with continuous monitoring, threat detection, and rapid response to protect your organization around the clock.",
+    fullDescription:
+      "Our security operations services provide continuous monitoring and threat detection capabilities that keep your organization protected 24/7. We combine advanced technology with expert analysts to identify and respond to threats before they cause damage.",
     icon: "Eye",
     marqueeBadges: [
-      "Continuous Threat Surveillance",
-      "AI-Powered Alert Analysis",
-      "Real-Time Security Monitoring",
+      "SOC Operations",
+      "Threat Monitoring",
+      "Security Analytics",
     ],
     overview:
-      "Intelligent threat monitoring provides continuous surveillance of your digital infrastructure, using AI and machine learning to identify threats in real time. Our monitoring solutions reduce alert fatigue while improving detection accuracy.",
+      "We provide managed security operations that combine 24/7 monitoring, threat intelligence, and expert analysis to detect and respond to security events across your environment.",
     benefits: [
       {
-        title: "Advanced Threat Protection",
+        title: "24/7 Monitoring",
         description:
-          "Detect and prevent cyber threats through intelligent monitoring and AI-powered security systems.",
+          "Round-the-clock security monitoring across your infrastructure with rapid alerting on security events.",
       },
       {
-        title: "Real-Time Monitoring",
+        title: "Threat Detection",
         description:
-          "Monitor networks and digital infrastructure continuously to identify suspicious activities instantly.",
+          "Advanced threat detection using SIEM, behavioral analytics, and threat intelligence feeds.",
       },
       {
-        title: "Secure Data Protection",
+        title: "Alert Triage",
         description:
-          "Protect sensitive business and customer information with advanced encryption and access control systems.",
+          "Expert analysis of security alerts to reduce false positives and focus on real threats.",
       },
       {
-        title: "Rapid Incident Response",
+        title: "Reporting & Metrics",
         description:
-          "Respond quickly to security incidents and minimize operational risks through automated defense strategies.",
+          "Regular security reporting with key metrics to track your security posture over time.",
       },
     ],
     features: [
       {
-        title: "Threat Monitoring",
+        title: "SIEM Management",
         description:
-          "Our AI-powered threat detection system continuously monitors digital environments to identify suspicious activities before they become major security risks.",
+          "Deployment and management of Security Information and Event Management platforms with custom detection rules and correlation logic.",
         image: "/images/protexy/services/feature1.png",
       },
       {
-        title: "Risk Prevention",
+        title: "Threat Intelligence",
         description:
-          "Our AI-powered security technology helps organizations prevent cyber attacks by identifying vulnerabilities and suspicious behaviors before they impact critical systems.",
+          "Integration of threat intelligence feeds and feeds to enrich detection capabilities and provide context for security events.",
         image: "/images/protexy/services/feature2.png",
       },
       {
-        title: "Security Intelligence",
+        title: "Log Management",
         description:
-          "AI-powered threat detection systems provide businesses with intelligent cybersecurity insights that improve decision-making and strengthen digital defense strategies.",
+          "Centralized log collection, parsing, and analysis across all security devices, servers, and applications.",
         image: "/images/protexy/services/feature3.png",
       },
       {
-        title: "Intelligent Defense",
+        title: "Security Dashboards",
         description:
-          "Our AI-powered threat detection system strengthens cybersecurity operations through intelligent automation, predictive analysis, and continuous infrastructure monitoring.",
+          "Real-time security dashboards and reporting that provide visibility into your security posture and key risk indicators.",
         image: "/images/protexy/services/feature4.png",
       },
     ],
     processSteps: [
       {
-        title: "Predict Threats",
+        title: "Monitor",
         description:
-          "Use AI-driven intelligence to identify risks before they escalate.",
+          "Continuously collect and analyze logs and events from across your environment.",
       },
       {
-        title: "Detect Anomalies",
+        title: "Detect",
         description:
-          "Monitor activity continuously to uncover unusual behavior and threats",
+          "Identify security events using correlation rules, behavioral analysis, and threat intelligence.",
       },
       {
-        title: "Automate Defense",
+        title: "Respond",
         description:
-          "Respond instantly with intelligent protection and rapid threat containment",
+          "Triage alerts, investigate incidents, and coordinate response activities with your team.",
       },
     ],
     relatedServices: [
       {
-        slug: "ai-powered-threat-detection-system",
-        title: "AI-powered threat detection system",
+        slug: "incident-response",
+        title: "Incident Response",
         features: [
-          "AI-Powered Threat Detection",
-          "Real-Time Monitoring",
-          "Automated Response",
+          "Breach Investigation",
+          "Forensic Analysis",
+          "Recovery Planning",
         ],
       },
       {
-        slug: "rapid-incident-response-management",
-        title: "Rapid incident response management",
+        slug: "network-security",
+        title: "Network Security",
         features: [
-          "Rapid Incident Response",
-          "Automated Threat Containment",
-          "Business Continuity Support",
+          "Network Defense",
+          "Traffic Monitoring",
+          "Zero Trust",
         ],
       },
     ],
   },
   {
-    slug: "rapid-incident-response-management",
-    title: "Rapid incident response management",
+    slug: "incident-response",
+    title: "Incident Response",
     shortDescription:
-      "Rapid incident response and management with automated containment and recovery capabilities.",
+      "Rapid incident response and digital forensics to contain breaches, investigate attacks, and restore operations quickly and effectively.",
     fullDescription:
-      "Rapid incident response management ensures that when security incidents occur, your organization can respond quickly and effectively to minimize damage, preserve evidence, and restore normal operations.",
+      "Our incident response services ensure your organization can respond quickly and effectively to security incidents. From initial containment through forensic investigation and recovery, we help you minimize impact and restore operations.",
     icon: "Zap",
     marqueeBadges: [
-      "Rapid Incident Response",
-      "Automated Threat Containment",
-      "Business Continuity Recovery",
+      "Breach Response",
+      "Digital Forensics",
+      "Recovery Planning",
     ],
     overview:
-      "Rapid incident response management ensures that when security incidents occur, your organization can respond quickly and effectively to minimize damage, preserve evidence, and restore normal operations.",
+      "We provide rapid incident response capabilities to contain threats, preserve evidence, investigate root causes, and restore your organization to a secure state.",
     benefits: [
       {
-        title: "Advanced Threat Protection",
+        title: "Rapid Containment",
         description:
-          "Detect and prevent cyber threats through intelligent monitoring and AI-powered security systems.",
+          "Swiftly contain active threats to prevent further damage and limit the scope of security incidents.",
       },
       {
-        title: "Real-Time Monitoring",
+        title: "Digital Forensics",
         description:
-          "Monitor networks and digital infrastructure continuously to identify suspicious activities instantly.",
+          "Expert forensic investigation to determine the root cause, scope, and impact of security incidents.",
       },
       {
-        title: "Secure Data Protection",
+        title: "Evidence Preservation",
         description:
-          "Protect sensitive business and customer information with advanced encryption and access control systems.",
+          "Chain-of-custody evidence handling to support legal proceedings and regulatory reporting.",
       },
       {
-        title: "Rapid Incident Response",
+        title: "Recovery Support",
         description:
-          "Respond quickly to security incidents and minimize operational risks through automated defense strategies.",
+          "Guided recovery process to restore systems to a secure state and prevent recurrence.",
       },
     ],
     features: [
       {
-        title: "Threat Monitoring",
+        title: "Incident Triage",
         description:
-          "Our AI-powered threat detection system continuously monitors digital environments to identify suspicious activities before they become major security risks.",
+          "Immediate assessment and classification of security incidents to determine severity, scope, and appropriate response actions.",
         image: "/images/protexy/services/feature1.png",
       },
       {
-        title: "Risk Prevention",
+        title: "Malware Analysis",
         description:
-          "Our AI-powered security technology helps organizations prevent cyber attacks by identifying vulnerabilities and suspicious behaviors before they impact critical systems.",
+          "Static and dynamic analysis of malware samples to understand functionality, indicators of compromise, and development attribution.",
         image: "/images/protexy/services/feature2.png",
       },
       {
-        title: "Security Intelligence",
+        title: "Forensic Investigation",
         description:
-          "AI-powered threat detection systems provide businesses with intelligent cybersecurity insights that improve decision-making and strengthen digital defense strategies.",
+          "Comprehensive forensic analysis of affected systems, networks, and logs to reconstruct attack timelines and identify all compromised assets.",
         image: "/images/protexy/services/feature3.png",
       },
       {
-        title: "Intelligent Defense",
+        title: "Recovery & Hardening",
         description:
-          "Our AI-powered threat detection system strengthens cybersecurity operations through intelligent automation, predictive analysis, and continuous infrastructure monitoring.",
+          "Systematic restoration of affected systems with additional hardening measures to prevent similar incidents in the future.",
         image: "/images/protexy/services/feature4.png",
       },
     ],
     processSteps: [
       {
-        title: "Predict Threats",
+        title: "Contain",
         description:
-          "Use AI-driven intelligence to identify risks before they escalate.",
+          "Isolate affected systems and contain the threat to prevent further damage.",
       },
       {
-        title: "Detect Anomalies",
+        title: "Investigate",
         description:
-          "Monitor activity continuously to uncover unusual behavior and threats",
+          "Conduct forensic analysis to determine root cause, scope, and impact of the incident.",
       },
       {
-        title: "Automate Defense",
+        title: "Recover",
         description:
-          "Respond instantly with intelligent protection and rapid threat containment",
+          "Restore systems to a secure state and implement measures to prevent recurrence.",
       },
     ],
     relatedServices: [
       {
-        slug: "intelligent-threat-monitoring",
-        title: "Intelligent threat monitoring",
+        slug: "security-operations",
+        title: "Security Operations",
         features: [
-          "Continuous Threat Surveillance",
-          "AI-Powered Alert Analysis",
-          "Real-Time Security Monitoring",
+          "SOC Monitoring",
+          "Threat Detection",
+          "Incident Handling",
         ],
       },
       {
-        slug: "ai-powered-threat-detection-system",
-        title: "AI-powered threat detection system",
+        slug: "grc-advisory",
+        title: "GRC Advisory",
         features: [
-          "AI-Powered Threat Detection",
-          "Real-Time Monitoring",
-          "Automated Response",
+          "Risk Assessment",
+          "Policy Development",
+          "Compliance Management",
         ],
       },
     ],

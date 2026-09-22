@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowDownRight,
   ArrowRight,
@@ -11,6 +11,7 @@ import {
   BookOpenCheck,
   Check,
   ChevronRight,
+  ChevronLeft,
   Crosshair,
   Eye,
   Fingerprint,
@@ -93,28 +94,64 @@ const testimonials = [
   { quote: "Our work is practical by design: understand the problem, show the evidence, and make the next move obvious.", label: "The client experience", mark: "03" },
 ];
 
+const heroSlides = [
+  {
+    eyebrow: "Know your risk",
+    title: "Security is stronger together.",
+    text: "FEDSEC brings offensive, defensive, governance, software, and people-focused security thinking into one collective.",
+    cta: "Explore the collective",
+    href: "/about",
+    image: "/images/protexy/hero/hero-bg.png",
+  },
+  {
+    eyebrow: "Find what matters",
+    title: "See the path before it becomes an incident.",
+    text: "We assess applications, APIs, networks, infrastructure, and operating context to turn uncertainty into a prioritized next move.",
+    cta: "See our services",
+    href: "/services",
+    image: "/images/protexy/hero/home-hero-image.png",
+  },
+  {
+    eyebrow: "Strengthen what matters",
+    title: "Practical security for real organizations.",
+    text: "From startups and SMEs to institutions and technology companies, we help teams build security they can actually operate.",
+    cta: "Start a conversation",
+    href: "/contact",
+    image: "/images/protexy/hero/about-hero.png",
+  },
+];
+
 const fadeUp: import("framer-motion").Variants = { hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" } } };
 
 export default function HomePage() {
+  const [activeHero, setActiveHero] = useState(0);
   const [activeService, setActiveService] = useState(0);
   const [activeProcess, setActiveProcess] = useState(0);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const selectedService = serviceGroups[activeService];
   const selectedProcess = process[activeProcess];
   const ProcessIcon = selectedProcess.icon;
+  const hero = heroSlides[activeHero];
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveHero((current) => (current + 1) % heroSlides.length);
+    }, 7200);
+    return () => window.clearInterval(timer);
+  }, []);
 
   return (
     <div className="overflow-hidden bg-[#08080a] text-white">
       <section className="relative isolate min-h-[min(880px,100vh)] overflow-hidden border-b border-white/10 bg-[#08080a]">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_18%,rgba(218,26,93,.34),transparent_25%),radial-gradient(circle_at_38%_8%,rgba(102,47,144,.36),transparent_34%)]" />
-        <div className="absolute inset-y-0 right-0 -z-10 hidden w-[58%] lg:block"><Image src="/images/protexy/hero/hero-bg.png" alt="" fill priority className="object-cover opacity-50 mix-blend-screen" /><div className="absolute inset-0 bg-gradient-to-r from-[#08080a] via-[#08080a]/75 to-transparent" /></div>
+        <motion.div key={hero.image} initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: .52, scale: 1 }} transition={{ duration: 1.1, ease: "easeOut" }} className="absolute inset-y-0 right-0 -z-10 hidden w-[58%] lg:block"><Image src={hero.image} alt="" fill priority={activeHero === 0} className="object-cover mix-blend-screen" /><div className="absolute inset-0 bg-gradient-to-r from-[#08080a] via-[#08080a]/75 to-transparent" /></motion.div>
         <div className="absolute inset-0 -z-10 grid-pattern opacity-40" />
         <div className="mx-auto flex min-h-[min(880px,100vh)] max-w-[1440px] items-end px-6 pb-16 pt-32 sm:px-10 sm:pb-20 lg:px-16 lg:pb-28">
           <div className="w-full max-w-6xl">
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} className="mb-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-[.28em] text-[#f27839]"><span className="h-px w-10 bg-[#f27839]" /> FEDSEC / KNOW YOUR RISK</motion.div>
-            <motion.h1 initial="hidden" animate="visible" variants={fadeUp} className="max-w-6xl text-[clamp(3.5rem,9vw,9.3rem)] font-medium leading-[.85] tracking-[-.08em]">Cybersecurity is<br /><span className="text-[#d91a63]">stronger together.</span></motion.h1>
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ delay: .1 }} className="mt-12 grid max-w-4xl gap-8 sm:grid-cols-[1fr_auto] sm:items-end"><p className="max-w-xl text-base leading-7 text-white/60 sm:text-lg">FEDSEC is a multidisciplinary cybersecurity firm built on trust, expertise, and collaboration. We help organizations see risk clearly and move with confidence.</p><Link href="/contact" className="group inline-flex w-fit items-center gap-4 border-b border-[#f27839] pb-3 text-xs font-semibold uppercase tracking-[.18em] text-white transition-colors hover:text-[#f27839]">Start a conversation <ArrowUpRight size={18} className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></Link></motion.div>
-            <div className="mt-16 flex items-center gap-5 text-[10px] uppercase tracking-[.24em] text-white/35"><span>Scroll to explore</span><ArrowDownRight size={16} className="text-[#f27839]" /><span className="hidden h-px w-20 bg-white/20 sm:block" /><span className="hidden sm:block">Different expertise / One collective</span></div>
+            <motion.div key={hero.eyebrow} initial="hidden" animate="visible" variants={fadeUp} className="mb-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-[.28em] text-[#f27839]"><span className="h-px w-10 bg-[#f27839]" /> FEDSEC / {hero.eyebrow}</motion.div>
+            <motion.h1 key={hero.title} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65, ease: "easeOut" }} className="max-w-6xl text-[clamp(3.5rem,9vw,9.3rem)] font-medium leading-[.85] tracking-[-.08em]">{hero.title}</motion.h1>
+            <motion.div key={hero.text} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65, delay: .08, ease: "easeOut" }} className="mt-12 grid max-w-4xl gap-8 sm:grid-cols-[1fr_auto] sm:items-end"><p className="max-w-xl text-base leading-7 text-white/60 sm:text-lg">{hero.text}</p><Link href={hero.href} className="group inline-flex w-fit items-center gap-4 border-b border-[#f27839] pb-3 text-xs font-semibold uppercase tracking-[.18em] text-white transition-colors hover:text-[#f27839]">{hero.cta} <ArrowUpRight size={18} className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></Link></motion.div>
+            <div className="mt-16 flex flex-wrap items-center gap-5 text-[10px] uppercase tracking-[.24em] text-white/35"><span>Scroll to explore</span><ArrowDownRight size={16} className="text-[#f27839]" /><span className="hidden h-px w-20 bg-white/20 sm:block" /><span className="hidden sm:block">Different expertise / One collective</span><div className="ml-auto flex items-center gap-2"><button type="button" aria-label="Previous hero slide" onClick={() => setActiveHero((activeHero + heroSlides.length - 1) % heroSlides.length)} className="flex h-9 w-9 items-center justify-center border border-white/20 transition-colors hover:border-[#f27839] hover:text-[#f27839]"><ChevronLeft size={15} /></button>{heroSlides.map((slide, index) => <button key={slide.eyebrow} type="button" aria-label={`Go to hero slide ${index + 1}`} onClick={() => setActiveHero(index)} className={`h-1 transition-all ${index === activeHero ? "w-10 bg-[#f27839]" : "w-4 bg-white/25"}`} />)}<button type="button" aria-label="Next hero slide" onClick={() => setActiveHero((activeHero + 1) % heroSlides.length)} className="flex h-9 w-9 items-center justify-center border border-white/20 transition-colors hover:border-[#f27839] hover:text-[#f27839]"><ArrowRight size={15} /></button></div></div>
           </div>
         </div>
       </section>

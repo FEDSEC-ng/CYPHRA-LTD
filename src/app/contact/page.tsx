@@ -39,14 +39,14 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-fedsec-gray-900 overflow-hidden">
+      <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28 bg-fedsec-gray-900 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-fedsec-purple/20 via-transparent to-fedsec-pink/10" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={springTransition}>
               <span className="inline-block mb-4 px-4 py-1.5 rounded-full bg-fedsec-purple/10 border border-fedsec-purple/20 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Contact Us</span>
-              <WordByWordReveal text="Get in touch with security experts" className="text-5xl md:text-6xl lg:text-7xl font-normal text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]" tag="h1" />
-              <p className="text-lg md:text-xl text-fedsec-gray-400 max-w-3xl leading-relaxed">Whether you have a specific security challenge or want to explore how FEDSEC can help your organization, we&apos;d love to hear from you.</p>
+              <WordByWordReveal text="Get in touch with security experts" className="text-[clamp(2.8rem,8vw,4.5rem)] font-normal text-fedsec-white leading-[.98] mb-6 font-[family-name:var(--font-heading)]" tag="h1" />
+              <p className="text-base sm:text-lg md:text-xl text-fedsec-gray-400 max-w-3xl leading-relaxed">Whether you have a specific security challenge or want to explore how FEDSEC can help your organization, we&apos;d love to hear from you.</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ ...springTransition, delay: 0.2 }} className="relative">
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
@@ -58,7 +58,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-fedsec-white">
+      <section className="py-16 sm:py-20 md:py-28 bg-fedsec-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {contactCards.map((card) => (
@@ -74,7 +74,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-fedsec-gray-100">
+      <section className="py-16 sm:py-20 md:py-28 bg-fedsec-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="bg-fedsec-gray-900 rounded-2xl overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
@@ -96,7 +96,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-fedsec-white">
+      <section className="py-16 sm:py-20 md:py-28 bg-fedsec-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             <motion.div variants={slideInLeft} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="lg:col-span-2">

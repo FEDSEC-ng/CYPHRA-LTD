@@ -52,17 +52,17 @@ const faqItems = [
 export default function AboutPage() {
   return (
     <>
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-fedsec-gray-900 overflow-hidden">
+      <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28 bg-fedsec-gray-900 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-fedsec-purple/20 via-transparent to-fedsec-pink/10" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={springTransition}>
               <span className="inline-block mb-4 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-fedsec-purple bg-fedsec-purple/10 rounded-full font-[family-name:var(--font-accent)]">About us</span>
-              <WordByWordReveal text="Advancing cybersecurity for modern organizations" className="text-5xl md:text-6xl lg:text-7xl font-normal text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]" />
-              <p className="text-lg md:text-xl text-fedsec-gray-400 max-w-xl leading-relaxed mb-8">
+              <WordByWordReveal text="Advancing cybersecurity for modern organizations" className="text-[clamp(2.8rem,8vw,4.5rem)] text-fedsec-white leading-[.98] mb-6 font-[family-name:var(--font-heading)]" />
+              <p className="text-base sm:text-lg md:text-xl text-fedsec-gray-400 max-w-xl leading-relaxed mb-8">
                 FEDSEC is a multidisciplinary cybersecurity firm built around trust, expertise, and collaboration. We help organizations identify risks, strengthen their security posture, and build greater resilience against evolving cyber threats.
               </p>
-              <a href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-fedsec-purple text-fedsec-white rounded-full text-sm font-bold uppercase tracking-wider hover:bg-fedsec-purple/90 transition-colors font-[family-name:var(--font-accent)]">
+              <a href="/contact" className="inline-flex max-w-full items-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 bg-fedsec-purple text-fedsec-white rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-fedsec-purple/90 transition-colors font-[family-name:var(--font-accent)]">
                 Join us today
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>
@@ -76,7 +76,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-fedsec-white border-b border-fedsec-gray-100">
+      <section className="py-12 sm:py-16 bg-fedsec-white border-b border-fedsec-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
@@ -89,7 +89,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-fedsec-gray-50">
+      <section className="py-16 sm:py-20 md:py-28 bg-fedsec-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold uppercase tracking-widest text-fedsec-pink mb-4 font-[family-name:var(--font-accent)]">Our team</p>

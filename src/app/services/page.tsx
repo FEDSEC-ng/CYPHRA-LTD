@@ -37,7 +37,7 @@ const serviceDescriptions: Record<string, string> = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-fedsec-gray-900 overflow-hidden">
+      <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28 bg-fedsec-gray-900 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-fedsec-purple/20 via-transparent to-fedsec-pink/10" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -48,10 +48,10 @@ export default function ServicesPage() {
             <span className="inline-block mb-4 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-fedsec-purple bg-fedsec-purple/10 rounded-full font-[family-name:var(--font-accent)]">
               Our services
             </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
+              <h1 className="text-[clamp(2.8rem,8vw,4.5rem)] font-normal text-fedsec-white leading-[.98] mb-6 font-[family-name:var(--font-heading)]">
               Modern business security solutions
             </h1>
-            <p className="text-lg md:text-xl text-fedsec-gray-400 max-w-3xl leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-fedsec-gray-400 max-w-3xl leading-relaxed">
               Comprehensive cybersecurity solutions designed to protect your
               organization from evolving digital threats.
             </p>
@@ -59,7 +59,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-fedsec-white">
+      <section className="py-16 sm:py-20 md:py-28 bg-fedsec-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={staggerContainer}
@@ -72,7 +72,7 @@ export default function ServicesPage() {
               <motion.div key={service.slug} variants={fadeInUp}>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="group block h-full bg-fedsec-gray-50 border border-fedsec-gray-200 rounded-2xl p-8 hover:border-fedsec-purple/30 hover:shadow-lg hover:shadow-fedsec-purple/5 transition-all duration-300"
+                  className="group block h-full bg-fedsec-gray-50 border border-fedsec-gray-200 rounded-2xl p-6 sm:p-8 hover:border-fedsec-purple/30 hover:shadow-lg hover:shadow-fedsec-purple/5 transition-all duration-300"
                 >
                   <div className="flex items-start gap-5">
                     <div className="w-14 h-14 rounded-xl bg-fedsec-purple/10 flex items-center justify-center shrink-0 group-hover:bg-fedsec-purple group-hover:text-fedsec-white transition-all duration-300">

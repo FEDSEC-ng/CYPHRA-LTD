@@ -24,11 +24,10 @@ export default function CTABanner() {
           transition={{ type: "spring", damping: 40, stiffness: 200, mass: 1 }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
-            Build a resilient security strategy for the future
+            Know your risk. Strengthen what matters.
           </h2>
           <p className="text-lg text-fedsec-gray-300 mb-8 max-w-2xl mx-auto font-[family-name:var(--font-accent)]">
-            AI-powered cybersecurity solutions built to secure modern digital
-            environments
+            Tell us where you are, what you rely on, and what you need to protect. We will help you understand what to do next.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button href="/contact" size="lg">

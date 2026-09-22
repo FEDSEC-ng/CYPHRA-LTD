@@ -9,8 +9,8 @@ const serviceLinks = [
   { label: "GRC Advisory", href: "/services/grc-advisory" },
   { label: "Network Security", href: "/services/network-security" },
   { label: "Software Security", href: "/services/software-security" },
-  { label: "Security Operations", href: "/services/security-operations" },
-  { label: "Incident Response", href: "/services/incident-response" },
+  { label: "Security Analysis", href: "/services" },
+  { label: "Cybersecurity Education & Awareness", href: "/services" },
 ];
 
 const companyLinks = [
@@ -71,9 +71,9 @@ export default function Footer() {
               <Image
                 src="/images/fedsec-logo-white.png"
                 alt="FEDSEC"
-                width={36}
-                height={36}
-                className="h-9 w-auto"
+                width={507}
+                height={121}
+                className="h-8 w-auto"
               />
             </Link>
             <p className="text-sm text-white/40 leading-relaxed mb-6 max-w-xs font-[family-name:var(--font-body)]">

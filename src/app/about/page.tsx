@@ -2,149 +2,41 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import WordByWordReveal from "@/components/ui/WordByWordReveal";
-import AwardCarousel from "@/components/ui/AwardCarousel";
-import Accordion from "@/components/ui/Accordion";
+import Link from "next/link";
+import { ArrowUpRight, Handshake, LockKeyhole, ShieldCheck, Sparkles } from "lucide-react";
+import { team } from "@/lib/data/team";
 import CTABanner from "@/components/ui/CTABanner";
 
-const springTransition = { type: "spring" as const, damping: 40, stiffness: 200 };
-
-const stats = [
-  { value: "12,400+", label: "Protected endpoints" },
-  { value: "185+", label: "Total countries covered" },
-  { value: "98.7%", label: "Threat detection rate" },
+const values = [
+  ["Trust", "We build relationships through reliability, transparency, and responsible security practices."],
+  ["Integrity", "We do what is right, even when no one is watching."],
+  ["Confidentiality", "We protect the information, systems, and access entrusted to us."],
+  ["Professionalism", "We approach every engagement with discipline, competence, and respect."],
+  ["Collaboration", "Different perspectives and areas of expertise create stronger security outcomes."],
+  ["Continuous learning", "We keep learning, adapting, and keeping pace with an evolving threat landscape."],
+  ["Accountability", "We take responsibility for our work, decisions, and outcomes."],
 ];
 
-const teamMembers = [
-  { name: "Nathan Brooks", role: "CEO", image: "/images/protexy/team/nathan-brooks.png" },
-  { name: "Olivia Walker", role: "Business Director", image: "/images/protexy/team/olivia-walker.png" },
-  { name: "James Walker", role: "Project Manager", image: "/images/protexy/team/james-walker.png" },
-  { name: "Emma Walker", role: "IT Manager", image: "/images/protexy/team/emma-walker.png" },
-];
-
-const faqItems = [
-  {
-    question: "What cybersecurity services do you provide?",
-    answer: "We provide comprehensive cybersecurity solutions protecting networks, systems, cloud infrastructure, and sensitive business data from threats.",
-  },
-  {
-    question: "How do you help prevent cyber threats?",
-    answer: "We use AI-powered monitoring, threat detection, proactive defense, and rapid response to prevent cyberattacks effectively.",
-  },
-  {
-    question: "Can your solutions support large organizations?",
-    answer: "We offer threat monitoring, risk assessment, incident response, and security analytics to help organizations stay protected.",
-  },
-  {
-    question: "Do you provide 24/7 security monitoring?",
-    answer: "Yes, our experts provide 24/7 security monitoring, detecting threats instantly and responding before serious damage occurs.",
-  },
-  {
-    question: "How quickly can you respond to incidents?",
-    answer: "Our incident response team reacts immediately, containing threats quickly to minimize downtime, damage, and business disruption.",
-  },
-  {
-    question: "How do I get started with your services?",
-    answer: "Contact our team, schedule a consultation, discuss your security needs, and receive a customized cybersecurity protection plan.",
-  },
+const promise = [
+  ["01", "Who we are", "A multidisciplinary cybersecurity firm bringing together professionals with diverse expertise."],
+  ["02", "Why we exist", "To make effective cybersecurity more accessible, practical, and actionable."],
+  ["03", "Who we serve", "Startups, SMEs, technology companies, institutions, and organizations that rely on digital systems."],
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28 bg-fedsec-gray-900 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-fedsec-purple/20 via-transparent to-fedsec-pink/10" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={springTransition}>
-              <span className="inline-block mb-4 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-fedsec-purple bg-fedsec-purple/10 rounded-full font-[family-name:var(--font-accent)]">About us</span>
-              <WordByWordReveal text="Advancing cybersecurity for modern organizations" className="text-[clamp(2.8rem,8vw,4.5rem)] text-fedsec-white leading-[.98] mb-6 font-[family-name:var(--font-heading)]" />
-              <p className="text-base sm:text-lg md:text-xl text-fedsec-gray-400 max-w-xl leading-relaxed mb-8">
-                FEDSEC is a multidisciplinary cybersecurity firm built around trust, expertise, and collaboration. We help organizations identify risks, strengthen their security posture, and build greater resilience against evolving cyber threats.
-              </p>
-              <a href="/contact" className="inline-flex max-w-full items-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 bg-fedsec-purple text-fedsec-white rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-fedsec-purple/90 transition-colors font-[family-name:var(--font-accent)]">
-                Join us today
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </a>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ ...springTransition, delay: 0.2 }} className="relative">
-              <div className="relative rounded-3xl overflow-hidden">
-                <Image src="/images/protexy/about/about-main.png" alt="About FEDSEC" width={600} height={500} className="w-full h-auto object-cover" priority />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <section className="relative overflow-hidden bg-[#08080a] px-6 pb-20 pt-32 text-white sm:px-10 lg:px-16 lg:pb-28 lg:pt-44"><div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_18%,rgba(218,26,93,.28),transparent_28%),linear-gradient(120deg,#08080a,#18101f)]" /><div className="relative mx-auto grid max-w-[1440px] items-end gap-12 lg:grid-cols-[1fr_.7fr]"><div><p className="mb-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-[.25em] text-[#f27839]"><span className="h-px w-10 bg-[#f27839]" /> FEDSEC / ABOUT</p><h1 className="max-w-5xl text-[clamp(3rem,9vw,8rem)] font-medium leading-[.88] tracking-[-.07em]">Trust is where<br /><span className="text-[#d91a63]">security starts.</span></h1><p className="mt-10 max-w-2xl text-base leading-7 text-white/60 sm:text-lg">FEDSEC was created around a simple belief: effective security requires more than one perspective. We bring technical knowledge, strategic thinking, and practical solutions together as one collective.</p></div><div className="relative aspect-[4/3] overflow-hidden bg-[#17121c]"><Image src="/images/protexy/about/about-main.png" alt="FEDSEC cybersecurity collective" fill className="object-cover opacity-70" /><div className="absolute inset-0 bg-gradient-to-t from-[#08080a] via-transparent to-transparent" /><div className="absolute bottom-5 left-5 flex items-center gap-3 text-xs uppercase tracking-[.2em] text-white/70"><Sparkles size={15} className="text-[#f27839]" /> Different expertise. One collective.</div></div></div></section>
 
-      <section className="py-12 sm:py-16 bg-fedsec-white border-b border-fedsec-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div key={stat.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ ...springTransition, delay: index * 0.1 }} className="text-center">
-                <div className="text-3xl md:text-4xl font-normal text-fedsec-purple mb-2 font-[family-name:var(--font-heading)]">{stat.value}</div>
-                <div className="text-sm text-fedsec-gray-500 font-[family-name:var(--font-accent)]">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="bg-[#efeee9] px-6 py-16 text-[#111114] sm:px-10 lg:px-16 lg:py-24"><div className="mx-auto max-w-[1440px]"><div className="grid border-t border-black/15 md:grid-cols-3">{promise.map(([number, title, text]) => <motion.div key={number} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="border-b border-black/15 py-8 md:border-l md:px-7 lg:py-12"><span className="text-sm text-[#d91a63]">{number}</span><h2 className="mt-10 text-2xl font-medium tracking-[-.03em]">{title}</h2><p className="mt-4 max-w-sm text-base leading-7 text-black/55">{text}</p></motion.div>)}</div></div></section>
 
-      <section className="py-16 sm:py-20 md:py-28 bg-fedsec-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-widest text-fedsec-pink mb-4 font-[family-name:var(--font-accent)]">Our team</p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">Security experts you can trust</h2>
-            <p className="text-lg text-fedsec-gray-500 max-w-2xl mx-auto">Our team of seasoned cybersecurity professionals brings decades of combined experience in protecting organizations from evolving threats.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <motion.div key={member.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ ...springTransition, delay: index * 0.1 }} className="group text-center">
-                <div className="relative mb-6 rounded-2xl overflow-hidden aspect-[3/4] bg-fedsec-gray-200">
-                  <Image src={member.image} alt={member.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <h3 className="text-xl md:text-2xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)]">{member.name}</h3>
-                <p className="text-sm text-fedsec-purple font-semibold font-[family-name:var(--font-accent)]">{member.role}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="bg-white px-6 py-20 text-[#111114] sm:px-10 lg:px-16 lg:py-32"><div className="mx-auto grid max-w-[1440px] gap-14 lg:grid-cols-[.8fr_1.2fr] lg:items-start"><div><p className="mb-5 text-xs font-semibold uppercase tracking-[.25em] text-[#662f90]">What makes us different</p><h2 className="text-4xl font-medium leading-[.92] tracking-[-.05em] sm:text-6xl">Multiple angles.<br /><span className="text-[#662f90]">One security outcome.</span></h2></div><div className="space-y-7 text-lg leading-8 text-black/60"><p>FEDSEC brings together offensive and defensive security perspectives with GRC, network, software, and other areas of expertise.</p><p>We do not approach security from a single point of view. We help organizations understand their environment, find what matters, and know what to do next.</p><p className="font-semibold text-black">Built on trust. Driven by expertise. Strengthened by collaboration.</p></div></div></section>
 
-      <AwardCarousel />
+      <section className="bg-[#08080a] px-6 py-20 text-white sm:px-10 lg:px-16 lg:py-32"><div className="mx-auto max-w-[1440px]"><div className="mb-14 max-w-3xl"><p className="mb-5 text-xs font-semibold uppercase tracking-[.25em] text-[#f27839]">Our values</p><h2 className="text-4xl font-medium leading-[.92] tracking-[-.05em] sm:text-6xl">The standard we hold ourselves to.</h2></div><div className="grid border-t border-white/15 sm:grid-cols-2 lg:grid-cols-3">{values.map(([title, text], index) => <div key={title} className="border-b border-white/15 p-7 sm:p-9 lg:border-l"><div className="flex items-center gap-4"><span className="text-xs text-[#d91a63]">0{index + 1}</span><h3 className="text-xl font-medium">{title}</h3></div><p className="mt-5 text-sm leading-6 text-white/50">{text}</p></div>)}</div></div></section>
 
-      <section className="py-20 md:py-28 bg-fedsec-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-widest text-fedsec-pink mb-4 font-[family-name:var(--font-accent)]">FAQ</p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Everything you need to know</h2>
-          </div>
-          <Accordion items={faqItems} />
-        </div>
-      </section>
+      <section className="bg-[#efeee9] px-6 py-20 text-[#111114] sm:px-10 lg:px-16 lg:py-32"><div className="mx-auto max-w-[1440px]"><div className="mb-14 flex flex-col justify-between gap-8 lg:flex-row lg:items-end"><div><p className="mb-5 text-xs font-semibold uppercase tracking-[.25em] text-[#662f90]">Our people</p><h2 className="text-4xl font-medium leading-[.92] tracking-[-.05em] sm:text-6xl">A collective in motion.</h2></div><Link href="/team" className="inline-flex w-fit items-center gap-3 border-b border-black/25 pb-2 text-xs font-semibold uppercase tracking-[.16em]">See every profile <ArrowUpRight size={16} /></Link></div><div className="grid gap-px bg-black/15 sm:grid-cols-2 lg:grid-cols-5">{team.map((member, index) => <div key={member.name} className="bg-[#efeee9] p-6"><div className="mb-10 flex h-16 w-16 items-end border-b-2 border-[#d91a63] text-3xl text-[#d91a63]">{member.name.charAt(0)}</div><p className="text-xs text-[#662f90]">0{index + 1}</p><h3 className="mt-4 text-xl font-medium leading-tight">{member.name}</h3><p className="mt-2 text-xs uppercase tracking-[.12em] text-black/50">{member.role}</p></div>)}</div></div></section>
 
-      <section className="py-20 md:py-28 bg-fedsec-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-widest text-fedsec-pink mb-4 font-[family-name:var(--font-accent)]">Our offices</p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Find us around the world</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { city: "New York", address: "350 5th Avenue, Suite 4500", zip: "New York, NY 10118", country: "United States" },
-              { city: "London", address: "1 Canada Square, Canary Wharf", zip: "London E14 5AB", country: "United Kingdom" },
-              { city: "Singapore", address: "1 Raffles Place, Level 20", zip: "Singapore 048616", country: "Singapore" },
-            ].map((office, index) => (
-              <motion.div key={office.city} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ ...springTransition, delay: index * 0.1 }} className="bg-fedsec-white border border-fedsec-gray-200 rounded-2xl p-8 text-center hover:border-fedsec-purple/30 hover:shadow-lg transition-all duration-300">
-                <div className="w-14 h-14 rounded-2xl bg-fedsec-purple/10 flex items-center justify-center mx-auto mb-5">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#662f90" /></svg>
-                </div>
-                <h3 className="text-xl md:text-2xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)]">{office.city}</h3>
-                <p className="text-sm text-fedsec-gray-500 leading-relaxed">{office.address}<br />{office.zip}<br />{office.country}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="bg-[#d91a63] px-6 py-20 text-white sm:px-10 lg:px-16 lg:py-28"><div className="mx-auto grid max-w-[1440px] gap-10 sm:grid-cols-3">{[[ShieldCheck, "Trust"], [LockKeyhole, "Confidentiality"], [Handshake, "Collaboration"]].map(([Icon, label]) => <div key={label as string} className="border-t border-white/30 pt-5"><Icon size={24} strokeWidth={1.5} /><p className="mt-8 text-2xl font-medium">{label as string}</p></div>)}</div></section>
 
       <CTABanner />
     </>

@@ -14,9 +14,9 @@ function FedsecLogo({ className = "" }: { className?: string }) {
       <Image
         src="/images/fedsec-logo-white.png"
         alt="FEDSEC"
-        width={36}
-        height={36}
-        className="h-9 w-auto"
+        width={507}
+        height={121}
+        className="h-7 w-auto sm:h-8"
         priority
       />
     </Link>

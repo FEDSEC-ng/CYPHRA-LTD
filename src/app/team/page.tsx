@@ -1,68 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import WordByWordReveal from "@/components/ui/WordByWordReveal";
+import Link from "next/link";
+import { ArrowUpRight, Fingerprint, Network, ScanSearch, ShieldCheck } from "lucide-react";
 import CTABanner from "@/components/ui/CTABanner";
-import ScrollingBadges from "@/components/ui/ScrollingBadges";
 import { team } from "@/lib/data/team";
 
-const springTransition = { type: "spring" as const, damping: 40, stiffness: 200 };
-
-const badges = [
-  "Penetration Testing", "Vulnerability Assessment", "Incident Response",
-  "Security Architecture", "Threat Intelligence", "GRC Advisory",
-  "Network Security", "Cloud Security", "Red Team Operations",
-];
+const disciplines = [
+  ["Offensive security", ScanSearch],
+  ["GRC & advisory", ShieldCheck],
+  ["Network security", Network],
+  ["Software security", Fingerprint],
+] as const;
 
 export default function TeamPage() {
-  const featured = team[0];
-
   return (
     <>
-      <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28 bg-fedsec-gray-900 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-fedsec-purple/20 via-transparent to-fedsec-pink/10" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={springTransition}>
-              <span className="inline-block mb-4 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-fedsec-purple bg-fedsec-purple/10 rounded-full font-[family-name:var(--font-accent)]">Our team</span>
-              <WordByWordReveal text="Protecting businesses from cyber threats" className="text-[clamp(2.8rem,8vw,4.5rem)] font-normal text-fedsec-white leading-[.98] mb-6 font-[family-name:var(--font-heading)]" tag="h1" />
-              <p className="text-base sm:text-lg md:text-xl text-fedsec-gray-400 max-w-xl leading-relaxed mb-8">Our team brings different cybersecurity disciplines together to help organizations understand, manage, and strengthen their security.</p>
-              <a href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-fedsec-purple text-fedsec-white rounded-full text-sm font-bold uppercase tracking-wider hover:bg-fedsec-purple/90 transition-colors font-[family-name:var(--font-accent)]">
-                Join us today
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </a>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ ...springTransition, delay: 0.2 }} className="relative">
-              <div className="relative rounded-3xl overflow-hidden">
-                <Image src={featured.image} alt={featured.name} width={600} height={500} className="w-full h-auto object-cover" priority />
-              </div>
-            </motion.div>
-          </div>
+      <section className="relative overflow-hidden bg-[#08080a] px-6 pb-20 pt-32 text-white sm:px-10 lg:px-16 lg:pb-28 lg:pt-44">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(218,26,93,.25),transparent_28%),linear-gradient(120deg,#08080a,#1a1123)]" />
+        <div className="relative mx-auto max-w-[1440px]">
+          <p className="mb-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-[.25em] text-[#f27839]"><span className="h-px w-10 bg-[#f27839]" /> FEDSEC / OUR PEOPLE</p>
+          <h1 className="max-w-5xl text-[clamp(3rem,9vw,8rem)] font-medium leading-[.88] tracking-[-.07em]">Different disciplines.<br /><span className="text-[#d91a63]">One collective.</span></h1>
+          <div className="mt-10 grid max-w-4xl gap-8 text-white/60 sm:grid-cols-[1fr_auto] sm:items-end"><p className="max-w-xl text-base leading-7 sm:text-lg">FEDSEC is built by people who bring different perspectives to the same security problem. Technical depth, business context, and a willingness to keep learning shape how we work.</p><Link href="/contact" className="inline-flex w-fit items-center gap-3 border-b border-[#f27839] pb-3 text-xs font-semibold uppercase tracking-[.16em] text-white">Work with us <ArrowUpRight size={17} /></Link></div>
         </div>
       </section>
 
-      <ScrollingBadges badges={badges} />
+      <section className="bg-[#efeee9] px-6 py-16 text-[#111114] sm:px-10 lg:px-16 lg:py-24">
+        <div className="mx-auto max-w-[1440px]"><p className="mb-8 text-xs font-semibold uppercase tracking-[.25em] text-[#662f90]">Our coverage</p><div className="grid border-t border-black/15 sm:grid-cols-2 lg:grid-cols-4">{disciplines.map(([label, Icon]) => <div key={label} className="flex items-center gap-4 border-b border-black/15 py-6 lg:border-l lg:px-6 lg:py-8"><Icon size={22} className="text-[#d91a63]" strokeWidth={1.5} /><span className="text-sm font-semibold uppercase tracking-[.12em]">{label}</span></div>)}</div></div>
+      </section>
 
-      <section className="py-16 sm:py-20 md:py-28 bg-fedsec-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-widest text-fedsec-pink mb-4 font-[family-name:var(--font-accent)]">Our team</p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">Security experts you can trust</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <motion.div key={member.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ ...springTransition, delay: index * 0.1 }} className="group text-center">
-                <div className="relative mb-6 rounded-2xl overflow-hidden aspect-[3/4] bg-fedsec-gray-200">
-                  <Image src={member.image} alt={member.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <h3 className="text-xl md:text-2xl font-normal text-fedsec-gray-900 mb-1 font-[family-name:var(--font-heading)]">{member.name}</h3>
-                <p className="text-sm text-fedsec-purple font-semibold font-[family-name:var(--font-accent)]">{member.role}</p>
-                <p className="text-sm text-fedsec-gray-500 mt-2 leading-relaxed">{member.bio}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+      <section className="bg-[#08080a] px-6 py-20 text-white sm:px-10 lg:px-16 lg:py-32">
+        <div className="mx-auto max-w-[1440px]"><div className="mb-14 max-w-2xl"><p className="mb-5 text-xs font-semibold uppercase tracking-[.25em] text-[#f27839]">The people behind FEDSEC</p><h2 className="text-4xl font-medium leading-[.92] tracking-[-.05em] sm:text-6xl">Meet the people building the firm.</h2></div><div className="grid gap-px bg-white/15 sm:grid-cols-2 lg:grid-cols-3">{team.map((member, index) => <motion.article key={member.name} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: .55, delay: index * .06 }} className="bg-[#08080a] p-7 sm:p-9"><div className="mb-12 flex h-24 w-24 items-end border-b border-[#d91a63] text-5xl font-medium text-[#d91a63]">{member.name.charAt(0)}</div><p className="mb-3 text-xs uppercase tracking-[.18em] text-[#f27839]">0{index + 1} / Profile</p><h3 className="text-2xl font-medium tracking-[-.03em]">{member.name}</h3><p className="mt-2 text-sm font-semibold text-white/65">{member.role}</p><p className="mt-6 text-sm leading-6 text-white/50">{member.bio}</p></motion.article>)}</div></div>
       </section>
 
       <CTABanner />

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Fingerprint, Network, ScanSearch, ShieldCheck } from "lucide-react";
 import CTABanner from "@/components/ui/CTABanner";
@@ -14,6 +15,8 @@ const disciplines = [
 ] as const;
 
 export default function TeamPage() {
+  const [expandedMember, setExpandedMember] = useState<string | null>(null);
+
   return (
     <>
       <section className="relative overflow-hidden bg-[#08080a] px-6 pb-20 pt-32 text-white sm:px-10 lg:px-16 lg:pb-28 lg:pt-44">
@@ -30,7 +33,7 @@ export default function TeamPage() {
       </section>
 
       <section className="bg-[#08080a] px-6 py-20 text-white sm:px-10 lg:px-16 lg:py-32">
-        <div className="mx-auto max-w-[1440px]"><div className="mb-14 max-w-2xl"><p className="mb-5 text-xs font-semibold uppercase tracking-[.25em] text-[#f27839]">The people behind FEDSEC</p><h2 className="text-4xl font-medium leading-[.92] tracking-[-.05em] sm:text-6xl">Meet the people building the firm.</h2></div><div className="grid gap-px bg-white/15 sm:grid-cols-2 lg:grid-cols-3">{team.map((member, index) => <motion.article key={member.name} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: .55, delay: index * .06 }} className="bg-[#08080a] p-7 sm:p-9"><div className="mb-12 flex h-24 w-24 items-end border-b border-[#d91a63] text-5xl font-medium text-[#d91a63]">{member.name.charAt(0)}</div><p className="mb-3 text-xs uppercase tracking-[.18em] text-[#f27839]">0{index + 1} / Profile</p><h3 className="text-2xl font-medium tracking-[-.03em]">{member.name}</h3><p className="mt-2 text-sm font-semibold text-white/65">{member.role}</p><p className="mt-6 text-sm leading-6 text-white/50">{member.bio}</p></motion.article>)}</div></div>
+        <div className="mx-auto max-w-[1440px]"><div className="mb-14 max-w-2xl"><p className="mb-5 text-xs font-semibold uppercase tracking-[.25em] text-[#f27839]">The people behind FEDSEC</p><h2 className="text-4xl font-medium leading-[.92] tracking-[-.05em] sm:text-6xl">Meet the people building the firm.</h2></div><div className="grid gap-px bg-white/15 sm:grid-cols-2 lg:grid-cols-3">{team.map((member, index) => { const isExpanded = expandedMember === member.name; return <motion.article key={member.name} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: .55, delay: index * .06 }} className="bg-[#08080a] p-7 sm:p-9"><div className="mb-12 flex h-24 w-24 items-end border-b border-[#d91a63] text-5xl font-medium text-[#d91a63]">{member.name.charAt(0)}</div><p className="mb-3 text-xs uppercase tracking-[.18em] text-[#f27839]">0{String(index + 1).padStart(2, "0")} / Profile</p><h3 className="text-2xl font-medium tracking-[-.03em]">{member.name}</h3><p className="mt-2 text-sm font-semibold text-white/65">{member.role}</p><p className={`mt-6 text-sm leading-6 text-white/50 ${isExpanded ? "" : "line-clamp-4"}`}>{member.bio}</p><div className="mt-7 flex flex-wrap items-center gap-4"><button type="button" onClick={() => setExpandedMember(isExpanded ? null : member.name)} className="inline-flex items-center gap-2 border-b border-[#f27839] pb-2 text-xs font-semibold uppercase tracking-[.14em] text-white">{isExpanded ? "Hide profile" : "Read profile"}</button>{member.resume ? <a href={member.resume} target="_blank" rel="noreferrer" className="text-xs font-semibold uppercase tracking-[.14em] text-[#f27839]">View CV</a> : <span className="text-xs uppercase tracking-[.14em] text-white/25">CV coming soon</span>}</div></motion.article>; })}</div></div>
       </section>
 
       <CTABanner />

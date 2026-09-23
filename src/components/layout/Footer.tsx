@@ -67,13 +67,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-4">
-            <Link href="/" className="inline-flex items-center gap-2.5 mb-5">
+            <Link href="/" className="inline-flex items-center mb-5">
               <Image
-                src="/images/fedsec-logo-white.png"
+                src="/images/fedsec-logo-horizontal.png"
                 alt="FEDSEC"
-                width={36}
-                height={36}
-                className="h-9 w-auto"
+                width={140}
+                height={40}
+                className="h-8 w-auto object-contain brightness-0 invert"
               />
             </Link>
             <p className="text-sm text-white/40 leading-relaxed mb-6 max-w-xs font-[family-name:var(--font-body)]">

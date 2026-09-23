@@ -264,18 +264,18 @@ export default function ServiceDetailPage() {
               <div className="flex items-center gap-4">
                 <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0">
                   <Image
-                    src="/images/protexy/team/member1.png"
-                    alt="Ethan Brooks"
+                    src="/images/team/francis.png"
+                    alt="Nwachukwu Francis O."
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div>
                   <p className="font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
-                    Ethan Brooks
+                    Nwachukwu Francis O.
                   </p>
                   <p className="text-sm text-fedsec-gray-500 font-[family-name:var(--font-accent)]">
-                    Senior Security Consultant
+                    Founder / Tech Lead
                   </p>
                 </div>
               </div>

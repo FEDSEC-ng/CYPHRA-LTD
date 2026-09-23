@@ -22,14 +22,14 @@ const testimonials: Testimonial[] = [
   {
     quote:
       "The cybersecurity solutions delivered exceeded our expectations. The real-time monitoring and automated incident response have significantly reduced our security risks and improved overall operational stability.",
-    name: "James Walker",
+    name: "Adebayo O.",
     role: "CTO, SecureTech",
     avatar: "/images/protexy/team/avatar-james.png",
   },
   {
     quote:
       "AI-powered monitoring transformed cybersecurity, preventing threats before disrupting business operations completely.",
-    name: "Emma Walker",
+    name: "Emeka N.",
     role: "CISO, SafeNet",
     avatar: "/images/protexy/team/avatar-emma.png",
   },

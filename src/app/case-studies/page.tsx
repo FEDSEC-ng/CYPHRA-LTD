@@ -8,12 +8,12 @@ import { caseStudies } from "@/lib/data/case-studies";
 import CTABanner from "@/components/ui/CTABanner";
 
 const caseImages: Record<string, string> = {
-  finsecure: "/images/protexy/cases/case-hero.png",
-  vireon: "/images/protexy/cases/case-overview1.png",
-  "medicore-systems": "/images/protexy/cases/case-overview2.png",
-  nexabank: "/images/protexy/cases/case-results1.png",
-  cloudsync: "/images/protexy/cases/case-results2.png",
-  vertexhealth: "/images/protexy/cases/case-content1.png",
+  finsecure: "/images/protexy/cases/case1.png",
+  vireon: "/images/protexy/cases/case2.png",
+  "medicore-systems": "/images/protexy/cases/case3.png",
+  nexabank: "/images/protexy/cases/case4.png",
+  cloudsync: "/images/protexy/cases/case5.png",
+  vertexhealth: "/images/protexy/cases/case6.png",
 };
 
 const caseStats: Record<string, { value: string; label: string }[]> = {

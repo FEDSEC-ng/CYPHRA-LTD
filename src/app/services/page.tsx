@@ -2,43 +2,46 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import { ArrowRight, Crosshair, Eye, ShieldCheck } from "lucide-react";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import { services } from "@/lib/data/services";
 import CTABanner from "@/components/ui/CTABanner";
 
-const serviceIcons: Record<string, string> = {
-  "advanced-cloud-security-protection": "/images/protexy/icons/BiLwEGhOv1EUnb8FqA8ZzcGg.svg",
-  "ai-powered-threat-detection-system": "/images/protexy/icons/hEdInb3mCJe8MyL1oTSA35AmZY.svg",
-  "end-to-end-data-encryption-service": "/images/protexy/icons/oo6hlxxs5ORxgDtM2c7wv6fLKd4.svg",
-  "intelligent-network-firewall-protection": "/images/protexy/icons/GSAZyUIhDT2c10NzlOF0UcsT6c.svg",
-  "intelligent-threat-monitoring": "/images/protexy/icons/SIb2C40P2SYrdZDpd43ru9IWG2M.svg",
-  "rapid-incident-response-management": "/images/protexy/icons/qh9WSzmiZO49WPjU5MLP5yjGNnQ.svg",
+const pillarMeta = {
+  "Red Team": {
+    icon: Crosshair,
+    title: "Red Team",
+    subtitle: "Attack like an adversary. Simulate, discover, and validate weaknesses before real attackers do.",
+    accent: "text-fedsec-pink",
+    chip: "bg-fedsec-pink/10",
+    border: "hover:border-fedsec-pink/40",
+  },
+  "Blue Team": {
+    icon: Eye,
+    title: "Blue Team",
+    subtitle: "Defend around the clock. Monitor, detect, and respond to threats across your environment.",
+    accent: "text-blue-500",
+    chip: "bg-blue-500/10",
+    border: "hover:border-blue-500/40",
+  },
+  GRC: {
+    icon: ShieldCheck,
+    title: "GRC",
+    subtitle: "Align security with the business. Governance, risk, and compliance that builds trust.",
+    accent: "text-fedsec-purple",
+    chip: "bg-fedsec-purple/10",
+    border: "hover:border-fedsec-purple/40",
+  },
 };
 
-const serviceCategories: Record<string, string> = {
-  "advanced-cloud-security-protection": "Recovery",
-  "ai-powered-threat-detection-system": "Detection",
-  "end-to-end-data-encryption-service": "Encryption",
-  "intelligent-network-firewall-protection": "Defense",
-  "intelligent-threat-monitoring": "Prevention",
-  "rapid-incident-response-management": "Analysis",
-};
-
-const serviceDescriptions: Record<string, string> = {
-  "advanced-cloud-security-protection": "Secure cloud environments, applications, and sensitive data",
-  "ai-powered-threat-detection-system": "Detect suspicious activity before it becomes a security threat",
-  "end-to-end-data-encryption-service": "Protect sensitive information across its entire lifecycle",
-  "intelligent-network-firewall-protection": "Comprehensive defense against unauthorized access and attacks",
-  "intelligent-threat-monitoring": "Continuous surveillance to identify threats in real time",
-  "rapid-incident-response-management": "Contain cyber incidents quickly and reduce disruption",
-};
+const pillarOrder = ["Red Team", "Blue Team", "GRC"] as const;
 
 export default function ServicesPage() {
   return (
     <>
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-fedsec-gray-900 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-fedsec-purple/20 via-transparent to-fedsec-pink/10" />
+        <div className="absolute inset-0 grid-pattern opacity-[0.03]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -48,60 +51,87 @@ export default function ServicesPage() {
             <span className="inline-block mb-4 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-fedsec-purple bg-fedsec-purple/10 rounded-full font-[family-name:var(--font-accent)]">
               Our services
             </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
-              Modern business security solutions
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
+              Security built on{" "}
+              <span className="gradient-text">three pillars</span>
             </h1>
             <p className="text-lg md:text-xl text-fedsec-gray-400 max-w-3xl leading-relaxed">
-              Comprehensive cybersecurity solutions designed to protect your
-              organization from evolving digital threats.
+              Offense. Defense. Governance. We attack like adversaries, defend
+              around the clock, and align security with your business — as one
+              collective.
             </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-fedsec-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+      {pillarOrder.map((pillar) => {
+        const meta = pillarMeta[pillar];
+        const members = pillar === "Red Team"
+          ? ["vulnerability-assessment-and-penetration-testing", "software-security", "network-security"]
+          : pillar === "Blue Team"
+            ? ["security-operations", "incident-response"]
+            : ["grc-advisory"];
+        const pillarServices = services.filter((s) => members.includes(s.slug));
+
+        return (
+          <section
+            key={pillar}
+            className={`py-16 md:py-24 ${pillar === "Blue Team" ? "bg-fedsec-gray-900" : "bg-fedsec-black"}`}
           >
-            {services.map((service) => (
-              <motion.div key={service.slug} variants={fadeInUp}>
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="group block h-full bg-fedsec-gray-50 border border-fedsec-gray-200 rounded-2xl p-8 hover:border-fedsec-purple/30 hover:shadow-lg hover:shadow-fedsec-purple/5 transition-all duration-300"
-                >
-                  <div className="flex items-start gap-5">
-                    <div className="w-14 h-14 rounded-xl bg-fedsec-purple/10 flex items-center justify-center shrink-0 group-hover:bg-fedsec-purple group-hover:text-fedsec-white transition-all duration-300">
-                      <Image
-                        src={serviceIcons[service.slug] || "/images/protexy/icons/BiLwEGhOv1EUnb8FqA8ZzcGg.svg"}
-                        alt={serviceCategories[service.slug] || "Service"}
-                        width={28}
-                        height={28}
-                        className="w-7 h-7"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <span className="inline-block text-xs font-bold uppercase tracking-wider text-fedsec-purple mb-2 font-[family-name:var(--font-accent)]">
-                        {serviceCategories[service.slug] || "Service"}
-                      </span>
-                      <h3 className="text-xl md:text-2xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">
-                        {service.title}
-                      </h3>
-                      <p className="text-fedsec-gray-500 text-sm leading-relaxed">
-                        {serviceDescriptions[service.slug] || service.shortDescription}
-                      </p>
-                    </div>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                className="mb-12"
+              >
+                <motion.div variants={fadeInUp} className="flex items-start gap-6 mb-10">
+                  <div className={`w-16 h-16 rounded-2xl ${meta.chip} flex items-center justify-center shrink-0`}>
+                    <meta.icon className={meta.accent} size={30} />
                   </div>
-                </Link>
+                  <div>
+                    <span className="section-tag mb-3">{pillar}</span>
+                    <h2 className="text-3xl md:text-5xl font-bold text-fedsec-white mb-4 font-[family-name:var(--font-heading)]">
+                      {pillar === "Red Team"
+                        ? "Think like an attacker"
+                        : pillar === "Blue Team"
+                          ? "Defend like a sentinel"
+                          : "Secure by governance"}
+                    </h2>
+                    <p className="text-lg text-white/50 max-w-2xl">{meta.subtitle}</p>
+                  </div>
+                </motion.div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {pillarServices.map((service) => (
+                    <motion.div key={service.slug} variants={fadeInUp}>
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className={`group block h-full glass rounded-2xl p-8 border border-white/10 ${meta.border} transition-all duration-300 hover:shadow-lg hover:shadow-black/20`}
+                      >
+                        <span className={`inline-block text-xs font-bold uppercase tracking-wider ${meta.accent} mb-3 font-[family-name:var(--font-accent)]`}>
+                          {pillar}
+                        </span>
+                        <h3 className="text-xl md:text-2xl font-bold text-fedsec-white mb-3 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">
+                          {service.title}
+                        </h3>
+                        <p className="text-fedsec-gray-400 text-sm leading-relaxed mb-6">
+                          {service.shortDescription}
+                        </p>
+                        <span className={`inline-flex items-center gap-2 text-sm font-semibold ${meta.accent} font-[family-name:var(--font-accent)]`}>
+                          Explore service
+                          <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                        </span>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+            </div>
+          </section>
+        );
+      })}
 
       <CTABanner />
     </>

@@ -10,13 +10,13 @@ import { headerSlideDown } from "@/lib/animations";
 
 function FedsecLogo({ className = "" }: { className?: string }) {
   return (
-    <Link href="/" className={`inline-flex items-center gap-2.5 ${className}`}>
+    <Link href="/" className={`inline-flex items-center ${className}`}>
       <Image
-        src="/images/fedsec-logo-white.png"
+        src="/images/fedsec-logo-horizontal.png"
         alt="FEDSEC"
-        width={36}
-        height={36}
-        className="h-9 w-auto"
+        width={140}
+        height={40}
+        className="h-8 w-auto object-contain brightness-0 invert"
         priority
       />
     </Link>

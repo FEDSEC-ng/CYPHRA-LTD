@@ -265,6 +265,105 @@ body {
   color: white;
 }
 
+/* ─── Cursor Follow Dot (FNZ style) ─────────────────── */
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(218, 26, 93, 0.9);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, opacity 0.3s ease;
+  mix-blend-mode: screen;
+}
+
+.cursor-dot.is-active {
+  transform: translate(-50%, -50%) scale(2.5);
+  opacity: 0.2;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(218, 26, 93, 0.4);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease-out, height 0.3s ease-out, border-color 0.3s ease, opacity 0.3s ease;
+  mix-blend-mode: screen;
+}
+
+.cursor-ring.is-active {
+  width: 64px;
+  height: 64px;
+  border-color: rgba(218, 26, 93, 0.1);
+}
+
+.growable:hover ~ .cursor-ring,
+.growable:hover ~ .cursor-dot {
+  border-color: rgba(102, 47, 144, 0.6);
+}
+
+/* ─── Magnetic / Touch-Move Title ───────────────────── */
+
+.touch-move {
+  will-change: transform;
+}
+
+/* ─── Section Tag (socialander/novora label style) ──── */
+
+.section-tag {
+  font-family: var(--font-accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-fedsec-pink);
+}
+
+/* ─── Numbers Counter Ray ───────────────────────────── */
+
+.stat-orb {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ─── Ellipse Decorations (socialander blobs) ───────── */
+
+.blob-purple {
+  background: radial-gradient(circle at 30% 30%, rgba(102, 47, 144, 0.35), transparent 70%);
+  filter: blur(40px);
+}
+.blob-pink {
+  background: radial-gradient(circle at 30% 30%, rgba(218, 26, 93, 0.35), transparent 70%);
+  filter: blur(40px);
+}
+
+/* ─── Industries rayless (grid accent) ──────────────── */
+
+.mid-tone-line {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Video wrapper ─────────────────────────────────── */
+
+.video-frame {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 /* ─── Scrollbar ──────────────────────────────────────── */
 
 .scrollbar-hide {

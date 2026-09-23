@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -306,20 +306,6 @@ const postEngagement = [
       "Dedicated advisory as your security program and maturity grow with your business.",
   },
 ];
-
-const industries = [
-  "Finance & Banking",
-  "Healthcare",
-  "Technology & SaaS",
-  "Government",
-  "E-Commerce & Retail",
-  "Education",
-  "Energy & Utilities",
-  "Telecommunications",
-  "Manufacturing",
-  "Transportation",
-];
-
 const audiences = [
   {
     title: "Startups and Founders",
@@ -562,19 +548,22 @@ function HeroSection() {
 
 function PartnerLogosMarquee() {
   const items = [
-    "Financial Institutions", "Healthcare", "Technology & SaaS", "Government",
-    "E-Commerce", "Education", "Energy", "Telecommunications",
+    "Google", "X", "Tesla", "HackerOne", "Microsoft", "Amazon",
+    "Netflix", "Stripe", "Cloudflare", "Meta", "Airbnb", "Slack",
   ];
   return (
-    <section className="py-6 border-b border-white/6 bg-fedsec-black overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-8">
-          <span className="text-xs text-white/40 font-[family-name:var(--font-accent)] whitespace-nowrap uppercase tracking-wider">
-            Secured sectors:
-          </span>
-          <div className="flex items-center gap-12 animate-marquee">
-            {[...items, ...items].map((client, i) => (
-              <span key={i} className="text-sm text-white/40 font-[family-name:var(--font-accent)] whitespace-nowrap">
+    <section className="py-10 border-y border-fedsec-gray-900/10 bg-fedsec-white overflow-hidden">
+      <p className="text-center text-[11px] font-bold uppercase tracking-[0.3em] text-fedsec-gray-900/50 mb-6 font-[family-name:var(--font-accent)]">
+        Trusted by security teams at
+      </p>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-16 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+          <div className="flex items-center gap-16 shrink-0 animate-marquee">
+            {[...items, ...items, ...items].map((client, i) => (
+              <span
+                key={i}
+                className="text-2xl md:text-3xl font-black tracking-tight text-fedsec-gray-900/45 whitespace-nowrap transition-colors duration-300 hover:text-fedsec-gray-900/80 font-[family-name:var(--font-heading)] cursor-default"
+              >
                 {client}
               </span>
             ))}
@@ -1037,6 +1026,29 @@ function CaseStudiesSection() {
 
 /* How We Do It (novora-style hacking process) */
 function ProcessSection() {
+  const wheelRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: wheelRef, offset: ["start start", "end end"] });
+  const spring = useSpring(scrollYProgress, { stiffness: 80, damping: 24, mass: 0.6 });
+  const rotate = useTransform(spring, [0, 1], [0, 270]);
+  const rotateX = useTransform(spring, [0, 1], [0, 720]);
+  const [active, setActive] = useState(0);
+
+  const orbitRadius = 240;
+  const orbitPositions = processSteps.map((_, i) => {
+    const angle = (i / processSteps.length) * Math.PI * 2 - Math.PI / 2;
+    return {
+      x: Math.cos(angle) * orbitRadius,
+      y: Math.sin(angle) * orbitRadius,
+    };
+  });
+
+  useMotionValueEvent(spring, "change", (v) => {
+    const idx = Math.min(processSteps.length - 1, Math.max(0, Math.floor(v * processSteps.length)));
+    setActive(idx);
+  });
+
+  const ActiveIcon = processSteps[active].icon;
+
   return (
     <section className="py-24 md:py-32 bg-fedsec-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1054,40 +1066,91 @@ function ProcessSection() {
           </h2>
         </motion.div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
-        >
-          {processSteps.map((step) => (
+        <div ref={wheelRef} className="relative h-[300vh]">
+          <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+            {/* center icon */}
             <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6 }}
-              className="group relative p-8 glass rounded-2xl overflow-hidden hover:border-fedsec-purple/30 transition-all duration-300"
+              style={{ rotateX }}
+              className="absolute w-28 h-28 md:w-36 md:h-36 rounded-full bg-fedsec-purple flex items-center justify-center z-20 shadow-[0_0_60px_rgba(102,47,144,0.6)]"
             >
-              <div className="absolute top-6 right-6 text-5xl font-bold text-white/[0.06] font-[family-name:var(--font-heading)] select-none">
-                {step.number}
-              </div>
-              <div className="w-12 h-12 rounded-xl bg-fedsec-purple/10 flex items-center justify-center mb-6 group-hover:bg-fedsec-purple transition-colors duration-300">
-                <step.icon size={24} className="text-fedsec-purple group-hover:text-white transition-colors duration-300" />
-              </div>
-              <span className="inline-block text-xs font-bold uppercase tracking-widest text-fedsec-pink mb-2 font-[family-name:var(--font-accent)]">
-                {step.kicker}
-              </span>
-              <h3 className="text-xl font-bold text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">
-                {step.title}
-              </h3>
-              <p className="text-sm text-white/40 leading-relaxed font-[family-name:var(--font-body)]">
-                {step.description}
+              <ActiveIcon size={56} className="text-fedsec-white" strokeWidth={1.5} />
+            </motion.div>
+
+            {/* orbit ring */}
+            <motion.svg viewBox="0 0 100 100" className="absolute w-[520px] h-[520px] md:w-[640px] md:h-[640px]">
+              <circle cx="50" cy="50" r="47" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="0.35" strokeDasharray="0.6 3" />
+            </motion.svg>
+
+            {/* orbiting step nodes */}
+            <motion.div style={{ rotate }} className="absolute w-[520px] h-[520px] md:w-[640px] md:h-[640px]">
+              {processSteps.map((step, i) => {
+                const pos = orbitPositions[i];
+                const state =
+                  i < active ? "done" : i === active ? "current" : "pending";
+                return (
+                  <motion.div
+                    key={step.number}
+                    style={{ rotate: -rotate }}
+                    className="absolute"
+                  >
+                    <motion.div
+                      initial={{ x: 0, y: 0 }}
+                      animate={{ x: pos.x, y: pos.y }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
+                      className="flex flex-col items-center gap-4"
+                    >
+                      <div
+                        className={`w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center border transition-all duration-500 ${
+                          state === "current"
+                            ? "bg-fedsec-purple/20 border-fedsec-purple shadow-[0_0_40px_rgba(102,47,144,0.4)]"
+                            : state === "done"
+                              ? "bg-fedsec-gray-900/40 border-fedsec-gray-700/60"
+                              : "bg-fedsec-gray-900/40 border-white/10"
+                        }`}
+                      >
+                        <step.icon
+                          size={40}
+                          className={`transition-colors duration-500 ${
+                            state === "current"
+                              ? "text-fedsec-purple"
+                              : state === "done"
+                                ? "text-fedsec-gray-500"
+                                : "text-white/25"
+                          }`}
+                        />
+                      </div>
+                      <span
+                        className={`text-[11px] font-bold uppercase tracking-[0.2em] font-[family-name:var(--font-accent)] transition-colors duration-500 ${
+                          state === "current"
+                            ? "text-fedsec-pink"
+                            : state === "done"
+                              ? "text-white/40"
+                              : "text-white/25"
+                        }`}
+                      >
+                        {step.kicker}
+                      </span>
+                    </motion.div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+
+            {/* active step detail panel */}
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="absolute bottom-[12vh] left-1/2 -translate-x-1/2 text-center px-6 max-w-xl z-10"
+            >
+              <span className="section-tag">{processSteps[active].number} / {processSteps[active].title}</span>
+              <p className="text-sm md:text-base text-white/45 mt-3 font-[family-name:var(--font-body)]">
+                {processSteps[active].description}
               </p>
             </motion.div>
-          ))}
-        </motion.div>
+          </div>
+        </div>
 
         <div className="flex flex-wrap justify-center gap-3 mb-16">
           {["Reconnaissance", "Fingerprinting", "Exploitation", "Reporting"].map((label) => (
@@ -1349,55 +1412,6 @@ function AudiencesSection() {
   );
 }
 
-/* Industries */
-function IndustriesSection() {
-  return (
-    <section className="py-24 md:py-28 bg-fedsec-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-14"
-        >
-          <span className="section-tag">Industries</span>
-          <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mt-4 mb-4 font-[family-name:var(--font-heading)] tracking-tight">
-            Industries We <span className="gradient-text">Secure</span>
-          </h2>
-          <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
-            A tailored approach per industry. No recycled strategies.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.06 } } }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
-        >
-          {industries.map((industry) => (
-            <motion.div
-              key={industry}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.4 }}
-              className="group p-6 glass rounded-xl text-center hover:border-fedsec-purple/20 hover:glow-sm transition-all duration-300"
-            >
-              <Shield size={24} className="text-fedsec-purple mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <p className="text-sm font-semibold text-fedsec-white font-[family-name:var(--font-accent)]">
-                {industry}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
 /* CTA */
 function CTASection() {
   return (
@@ -1466,7 +1480,6 @@ export default function Home() {
       <WhyFEDSEC />
       <AboutCard />
       <AudiencesSection />
-      <IndustriesSection />
       <CTASection />
     </>
   );

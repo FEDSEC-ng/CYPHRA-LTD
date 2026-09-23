@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   Shield,
+  ShieldCheck,
   ArrowRight,
   Search,
   Layers,
@@ -73,25 +74,9 @@ const team = [
     short: "I",
   },
   {
-    name: "Anih Kosarachi Clement",
-    role: "SOC Analyst",
-    bio: "FUTMinna cybersecurity graduate grounded in SIEM concepts, alert triage, and threat detection. Anchors FEDSEC's defensive security capability.",
-    image: "/images/team/clement.png",
-    cv: "/images/resumes/clement-cv.pdf",
-    short: "C",
-  },
-  {
-    name: "Olowolagba Peter",
-    role: "Network Security Engineer",
-    bio: "Enterprise network defense from Stanbic IBTC. Cisco core switching, SD-WAN, SolarWinds, and enterprise security tools. Pursuing CCNA.",
-    image: "/images/team/peter.png",
-    cv: "/images/resumes/peter-cv.pdf",
-    short: "P",
-  },
-  {
     name: "Badu Zaccheaus J.",
     role: "Cyber Security Analyst",
-    bio: "Hands-on testing of production systems — misconfigurations, insecure headers, and web application flaws turned into clear, actionable reports.",
+    bio: "Hands-on testing of production systems — misconfigurations, insecure headers, and web application flaws turned into clear, actionable reports. Part of the discipline behind FEDSEC's methodology: authorized, documented, and built to hold up under scrutiny.",
     image: "/images/team/badu.png",
     cv: "/images/resumes/badu-cv.docx",
     short: "B",
@@ -108,18 +93,19 @@ const stats = [
 ];
 
 const locations = [
-  { city: "Lagos", country: "Nigeria", flag: "NG", blurb: "Headquarters — enterprise, fintech & government engagements across West Africa." },
-  { city: "Abuja", country: "Nigeria", flag: "NG", blurb: "Advisory & compliance practice serving institutions and public sector." },
-  { city: "Munich", country: "Germany", flag: "DE", blurb: "European operations — GRC, data protection, and penetration testing." },
-  { city: "London", country: "United Kingdom", flag: "UK", blurb: "Partnered delivery for UK & EU regulated organizations." },
-  { city: "New York", country: "United States", flag: "US", blurb: "Coverage for US clients across cloud security and red teaming." },
-  { city: "Accra", country: "Ghana", flag: "GH", blurb: "West African expansion — SOC advisory and security operations." },
+  { city: "Lagos", country: "Nigeria", flag: "NG", image: "/images/locations/lagos.svg", blurb: "Headquarters — enterprise, fintech & government engagements across West Africa.", service: "/services/penetration-testing" },
+  { city: "Abuja", country: "Nigeria", flag: "NG", image: "/images/locations/abuja.svg", blurb: "Advisory & compliance practice serving institutions and public sector.", service: "/services/grc-advisory" },
+  { city: "Munich", country: "Germany", flag: "DE", image: "/images/locations/munich.svg", blurb: "European operations — GRC, data protection, and penetration testing.", service: "/services/grc-advisory" },
+  { city: "London", country: "United Kingdom", flag: "UK", image: "/images/locations/london.svg", blurb: "Partnered delivery for UK & EU regulated organizations.", service: "/services/penetration-testing" },
+  { city: "New York", country: "United States", flag: "US", image: "/images/locations/nyc.svg", blurb: "Coverage for US clients across cloud security and red teaming.", service: "/services/penetration-testing" },
+  { city: "Accra", country: "Ghana", flag: "GH", image: "/images/locations/accra.svg", blurb: "West African expansion — SOC advisory and security operations.", service: "/services/soc-monitoring" },
 ];
 
 const growthTabs = [
   {
     id: "red",
     label: "Red Team",
+    icon: Target,
     eyebrow: "Offensive Security",
     tagline: "We attack like an adversary — before they do. Authorized, documented, and built to hold up under scrutiny.",
     description:
@@ -135,6 +121,7 @@ const growthTabs = [
   {
     id: "blue",
     label: "Blue Team",
+    icon: ShieldCheck,
     eyebrow: "Defensive Security",
     tagline: "We defend in depth. Detection, response, and hardening engineered for your environment.",
     description:
@@ -150,6 +137,7 @@ const growthTabs = [
   {
     id: "grc",
     label: "GRC",
+    icon: FileCheck,
     eyebrow: "Governance, Risk & Compliance",
     tagline: "We translate cyber risk into the language your board actually acts on.",
     description:
@@ -673,7 +661,7 @@ function LocationsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide lg:overflow-visible lg:flex-wrap lg:justify-center">
           {locations.map((loc, i) => (
             <motion.div
               key={loc.city}
@@ -681,25 +669,34 @@ function LocationsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.05 }}
-              className="group relative p-8 glass rounded-2xl hover:border-fedsec-purple/30 transition-all duration-300"
+              className="snap-start shrink-0 w-[320px] sm:w-[360px] group relative rounded-2xl overflow-hidden card-glow hover:border-fedsec-purple/40 transition-all duration-300"
             >
-              <div className="flex items-center justify-between mb-5">
-                <div className="w-14 h-14 rounded-full bg-fedsec-purple/10 flex items-center justify-center text-xl font-bold text-fedsec-white font-[family-name:var(--font-heading)]">
-                  {loc.flag}
+              <Link href={loc.service} className="block relative h-56 overflow-hidden">
+                <Image
+                  src={loc.image}
+                  alt={`${loc.city}, ${loc.country}`}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-fedsec-black via-black/30 to-transparent" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute inset-0 grid-pattern opacity-30" />
+                  <div className="absolute inset-0 bg-fedsec-purple/20 mix-blend-multiply" />
                 </div>
-                <span className="inline-flex items-center gap-2 text-sm font-semibold text-fedsec-purple font-[family-name:var(--font-accent)]">
-                  Work with us <ArrowRight size={14} />
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-fedsec-white mb-1 font-[family-name:var(--font-heading)]">
-                {loc.city}
-              </h3>
-              <p className="text-sm text-fedsec-pink font-semibold mb-4 font-[family-name:var(--font-accent)]">
-                {loc.country}
-              </p>
-              <p className="text-sm text-white/40 leading-relaxed font-[family-name:var(--font-body)]">
-                {loc.blurb}
-              </p>
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-xl font-bold text-fedsec-white font-[family-name:var(--font-heading)]">{loc.city}</h3>
+                    <span className="text-2xl">{loc.flag}</span>
+                  </div>
+                  <p className="text-xs font-semibold text-fedsec-pink font-[family-name:var(--font-accent)]">{loc.country}</p>
+                  <p className="text-sm text-white/60 leading-relaxed mt-3 font-[family-name:var(--font-body)] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    {loc.blurb}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs font-semibold text-fedsec-purple mt-3 font-[family-name:var(--font-accent)]">
+                    View services <ArrowRight size={13} />
+                  </span>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -734,75 +731,112 @@ function GrowthTabs() {
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-wrap justify-center gap-3 mb-14"
-        >
-          {growthTabs.map((t, i) => (
-            <button
-              key={t.id}
-              onClick={() => setActive(i)}
-              className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 font-[family-name:var(--font-accent)] ${
-                active === i
-                  ? "bg-fedsec-purple text-white glow-purple"
-                  : "glass text-white/40 hover:text-fedsec-white"
-              }`}
-            >
-              {t.label}
-            </button>
-          ))}
-        </motion.div>
-
-        <motion.div
-          key={tab.id}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-        >
-          <div className="glass-strong rounded-2xl p-8 md:p-10 flex flex-col">
-            <span className="text-sm font-bold uppercase tracking-widest text-fedsec-pink mb-3 font-[family-name:var(--font-accent)]">
-              {tab.eyebrow}
-            </span>
-            <h3 className="text-2xl md:text-3xl font-bold text-fedsec-white mb-4 font-[family-name:var(--font-heading)]">
-              {tab.tagline}
-            </h3>
-            <p className="text-white/50 leading-relaxed mb-6 font-[family-name:var(--font-body)]">
-              {tab.description}
-            </p>
-            <Link href="/services" className="grow-pill mt-auto growable">
-              <span className="pill-label">Explore {tab.label} Services</span>
-              <span className="pill-icon">
-                <ArrowRight size={18} />
-              </span>
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {tab.items.map((item, i) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="group p-6 glass rounded-2xl hover:border-fedsec-purple/30 transition-all duration-300"
+        <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-6 lg:gap-10 items-start">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex lg:flex-col gap-3"
+          >
+            {growthTabs.map((t, i) => (
+              <button
+                key={t.id}
+                onClick={() => setActive(i)}
+                className={`group flex-1 lg:flex-none flex items-center gap-4 px-5 py-5 rounded-2xl text-left transition-all duration-300 border font-[family-name:var(--font-accent)] ${
+                  active === i
+                    ? t.id === "red"
+                      ? "bg-fedsec-red/20 border-fedsec-red/50 text-fedsec-white glow-red"
+                      : t.id === "blue"
+                      ? "bg-fedsec-blue/20 border-fedsec-blue/50 text-fedsec-white glow-blue"
+                      : "bg-fedsec-emerald/20 border-fedsec-emerald/50 text-fedsec-white glow-emerald"
+                    : "glass border-transparent text-white/40 hover:text-fedsec-white"
+                }`}
               >
-                <div className="w-11 h-11 rounded-xl bg-fedsec-purple/10 flex items-center justify-center mb-4 group-hover:bg-fedsec-purple group-hover:text-white transition-colors duration-300">
-                  <item.icon size={22} className="text-fedsec-purple group-hover:text-white transition-colors duration-300" />
-                </div>
-                <h4 className="font-bold text-fedsec-white mb-2 font-[family-name:var(--font-heading)]">
-                  {item.title}
-                </h4>
-                <p className="text-sm text-white/40 leading-relaxed font-[family-name:var(--font-body)]">
-                  {item.desc}
-                </p>
-              </motion.div>
+                <span
+                  className={`w-11 h-11 shrink-0 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                    active === i
+                      ? "bg-fedsec-purple/15 text-fedsec-purple"
+                      : "bg-fedsec-purple/10 text-fedsec-purple"
+                  }`}
+                >
+                  <t.icon size={20} />
+                </span>
+                <span>
+                  <span className="block text-xs font-bold uppercase tracking-widest opacity-60 text-[10px]">
+                    {t.eyebrow}
+                  </span>
+                  <span className="block font-bold text-sm">{t.label}</span>
+                </span>
+              </button>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+
+          <motion.div
+            key={tab.id}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="glass-strong rounded-2xl overflow-hidden"
+          >
+            <div className="relative aspect-[16/10] md:aspect-[21/10] overflow-hidden">
+              <video
+                className="absolute inset-0 w-full h-full object-cover opacity-70"
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster="/images/fedsec-brand-video-poster.jpg"
+              >
+                <source src="/images/fedsec-brand-video.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-fedsec-black via-transparent to-fedsec-black/40" />
+              <div className="absolute top-4 left-4 flex items-center gap-2">
+                <span
+                  className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest font-[family-name:var(--font-accent)] ${
+                    tab.id === "red"
+                      ? "bg-fedsec-red text-white"
+                      : tab.id === "blue"
+                      ? "bg-fedsec-blue text-white"
+                      : "bg-fedsec-emerald text-white"
+                  }`}
+                >
+                  {tab.eyebrow}
+                </span>
+              </div>
+              <div className="absolute bottom-6 left-6 right-6">
+                <h3 className="text-2xl md:text-3xl font-bold text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">
+                  {tab.tagline}
+                </h3>
+                <p className="text-white/60 leading-relaxed max-w-2xl font-[family-name:var(--font-body)]">
+                  {tab.description}
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-6 md:p-8">
+              {tab.items.map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: i * 0.06 }}
+                  className="group p-6 glass rounded-2xl hover:border-fedsec-purple/30 transition-all duration-300"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-fedsec-purple/10 flex items-center justify-center mb-4 group-hover:bg-fedsec-purple group-hover:text-white transition-colors duration-300">
+                    <item.icon size={22} className="text-fedsec-purple group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <h4 className="font-bold text-fedsec-white mb-2 font-[family-name:var(--font-heading)]">
+                    {item.title}
+                  </h4>
+                  <p className="text-sm text-white/40 leading-relaxed font-[family-name:var(--font-body)]">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

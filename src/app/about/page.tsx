@@ -51,22 +51,6 @@ const team = [
     credentials: "CAP · CNSP · XRP Ledger Audits",
   },
   {
-    name: "Anih Kosarachi Clement",
-    role: "SOC Analyst",
-    bio: "Cybersecurity graduate of FUTMinna with a strong foundation in security monitoring, alert triage, incident analysis, and threat detection. Grounded in SIEM concepts, log versus event analysis, IOCs, and endpoint behavior — building toward incident response, threat hunting, and detection engineering.",
-    image: "/images/team/clement.png",
-    cv: "/images/resumes/clement-cv.pdf",
-    credentials: "FUTMinna · SIEM · Threat Detection",
-  },
-  {
-    name: "Olowolagba Peter",
-    role: "Network Security Engineer",
-    bio: "Network security specialist with hands-on experience across enterprise networking and IT security operations, gained through internships with Stanbic IBTC Pension Managers. Cisco core switching, SD-WAN, SolarWinds, ManageEngine, Forcepoint, Trellix ePO, Check Point SmartConsole, and Imperva DAM. Pursuing CCNA.",
-    image: "/images/team/peter.png",
-    cv: "/images/resumes/peter-cv.pdf",
-    credentials: "CCNA (pursuing) · Cisco · Stanbic IBTC",
-  },
-  {
     name: "Badu Zaccheaus J.",
     role: "Cyber Security Analyst",
     bio: "Cybersecurity analyst with hands-on experience testing production systems — uncovering misconfigurations, insecure headers, and web application flaws, and turning findings into clear, actionable reports for stakeholders. Part of the discipline behind FEDSEC's methodology: authorized, documented, and built to hold up under scrutiny.",

@@ -1256,7 +1256,7 @@ function AboutCard() {
           transition={{ duration: 0.7 }}
           className="mb-16"
         >
-          <span className="section-tag">About Us</span>
+          <span className="section-tag">Meet the Team</span>
           <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mt-4 mb-4 font-[family-name:var(--font-heading)] tracking-tight">
             Built on Trust.{" "}
             <span className="gradient-text">Driven by Expertise.</span>

@@ -92,8 +92,8 @@ export const blogs: BlogPost[] = [
     category: "Threat Monitoring",
     date: "2026-09-10",
     readTime: "7 min read",
-    author: "Anih Kosarachi Clement",
-    authorRole: "SOC Analyst",
+    author: "Agnes Akpa",
+    authorRole: "Cyber Security Analyst",
     image: "/images/protexy/blogs/blog-related4.png",
   },
 ];

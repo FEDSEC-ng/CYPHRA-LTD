@@ -10,7 +10,7 @@ import CTABanner from "@/components/ui/CTABanner";
 export default function BlogsPage() {
   return (
     <>
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-fedsec-gray-900 overflow-hidden">
+      <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28 bg-fedsec-gray-900 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-fedsec-purple/20 via-transparent to-fedsec-pink/10" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -21,10 +21,10 @@ export default function BlogsPage() {
             <span className="inline-block mb-4 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-fedsec-purple bg-fedsec-purple/10 rounded-full font-[family-name:var(--font-accent)]">
               Our blogs
             </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
+            <h1 className="text-[clamp(2.8rem,8vw,4.5rem)] font-normal text-fedsec-white leading-[.98] mb-6 font-[family-name:var(--font-heading)]">
               Latest cybersecurity news updates
             </h1>
-            <p className="text-lg md:text-xl text-fedsec-gray-400 max-w-3xl leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-fedsec-gray-400 max-w-3xl leading-relaxed">
               Articles, research, security awareness content, and technical
               write-ups from our team of cybersecurity professionals.
             </p>
@@ -32,7 +32,7 @@ export default function BlogsPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-fedsec-white">
+      <section className="py-16 sm:py-20 md:py-28 bg-fedsec-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={staggerContainer}

@@ -26,7 +26,7 @@ export default function ScrollingBadges({ badges }: ScrollingBadgesProps) {
         {duplicated.map((badge, i) => (
           <span
             key={i}
-            className="inline-flex items-center px-6 py-2 mx-2 rounded-full border border-fedsec-gray-200 bg-fedsec-white text-sm font-medium text-fedsec-gray-600 font-[family-name:var(--font-accent)]"
+            className="inline-flex items-center px-5 py-2 mx-2 rounded-full border border-fedsec-gray-200 bg-fedsec-white text-xs sm:text-sm font-medium text-fedsec-gray-600 font-[family-name:var(--font-accent)]"
           >
             {badge}
           </span>

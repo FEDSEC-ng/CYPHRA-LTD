@@ -26,6 +26,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 88px;
 }
 
 body {
@@ -34,6 +35,25 @@ body {
   color: var(--color-fedsec-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-fedsec-pink);
+  outline-offset: 4px;
 }
 
 ::selection {
@@ -185,6 +205,33 @@ body {
 .animate-shimmer {
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .grow-pill {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .section-glow::before {
+    width: 320px;
+    height: 240px;
+  }
 }
 
 /* ─── Grow Pill Button ───────────────────────────────── */

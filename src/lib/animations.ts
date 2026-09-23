@@ -7,9 +7,9 @@ import {
 
 export const springTransition: Transition = {
   type: "spring",
-  damping: 40,
-  stiffness: 200,
-  mass: 1,
+  damping: 30,
+  stiffness: 160,
+  mass: 0.8,
 };
 
 export const springFast: Transition = {
@@ -21,7 +21,7 @@ export const springFast: Transition = {
 };
 
 export const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 28 },
   visible: {
     opacity: 1,
     y: 0,
@@ -58,7 +58,7 @@ export const scaleUp: Variants = {
 };
 
 export const slideInLeft: Variants = {
-  hidden: { opacity: 0, x: -50 },
+  hidden: { opacity: 0, x: -28 },
   visible: {
     opacity: 1,
     x: 0,
@@ -67,7 +67,7 @@ export const slideInLeft: Variants = {
 };
 
 export const slideInRight: Variants = {
-  hidden: { opacity: 0, x: 50 },
+  hidden: { opacity: 0, x: 28 },
   visible: {
     opacity: 1,
     x: 0,

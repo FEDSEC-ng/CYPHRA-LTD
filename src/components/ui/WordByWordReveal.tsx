@@ -26,12 +26,12 @@ export default function WordByWordReveal({
           animate={{ opacity: 1, y: 0 }}
           transition={{
             type: "spring",
-            damping: 40,
-            stiffness: 200,
-            mass: 1,
+            damping: 30,
+            stiffness: 160,
+            mass: 0.8,
             delay: i * 0.06,
           }}
-          className="inline-block mr-[0.3em]"
+          className="inline-block mr-[0.3em] will-change-transform"
         >
           {word}
         </motion.span>

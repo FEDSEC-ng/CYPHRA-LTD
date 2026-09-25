@@ -1152,6 +1152,8 @@ function ProcessSection() {
   const { scrollYProgress } = useScroll({ target: wheelRef, offset: ["start start", "end end"] });
   const spring = useSpring(scrollYProgress, { stiffness: 80, damping: 24, mass: 0.6 });
   const rotate = useTransform(spring, [0, 1], [0, 270]);
+  // live counter-rotation so every node stays upright while the ring turns
+  const counterRotate = useTransform(rotate, (v) => -v);
   const [active, setActive] = useState(0);
 
   const [vp, setVp] = useState({ w: 1200, h: 850 });
@@ -1243,7 +1245,7 @@ function ProcessSection() {
                     }}
                   >
                     {/* counter-rotation pivots on the node itself → icon stays upright */}
-                    <motion.div style={{ rotate: -rotate }} className="will-change-transform">
+                    <motion.div style={{ rotate: counterRotate }} className="will-change-transform">
                       <div
                         className={`flex flex-col items-center gap-3 ${
                           state === "current" ? "scale-110" : "scale-100"

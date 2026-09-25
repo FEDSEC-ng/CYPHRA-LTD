@@ -107,6 +107,37 @@ const approach = [
   { title: "Strengthen", desc: "We help organizations improve their security posture and become more resilient over time." },
 ];
 
+const purpose = [
+  {
+    tag: "Why we exist",
+    title: "Risk found before it becomes a threat.",
+    body: "We exist to make effective cybersecurity more accessible, practical, and actionable — helping organizations identify risks before they become serious threats.",
+  },
+  {
+    tag: "Our mission",
+    title: "Trusted, practical, multidisciplinary security.",
+    body: "To provide trusted, practical, and multidisciplinary cybersecurity solutions that help organizations identify risks, strengthen their security posture, and operate with greater confidence.",
+  },
+  {
+    tag: "Our vision",
+    title: "A trusted name in cybersecurity.",
+    body: "To become a trusted cybersecurity firm recognized for bringing together diverse expertise, delivering practical security solutions, and contributing to a more secure digital ecosystem.",
+  },
+];
+
+const futureAreas = [
+  "Red Team Operations",
+  "Managed Detection",
+  "Application & API Security",
+  "Cloud Security",
+  "Incident Response",
+  "Threat Intelligence",
+  "Awareness & Training",
+  "Advanced GRC",
+  "Security Research",
+  "Security Products",
+];
+
 const whoWeAre = [
   {
     tag: "Who we are",
@@ -178,6 +209,60 @@ export default function AboutPage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Purpose — why we exist / mission / vision (from the brand book) */}
+      <section className="py-20 md:py-24 bg-fedsec-black border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {purpose.map((item, index) => (
+              <motion.div
+                key={item.tag}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ ...springTransition, delay: index * 0.08 }}
+                className="p-8 glass card-glow rounded-2xl"
+              >
+                <span className="section-tag">{item.tag}</span>
+                <h3 className="text-xl font-bold text-fedsec-white mt-4 mb-3 font-[family-name:var(--font-heading)] leading-snug">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-white/45 leading-relaxed font-[family-name:var(--font-body)]">
+                  {item.body}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Our future — where the collective is headed (brand book) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ ...springTransition, delay: 0.15 }}
+            className="mt-10 glass-strong rounded-2xl p-6 md:p-8"
+          >
+            <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+              <p className="shrink-0 text-sm font-bold text-fedsec-white font-[family-name:var(--font-heading)] md:w-44">
+                Built for the long run.
+                <span className="block text-xs font-medium text-white/40 mt-1 font-[family-name:var(--font-body)]">
+                  Deeper expertise, stronger partnerships — our capabilities keep growing.
+                </span>
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {futureAreas.map((area) => (
+                  <span
+                    key={area}
+                    className="px-3 py-1.5 rounded-full text-xs font-semibold text-white/60 bg-fedsec-purple/10 border border-fedsec-purple/20 hover:text-fedsec-white hover:border-fedsec-purple/50 transition-colors font-[family-name:var(--font-accent)]"
+                  >
+                    {area}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

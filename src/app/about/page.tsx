@@ -112,8 +112,8 @@ const whoWeAre = [
     tag: "Who we are",
     title: "Not a vendor. A collective on your bench.",
     body: "CYPHRA operates as an extension of your team — offensive specialists, defensive engineers, and governance advisors who sit with you, think with you, and build with you. One engagement or a full security program, the collective works as one.",
-    image: "/images/why/why3.jpg",
-    alt: "The collective working together around a screen",
+    image: "/images/why/why4.jpg",
+    alt: "Analysts reviewing security dashboards",
   },
   {
     tag: "What we believe",
@@ -156,8 +156,8 @@ export default function AboutPage() {
               </Link>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ ...springTransition, delay: 0.2 }} className="relative">
-              <div className="relative rounded-3xl overflow-hidden border border-white/10">
-                <Image src="/images/protexy/about/about-main.png" alt="About CYPHRA" width={640} height={520} className="w-full h-auto object-cover" priority />
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[5/4]">
+                <Image src="/images/why/why3.jpg" alt="The CYPHRA collective at work" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" priority />
                 <div className="absolute inset-0 bg-gradient-to-t from-fedsec-black/60 to-transparent" />
               </div>
             </motion.div>

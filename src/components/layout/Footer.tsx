@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { SITE, SOCIAL_LINKS } from "@/lib/constants";
+import CyphraLogo from "./CyphraLogo";
 
 const serviceLinks = [
   { label: "Vulnerability Assessment & Penetration Testing", href: "/services/vulnerability-assessment-and-penetration-testing" },
@@ -66,16 +67,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-4">
-            <Link href="/" className="inline-flex items-center mb-5">
-              <span className="inline-flex items-center gap-2.5">
-                <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-fedsec-purple to-fedsec-pink font-[family-name:var(--font-heading)] text-sm font-bold text-white">
-                  C
-                </span>
-                <span className="font-[family-name:var(--font-heading)] text-xl font-bold tracking-tight text-white">
-                  CYPHRA<span className="text-fedsec-pink">.</span>
-                </span>
-              </span>
-            </Link>
+            <div className="mb-5">
+              <CyphraLogo />
+            </div>
             <p className="text-sm text-white/40 leading-relaxed mb-6 max-w-xs font-[family-name:var(--font-body)]">
               {SITE.description}
             </p>

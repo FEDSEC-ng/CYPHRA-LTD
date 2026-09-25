@@ -1,24 +1,27 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 /**
- * CyphraLogo — text wordmark pending official CYPHRA logo assets.
- * Swap the wordmark for an <Image> of the official logo when provided.
+ * CyphraLogo — official brand lockup from /public/images.
+ * White variant for dark surfaces (header, footer).
  */
 export default function CyphraLogo({ className = "" }: { className?: string }) {
   return (
     <Link
       href="/"
-      aria-label="CYPHRA home"
-      className={`inline-flex items-center gap-2.5 ${className}`}
+      aria-label="CYPHRA — Know Your Risk"
+      className={`relative inline-block shrink-0 ${className}`}
     >
-      <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-fedsec-purple to-fedsec-pink font-[family-name:var(--font-heading)] text-sm font-bold text-white">
-        C
-      </span>
-      <span className="font-[family-name:var(--font-heading)] text-xl font-bold tracking-tight text-white">
-        CYPHRA<span className="text-fedsec-pink">.</span>
-      </span>
+      <Image
+        src="/images/fedsec-logo-white.png"
+        alt="CYPHRA — Know Your Risk"
+        width={506}
+        height={149}
+        priority
+        className="h-8 w-auto md:h-9"
+      />
     </Link>
   );
 }

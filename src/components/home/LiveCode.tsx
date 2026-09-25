@@ -15,6 +15,8 @@ const toneClass: Record<NonNullable<CodeLine["tone"]>, string> = {
   dim: "text-white/45",
 };
 
+export { toneClass };
+
 /**
  * LiveCode — self-typing terminal output used inside the process wheel and
  * the red/blue/GRC tab panel. Reveals lines one by one, holds with a blinking

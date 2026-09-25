@@ -29,6 +29,7 @@ import {
   HeartHandshake,
 } from "lucide-react";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
+import AutoCodeViewer from "@/components/home/AutoCodeViewer";
 import CaseStudiesFolderStack from "@/components/home/CaseStudiesFolderStack";
 import ColorSplash from "@/components/home/ColorSplash";
 import LiveCode, { type CodeLine } from "@/components/home/LiveCode";
@@ -325,27 +326,67 @@ const heroChips = [
   { label: "24/7 SOC Monitoring", icon: Radar },
 ];
 
-/* Live code streams — per growth tab and per process step */
+/* Auto-code files — one per discipline, typed live in the rectangle viewer */
 
-const tabStreams: Record<string, CodeLine[]> = {
-  red: [
-    { text: "nmap -sS -sV -T4 target.corp --top-ports 1000", tone: "net" },
-    { text: "param id=104 → probing injection points", tone: "attack" },
-    { text: "payload: ' OR 1=1 --  →  200 OK (0.4s)", tone: "attack" },
-    { text: "[!!] SQLi confirmed — chained to admin", tone: "warn" },
-  ],
-  blue: [
-    { text: "pkt 10.0.4.12:443 ⇄ 91.203.x.x  TLS 1.3 hs ok", tone: "net" },
-    { text: "SIEM rule TA0007: 14 beacon attempts blocked", tone: "ok" },
-    { text: "EDR quarantine: cobaltstrike.beacon.dll", tone: "warn" },
-    { text: "SOC ticket #4821 escalated → IR retainer", tone: "net" },
-  ],
-  grc: [
-    { text: "policy rbac/finance-portal.yaml — applying", tone: "net" },
-    { text: "role: auditor   allow: read:reports", tone: "ok" },
-    { text: "role: analyst   allow: read:*  write:drafts", tone: "ok" },
-    { text: "ISO 27001: 94 controls mapped · 0 majors", tone: "ok" },
-  ],
+const tabCodeFiles: Record<string, { file: string; status: string; lines: CodeLine[] }> = {
+  red: {
+    file: "recon_redteam.ts",
+    status: "authorized engagement · simulated",
+    lines: [
+      { text: "const target = \"client.corp\";", tone: "net" },
+      { text: "const scope  = authorize({", tone: "dim" },
+      { text: "  nets: [\"10.0.4.0/22\"], until: \"Q3\" });", tone: "dim" },
+      { text: "", tone: "dim" },
+      { text: "await recon.enumerate(target, {", tone: "net" },
+      { text: "  ports: \"top-1000\", stealth: true });", tone: "net" },
+      { text: "// → 47 hosts · nginx 1.24.0 · Drupal 9.5", tone: "ok" },
+      { text: "", tone: "dim" },
+      { text: "const sqli = await probe.param(104, {", tone: "attack" },
+      { text: "  payloads: ['\u0027 OR 1=1 --'] });", tone: "attack" },
+      { text: "if (sqli.confirmed) {", tone: "attack" },
+      { text: "  chain([idor(), tokenReuse()])", tone: "warn" },
+      { text: "    .escalateTo(\"admin\");", tone: "warn" },
+      { text: "  report({ severity: \"critical\", cvss: 9.1 });", tone: "ok" },
+      { text: "}", tone: "attack" },
+    ],
+  },
+  blue: {
+    file: "soc_detection.pcap",
+    status: "live detection stream · 24/7",
+    lines: [
+      { text: "stream.on(\"packet\", (pkt) => {", tone: "net" },
+      { text: "  soc.inspect(pkt); // 10.0.4.12 ⇄ 91.203.x", tone: "net" },
+      { text: "}); // TLS 1.3 handshake ok", tone: "ok" },
+      { text: "", tone: "dim" },
+      { text: "siem.match(\"TA0007\", {", tone: "net" },
+      { text: "  beacon: /cobaltstrike/, window: \"60s\" });", tone: "net" },
+      { text: "// → 14 beacon attempts blocked", tone: "ok" },
+      { text: "", tone: "dim" },
+      { text: "edr.quarantine(\"cobaltstrike.beacon.dll\");", tone: "warn" },
+      { text: "ir.open(\"#4821\", {", tone: "attack" },
+      { text: "  severity: \"high\", playbook: \"C2-Contain\" });", tone: "attack" },
+      { text: "dashboard.push(\"risk reduced → 41%\");", tone: "ok" },
+    ],
+  },
+  grc: {
+    file: "rbac_policy.yaml",
+    status: "policy: enforced · 0 majors",
+    lines: [
+      { text: "policy: finance-portal", tone: "net" },
+      { text: "roles:", tone: "dim" },
+      { text: "  auditor:", tone: "net" },
+      { text: "    allow: [read:reports]", tone: "ok" },
+      { text: "  analyst:", tone: "net" },
+      { text: "    allow: [read:*, write:drafts]", tone: "ok" },
+      { text: "", tone: "dim" },
+      { text: "controls:", tone: "dim" },
+      { text: "  ISO_27001: { mapped: 94, majors: 0 }", tone: "ok" },
+      { text: "  SOC_2:     { status: evidence-complete }", tone: "ok" },
+      { text: "", tone: "dim" },
+      { text: "enforce: rbac.apply(policy)", tone: "attack" },
+      { text: "// board report: risk in business terms", tone: "dim" },
+    ],
+  },
 };
 
 const stepStreams: CodeLine[][] = [
@@ -629,7 +670,7 @@ function PartnerLogosMarquee() {
           <div className="flex items-center gap-16 shrink-0 animate-marquee">
             {[...items, ...items, ...items].map((client, i) => (
               <span
-                key={i}
+                key={`${client}-${i}`}
                 className="text-2xl md:text-3xl font-black tracking-tight text-fedsec-gray-900/45 whitespace-nowrap transition-colors duration-300 hover:text-fedsec-gray-900/80 font-[family-name:var(--font-heading)] cursor-default"
               >
                 {client}
@@ -861,26 +902,9 @@ function GrowthTabs() {
             transition={{ duration: 0.4 }}
             className="glass-strong rounded-2xl overflow-hidden"
           >
-            <div className="relative aspect-[16/10] md:aspect-[21/10] overflow-hidden">
-              <video
-                className="absolute inset-0 w-full h-full object-cover opacity-70"
-                autoPlay
-                muted
-                loop
-                playsInline
-                poster="/images/fedsec-brand-video-poster.jpg"
-              >
-                <source src="/images/fedsec-brand-video.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-fedsec-black via-transparent to-fedsec-black/40" />
-              {/* live ops stream per discipline */}
-              <LiveCode
-                key={tab.id}
-                lines={tabStreams[tab.id]}
-                title={`${tab.id}-team@cyphra:~`}
-                className="absolute top-4 right-4 w-[290px] hidden lg:block"
-              />
-              <div className="absolute top-4 left-4 flex items-center gap-2">
+            {/* rectangle auto-code viewer — the discipline's live file */}
+            <div className="relative p-4 sm:p-5 bg-gradient-to-br from-fedsec-purple/10 via-transparent to-fedsec-emerald/5">
+              <div className="absolute top-4 left-4 z-10 flex items-center gap-2 sm:top-5 sm:left-5">
                 <span
                   className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest font-[family-name:var(--font-accent)] ${
                     tab.id === "red"
@@ -893,14 +917,21 @@ function GrowthTabs() {
                   {tab.eyebrow}
                 </span>
               </div>
-              <div className="absolute bottom-6 left-6 right-6">
-                <h3 className="text-2xl md:text-3xl font-bold text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">
-                  {tab.tagline}
-                </h3>
-                <p className="text-white/60 leading-relaxed max-w-2xl font-[family-name:var(--font-body)]">
-                  {tab.description}
-                </p>
-              </div>
+              <AutoCodeViewer
+                file={tabCodeFiles[tab.id].file}
+                lines={tabCodeFiles[tab.id].lines}
+                status={tabCodeFiles[tab.id].status}
+                className="mt-12 h-[300px] sm:h-[340px] md:h-[380px]"
+              />
+            </div>
+
+            <div className="px-6 pt-2 md:px-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">
+                {tab.tagline}
+              </h3>
+              <p className="text-white/60 leading-relaxed max-w-2xl font-[family-name:var(--font-body)]">
+                {tab.description}
+              </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-6 md:p-8">

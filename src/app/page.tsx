@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useSpring, useTransform, useMotionValueEvent } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring, useTransform, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -12,7 +12,6 @@ import {
   Layers,
   Zap,
   Quote,
-  Play,
   Crosshair,
   Radar,
   Target,
@@ -26,6 +25,8 @@ import {
   Rocket,
   Briefcase,
   HeartHandshake,
+  Landmark,
+  Cloud,
 } from "lucide-react";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import AutoCodeViewer from "@/components/home/AutoCodeViewer";
@@ -164,6 +165,9 @@ const testimonials = [
     author: "Chief Technology Officer",
     company: "FinSecure Capital",
     tag: "VAPT · Nigeria",
+    icon: Landmark,
+    image: "/images/locations/lagos.jpg",
+    place: "Lagos, Nigeria",
   },
   {
     quote:
@@ -171,6 +175,9 @@ const testimonials = [
     author: "Head of Engineering",
     company: "CloudSync Technologies",
     tag: "Web & API Security · UK",
+    icon: Cloud,
+    image: "/images/locations/london.jpg",
+    place: "London, United Kingdom",
   },
   {
     quote:
@@ -178,6 +185,9 @@ const testimonials = [
     author: "Chief Information Security Officer",
     company: "NexaBank",
     tag: "GRC · Germany",
+    icon: Building2,
+    image: "/images/locations/munich.jpg",
+    place: "Munich, Germany",
   },
 ];
 
@@ -950,11 +960,17 @@ function TestimonialFolderSlider() {
   const n = testimonials.length;
   const go = (dir: number) => setIdx((i) => (i + dir + n) % n);
 
+  // keep the client-image panel in sync
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent("cyphra:testimonial", { detail: idx }));
+  }, [idx]);
+
   return (
-    <div className="relative h-[440px] sm:h-[400px]">
+    <div className="relative h-[460px] sm:h-[420px]">
       {testimonials.map((t, i) => {
         const depth = (i - idx + n) % n; // 0 = front
         const hidden = depth > 2;
+        const OrgIcon = t.icon;
         return (
           <motion.div
             key={t.company}
@@ -968,13 +984,16 @@ function TestimonialFolderSlider() {
             transition={{ type: "spring", stiffness: 180, damping: 26 }}
             className="absolute inset-x-0 top-6 bottom-0 will-change-transform"
           >
-            {/* folder tab */}
-            <div className="ml-6 flex h-8 w-44 items-center rounded-t-xl border border-b-0 border-black/10 bg-fedsec-gray-100 px-4">
-              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-fedsec-gray-900/50">
+            {/* folder tab — org icon identifies the client */}
+            <div className="ml-6 flex h-9 w-52 items-center gap-2.5 rounded-t-xl border border-b-0 border-black/10 bg-fedsec-gray-100 px-4">
+              <span className="grid h-5 w-5 shrink-0 place-items-center rounded-md bg-gradient-to-br from-fedsec-purple to-fedsec-pink text-white">
+                <OrgIcon size={11} />
+              </span>
+              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-fedsec-gray-900/55">
                 Client File {String(i + 1).padStart(2, "0")}
               </span>
             </div>
-            <div className="relative h-[calc(100%-2rem)] rounded-2xl rounded-tl-none border border-black/10 bg-white p-7 sm:p-9 shadow-[0_30px_60px_-25px_rgba(0,0,0,0.25)] flex flex-col">
+            <div className="relative h-[calc(100%-2.25rem)] rounded-2xl rounded-tl-none border border-black/10 bg-white p-7 sm:p-9 shadow-[0_30px_60px_-25px_rgba(0,0,0,0.25)] flex flex-col">
               <Quote size={26} className="text-fedsec-purple mb-4" />
               <p className="text-fedsec-gray-600 leading-relaxed mb-6 italic flex-1 font-[family-name:var(--font-body)]">
                 &ldquo;{t.quote}&rdquo;
@@ -1033,19 +1052,16 @@ function TestimonialFolderSlider() {
 }
 
 function ResultsSection() {
-  const [playing, setPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [idx, setIdx] = useState(0);
+  const active = testimonials[idx];
+  const ActiveIcon = active.icon;
 
-  const toggleVideo = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    if (playing) {
-      v.pause();
-    } else {
-      v.play().catch(() => {});
-    }
-    setPlaying(!playing);
-  };
+  // mirror the folder-slider navigation
+  useEffect(() => {
+    const onNav = (e: Event) => setIdx((e as CustomEvent<number>).detail);
+    window.addEventListener("cyphra:testimonial", onNav as EventListener);
+    return () => window.removeEventListener("cyphra:testimonial", onNav as EventListener);
+  }, []);
 
   return (
     <section className="py-24 md:py-28 bg-fedsec-white text-fedsec-gray-900 overflow-hidden">
@@ -1067,48 +1083,53 @@ function ResultsSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
-          {/* brand film tile */}
+          {/* client panel — image of the active client, synced with the folder stack */}
           <div className="lg:col-span-2">
-            <div className="video-frame video-frame-light h-full min-h-[280px]">
-              <video
-                ref={videoRef}
-                className="absolute inset-0 w-full h-full object-cover"
-                loop
-                playsInline
-                poster="/images/fedsec-brand-video-poster.jpg"
-              >
-                <source src="/images/fedsec-brand-video.mp4" type="video/mp4" />
-              </video>
-              {!playing && (
-                <button
-                  onClick={toggleVideo}
-                  className="absolute inset-0 flex items-center justify-center group"
-                  aria-label="Play brand film"
+            <div className="video-frame video-frame-light relative h-[340px] sm:h-[420px] lg:h-full lg:min-h-[460px] overflow-hidden">
+              <AnimatePresence mode="sync">
+                <motion.div
+                  key={active.company}
+                  initial={{ opacity: 0, scale: 1.04 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.55, ease: "easeOut" }}
+                  className="absolute inset-0"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
-                  <div className="relative w-20 h-20 rounded-full bg-fedsec-purple/80 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform duration-300 glow-purple">
-                    <Play size={30} className="text-white ml-1" />
-                  </div>
-                  <span className="absolute bottom-6 left-6 text-white text-sm font-semibold font-[family-name:var(--font-accent)]">
-                    Watch our brand film
-                  </span>
-                </button>
-              )}
-              {playing && (
-                <button
-                  onClick={toggleVideo}
-                  className="absolute inset-0 flex items-center justify-center group"
-                  aria-label="Pause video"
-                >
-                  <div className="w-16 h-16 rounded-full bg-fedsec-purple/70 backdrop-blur flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Zap size={26} className="text-white" />
-                  </div>
-                </button>
-              )}
+                  <Image
+                    src={active.image}
+                    alt={`${active.company} — ${active.place}`}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover"
+                  />
+                  {/* brand duotone */}
+                  <div className="absolute inset-0 bg-fedsec-purple/70 mix-blend-multiply" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30" />
+                </motion.div>
+              </AnimatePresence>
+
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-8 text-center">
+                <span className="grid h-20 w-20 place-items-center rounded-2xl bg-white/12 backdrop-blur border border-white/25 text-white shadow-[0_0_40px_rgba(0,0,0,0.35)]">
+                  <ActiveIcon size={36} />
+                </span>
+                <div>
+                  <p className="font-bold text-white text-xl font-[family-name:var(--font-heading)]">
+                    {active.company}
+                  </p>
+                  <p className="text-sm text-white/70 font-[family-name:var(--font-accent)] mt-1">
+                    {active.author} · {active.place}
+                  </p>
+                </div>
+              </div>
+
+              <span className="absolute bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-white/60">
+                Client story {String(idx + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}
+              </span>
             </div>
             <p className="mt-4 text-sm text-fedsec-gray-500 font-[family-name:var(--font-body)]">
-              Real engagements. Real outcomes. The film says it better than we
-              can — see how the collective works.
+              Real engagements. Real outcomes. Every file in the stack is a
+              client who can tell you what working with the collective feels
+              like.
             </p>
           </div>
 

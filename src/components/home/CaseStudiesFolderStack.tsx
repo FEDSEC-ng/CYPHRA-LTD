@@ -150,18 +150,18 @@ function FolderCard({
         href="/case-studies"
         className="group relative block overflow-hidden rounded-2xl rounded-tl-none border border-white/10 bg-fedsec-gray-900 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.45)]"
       >
-        <div className="grid h-[560px] grid-cols-1 md:h-[540px] md:grid-cols-[1fr_1.05fr]">
+        <div className="grid h-[560px] grid-cols-1 md:h-[620px] md:grid-cols-[1fr_1.05fr]">
           {/* copy */}
-          <div className="order-2 flex flex-col justify-center gap-4 p-7 sm:p-10 md:order-1">
+          <div className="order-2 flex flex-col justify-center gap-5 p-7 sm:p-10 lg:p-12 md:order-1">
             <div className="flex items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.25em]">
               <span className="text-fedsec-pink">{cs.industry}</span>
               <span className="h-1 w-1 rounded-full bg-white/20" />
               <span className="text-white/40">{cs.location}</span>
             </div>
-            <h3 className="text-2xl font-bold leading-snug text-fedsec-white sm:text-3xl font-[family-name:var(--font-heading)]">
+            <h3 className="text-2xl font-bold leading-snug text-fedsec-white sm:text-3xl lg:text-4xl font-[family-name:var(--font-heading)]">
               {cs.name}
             </h3>
-            <p className="max-w-md text-sm leading-relaxed text-white/50 sm:text-base font-[family-name:var(--font-body)] line-clamp-4">
+            <p className="max-w-md text-sm leading-relaxed text-white/55 sm:text-base lg:text-lg font-[family-name:var(--font-body)] line-clamp-4">
               {cs.description}
             </p>
             <span className="inline-flex items-center gap-2 text-sm font-semibold text-white transition-all group-hover:gap-3 font-[family-name:var(--font-accent)]">

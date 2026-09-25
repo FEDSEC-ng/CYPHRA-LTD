@@ -6,6 +6,8 @@ import Link from "next/link";
 import { ArrowRight, FileCheck, Shield } from "lucide-react";
 import WordByWordReveal from "@/components/ui/WordByWordReveal";
 import CTABanner from "@/components/ui/CTABanner";
+import Tremble from "@/components/ui/Tremble";
+import PuzzleGradient from "@/components/home/PuzzleGradient";
 
 const springTransition = { type: "spring" as const, damping: 40, stiffness: 200 };
 
@@ -105,12 +107,29 @@ const approach = [
   { title: "Strengthen", desc: "We help organizations improve their security posture and become more resilient over time." },
 ];
 
+const whoWeAre = [
+  {
+    tag: "Who we are",
+    title: "Not a vendor. A collective on your bench.",
+    body: "CYPHRA operates as an extension of your team — offensive specialists, defensive engineers, and governance advisors who sit with you, think with you, and build with you. One engagement or a full security program, the collective works as one.",
+    image: "/images/why/why3.jpg",
+    alt: "The collective working together around a screen",
+  },
+  {
+    tag: "What we believe",
+    title: "Security is measured in risk reduced, not pages delivered.",
+    body: "We keep reports short, findings honest, and guidance practical. Every recommendation is sized to your environment and maturity — so your team can actually implement it, and your defenses actually improve.",
+    image: "/images/why/why5.jpg",
+    alt: "Modern enterprise architecture review",
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-fedsec-gray-900 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-fedsec-purple/20 via-transparent to-fedsec-pink/10" />
+        <PuzzleGradient base="none" opacity={0.6} blobCount={5} />
         <div className="absolute inset-0 grid-pattern opacity-[0.03]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -159,6 +178,54 @@ export default function AboutPage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Who we are — alternating image/copy rows (socialander-style) */}
+      <section className="py-20 md:py-28 bg-fedsec-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 md:space-y-24">
+          {whoWeAre.map((row, i) => {
+            const flip = i % 2 === 1;
+            return (
+              <motion.div
+                key={row.tag}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={springTransition}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center"
+              >
+                <div className={`relative rounded-3xl overflow-hidden border border-white/10 aspect-[4/3] ${flip ? "lg:order-2" : ""}`}>
+                  <Image
+                    src={row.image}
+                    alt={row.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover saturate-[0.85] transition-all duration-700 hover:scale-105 hover:saturate-100"
+                  />
+                  <div className="absolute inset-0 bg-fedsec-purple/25 mix-blend-multiply" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                </div>
+                <div className={flip ? "lg:order-1" : ""}>
+                  <span className="section-tag">{row.tag}</span>
+                  <Tremble className="mt-4 block">
+                    <h3 className="text-2xl md:text-4xl font-bold text-fedsec-white mb-5 font-[family-name:var(--font-heading)] tracking-tight leading-tight">
+                      {row.title}
+                    </h3>
+                  </Tremble>
+                  <p className="text-base md:text-lg text-white/50 leading-relaxed max-w-xl mb-8 font-[family-name:var(--font-body)]">
+                    {row.body}
+                  </p>
+                  <Link href="/services" className="grow-pill grow-pill-outline growable">
+                    <span className="pill-label">See how we work</span>
+                    <span className="pill-icon">
+                      <ArrowRight size={16} />
+                    </span>
+                  </Link>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </section>
 
@@ -235,10 +302,10 @@ export default function AboutPage() {
               cybersecurity — hover a specialist to see their story.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {team.map((member, index) => (
-              <motion.div key={member.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ ...springTransition, delay: (index % 4) * 0.08 }} className="group relative rounded-2xl overflow-hidden aspect-[3/4] bg-fedsec-gray-800">
-                <Image src={member.image} alt={member.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <motion.div key={member.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ ...springTransition, delay: (index % 3) * 0.08 }} className="group relative rounded-2xl overflow-hidden aspect-[3/4] bg-fedsec-gray-800">
+                <Image src={member.image} alt={member.name} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <h3 className="text-lg font-bold text-white mb-1 font-[family-name:var(--font-heading)]">{member.name}</h3>

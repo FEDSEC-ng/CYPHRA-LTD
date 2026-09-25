@@ -29,6 +29,10 @@ import {
   HeartHandshake,
 } from "lucide-react";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
+import CaseStudiesFolderStack from "@/components/home/CaseStudiesFolderStack";
+import ColorSplash from "@/components/home/ColorSplash";
+import LiveCode, { type CodeLine } from "@/components/home/LiveCode";
+import Tremble from "@/components/ui/Tremble";
 
 /* ─── Data ─────────────────────────────────────────────── */
 
@@ -36,7 +40,7 @@ const team = [
   {
     name: "Nwachukwu Francis O.",
     role: "Founder / Tech Lead",
-    bio: "Cybersecurity analyst and CTF player ranked in TryHackMe's top 2%. Leads FEDSEC's technical bench across network security, threat analysis, and SOC operations.",
+    bio: "Cybersecurity analyst and CTF player ranked in TryHackMe's top 2%. Leads CYPHRA's technical bench across network security, threat analysis, and SOC operations.",
     image: "/images/team/francis.png",
     cv: null,
     short: "F",
@@ -76,7 +80,7 @@ const team = [
   {
     name: "Badu Zaccheaus J.",
     role: "Cyber Security Analyst",
-    bio: "Hands-on testing of production systems — misconfigurations, insecure headers, and web application flaws turned into clear, actionable reports. Part of the discipline behind FEDSEC's methodology: authorized, documented, and built to hold up under scrutiny.",
+    bio: "Hands-on testing of production systems — misconfigurations, insecure headers, and web application flaws turned into clear, actionable reports. Part of the discipline behind CYPHRA's methodology: authorized, documented, and built to hold up under scrutiny.",
     image: "/images/team/badu.png",
     cv: "/images/resumes/badu-cv.docx",
     short: "B",
@@ -93,12 +97,12 @@ const stats = [
 ];
 
 const locations = [
-  { city: "Lagos", country: "Nigeria", flag: "NG", image: "/images/locations/lagos.svg", blurb: "Headquarters — enterprise, fintech & government engagements across West Africa.", service: "/services/penetration-testing" },
-  { city: "Abuja", country: "Nigeria", flag: "NG", image: "/images/locations/abuja.svg", blurb: "Advisory & compliance practice serving institutions and public sector.", service: "/services/grc-advisory" },
-  { city: "Munich", country: "Germany", flag: "DE", image: "/images/locations/munich.svg", blurb: "European operations — GRC, data protection, and penetration testing.", service: "/services/grc-advisory" },
-  { city: "London", country: "United Kingdom", flag: "UK", image: "/images/locations/london.svg", blurb: "Partnered delivery for UK & EU regulated organizations.", service: "/services/penetration-testing" },
-  { city: "New York", country: "United States", flag: "US", image: "/images/locations/nyc.svg", blurb: "Coverage for US clients across cloud security and red teaming.", service: "/services/penetration-testing" },
-  { city: "Accra", country: "Ghana", flag: "GH", image: "/images/locations/accra.svg", blurb: "West African expansion — SOC advisory and security operations.", service: "/services/soc-monitoring" },
+  { city: "Lagos", country: "Nigeria", flag: "NG", image: "/images/locations/lagos.jpg", blurb: "Headquarters — enterprise, fintech & government engagements across West Africa.", service: "/services/vulnerability-assessment-and-penetration-testing" },
+  { city: "Abuja", country: "Nigeria", flag: "NG", image: "/images/locations/abuja.jpg", blurb: "Advisory & compliance practice serving institutions and public sector.", service: "/services/grc-advisory" },
+  { city: "Munich", country: "Germany", flag: "DE", image: "/images/locations/munich.jpg", blurb: "European operations — GRC, data protection, and penetration testing.", service: "/services/grc-advisory" },
+  { city: "London", country: "United Kingdom", flag: "UK", image: "/images/locations/london.jpg", blurb: "Partnered delivery for UK & EU regulated organizations.", service: "/services/vulnerability-assessment-and-penetration-testing" },
+  { city: "New York", country: "United States", flag: "US", image: "/images/locations/nyc.jpg", blurb: "Coverage for US clients across cloud security and red teaming.", service: "/services/vulnerability-assessment-and-penetration-testing" },
+  { city: "Accra", country: "Ghana", flag: "GH", image: "/images/locations/accra.jpg", blurb: "West African expansion — SOC advisory and security operations.", service: "/services/security-operations" },
 ];
 
 const growthTabs = [
@@ -155,14 +159,14 @@ const growthTabs = [
 const testimonials = [
   {
     quote:
-      "FEDSEC transformed our approach to security. Their team identified critical vulnerabilities we had missed for years and provided a clear roadmap for remediation.",
+      "CYPHRA transformed our approach to security. Their team identified critical vulnerabilities we had missed for years and provided a clear roadmap for remediation.",
     author: "Chief Technology Officer",
     company: "FinSecure Capital",
     tag: "VAPT · Nigeria",
   },
   {
     quote:
-      "The penetration testing engagement was thorough, professional, and delivered actionable results. FEDSEC's team went above and beyond to help us understand and prioritize findings.",
+      "The penetration testing engagement was thorough, professional, and delivered actionable results. CYPHRA's team went above and beyond to help us understand and prioritize findings.",
     author: "Head of Engineering",
     company: "CloudSync Technologies",
     tag: "Web & API Security · UK",
@@ -176,81 +180,48 @@ const testimonials = [
   },
 ];
 
-const caseStudies = [
-  {
-    name: "SOC Build-Out, Zero to Detection",
-    industry: "Financial Services",
-    location: "Nigeria",
-    description:
-      "Designed and built a bank's SOC from scratch — SIEM/SOAR platforms and 200+ detection use cases mapped to MITRE ATT&CK.",
-  },
-  {
-    name: "Web & API Security Assessment",
-    industry: "Technology",
-    location: "United Kingdom",
-    description:
-      "Full-stack security assessment of a SaaS platform, uncovering business-logic flaws and critical API vulnerabilities.",
-  },
-  {
-    name: "ISO 27001 Compliance Program",
-    industry: "Healthcare",
-    location: "Germany",
-    description:
-      "GRC advisory establishing auditable security governance, controls, and documentation toward certification.",
-  },
-  {
-    name: "Enterprise Network Hardening",
-    industry: "Enterprise",
-    location: "Nigeria",
-    description:
-      "Zero-trust architecture review, firewall segmentation, and continuous monitoring across a corporate estate.",
-  },
-  {
-    name: "E-Commerce Platform Protection",
-    industry: "E-Commerce",
-    location: "United States",
-    description:
-      "Application, API, and cloud infrastructure security for a high-traffic retail platform.",
-  },
-  {
-    name: "Government Cybersecurity Framework",
-    industry: "Government",
-    location: "Ghana",
-    description:
-      "SOC advisory and security operations setup for a national digital transformation initiative.",
-  },
-];
-
 const whyCards = [
   {
     title: "We Identify Hidden Vulnerabilities",
     description:
-      "Manual, adversarial testing that finds what scanners miss — misconfigurations, logic flaws, and exploitable chains.",
+      "Manual, adversarial testing that finds what scanners miss — logic flaws, misconfigurations, and exploitable chains.",
+    image: "/images/why/why1.jpg",
+    alt: "Analyst probing systems in a darkened room",
   },
   {
     title: "We Reduce Attack Surface",
     description:
-      "Prioritized remediation that closes the real paths attackers take, not a generic checklist.",
+      "Prioritized remediation that closes the real paths attackers take — not a generic checklist.",
+    image: "/images/why/why2.jpg",
+    alt: "Hardened data center corridor",
   },
   {
     title: "A Team That Works Like a Partner",
     description:
-      "Disciplines — offensive, defensive, GRC, network, software — working as one collective on your bench.",
+      "Offensive, defensive, GRC, network, and software disciplines working as one collective on your bench.",
+    image: "/images/why/why3.jpg",
+    alt: "Team collaborating around a screen",
   },
   {
     title: "Your Security Is Our Only Metric",
     description:
-      "We measure success by risk reduced and resilience built, not hours billed or reports delivered.",
+      "We measure success by risk reduced and resilience built — not hours billed or pages delivered.",
+    image: "/images/why/why4.jpg",
+    alt: "Analysts reviewing security dashboards",
   },
   {
     title: "Long-Term Security Maturity",
     description:
       "Programs designed for where your business is three years from now, not a three-month engagement.",
+    image: "/images/why/why5.jpg",
+    alt: "Modern enterprise architecture",
   },
   {
     title: "Continuous Optimization",
     description:
-      "Monitoring, retesting, and adjustment. Security is a process, not a project.",
+      "Monitoring, retesting, and tuning between engagements. Security is a process, not a project.",
+    image: "/images/why/why6.jpg",
+    alt: "Fiber patch panel under maintenance",
   },
 ];
 
@@ -334,6 +305,56 @@ const audiences = [
 ];
 
 const trustBadges = ["VAPT", "GRC Advisory", "SOC Operations", "Red Team", "ISO 27001 Aligned"];
+
+/* Live code streams — per growth tab and per process step */
+
+const tabStreams: Record<string, CodeLine[]> = {
+  red: [
+    { text: "nmap -sS -sV -T4 target.corp --top-ports 1000", tone: "net" },
+    { text: "param id=104 → probing injection points", tone: "attack" },
+    { text: "payload: ' OR 1=1 --  →  200 OK (0.4s)", tone: "attack" },
+    { text: "[!!] SQLi confirmed — chained to admin", tone: "warn" },
+  ],
+  blue: [
+    { text: "pkt 10.0.4.12:443 ⇄ 91.203.x.x  TLS 1.3 hs ok", tone: "net" },
+    { text: "SIEM rule TA0007: 14 beacon attempts blocked", tone: "ok" },
+    { text: "EDR quarantine: cobaltstrike.beacon.dll", tone: "warn" },
+    { text: "SOC ticket #4821 escalated → IR retainer", tone: "net" },
+  ],
+  grc: [
+    { text: "policy rbac/finance-portal.yaml — applying", tone: "net" },
+    { text: "role: auditor   allow: read:reports", tone: "ok" },
+    { text: "role: analyst   allow: read:*  write:drafts", tone: "ok" },
+    { text: "ISO 27001: 94 controls mapped · 0 majors", tone: "ok" },
+  ],
+};
+
+const stepStreams: CodeLine[][] = [
+  [
+    { text: "nmap -sS -T4 --top-ports 1000 client.io", tone: "net" },
+    { text: "Discovered 10.0.4.12 — nginx 1.24.0 :443", tone: "dim" },
+    { text: "subfinder -d client.io -silent → 47 hosts", tone: "net" },
+    { text: "[+] 6 assets resolve to internal ranges", tone: "ok" },
+  ],
+  [
+    { text: "whatweb https://api.client.io", tone: "net" },
+    { text: "[200] AngularJS 1.7.9 · jQuery 3.4.1", tone: "dim" },
+    { text: "wafw00f: Cloudflare — bypass mapped", tone: "warn" },
+    { text: "[!] Drupal 9.5 flagged — 3 CVE candidates", tone: "attack" },
+  ],
+  [
+    { text: "param id=104 → testing injection points", tone: "attack" },
+    { text: "payload: ' OR 1=1 --  →  200 OK (0.4s)", tone: "attack" },
+    { text: "[!!] SQLi confirmed — read-only extraction", tone: "warn" },
+    { text: "chain: user → admin via IDOR + token reuse", tone: "attack" },
+  ],
+  [
+    { text: "CVSS 9.1 · 4 High · 11 Medium findings filed", tone: "dim" },
+    { text: "remediation pack delivered — retest booked", tone: "ok" },
+    { text: "policy rbac/finance-portal.yaml", tone: "net" },
+    { text: "role: auditor | allow: read:reports", tone: "ok" },
+  ],
+];
 
 /* ─── TouchMove (socialander title/subtitle) ──────────── */
 
@@ -458,6 +479,9 @@ function HeroSection() {
       >
         <source src="/images/fedsec-brand-video.mp4" type="video/mp4" />
       </video>
+
+      {/* socialander-style mouse-following color splash (purple leads, pink trails) */}
+      <ColorSplash mode="dark" />
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28">
         <div className="max-w-4xl mx-auto text-center">
@@ -589,10 +613,12 @@ function NumbersSection() {
           className="text-center mb-14"
         >
           <span className="section-tag">Our Numbers Do the Talking for Us</span>
-          <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mt-4 mb-4 font-[family-name:var(--font-heading)] tracking-tight">
-            A Collective Built on{" "}
-            <span className="gradient-text">Proof, Not Promises</span>
-          </h2>
+          <Tremble className="mt-4">
+            <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mb-4 font-[family-name:var(--font-heading)] tracking-tight">
+              A Collective Built on{" "}
+              <span className="gradient-text">Proof, Not Promises</span>
+            </h2>
+          </Tremble>
           <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
             Different disciplines. One standard. Measured entirely on the risk we
             reduce and the resilience we build.
@@ -626,68 +652,87 @@ function NumbersSection() {
   );
 }
 
-/* Where We Work (socialander global locations) */
+/* Where We Work (socialander global locations — white band) */
 function LocationsSection() {
   return (
-    <section className="py-24 md:py-28 bg-fedsec-gray-900">
+    <section className="py-24 md:py-28 bg-fedsec-white text-fedsec-gray-900 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-14"
-        >
-          <span className="section-tag">Where We Work</span>
-          <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mt-4 mb-4 font-[family-name:var(--font-heading)] tracking-tight">
-            Local Business on a{" "}
-            <span className="gradient-text">Global Collective</span>
-          </h2>
-          <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
-            Delivered across multiple locations through a globally connected
-            team — consistent standards, reliable communication, and effective
-            delivery regardless of region.
-          </p>
-        </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(300px,380px)_1fr] gap-10 lg:gap-14 items-center mb-12">
+          {/* left column — smaller content */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7 }}
+          >
+            <span className="section-tag">Where We Work</span>
+            <Tremble className="mt-4">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-[family-name:var(--font-heading)]">
+                Local Business on a{" "}
+                <span className="gradient-text">Global Collective</span>
+              </h2>
+            </Tremble>
+            <p className="text-base text-fedsec-gray-500 mt-4 leading-relaxed font-[family-name:var(--font-body)]">
+              Delivered across multiple locations through a globally connected
+              team — consistent standards, reliable communication, and effective
+              delivery regardless of region.
+            </p>
+            <p className="mt-6 hidden lg:flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-fedsec-gray-900/40 font-[family-name:var(--font-accent)]">
+              Drag / scroll the strip
+              <ArrowRight size={14} className="text-fedsec-pink" />
+            </p>
+          </motion.div>
 
-        <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide lg:overflow-visible lg:flex-wrap lg:justify-center">
-          {locations.map((loc, i) => (
-            <motion.div
-              key={loc.city}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.05 }}
-              className="snap-start shrink-0 w-[320px] sm:w-[360px] group relative rounded-2xl overflow-hidden card-glow hover:border-fedsec-purple/40 transition-all duration-300"
-            >
-              <Link href={loc.service} className="block relative h-56 overflow-hidden">
-                <Image
-                  src={loc.image}
-                  alt={`${loc.city}, ${loc.country}`}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-fedsec-black via-black/30 to-transparent" />
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-0 grid-pattern opacity-30" />
-                  <div className="absolute inset-0 bg-fedsec-purple/20 mix-blend-multiply" />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-xl font-bold text-fedsec-white font-[family-name:var(--font-heading)]">{loc.city}</h3>
-                    <span className="text-2xl">{loc.flag}</span>
-                  </div>
-                  <p className="text-xs font-semibold text-fedsec-pink font-[family-name:var(--font-accent)]">{loc.country}</p>
-                  <p className="text-sm text-white/60 leading-relaxed mt-3 font-[family-name:var(--font-body)] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    {loc.blurb}
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-xs font-semibold text-fedsec-purple mt-3 font-[family-name:var(--font-accent)]">
-                    View services <ArrowRight size={13} />
+          {/* right — one straight horizontal line of city cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0"
+          >
+            {locations.map((loc, i) => (
+              <motion.div
+                key={loc.city}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+                className="snap-start shrink-0 w-[250px] group relative h-[340px] rounded-2xl overflow-hidden border border-black/10 bg-fedsec-gray-100 shadow-[0_16px_40px_-18px_rgba(0,0,0,0.25)] transition-all duration-500 hover:shadow-[0_24px_50px_-18px_rgba(102,47,144,0.35)]"
+              >
+                <Link href={loc.service} className="relative block h-full">
+                  <Image
+                    src={loc.image}
+                    alt={`${loc.city}, ${loc.country}`}
+                    fill
+                    sizes="250px"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                  <div className="absolute inset-0 bg-fedsec-purple/25 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  <span className="absolute top-4 left-4 font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-white/70">
+                    {String(i + 1).padStart(2, "0")} · {loc.flag}
                   </span>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h3 className="text-xl font-bold text-white font-[family-name:var(--font-heading)]">
+                      {loc.city}
+                    </h3>
+                    <p className="text-xs font-semibold text-fedsec-pink font-[family-name:var(--font-accent)]">
+                      {loc.country}
+                    </p>
+                    <p className="text-xs text-white/70 leading-relaxed mt-2 font-[family-name:var(--font-body)] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      {loc.blurb}
+                    </p>
+                    <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-white bg-fedsec-purple px-3 py-1.5 rounded-full translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 font-[family-name:var(--font-accent)]">
+                      View services <ArrowRight size={12} />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
@@ -700,8 +745,10 @@ function GrowthTabs() {
   const tab = growthTabs[active];
 
   return (
-    <section className="py-24 md:py-28 bg-fedsec-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 md:py-28 bg-fedsec-black relative overflow-hidden">
+      {/* mouse-following gradient interplay for the RGB section */}
+      <ColorSplash mode="dark" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -710,10 +757,12 @@ function GrowthTabs() {
           className="text-center mb-12"
         >
           <span className="section-tag">How We Secure Your Business</span>
-          <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mt-4 mb-4 font-[family-name:var(--font-heading)] tracking-tight">
-            Red Team. Blue Team.{" "}
-            <span className="gradient-text">GRC.</span>
-          </h2>
+          <Tremble className="mt-4">
+            <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mb-4 font-[family-name:var(--font-heading)] tracking-tight">
+              Red Team. Blue Team.{" "}
+              <span className="gradient-text">GRC.</span>
+            </h2>
+          </Tremble>
           <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
             We combine offensive and defensive security perspectives with
             governance, risk, and compliance — a super team of cybersecurity.
@@ -780,6 +829,13 @@ function GrowthTabs() {
                 <source src="/images/fedsec-brand-video.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-fedsec-black via-transparent to-fedsec-black/40" />
+              {/* live ops stream per discipline */}
+              <LiveCode
+                key={tab.id}
+                lines={tabStreams[tab.id]}
+                title={`${tab.id}-team@cyphra:~`}
+                className="absolute top-4 right-4 w-[290px] hidden lg:block"
+              />
               <div className="absolute top-4 left-4 flex items-center gap-2">
                 <span
                   className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest font-[family-name:var(--font-accent)] ${
@@ -831,7 +887,94 @@ function GrowthTabs() {
   );
 }
 
-/* Amazing Clients, Amazing Results (socialander testimonials + video) */
+/* Amazing Clients, Amazing Results — white band with folder-stack slider */
+function TestimonialFolderSlider() {
+  const [idx, setIdx] = useState(0);
+  const n = testimonials.length;
+  const go = (dir: number) => setIdx((i) => (i + dir + n) % n);
+
+  return (
+    <div className="relative h-[440px] sm:h-[400px]">
+      {testimonials.map((t, i) => {
+        const depth = (i - idx + n) % n; // 0 = front
+        const hidden = depth > 2;
+        return (
+          <motion.div
+            key={t.company}
+            animate={{
+              y: depth === 0 ? 0 : depth * -22,
+              scale: depth === 0 ? 1 : 1 - depth * 0.04,
+              opacity: hidden ? 0 : depth === 0 ? 1 : 0.55,
+              filter: depth === 0 ? "brightness(1)" : `brightness(${1 - depth * 0.3})`,
+              zIndex: 10 - depth,
+            }}
+            transition={{ type: "spring", stiffness: 180, damping: 26 }}
+            className="absolute inset-x-0 top-6 bottom-0 will-change-transform"
+          >
+            {/* folder tab */}
+            <div className="ml-6 flex h-8 w-44 items-center rounded-t-xl border border-b-0 border-black/10 bg-fedsec-gray-100 px-4">
+              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-fedsec-gray-900/50">
+                Client File {String(i + 1).padStart(2, "0")}
+              </span>
+            </div>
+            <div className="relative h-[calc(100%-2rem)] rounded-2xl rounded-tl-none border border-black/10 bg-white p-7 sm:p-9 shadow-[0_30px_60px_-25px_rgba(0,0,0,0.25)] flex flex-col">
+              <Quote size={26} className="text-fedsec-purple mb-4" />
+              <p className="text-fedsec-gray-600 leading-relaxed mb-6 italic flex-1 font-[family-name:var(--font-body)]">
+                &ldquo;{t.quote}&rdquo;
+              </p>
+              <div className="flex items-center justify-between flex-wrap gap-2">
+                <div>
+                  <p className="font-bold text-fedsec-gray-900 text-sm font-[family-name:var(--font-heading)]">
+                    {t.author}
+                  </p>
+                  <p className="text-sm text-fedsec-pink font-[family-name:var(--font-accent)]">
+                    {t.company}
+                  </p>
+                </div>
+                <span className="font-mono text-xs text-fedsec-gray-900/40">
+                  {t.tag}
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        );
+      })}
+
+      {/* controls */}
+      <div className="absolute -bottom-12 left-0 right-0 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          {testimonials.map((t, i) => (
+            <button
+              key={t.company}
+              onClick={() => setIdx(i)}
+              aria-label={`Show testimonial ${i + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                i === idx ? "w-7 bg-fedsec-pink" : "w-2 bg-fedsec-gray-900/20 hover:bg-fedsec-gray-900/40"
+              }`}
+            />
+          ))}
+        </div>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => go(-1)}
+            aria-label="Previous testimonial"
+            className="w-11 h-11 rounded-full border border-black/15 bg-white flex items-center justify-center text-fedsec-gray-900 hover:bg-fedsec-purple hover:text-white hover:border-fedsec-purple transition-colors"
+          >
+            <ArrowRight size={17} className="rotate-180" />
+          </button>
+          <button
+            onClick={() => go(1)}
+            aria-label="Next testimonial"
+            className="w-11 h-11 rounded-full border border-black/15 bg-white flex items-center justify-center text-fedsec-gray-900 hover:bg-fedsec-purple hover:text-white hover:border-fedsec-purple transition-colors"
+          >
+            <ArrowRight size={17} />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ResultsSection() {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -848,26 +991,28 @@ function ResultsSection() {
   };
 
   return (
-    <section className="py-24 md:py-28 bg-fedsec-gray-900 overflow-hidden">
-      <div className="absolute top-0 right-0 w-80 h-80 blob-purple opacity-60" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section className="py-24 md:py-28 bg-fedsec-white text-fedsec-gray-900 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-14"
+          className="mb-16"
         >
           <span className="section-tag">Amazing Clients, Amazing Results</span>
-          <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mt-4 mb-4 font-[family-name:var(--font-heading)] tracking-tight">
-            Our Clients Have Seen How{" "}
-            <span className="gradient-text">We Deliver</span>
-          </h2>
+          <Tremble className="mt-4">
+            <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold tracking-tight font-[family-name:var(--font-heading)]">
+              Our Clients Have Seen How{" "}
+              <span className="gradient-text">We Deliver</span>
+            </h2>
+          </Tremble>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
+          {/* brand film tile */}
           <div className="lg:col-span-2">
-            <div className="video-frame h-full min-h-[260px]">
+            <div className="video-frame video-frame-light h-full min-h-[280px]">
               <video
                 ref={videoRef}
                 className="absolute inset-0 w-full h-full object-cover"
@@ -881,7 +1026,7 @@ function ResultsSection() {
                 <button
                   onClick={toggleVideo}
                   className="absolute inset-0 flex items-center justify-center group"
-                  aria-label="Play FEDSEC brand film"
+                  aria-label="Play brand film"
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
                   <div className="relative w-20 h-20 rounded-full bg-fedsec-purple/80 backdrop-blur flex items-center justify-center group-hover:scale-110 transition-transform duration-300 glow-purple">
@@ -904,39 +1049,15 @@ function ResultsSection() {
                 </button>
               )}
             </div>
+            <p className="mt-4 text-sm text-fedsec-gray-500 font-[family-name:var(--font-body)]">
+              Real engagements. Real outcomes. The film says it better than we
+              can — see how the collective works.
+            </p>
           </div>
 
-          <div className="lg:col-span-3 space-y-4">
-            {testimonials.map((t, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="p-6 glass rounded-2xl flex gap-5"
-              >
-                <Quote size={28} className="text-fedsec-purple flex-shrink-0 mt-1" />
-                <div>
-                  <p className="text-white/70 leading-relaxed mb-4 italic font-[family-name:var(--font-body)]">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                  <div className="flex items-center justify-between flex-wrap gap-2">
-                    <div>
-                      <p className="font-bold text-fedsec-white text-sm font-[family-name:var(--font-heading)]">
-                        {t.author}
-                      </p>
-                      <p className="text-sm text-fedsec-pink font-[family-name:var(--font-accent)]">
-                        {t.company}
-                      </p>
-                    </div>
-                    <span className="text-xs text-white/30 font-[family-name:var(--font-accent)]">
-                      {t.tag}
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+          {/* folder-stack testimonial slider */}
+          <div className="lg:col-span-3">
+            <TestimonialFolderSlider />
           </div>
         </div>
       </div>
@@ -944,85 +1065,6 @@ function ResultsSection() {
   );
 }
 
-/* Real Results — card grid (socialander case-study cards) */
-function CaseStudiesSection() {
-  return (
-    <section className="py-24 md:py-28 bg-fedsec-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between mb-14"
-        >
-          <div>
-            <span className="section-tag">Real Clients. Real Results.</span>
-            <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mt-4 font-[family-name:var(--font-heading)] tracking-tight">
-              We Let the Work{" "}
-              <span className="gradient-text">Speak for Itself</span>
-            </h2>
-          </div>
-          <Link
-            href="/case-studies"
-            className="mt-4 md:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-fedsec-purple hover:gap-3 transition-all font-[family-name:var(--font-accent)]"
-          >
-            See all case studies <ArrowRight size={14} />
-          </Link>
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {caseStudies.map((cs, i) => (
-            <motion.div
-              key={cs.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-            >
-              <Link href="/case-studies" className="group block glass card-glow rounded-2xl overflow-hidden h-full">
-                <div className="aspect-[16/10] relative overflow-hidden">
-                  <Image
-                    src={`/images/protexy/cases/case${(i % 6) + 1}.png`}
-                    alt={cs.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-fedsec-pink font-[family-name:var(--font-accent)]">
-                      {cs.industry}
-                    </span>
-                    <span className="w-1 h-1 rounded-full bg-white/20" />
-                    <span className="text-xs text-white/40 font-[family-name:var(--font-accent)]">
-                      {cs.location}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-bold text-fedsec-white mb-2 font-[family-name:var(--font-heading)] leading-snug">
-                    {cs.name}
-                  </h3>
-                  <p className="text-sm text-white/40 leading-relaxed mb-4 font-[family-name:var(--font-body)]">
-                    {cs.description}
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-fedsec-purple group-hover:gap-3 transition-all font-[family-name:var(--font-accent)]">
-                    See case study <ArrowRight size={14} />
-                  </span>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
 
 /* How We Do It (novora-style hacking process) */
 function ProcessSection() {
@@ -1030,7 +1072,6 @@ function ProcessSection() {
   const { scrollYProgress } = useScroll({ target: wheelRef, offset: ["start start", "end end"] });
   const spring = useSpring(scrollYProgress, { stiffness: 80, damping: 24, mass: 0.6 });
   const rotate = useTransform(spring, [0, 1], [0, 270]);
-  const rotateX = useTransform(spring, [0, 1], [0, 720]);
   const [active, setActive] = useState(0);
 
   const orbitRadius = 240;
@@ -1047,10 +1088,13 @@ function ProcessSection() {
     setActive(idx);
   });
 
-  const ActiveIcon = processSteps[active].icon;
+  // novora-style clockwise progress arc (fills as the wheel turns to 270°)
+  const ARC_R = 47;
+  const ARC_C = 2 * Math.PI * ARC_R;
+  const arcOffset = useTransform(spring, [0, 1], [ARC_C, ARC_C * (1 - 270 / 360)]);
 
   return (
-    <section className="py-24 md:py-32 bg-fedsec-gray-900 overflow-hidden">
+    <section className="py-24 md:py-32 bg-fedsec-gray-900 overflow-x-clip">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -1060,25 +1104,58 @@ function ProcessSection() {
           className="mb-16"
         >
           <span className="section-tag">[ How We Do It ]</span>
-          <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mt-4 font-[family-name:var(--font-heading)] tracking-tight">
-            The Hacking Process,{" "}
-            <span className="gradient-text">Done Properly</span>
-          </h2>
+          <Tremble className="mt-4">
+            <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white font-[family-name:var(--font-heading)] tracking-tight">
+              The Hacking Process,{" "}
+              <span className="gradient-text">Done Properly</span>
+            </h2>
+          </Tremble>
         </motion.div>
 
         <div ref={wheelRef} className="relative h-[300vh]">
           <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-            {/* center icon */}
+            {/* live ops terminal — the wheel's beating heart */}
             <motion.div
-              style={{ rotateX }}
-              className="absolute w-28 h-28 md:w-36 md:h-36 rounded-full bg-fedsec-purple flex items-center justify-center z-20 shadow-[0_0_60px_rgba(102,47,144,0.6)]"
+              key={active}
+              initial={{ opacity: 0, scale: 0.94 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
+              className="absolute z-20 w-[min(400px,86vw)]"
             >
-              <ActiveIcon size={56} className="text-fedsec-white" strokeWidth={1.5} />
+              <div className="rounded-2xl bg-fedsec-purple p-[1.5px] shadow-[0_0_60px_rgba(102,47,144,0.55)]">
+                <div className="rounded-[15px] bg-fedsec-gray-900/95 p-3">
+                  <LiveCode
+                    lines={stepStreams[active]}
+                    title={`step-${processSteps[active].number}-@ops:~`}
+                    interval={950}
+                  />
+                </div>
+              </div>
+              <div className="mt-3 flex justify-center">
+                <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-full glass px-4 py-1.5 font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-fedsec-pink">
+                  {(() => {
+                    const StepIcon = processSteps[active].icon;
+                    return <StepIcon size={12} className="shrink-0" />;
+                  })()}
+                  {processSteps[active].number} · {processSteps[active].title}
+                </span>
+              </div>
             </motion.div>
 
-            {/* orbit ring */}
-            <motion.svg viewBox="0 0 100 100" className="absolute w-[520px] h-[520px] md:w-[640px] md:h-[640px]">
+            {/* orbit ring + novora progress arc */}
+            <motion.svg viewBox="0 0 100 100" className="absolute w-[520px] h-[520px] md:w-[640px] md:h-[640px] -rotate-90">
               <circle cx="50" cy="50" r="47" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="0.35" strokeDasharray="0.6 3" />
+              <motion.circle
+                cx="50"
+                cy="50"
+                r={ARC_R}
+                fill="none"
+                stroke="var(--color-fedsec-emerald)"
+                strokeWidth="1.1"
+                strokeLinecap="round"
+                strokeDasharray={ARC_C}
+                style={{ strokeDashoffset: arcOffset }}
+            />
             </motion.svg>
 
             {/* orbiting step nodes */}
@@ -1191,8 +1268,8 @@ function ProcessSection() {
   );
 }
 
-/* Why FEDSEC (socialander "Why Brands Choose") */
-function WhyFEDSEC() {
+/* Why Cyphra (socialander "Why Brands Choose") */
+function WhyCyphra() {
   return (
     <section className="py-24 md:py-28 bg-fedsec-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1203,11 +1280,13 @@ function WhyFEDSEC() {
           transition={{ duration: 0.7 }}
           className="text-center mb-14"
         >
-          <span className="section-tag">Why Brands Choose FEDSEC</span>
-          <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mt-4 mb-4 font-[family-name:var(--font-heading)] tracking-tight">
-            With Expertise Across the{" "}
-            <span className="gradient-text">Entire Security Stack</span>
-          </h2>
+          <span className="section-tag">Why Brands Choose CYPHRA</span>
+          <Tremble className="mt-4">
+            <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mb-4 font-[family-name:var(--font-heading)] tracking-tight">
+              With Expertise Across the{" "}
+              <span className="gradient-text">Entire Security Stack</span>
+            </h2>
+          </Tremble>
           <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
             A super team of cybersecurity — offense, defense, governance, and
             engineering aligned precisely with your business objectives.
@@ -1222,17 +1301,30 @@ function WhyFEDSEC() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-              className="p-8 glass card-glow rounded-2xl"
+              className="group glass card-glow rounded-2xl overflow-hidden"
             >
-              <span className="block text-3xl font-bold text-white/[0.08] mb-4 font-[family-name:var(--font-heading)]">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="text-xl font-bold text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">
-                {item.title}
-              </h3>
-              <p className="text-sm text-white/40 leading-relaxed font-[family-name:var(--font-body)]">
-                {item.description}
-              </p>
+              <div className="relative h-44 overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover opacity-80 saturate-[0.85] transition-all duration-700 group-hover:scale-105 group-hover:opacity-100 group-hover:saturate-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-fedsec-black via-fedsec-black/25 to-transparent" />
+                <div className="absolute inset-0 bg-fedsec-purple/15 mix-blend-screen opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <span className="absolute left-5 bottom-4 font-mono text-xs font-bold tracking-[0.3em] text-fedsec-pink">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <div className="p-7">
+                <h3 className="text-xl font-bold text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-white/40 leading-relaxed font-[family-name:var(--font-body)]">
+                  {item.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -1257,15 +1349,17 @@ function AboutCard() {
           className="mb-16"
         >
           <span className="section-tag">Meet the Team</span>
-          <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mt-4 mb-4 font-[family-name:var(--font-heading)] tracking-tight">
-            Built on Trust.{" "}
-            <span className="gradient-text">Driven by Expertise.</span>
-          </h2>
+          <Tremble className="mt-4">
+            <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mb-4 font-[family-name:var(--font-heading)] tracking-tight">
+              Built on Trust.{" "}
+              <span className="gradient-text">Driven by Expertise.</span>
+            </h2>
+          </Tremble>
           <p className="text-base md:text-lg text-white/40 max-w-3xl font-[family-name:var(--font-body)]">
-            FED was inspired by the Latin <em>fiducia</em> — trust. SEC is the
-            security we deliver. Purple, the meeting of blue (defense) and red
-            (offense) — the coming together of different disciplines into one
-            collective. The team below is that collective.
+            CYPHRA — from <em>cipher</em>, the craft of keeping what matters
+            private, intact, and trusted. And like the color purple — blue
+            (defense) meeting red (offense) — we bring different disciplines
+            together into one collective. The team below is that collective.
           </p>
         </motion.div>
 
@@ -1375,10 +1469,12 @@ function AudiencesSection() {
           className="text-center mb-14"
         >
           <span className="section-tag">Who We Serve</span>
-          <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mt-4 mb-4 font-[family-name:var(--font-heading)] tracking-tight">
-            We Know What Different{" "}
-            <span className="gradient-text">Businesses Need</span>
-          </h2>
+          <Tremble className="mt-4">
+            <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-fedsec-white mb-4 font-[family-name:var(--font-heading)] tracking-tight">
+              We Know What Different{" "}
+              <span className="gradient-text">Businesses Need</span>
+            </h2>
+          </Tremble>
           <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
             Whatever stage you are at, if security is the goal, we have done
             this before.
@@ -1435,10 +1531,12 @@ function CTASection() {
           transition={{ duration: 0.7 }}
         >
           <span className="section-tag">Ready When You Are</span>
-          <h2 className="text-4xl md:text-6xl lg:text-[68px] font-bold text-fedsec-white my-6 font-[family-name:var(--font-heading)] tracking-tight">
-            Your Security Partner,{" "}
-            <span className="gradient-text">Not Just Another Firm</span>
-          </h2>
+          <Tremble className="my-6">
+            <h2 className="text-4xl md:text-6xl lg:text-[68px] font-bold text-fedsec-white font-[family-name:var(--font-heading)] tracking-tight">
+              Your Security Partner,{" "}
+              <span className="gradient-text">Not Just Another Firm</span>
+            </h2>
+          </Tremble>
           <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto mb-10 font-[family-name:var(--font-body)]">
             A super team of cybersecurity, one collective. Let us find the risk
             before the attacker does.
@@ -1475,9 +1573,9 @@ export default function Home() {
       <LocationsSection />
       <GrowthTabs />
       <ResultsSection />
-      <CaseStudiesSection />
+      <CaseStudiesFolderStack />
       <ProcessSection />
-      <WhyFEDSEC />
+      <WhyCyphra />
       <AboutCard />
       <AudiencesSection />
       <CTASection />

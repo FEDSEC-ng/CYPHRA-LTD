@@ -59,10 +59,10 @@ export default function TeamPage() {
               Security experts you can trust
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {team.map((member, index) => (
-              <motion.div key={member.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ ...springTransition, delay: (index % 4) * 0.08 }} className="group relative rounded-2xl overflow-hidden aspect-[3/4] bg-fedsec-gray-800">
-                <Image src={member.image} alt={member.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <motion.div key={member.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ ...springTransition, delay: (index % 3) * 0.08 }} className="group relative rounded-2xl overflow-hidden aspect-[3/4] bg-fedsec-gray-800">
+                <Image src={member.image} alt={member.name} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <h3 className="text-lg font-bold text-white mb-1 font-[family-name:var(--font-heading)]">{member.name}</h3>

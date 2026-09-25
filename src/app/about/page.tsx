@@ -13,7 +13,7 @@ const team = [
   {
     name: "Nwachukwu Francis O.",
     role: "Founder / Tech Lead",
-    bio: "Cybersecurity analyst and CTF player ranked in TryHackMe's top 2%, with hands-on experience spanning network security, threat analysis, and SOC operations. Holds SOC Level 1, APIsec Certified Practitioner, Practical Ethical Hacking, Cisco Network Defense, and HCIA Cloud Security credentials. Leads FEDSEC's technical bench and brand.",
+    bio: "Cybersecurity analyst and CTF player ranked in TryHackMe's top 2%, with hands-on experience spanning network security, threat analysis, and SOC operations. Holds SOC Level 1, APIsec Certified Practitioner, Practical Ethical Hacking, Cisco Network Defense, and HCIA Cloud Security credentials. Leads CYPHRA's technical bench and brand.",
     image: "/images/team/francis.png",
     cv: null,
     credentials: "TryHackMe Top 2% · SOC L1 · APIsec · CNSP",
@@ -53,7 +53,7 @@ const team = [
   {
     name: "Badu Zaccheaus J.",
     role: "Cyber Security Analyst",
-    bio: "Cybersecurity analyst with hands-on experience testing production systems — uncovering misconfigurations, insecure headers, and web application flaws, and turning findings into clear, actionable reports for stakeholders. Part of the discipline behind FEDSEC's methodology: authorized, documented, and built to hold up under scrutiny.",
+    bio: "Cybersecurity analyst with hands-on experience testing production systems — uncovering misconfigurations, insecure headers, and web application flaws, and turning findings into clear, actionable reports for stakeholders. Part of the discipline behind CYPHRA's methodology: authorized, documented, and built to hold up under scrutiny.",
     image: "/images/team/badu.png",
     cv: "/images/resumes/badu-cv.docx",
     credentials: "Web App Testing · Methodical Reporting",
@@ -123,7 +123,7 @@ export default function AboutPage() {
                 className="text-4xl md:text-6xl lg:text-[64px] font-bold text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]"
               />
               <p className="text-lg md:text-xl text-fedsec-gray-400 max-w-xl leading-relaxed mb-8">
-                FEDSEC is a multidisciplinary cybersecurity firm bringing
+                CYPHRA is a multidisciplinary cybersecurity firm bringing
                 together professionals with diverse expertise to help
                 organizations understand, manage, and strengthen their
                 cybersecurity. Our foundation is trust. Our strength is
@@ -138,7 +138,7 @@ export default function AboutPage() {
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ ...springTransition, delay: 0.2 }} className="relative">
               <div className="relative rounded-3xl overflow-hidden border border-white/10">
-                <Image src="/images/protexy/about/about-main.png" alt="About FEDSEC" width={640} height={520} className="w-full h-auto object-cover" priority />
+                <Image src="/images/protexy/about/about-main.png" alt="About CYPHRA" width={640} height={520} className="w-full h-auto object-cover" priority />
                 <div className="absolute inset-0 bg-gradient-to-t from-fedsec-black/60 to-transparent" />
               </div>
             </motion.div>
@@ -172,12 +172,12 @@ export default function AboutPage() {
               <span className="gradient-text">One Collective.</span>
             </h2>
             <p className="text-lg text-white/50 max-w-3xl mx-auto leading-relaxed">
-              FEDSEC was born from a simple idea: cybersecurity is stronger when
-              different areas of expertise work together. <strong className="text-white">FED</strong> is
-              inspired by the Latin <em>fiducia</em> — trust, confidence, and reliance.
-              <strong className="text-white"> SEC</strong> is security, the core of what we do. Purple — the
-              coming together of blue (defense) and red (offense) — represents
-              the integration of different disciplines into one collective.
+              CYPHRA was born from a simple idea: cybersecurity is stronger when
+              different areas of expertise work together. Our name comes from
+              the <strong className="text-white">cipher</strong> — the craft of protecting what matters.
+              Purple — the coming together of blue (defense) and red (offense) —
+              represents the integration of different disciplines into one
+              collective.
             </p>
           </div>
 

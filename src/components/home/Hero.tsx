@@ -54,7 +54,7 @@ export default function Hero() {
             variants={fadeInUp}
             className="text-lg md:text-xl text-fedsec-gray-400 max-w-2xl mb-10 leading-relaxed"
           >
-            FEDSEC is a multidisciplinary cybersecurity firm built on trust,
+            CYPHRA is a multidisciplinary cybersecurity firm built on trust,
             expertise, and collaboration. We deliver vulnerability assessments,
             penetration testing, GRC advisory, and incident response services
             that help organizations know their risk and build resilience.

@@ -9,14 +9,14 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 const testimonials = [
   {
     quote:
-      "FEDSEC transformed our approach to security. Their team identified critical vulnerabilities we had missed for years and provided a clear roadmap for remediation.",
+      "CYPHRA transformed our approach to security. Their team identified critical vulnerabilities we had missed for years and provided a clear roadmap for remediation.",
     author: "CTO",
     company: "FinSecure Capital",
     industry: "Financial Services",
   },
   {
     quote:
-      "The penetration testing engagement was thorough, professional, and delivered actionable results. FEDSEC's team went above and beyond to help us understand and prioritize findings.",
+      "The penetration testing engagement was thorough, professional, and delivered actionable results. CYPHRA's team went above and beyond to help us understand and prioritize findings.",
     author: "Head of Engineering",
     company: "CloudSync Technologies",
     industry: "Technology",

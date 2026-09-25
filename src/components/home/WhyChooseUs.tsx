@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
     <section className="py-20 md:py-28 bg-fedsec-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          label="Why FEDSEC"
+          label="Why CYPHRA"
           title="Built on Trust, Driven by Expertise"
           description="We don't just find vulnerabilities. We understand your business, your risks, and deliver solutions that make a real difference."
           light

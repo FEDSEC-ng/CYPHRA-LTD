@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, DM_Sans } from "next/font/google";
+import { Space_Grotesk, DM_Sans, JetBrains_Mono } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
@@ -18,10 +18,17 @@ const dmSans = DM_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono-jetbrains",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "700"],
+});
+
 export const metadata: Metadata = {
-  title: "FEDSEC — Know Your Risk | Multidisciplinary Cybersecurity Firm",
+  title: "CYPHRA — Know Your Risk | Multidisciplinary Cybersecurity Firm",
   description:
-    "Different Expertise. One Collective. Secure by Trust. FEDSEC delivers VAPT, GRC advisory, network security, software security, security operations, and incident response services.",
+    "Different Expertise. One Collective. Secure by Trust. CYPHRA delivers VAPT, GRC advisory, network security, software security, security operations, and incident response services.",
   keywords: [
     "cybersecurity",
     "penetration testing",
@@ -36,16 +43,16 @@ export const metadata: Metadata = {
     "know your risk",
   ],
   openGraph: {
-    title: "FEDSEC — Know Your Risk | Multidisciplinary Cybersecurity Firm",
+    title: "CYPHRA — Know Your Risk | Multidisciplinary Cybersecurity Firm",
     description:
       "Different Expertise. One Collective. Secure by Trust. Cybersecurity that delivers results.",
     type: "website",
-    siteName: "FEDSEC",
-    url: "https://fedsec.tech.io",
+    siteName: "CYPHRA",
+    url: "https://cyphraltd.tech",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FEDSEC — Know Your Risk",
+    title: "CYPHRA — Know Your Risk",
     description:
       "Different Expertise. One Collective. Secure by Trust. Cybersecurity that delivers results.",
   },
@@ -63,7 +70,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${dmSans.variable}`}
+      className={`${spaceGrotesk.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen flex flex-col antialiased bg-fedsec-black text-fedsec-white">
         <Header />

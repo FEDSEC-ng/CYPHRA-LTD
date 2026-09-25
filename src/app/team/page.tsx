@@ -30,7 +30,7 @@ export default function TeamPage() {
               <span className="inline-block mb-4 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-fedsec-purple bg-fedsec-purple/10 rounded-full font-[family-name:var(--font-accent)]">Our team</span>
               <WordByWordReveal text="Different expertise. One collective." className="text-4xl md:text-6xl lg:text-7xl font-bold text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]" tag="h1" />
               <p className="text-lg md:text-xl text-fedsec-gray-400 max-w-xl leading-relaxed mb-8">
-                Meet the FEDSEC collective — offensive and defensive specialists,
+                Meet the CYPHRA collective — offensive and defensive specialists,
                 governance and engineering minds working as one team to protect
                 your business.
               </p>

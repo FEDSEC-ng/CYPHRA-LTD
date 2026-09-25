@@ -147,7 +147,7 @@ export default function BlogDetailPage() {
               &ldquo;
             </div>
             <blockquote className="text-xl md:text-2xl text-fedsec-gray-700 leading-relaxed mb-6 italic font-[family-name:var(--font-heading)]">
-              FEDSEC&apos;s cybersecurity solutions transformed our approach to
+              CYPHRA&apos;s cybersecurity solutions transformed our approach to
               cloud security. Their team delivered exceptional results and
               provided ongoing support throughout the entire engagement.
             </blockquote>

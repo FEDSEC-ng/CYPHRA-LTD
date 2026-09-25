@@ -20,12 +20,12 @@ const contactCards = [
 ];
 
 const faqItems = [
-  { question: "What cybersecurity services does FEDSEC offer?", answer: "We offer a comprehensive range of services including Vulnerability Assessment & Penetration Testing, Security Analysis, GRC & Cybersecurity Advisory, Network Security, Software Security, and Security Operations. Our multidisciplinary approach covers the full spectrum of cybersecurity needs." },
-  { question: "How does FEDSEC approach a new security engagement?", answer: "We begin with a thorough assessment of your current security posture, identify vulnerabilities and risks, then develop a tailored strategy that aligns with your business objectives. Our approach combines offensive security testing with defensive architecture recommendations." },
-  { question: "What industries does FEDSEC serve?", answer: "We serve organizations across multiple industries including financial services, healthcare, technology, government, and education. Our solutions are designed to meet the specific compliance and security requirements of each sector." },
-  { question: "How does FEDSEC ensure client confidentiality?", answer: "Confidentiality is one of our core values. We implement strict data handling protocols, use encrypted communication channels, and ensure all team members adhere to comprehensive non-disclosure agreements. Your sensitive information is protected as if it were our own." },
-  { question: "What makes FEDSEC different from other cybersecurity firms?", answer: "Our multidisciplinary team brings together experts from different cybersecurity domains. Rather than a one-size-fits-all approach, we combine offensive testing, defensive architecture, governance expertise, and security operations to deliver comprehensive, integrated solutions." },
-  { question: "How can I get started with FEDSEC?", answer: "Getting started is simple. Reach out through our contact form or book a free security consultation call. We will discuss your needs, assess your current situation, and recommend the most appropriate services for your organization." },
+  { question: "What cybersecurity services does CYPHRA offer?", answer: "We offer a comprehensive range of services including Vulnerability Assessment & Penetration Testing, Security Analysis, GRC & Cybersecurity Advisory, Network Security, Software Security, and Security Operations. Our multidisciplinary approach covers the full spectrum of cybersecurity needs." },
+  { question: "How does CYPHRA approach a new security engagement?", answer: "We begin with a thorough assessment of your current security posture, identify vulnerabilities and risks, then develop a tailored strategy that aligns with your business objectives. Our approach combines offensive security testing with defensive architecture recommendations." },
+  { question: "What industries does CYPHRA serve?", answer: "We serve organizations across multiple industries including financial services, healthcare, technology, government, and education. Our solutions are designed to meet the specific compliance and security requirements of each sector." },
+  { question: "How does CYPHRA ensure client confidentiality?", answer: "Confidentiality is one of our core values. We implement strict data handling protocols, use encrypted communication channels, and ensure all team members adhere to comprehensive non-disclosure agreements. Your sensitive information is protected as if it were our own." },
+  { question: "What makes CYPHRA different from other cybersecurity firms?", answer: "Our multidisciplinary team brings together experts from different cybersecurity domains. Rather than a one-size-fits-all approach, we combine offensive testing, defensive architecture, governance expertise, and security operations to deliver comprehensive, integrated solutions." },
+  { question: "How can I get started with CYPHRA?", answer: "Getting started is simple. Reach out through our contact form or book a free security consultation call. We will discuss your needs, assess your current situation, and recommend the most appropriate services for your organization." },
 ];
 
 export default function ContactPage() {
@@ -46,7 +46,7 @@ export default function ContactPage() {
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={springTransition}>
               <span className="inline-block mb-4 px-4 py-1.5 rounded-full bg-fedsec-purple/10 border border-fedsec-purple/20 text-sm font-semibold uppercase tracking-widest text-fedsec-pink font-[family-name:var(--font-accent)]">Contact Us</span>
               <WordByWordReveal text="Get in touch with security experts" className="text-[clamp(2.8rem,8vw,4.5rem)] font-normal text-fedsec-white leading-[.98] mb-6 font-[family-name:var(--font-heading)]" tag="h1" />
-              <p className="text-base sm:text-lg md:text-xl text-fedsec-gray-400 max-w-3xl leading-relaxed">Whether you have a specific security challenge or want to explore how FEDSEC can help your organization, we&apos;d love to hear from you.</p>
+              <p className="text-base sm:text-lg md:text-xl text-fedsec-gray-400 max-w-3xl leading-relaxed">Whether you have a specific security challenge or want to explore how CYPHRA can help your organization, we&apos;d love to hear from you.</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ ...springTransition, delay: 0.2 }} className="relative">
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
@@ -106,7 +106,7 @@ export default function ContactPage() {
               <div className="p-6 bg-fedsec-gray-900 rounded-2xl">
                 <h3 className="text-lg font-normal text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">{SITE.founder}</h3>
                 <p className="text-sm text-fedsec-purple font-semibold mb-2 font-[family-name:var(--font-accent)]">{SITE.founderRole}</p>
-                <p className="text-sm text-fedsec-gray-400 leading-relaxed">Built on the principle of trust, FEDSEC is committed to professionalism, confidentiality, continuous learning, and responsible security practices.</p>
+                <p className="text-sm text-fedsec-gray-400 leading-relaxed">Built on the principle of trust, CYPHRA is committed to professionalism, confidentiality, continuous learning, and responsible security practices.</p>
               </div>
             </motion.div>
             <motion.div variants={slideInRight} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="lg:col-span-3">

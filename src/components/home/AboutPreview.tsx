@@ -21,7 +21,7 @@ export default function AboutPreview() {
         >
           <motion.div variants={slideInLeft}>
             <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-purple font-[family-name:var(--font-accent)]">
-              About FEDSEC
+              About CYPHRA
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-fedsec-gray-900 leading-tight mb-6 font-[family-name:var(--font-heading)]">
               Effective Cybersecurity Goes Beyond Finding Vulnerabilities
@@ -33,7 +33,7 @@ export default function AboutPreview() {
               practical solutions that address real organizational needs.
             </p>
             <p className="text-lg text-fedsec-gray-500 leading-relaxed mb-8">
-              Built on the principle of trust, FEDSEC is committed to
+              Built on the principle of trust, CYPHRA is committed to
               professionalism, confidentiality, continuous learning, and
               responsible security practices.
             </p>

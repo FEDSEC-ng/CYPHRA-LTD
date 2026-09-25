@@ -306,7 +306,7 @@ export default function CaseStudyDetailPage() {
               &ldquo;
             </div>
             <blockquote className="text-xl md:text-2xl text-fedsec-gray-700 leading-relaxed mb-6 italic font-[family-name:var(--font-heading)]">
-              FEDSEC delivered a comprehensive security transformation that
+              CYPHRA delivered a comprehensive security transformation that
               exceeded our expectations. Their team provided exceptional
               expertise and ongoing support throughout the entire engagement.
             </blockquote>

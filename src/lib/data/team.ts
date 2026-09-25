@@ -11,7 +11,7 @@ export const team: TeamMember[] = [
   {
     name: "Nwachukwu Francis O.",
     role: "Founder / Tech Lead",
-    bio: "A cybersecurity analyst and CTF player ranked in TryHackMe's top 2%, with hands-on experience spanning network security, threat analysis, and SOC operations across infrastructure, professional, and forensic environments. Francis leads FEDSEC's technical bench and brand, holding SOC Level 1, APIsec Certified Practitioner, Practical Ethical Hacking, Cisco Network Defense, and HCIA Cloud Security credentials.",
+    bio: "A cybersecurity analyst and CTF player ranked in TryHackMe's top 2%, with hands-on experience spanning network security, threat analysis, and SOC operations across infrastructure, professional, and forensic environments. Francis leads CYPHRA's technical bench and brand, holding SOC Level 1, APIsec Certified Practitioner, Practical Ethical Hacking, Cisco Network Defense, and HCIA Cloud Security credentials.",
     image: "/images/team/francis.png",
     cv: null,
     credentials: "TryHackMe Top 2% · SOC L1 · APIsec",
@@ -51,7 +51,7 @@ export const team: TeamMember[] = [
   {
     name: "Badu Zaccheaus J.",
     role: "Cyber Security Analyst",
-    bio: "Cybersecurity analyst with hands-on experience testing production systems — uncovering misconfigurations, insecure headers, and web application flaws, and turning findings into clear, actionable reports for stakeholders. Part of the discipline behind FEDSEC's methodology: authorized, documented, and built to hold up under scrutiny.",
+    bio: "Cybersecurity analyst with hands-on experience testing production systems — uncovering misconfigurations, insecure headers, and web application flaws, and turning findings into clear, actionable reports for stakeholders. Part of the discipline behind CYPHRA's methodology: authorized, documented, and built to hold up under scrutiny.",
     image: "/images/team/badu.png",
     cv: "/images/resumes/badu-cv.docx",
     credentials: "Web App Testing · Methodical Reporting",

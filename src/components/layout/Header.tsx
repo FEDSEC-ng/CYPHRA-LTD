@@ -2,26 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 import { headerSlideDown } from "@/lib/animations";
-
-function FedsecLogo({ className = "" }: { className?: string }) {
-  return (
-    <Link href="/" className={`inline-flex items-center ${className}`}>
-      <Image
-        src="/images/fedsec-logo-horizontal.png"
-        alt="FEDSEC"
-        width={140}
-        height={40}
-        className="h-8 w-auto object-contain brightness-0 invert"
-        priority
-      />
-    </Link>
-  );
-}
+import CyphraLogo from "./CyphraLogo";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +31,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-16 md:h-20">
-          <FedsecLogo />
+          <CyphraLogo />
 
           <div className="hidden lg:flex items-center gap-1">
             {NAV_LINKS.map((link) => (

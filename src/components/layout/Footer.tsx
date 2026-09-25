@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { SITE, SOCIAL_LINKS } from "@/lib/constants";
 
 const serviceLinks = [
@@ -68,13 +67,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-4">
             <Link href="/" className="inline-flex items-center mb-5">
-              <Image
-                src="/images/fedsec-logo-horizontal.png"
-                alt="FEDSEC"
-                width={140}
-                height={40}
-                className="h-8 w-auto object-contain brightness-0 invert"
-              />
+              <span className="inline-flex items-center gap-2.5">
+                <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-fedsec-purple to-fedsec-pink font-[family-name:var(--font-heading)] text-sm font-bold text-white">
+                  C
+                </span>
+                <span className="font-[family-name:var(--font-heading)] text-xl font-bold tracking-tight text-white">
+                  CYPHRA<span className="text-fedsec-pink">.</span>
+                </span>
+              </span>
             </Link>
             <p className="text-sm text-white/40 leading-relaxed mb-6 max-w-xs font-[family-name:var(--font-body)]">
               {SITE.description}
@@ -174,7 +174,7 @@ export default function Footer() {
       <div className="border-t border-white/[0.04]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/25 font-[family-name:var(--font-body)]">
-            &copy; {new Date().getFullYear()} FEDSEC. All rights reserved.
+            &copy; {new Date().getFullYear()} CYPHRA. All rights reserved.
           </p>
           <p className="text-xs text-white/20 font-[family-name:var(--font-accent)] tracking-wide">
             Different Expertise. One Collective. Secure by Trust.

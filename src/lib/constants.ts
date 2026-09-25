@@ -1,10 +1,10 @@
 export const SITE = {
-  name: "FEDSEC",
-  title: "FEDSEC — Multidisciplinary Cybersecurity Firm",
+  name: "CYPHRA",
+  title: "CYPHRA — Multidisciplinary Cybersecurity Firm",
   description:
-    "FEDSEC is a multidisciplinary cybersecurity firm built on trust, expertise, and collaboration. We help organizations identify vulnerabilities, understand risk, strengthen security, and make informed decisions.",
+    "CYPHRA is a multidisciplinary cybersecurity firm built on trust, expertise, and collaboration. We help organizations identify vulnerabilities, understand risk, strengthen security, and make informed decisions.",
   tagline: "KNOW YOUR RISK",
-  url: "https://fedsec.tech.io",
+  url: "https://cyphraltd.tech",
   email: "Buchi@fadsec.io",
   phone: "+2349021530382",
   founder: "Nwachukwu Francis O.",

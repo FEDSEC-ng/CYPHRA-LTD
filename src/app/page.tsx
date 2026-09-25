@@ -32,6 +32,7 @@ import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import CaseStudiesFolderStack from "@/components/home/CaseStudiesFolderStack";
 import ColorSplash from "@/components/home/ColorSplash";
 import LiveCode, { type CodeLine } from "@/components/home/LiveCode";
+import PuzzleGradient from "@/components/home/PuzzleGradient";
 import Tremble from "@/components/ui/Tremble";
 
 /* ─── Data ─────────────────────────────────────────────── */
@@ -306,6 +307,24 @@ const audiences = [
 
 const trustBadges = ["VAPT", "GRC Advisory", "SOC Operations", "Red Team", "ISO 27001 Aligned"];
 
+/* Hero live ops feed — interleaved red / blue / GRC stream */
+const heroStream: CodeLine[] = [
+  { text: "[red] nmap -sS -sV -T4 target.corp --top-ports 1000", tone: "attack" },
+  { text: "[blue] pkt 10.0.4.12:443 ⇄ 91.203.x.x  TLS 1.3 hs ok", tone: "net" },
+  { text: "[red] param id=104 → probing injection points", tone: "attack" },
+  { text: "[grc] policy rbac/finance-portal.yaml — applying", tone: "ok" },
+  { text: "[blue] SIEM rule TA0007: 14 beacon attempts blocked", tone: "net" },
+  { text: "[red] [!!] SQLi confirmed — chained to admin", tone: "warn" },
+  { text: "[grc] ISO 27001: 94 controls mapped · 0 majors", tone: "ok" },
+  { text: "[blue] EDR quarantine: cobaltstrike.beacon.dll", tone: "warn" },
+];
+
+const heroChips = [
+  { label: "TryHackMe Top 2%", icon: Crosshair },
+  { label: "35+ Accepted Reports", icon: FileCheck },
+  { label: "24/7 SOC Monitoring", icon: Radar },
+];
+
 /* Live code streams — per growth tab and per process step */
 
 const tabStreams: Record<string, CodeLine[]> = {
@@ -466,101 +485,126 @@ function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-fedsec-black overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(102,47,144,0.18),transparent_70%)]" />
+      {/* fnz-style living puzzle gradient — moves by itself, hover steers it */}
+      <PuzzleGradient />
       <div className="absolute inset-0 grid-pattern opacity-[0.04]" />
 
-      <video
-        className="absolute inset-0 w-full h-full object-cover opacity-[0.12]"
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/images/fedsec-brand-video-poster.jpg"
-      >
-        <source src="/images/fedsec-brand-video.mp4" type="video/mp4" />
-      </video>
+      <div className="relative w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center">
+          {/* left — copy */}
+          <div className="max-w-2xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mb-8 flex"
+            >
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-fedsec-purple text-xs sm:text-sm font-medium font-[family-name:var(--font-accent)]">
+                <Shield size={14} />
+                Different Expertise. One Collective.
+              </span>
+            </motion.div>
 
-      {/* socialander-style mouse-following color splash (purple leads, pink trails) */}
-      <ColorSplash mode="dark" />
-
-      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8 flex justify-center"
-          >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-fedsec-purple text-xs sm:text-sm font-medium font-[family-name:var(--font-accent)]">
-              <Shield size={14} />
-              Different Expertise. One Collective.
-            </span>
-          </motion.div>
-
-          <TouchMove strength={10}>
-            <h1 className="text-[40px] sm:text-6xl md:text-7xl lg:text-[92px] font-bold text-fedsec-white leading-[1.05] mb-6 sm:mb-8 font-[family-name:var(--font-heading)] tracking-tight">
-              {words.map((word, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ opacity: 0, y: 90 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.9, delay: 0.15 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                  className={`inline-block mr-[0.25em] ${word === "Risk." ? "gradient-text" : ""}`}
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </h1>
-          </TouchMove>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <TouchMove strength={6}>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/50 max-w-2xl mx-auto mb-10 leading-relaxed font-[family-name:var(--font-body)]">
-                A multidisciplinary cybersecurity collective. Red team and blue
-                team, GRC and engineering — different expertise working as one
-                to find the risk before it finds you.
-              </p>
+            <TouchMove strength={10}>
+              <h1 className="text-[44px] sm:text-6xl md:text-7xl lg:text-[84px] font-bold text-fedsec-white leading-[1.04] mb-6 sm:mb-8 font-[family-name:var(--font-heading)] tracking-tight">
+                {words.map((word, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, y: 90 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.9, delay: 0.15 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                    className={`inline-block mr-[0.25em] ${word === "Risk." ? "gradient-text" : ""}`}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </h1>
             </TouchMove>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.75 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16"
-          >
-            <Link href="/contact" className="grow-pill growable">
-              <span className="pill-label">Know Your Risk</span>
-              <span className="pill-icon">
-                <ArrowRight size={18} />
-              </span>
-            </Link>
-            <Link href="/services" className="grow-pill grow-pill-outline growable">
-              <span className="pill-label">Our Services</span>
-              <span className="pill-icon">
-                <ArrowRight size={18} />
-              </span>
-            </Link>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <TouchMove strength={6}>
+                <p className="text-base sm:text-lg md:text-xl text-white/50 max-w-xl mb-10 leading-relaxed font-[family-name:var(--font-body)]">
+                  A multidisciplinary cybersecurity collective. Red team and blue
+                  team, GRC and engineering — different expertise working as one
+                  to find the risk before it finds you.
+                </p>
+              </TouchMove>
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="flex flex-wrap justify-center gap-3"
-          >
-            {trustBadges.map((badge) => (
-              <div key={badge} className="flex items-center gap-2 px-4 py-2 rounded-full glass">
-                <Shield size={14} className="text-fedsec-purple" />
-                <span className="text-xs sm:text-sm font-semibold text-white/60 font-[family-name:var(--font-accent)]">
-                  {badge}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.75 }}
+              className="flex flex-col sm:flex-row items-center sm:justify-start justify-center gap-3 sm:gap-4 mb-10"
+            >
+              <Link href="/contact" className="grow-pill growable">
+                <span className="pill-label">Know Your Risk</span>
+                <span className="pill-icon">
+                  <ArrowRight size={18} />
                 </span>
+              </Link>
+              <Link href="/services" className="grow-pill grow-pill-outline growable">
+                <span className="pill-label">Our Services</span>
+                <span className="pill-icon">
+                  <ArrowRight size={18} />
+                </span>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+              className="flex flex-wrap gap-3"
+            >
+              {trustBadges.map((badge) => (
+                <div key={badge} className="flex items-center gap-2 px-4 py-2 rounded-full glass">
+                  <Shield size={14} className="text-fedsec-purple" />
+                  <span className="text-xs sm:text-sm font-semibold text-white/60 font-[family-name:var(--font-accent)]">
+                    {badge}
+                  </span>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* right — live ops code sim */}
+          <motion.div
+            initial={{ opacity: 0, y: 40, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="relative hidden md:block"
+          >
+            <div className="rounded-2xl bg-gradient-to-br from-fedsec-purple/80 via-fedsec-pink/40 to-fedsec-emerald/50 p-[1.5px] shadow-[0_0_80px_rgba(102,47,144,0.4)]">
+              <div className="rounded-[15px] bg-black/85 backdrop-blur-md">
+                <LiveCode
+                  lines={heroStream}
+                  title="cyphra@ops:~ — live collective feed"
+                  interval={820}
+                />
               </div>
-            ))}
+            </div>
+
+            <div className="mt-5 grid grid-cols-3 gap-3">
+              {heroChips.map((chip) => (
+                <div
+                  key={chip.label}
+                  className="glass rounded-xl px-3 py-3 flex flex-col items-center gap-2 text-center"
+                >
+                  <chip.icon size={16} className="text-fedsec-pink" />
+                  <span className="text-[11px] font-semibold text-white/60 leading-tight font-[family-name:var(--font-accent)]">
+                    {chip.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="absolute -top-6 -right-4 w-40 h-40 blob-pink opacity-60 -z-10" />
+            <div className="absolute -bottom-8 -left-8 w-44 h-44 blob-purple opacity-70 -z-10" />
           </motion.div>
         </div>
       </div>

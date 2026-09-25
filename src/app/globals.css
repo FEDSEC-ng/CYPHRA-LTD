@@ -19,9 +19,13 @@
   --color-fedsec-gray-700: #323232;
   --color-fedsec-gray-800: #262626;
   --color-fedsec-gray-900: #111111;
+  --color-fedsec-red: #e5484d;
+  --color-fedsec-blue: #3b82f6;
+  --color-fedsec-emerald: #10b981;
   --font-heading: "Space Grotesk", "Inter", sans-serif;
   --font-body: "DM Sans", "Inter", sans-serif;
   --font-accent: "Space Grotesk", "Inter", sans-serif;
+  --font-mono: var(--font-mono-jetbrains), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 html {
@@ -126,6 +130,18 @@ select {
   box-shadow: 0 0 20px rgba(218, 26, 93, 0.3), 0 0 60px rgba(218, 26, 93, 0.1);
 }
 
+.glow-red {
+  box-shadow: 0 0 20px rgba(229, 72, 77, 0.28), 0 0 60px rgba(229, 72, 77, 0.1);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.28), 0 0 60px rgba(59, 130, 246, 0.1);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.28), 0 0 60px rgba(16, 185, 129, 0.1);
+}
+
 .glow-sm {
   box-shadow: 0 0 30px rgba(102, 47, 144, 0.08);
 }
@@ -205,6 +221,28 @@ select {
 .animate-shimmer {
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
+}
+
+/* ─── Tremble (socialander title shake on view) ─────── */
+
+@keyframes tremble-shake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  15% { transform: translate(-1.6px, 1px) rotate(-0.35deg); }
+  30% { transform: translate(1.6px, -1px) rotate(0.32deg); }
+  45% { transform: translate(-1.1px, -1.4px) rotate(-0.26deg); }
+  60% { transform: translate(1.1px, 1.4px) rotate(0.26deg); }
+  78% { transform: translate(-0.5px, 0.4px) rotate(-0.1deg); }
+}
+
+.tremble-once {
+  animation: tremble-shake 0.7s ease-in-out 1;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tremble-once {
+    animation: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -409,6 +447,11 @@ select {
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.video-frame-light {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.3);
 }
 
 /* ─── Scrollbar ──────────────────────────────────────── */

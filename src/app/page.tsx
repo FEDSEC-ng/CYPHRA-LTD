@@ -11,7 +11,6 @@ import {
   Search,
   Layers,
   Zap,
-  CheckCircle,
   Quote,
   Play,
   Crosshair,
@@ -262,23 +261,6 @@ const processSteps = [
   },
 ];
 
-const postEngagement = [
-  {
-    title: "Ongoing Review",
-    description:
-      "Regular reassessment to keep defenses current against an evolving threat landscape.",
-  },
-  {
-    title: "Continuous Improvement",
-    description:
-      "Detection tuning, threat intelligence, and iterative hardening between engagements.",
-  },
-  {
-    title: "Long-Term Support",
-    description:
-      "Dedicated advisory as your security program and maturity grow with your business.",
-  },
-];
 const audiences = [
   {
     title: "Startups and Founders",
@@ -1141,7 +1123,9 @@ function ResultsSection() {
 }
 
 
-/* How We Do It (novora-style hacking process) */
+/* How We Do It — scroll wheel; nodes locked to the X / Y / −Y / −X axes.
+ * Ring rotation carries each node to the top position while counter-rotation
+ * keeps every icon upright — the formation never detaches from its circle. */
 function ProcessSection() {
   const wheelRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: wheelRef, offset: ["start start", "end end"] });
@@ -1149,7 +1133,18 @@ function ProcessSection() {
   const rotate = useTransform(spring, [0, 1], [0, 270]);
   const [active, setActive] = useState(0);
 
-  const orbitRadius = 240;
+  const [vp, setVp] = useState({ w: 1200, h: 850 });
+  useEffect(() => {
+    const onResize = () => setVp({ w: window.innerWidth, h: window.innerHeight });
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  const ringSize = Math.min(620, vp.w * 0.92);
+  const orbitRadius = Math.max(158, Math.min(ringSize / 2 - 60, vp.h * 0.3));
+
+  // nodes locked to the four axes: top (−Y), right (+X), bottom (+Y), left (−X)
   const orbitPositions = processSteps.map((_, i) => {
     const angle = (i / processSteps.length) * Math.PI * 2 - Math.PI / 2;
     return {
@@ -1189,36 +1184,12 @@ function ProcessSection() {
 
         <div ref={wheelRef} className="relative h-[300vh]">
           <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-            {/* live ops terminal — the wheel's beating heart */}
-            <motion.div
-              key={active}
-              initial={{ opacity: 0, scale: 0.94 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.45, ease: "easeOut" }}
-              className="absolute z-20 w-[min(400px,86vw)]"
-            >
-              <div className="rounded-2xl bg-fedsec-purple p-[1.5px] shadow-[0_0_60px_rgba(102,47,144,0.55)]">
-                <div className="rounded-[15px] bg-fedsec-gray-900/95 p-3">
-                  <LiveCode
-                    lines={stepStreams[active]}
-                    title={`step-${processSteps[active].number}-@ops:~`}
-                    interval={950}
-                  />
-                </div>
-              </div>
-              <div className="mt-3 flex justify-center">
-                <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-full glass px-4 py-1.5 font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-fedsec-pink">
-                  {(() => {
-                    const StepIcon = processSteps[active].icon;
-                    return <StepIcon size={12} className="shrink-0" />;
-                  })()}
-                  {processSteps[active].number} · {processSteps[active].title}
-                </span>
-              </div>
-            </motion.div>
-
             {/* orbit ring + novora progress arc */}
-            <motion.svg viewBox="0 0 100 100" className="absolute w-[520px] h-[520px] md:w-[640px] md:h-[640px] -rotate-90">
+            <motion.svg
+              viewBox="0 0 100 100"
+              className="absolute -rotate-90"
+              style={{ width: ringSize, height: ringSize }}
+            >
               <circle cx="50" cy="50" r="47" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="0.35" strokeDasharray="0.6 3" />
               <motion.circle
                 cx="50"
@@ -1230,114 +1201,103 @@ function ProcessSection() {
                 strokeLinecap="round"
                 strokeDasharray={ARC_C}
                 style={{ strokeDashoffset: arcOffset }}
-            />
+              />
             </motion.svg>
 
-            {/* orbiting step nodes */}
-            <motion.div style={{ rotate }} className="absolute w-[520px] h-[520px] md:w-[640px] md:h-[640px]">
+            {/* rotating ring — nodes keep their circular formation */}
+            <motion.div
+              style={{ rotate, width: ringSize, height: ringSize }}
+              className="absolute will-change-transform"
+            >
               {processSteps.map((step, i) => {
                 const pos = orbitPositions[i];
                 const state =
                   i < active ? "done" : i === active ? "current" : "pending";
                 return (
-                  <motion.div
+                  <div
                     key={step.number}
-                    style={{ rotate: -rotate }}
-                    className="absolute"
+                    className="absolute left-1/2 top-1/2"
+                    style={{
+                      transform: `translate(-50%, -50%) translate(${pos.x}px, ${pos.y}px)`,
+                    }}
                   >
-                    <motion.div
-                      initial={{ x: 0, y: 0 }}
-                      animate={{ x: pos.x, y: pos.y }}
-                      transition={{ duration: 0.8, ease: "easeOut" }}
-                      className="flex flex-col items-center gap-4"
-                    >
+                    {/* counter-rotation pivots on the node itself → icon stays upright */}
+                    <motion.div style={{ rotate: -rotate }} className="will-change-transform">
                       <div
-                        className={`w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center border transition-all duration-500 ${
-                          state === "current"
-                            ? "bg-fedsec-purple/20 border-fedsec-purple shadow-[0_0_40px_rgba(102,47,144,0.4)]"
-                            : state === "done"
-                              ? "bg-fedsec-gray-900/40 border-fedsec-gray-700/60"
-                              : "bg-fedsec-gray-900/40 border-white/10"
-                        }`}
+                        className={`flex flex-col items-center gap-3 ${
+                          state === "current" ? "scale-110" : "scale-100"
+                        } transition-transform duration-500`}
                       >
-                        <step.icon
-                          size={40}
-                          className={`transition-colors duration-500 ${
+                        <div
+                          className={`w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center border transition-all duration-500 ${
                             state === "current"
-                              ? "text-fedsec-purple"
+                              ? "bg-fedsec-purple/25 border-fedsec-purple shadow-[0_0_44px_rgba(102,47,144,0.45)]"
                               : state === "done"
-                                ? "text-fedsec-gray-500"
+                                ? "bg-fedsec-gray-900/60 border-fedsec-gray-700/60"
+                                : "bg-fedsec-gray-900/60 border-white/10"
+                          }`}
+                        >
+                          <step.icon
+                            size={34}
+                            className={`transition-colors duration-500 ${
+                              state === "current"
+                                ? "text-fedsec-purple"
+                                : state === "done"
+                                  ? "text-fedsec-gray-500"
+                                  : "text-white/25"
+                            }`}
+                          />
+                        </div>
+                        <span
+                          className={`hidden sm:block text-[11px] font-bold uppercase tracking-[0.2em] font-[family-name:var(--font-accent)] transition-colors duration-500 ${
+                            state === "current"
+                              ? "text-fedsec-pink"
+                              : state === "done"
+                                ? "text-white/40"
                                 : "text-white/25"
                           }`}
-                        />
+                        >
+                          {step.kicker}
+                        </span>
                       </div>
-                      <span
-                        className={`text-[11px] font-bold uppercase tracking-[0.2em] font-[family-name:var(--font-accent)] transition-colors duration-500 ${
-                          state === "current"
-                            ? "text-fedsec-pink"
-                            : state === "done"
-                              ? "text-white/40"
-                              : "text-white/25"
-                        }`}
-                      >
-                        {step.kicker}
-                      </span>
                     </motion.div>
-                  </motion.div>
+                  </div>
                 );
               })}
             </motion.div>
 
-            {/* active step detail panel */}
+            {/* live ops terminal — the wheel's beating heart, fixed in the center */}
             <motion.div
               key={active}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="absolute bottom-[12vh] left-1/2 -translate-x-1/2 text-center px-6 max-w-xl z-10"
+              initial={{ opacity: 0, scale: 0.94 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
+              className="absolute z-20 w-[min(220px,58vw)] md:w-[min(380px,80vw)]"
             >
-              <span className="section-tag">{processSteps[active].number} / {processSteps[active].title}</span>
-              <p className="text-sm md:text-base text-white/45 mt-3 font-[family-name:var(--font-body)]">
+              <div className="rounded-2xl bg-fedsec-purple p-[1.5px] shadow-[0_0_60px_rgba(102,47,144,0.55)]">
+                <div className="rounded-[15px] bg-fedsec-gray-900/95 p-2 md:p-3">
+                  <LiveCode
+                    lines={stepStreams[active]}
+                    title={`step-${processSteps[active].number}-@ops:~`}
+                    interval={950}
+                  />
+                </div>
+              </div>
+              <div className="mt-3 flex justify-center">
+                <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-full glass px-3 md:px-4 py-1.5 font-mono text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-fedsec-pink">
+                  {(() => {
+                    const StepIcon = processSteps[active].icon;
+                    return <StepIcon size={12} className="shrink-0" />;
+                  })()}
+                  {processSteps[active].number} · {processSteps[active].title}
+                </span>
+              </div>
+              <p className="mx-auto mt-2 max-w-[300px] md:max-w-sm text-center text-[11px] md:text-sm text-white/45 leading-relaxed font-[family-name:var(--font-body)]">
                 {processSteps[active].description}
               </p>
             </motion.div>
           </div>
         </div>
-
-        <div className="flex flex-wrap justify-center gap-3 mb-16">
-          {["Reconnaissance", "Fingerprinting", "Exploitation", "Reporting"].map((label) => (
-            <span key={label} className="px-5 py-2 rounded-full glass text-sm text-white/40 font-[family-name:var(--font-accent)]">
-              {label}
-            </span>
-          ))}
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="glass-strong rounded-2xl p-8 md:p-12"
-        >
-          <h3 className="text-2xl md:text-3xl font-bold text-fedsec-white mb-8 text-center font-[family-name:var(--font-heading)]">
-            What Happens After Engagement?
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {postEngagement.map((item) => (
-              <div key={item.title} className="p-6 glass rounded-xl">
-                <div className="w-10 h-10 rounded-lg bg-fedsec-purple/20 flex items-center justify-center mb-4">
-                  <CheckCircle size={20} className="text-fedsec-purple" />
-                </div>
-                <h4 className="font-bold text-fedsec-white mb-2 font-[family-name:var(--font-heading)]">
-                  {item.title}
-                </h4>
-                <p className="text-sm text-white/40 leading-relaxed font-[family-name:var(--font-body)]">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

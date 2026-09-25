@@ -5,7 +5,7 @@ export const SITE = {
     "CYPHRA is a multidisciplinary cybersecurity firm built on trust, expertise, and collaboration. We help organizations identify vulnerabilities, understand risk, strengthen security, and make informed decisions.",
   tagline: "KNOW YOUR RISK",
   url: "https://cyphraltd.tech",
-  email: "Buchi@fadsec.io",
+  email: "info@cyphraltd.com",
   phone: "+2349021530382",
   founder: "Nwachukwu Francis O.",
   founderRole: "Founder & Cybersecurity Professional",

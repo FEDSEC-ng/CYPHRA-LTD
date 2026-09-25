@@ -52,10 +52,14 @@ export default function PuzzleGradient({
   className = "",
   blobCount = 6,
   opacity = 1,
+  base = "black",
 }: {
   className?: string;
   blobCount?: number;
   opacity?: number;
+  /** "black" paints a solid base (full-bleed hero); "none" leaves the canvas
+   *  transparent so blobs screen-blend onto the section behind. */
+  base?: "black" | "none";
 }) {
   const hostRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -139,8 +143,12 @@ export default function PuzzleGradient({
 
     const draw = () => {
       ctx.globalCompositeOperation = "source-over";
-      ctx.fillStyle = "#000000";
-      ctx.fillRect(0, 0, w, h);
+      if (base === "black") {
+        ctx.fillStyle = "#000000";
+        ctx.fillRect(0, 0, w, h);
+      } else {
+        ctx.clearRect(0, 0, w, h);
+      }
 
       ctx.globalCompositeOperation = "screen";
 
@@ -186,14 +194,16 @@ export default function PuzzleGradient({
       }
 
       // edge vignette so the field melts into the section
-      const vig = ctx.createRadialGradient(
-        w / 2, h / 2, Math.min(w, h) * 0.32,
-        w / 2, h / 2, Math.max(w, h) * 0.75,
-      );
-      vig.addColorStop(0, "rgba(0,0,0,0)");
-      vig.addColorStop(1, "rgba(0,0,0,0.55)");
-      ctx.fillStyle = vig;
-      ctx.fillRect(0, 0, w, h);
+      if (base === "black") {
+        const vig = ctx.createRadialGradient(
+          w / 2, h / 2, Math.min(w, h) * 0.32,
+          w / 2, h / 2, Math.max(w, h) * 0.75,
+        );
+        vig.addColorStop(0, "rgba(0,0,0,0)");
+        vig.addColorStop(1, "rgba(0,0,0,0.55)");
+        ctx.fillStyle = vig;
+        ctx.fillRect(0, 0, w, h);
+      }
     };
 
     const loop = () => {
@@ -232,7 +242,7 @@ export default function PuzzleGradient({
     });
     roStatic.observe(host);
     return () => roStatic.disconnect();
-  }, [blobCount, opacity]);
+  }, [blobCount, opacity, base]);
 
   return (
     <div ref={hostRef} aria-hidden className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}>

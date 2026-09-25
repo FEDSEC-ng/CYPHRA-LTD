@@ -1395,6 +1395,8 @@ function AboutCard() {
 
   return (
     <section className="py-24 md:py-32 bg-fedsec-gray-900 overflow-hidden relative">
+      {/* hero-style living gradient behind the team */}
+      <PuzzleGradient base="none" opacity={0.55} blobCount={5} />
       <div className="absolute bottom-0 left-0 w-96 h-96 blob-pink opacity-40" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
@@ -1419,14 +1421,14 @@ function AboutCard() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {team.map((member, i) => (
             <motion.div
               key={member.name}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: (i % 4) * 0.06 }}
+              transition={{ duration: 0.5, delay: (i % 3) * 0.07 }}
               onMouseEnter={() => setActive(i)}
               onMouseLeave={() => setActive(null)}
               onClick={() => setActive(active === i ? null : i)}
@@ -1436,7 +1438,7 @@ function AboutCard() {
                 src={member.image}
                 alt={member.name}
                 fill
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 33vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
@@ -1564,21 +1566,12 @@ function AudiencesSection() {
   );
 }
 
-/* CTA */
+/* CTA — hero-style living gradient */
 function CTASection() {
   return (
     <section className="relative py-24 md:py-32 bg-fedsec-black overflow-hidden">
-      <video
-        className="absolute inset-0 w-full h-full object-cover opacity-[0.15]"
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/images/fedsec-brand-video-poster.jpg"
-      >
-        <source src="/images/fedsec-brand-video.mp4" type="video/mp4" />
-      </video>
-      <div className="absolute inset-0 bg-gradient-to-b from-fedsec-black/70 via-fedsec-black/50 to-fedsec-black" />
+      <PuzzleGradient base="none" opacity={0.9} blobCount={7} />
+      <div className="absolute inset-0 bg-gradient-to-b from-fedsec-black/70 via-transparent to-fedsec-black/40" />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -28,7 +28,7 @@ const caseStudies: CaseStudy[] = [
     industry: "Financial Services",
     location: "Nigeria",
     description:
-      "Designed and built a bank's SOC from scratch — SIEM/SOAR platforms and 200+ detection use cases mapped to MITRE ATT&CK.",
+      "Designed and built a bank's SOC from scratch - SIEM/SOAR platforms and 200+ detection use cases mapped to MITRE ATT&CK.",
   },
   {
     name: "Web & API Security Assessment",
@@ -68,7 +68,7 @@ const caseStudies: CaseStudy[] = [
 ];
 
 /**
- * CaseStudiesFolderStack — "Real Clients. Real Results."
+ * CaseStudiesFolderStack - "Real Clients. Real Results."
  *
  * A pinned, scroll-driven folder stack. Every visual state is a pure function
  * of scrollYProgress (no discrete card state, no whileInView on cards), so the
@@ -79,8 +79,8 @@ const caseStudies: CaseStudy[] = [
  *  - folder 0 is already seated in front at progress 0
  *  - folder i (i>0) waits beneath the seated folder (bottom edge peeking),
  *    then slides up and covers it during its enter window
- *  - while later folders enter, folder i recedes step-by-step — shifts up,
- *    scales down, dims — its folder-tab edge peeking at the top of the pile
+ *  - while later folders enter, folder i recedes step-by-step - shifts up,
+ *    scales down, dims - its folder-tab edge peeking at the top of the pile
  *  - z-order flips at the start of each enter so the incoming folder covers
  *    the pile as it slides up (and drops back beneath on the way in reverse)
  */
@@ -141,7 +141,7 @@ function FolderCard({
       {/* folder tab */}
       <div className="relative ml-6 flex h-9 w-48 items-center gap-2 rounded-t-xl border border-b-0 border-white/10 bg-fedsec-gray-800 px-4">
         <FolderOpen size={13} className="text-fedsec-pink" />
-        <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-white/50">
+        <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-white/75">
           Case File {String(index + 1).padStart(2, "0")}
         </span>
       </div>
@@ -156,7 +156,7 @@ function FolderCard({
             <div className="flex items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.25em]">
               <span className="text-fedsec-pink">{cs.industry}</span>
               <span className="h-1 w-1 rounded-full bg-white/20" />
-              <span className="text-white/40">{cs.location}</span>
+              <span className="text-white/70">{cs.location}</span>
             </div>
             <h3 className="text-2xl font-bold leading-snug text-fedsec-white sm:text-3xl lg:text-4xl font-[family-name:var(--font-heading)]">
               {cs.name}
@@ -210,7 +210,7 @@ export default function CaseStudiesFolderStack() {
 
   return (
     <section className="relative bg-fedsec-white text-fedsec-gray-900">
-      {/* heading — normal flow above the pinned stack */}
+      {/* heading - normal flow above the pinned stack */}
       <div className="mx-auto max-w-7xl px-4 pb-10 pt-24 sm:px-6 md:pt-28 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

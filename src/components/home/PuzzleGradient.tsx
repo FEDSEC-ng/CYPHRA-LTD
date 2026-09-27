@@ -3,14 +3,14 @@
 import { useEffect, useRef } from "react";
 
 /**
- * PuzzleGradient — fnz-style living gradient field.
+ * PuzzleGradient - fnz-style living gradient field.
  *
  * A black canvas where luminous brand-colored blobs (purple / pink / emerald)
  * drift continuously on their own. Thin rounded "puzzle seams" overlay the
  * field so the gradient reads as interlocking pieces slowly trading colors.
  *
  * Interaction: moving the cursor across the host bends the flow direction
- * toward the mouse movement vector — hover steers the puzzle. When idle
+ * toward the mouse movement vector - hover steers the puzzle. When idle
  * (or on leave) the field resumes its autonomous slow rotation.
  *
  * Accessibility / performance:
@@ -179,7 +179,7 @@ export default function PuzzleGradient({
         ctx.fill();
       }
 
-      // puzzle seams — thin rounded tiles over the field
+      // puzzle seams - thin rounded tiles over the field
       ctx.globalCompositeOperation = "source-over";
       const tile = Math.max(110, Math.min(w, h) / 5.2);
       ctx.strokeStyle = "rgba(255,255,255,0.05)";

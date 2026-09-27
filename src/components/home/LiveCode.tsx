@@ -12,13 +12,13 @@ const toneClass: Record<NonNullable<CodeLine["tone"]>, string> = {
   net: "text-sky-400",
   ok: "text-fedsec-emerald",
   warn: "text-amber-400",
-  dim: "text-white/45",
+  dim: "text-white/65",
 };
 
 export { toneClass };
 
 /**
- * LiveCode — self-typing terminal output used inside the process wheel and
+ * LiveCode - self-typing terminal output used inside the process wheel and
  * the red/blue/GRC tab panel. Reveals lines one by one, holds with a blinking
  * cursor, then loops. Re-syncs whenever `lines` changes.
  */
@@ -59,7 +59,7 @@ export default function LiveCode({
         <span className="h-2 w-2 rounded-full bg-fedsec-pink/80" />
         <span className="h-2 w-2 rounded-full bg-amber-400/80" />
         <span className="h-2 w-2 rounded-full bg-fedsec-emerald/80" />
-        <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
+        <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">
           {title}
         </span>
       </div>

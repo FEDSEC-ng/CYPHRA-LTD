@@ -41,7 +41,7 @@ import Tremble from "@/components/ui/Tremble";
 const team = [
   {
     name: "Nwachukwu Francis O.",
-    role: "Founder / Tech Lead",
+    role: "Founder/Tech Lead",
     bio: "Cybersecurity analyst and CTF player ranked in TryHackMe's top 2%. Leads CYPHRA's technical bench across network security, threat analysis, and SOC operations.",
     image: "/images/team/francis.png",
     cv: null,
@@ -49,7 +49,7 @@ const team = [
   },
   {
     name: "Abang Obed",
-    role: "Lead Security Engineer",
+    role: "Offensive Security & Red Team Operations",
     bio: "Six years across security operations, application security, offensive security, and detection engineering. CPTS certified, credited on GitHub and X security advisories.",
     image: "/images/team/obed.png",
     cv: "/images/resumes/obed-cv.pdf",
@@ -57,7 +57,7 @@ const team = [
   },
   {
     name: "Ridwan Adebayo",
-    role: "Penetration Tester",
+    role: "Penetration Tester & Cloud Engineer",
     bio: "Five+ years in offensive security. Advises Nigeria's Police Force National Cyber Crime Center, 35+ accepted bug bounty reports across Bugcrowd and YesWeHack.",
     image: "/images/team/ridwan.png",
     cv: "/images/resumes/ridwan-cv.pdf",
@@ -65,7 +65,7 @@ const team = [
   },
   {
     name: "Agnes Akpa",
-    role: "Cyber Security Analyst",
+    role: "DevSecOps & GRC",
     bio: "Head of Security at FiatRouter. Blends technical depth with risk governance and business alignment. (ISC)2 Certified in Cybersecurity, DevSecOps, and Google Cybersecurity certified.",
     image: "/images/team/agnes.png",
     cv: "/images/resumes/agnes-cv.docx",
@@ -73,7 +73,7 @@ const team = [
   },
   {
     name: "Isah Dauda",
-    role: "Security Researcher",
+    role: "Full Stack Developer & Security Researcher",
     bio: "Full-stack blockchain engineer who audits from the inside out. CAP and CNSP certified, hunts on Cantina, YesWeHack, and Bugcrowd, including XRP Ledger audit contests.",
     image: "/images/team/isah-v2.png",
     cv: "/images/resumes/isah-cv.pdf",
@@ -81,8 +81,8 @@ const team = [
   },
   {
     name: "Badu Zaccheaus J.",
-    role: "Cyber Security Analyst",
-    bio: "Hands-on testing of production systems — misconfigurations, insecure headers, and web application flaws turned into clear, actionable reports. Part of the discipline behind CYPHRA's methodology: authorized, documented, and built to hold up under scrutiny.",
+    role: "Cyber Security Analyst & Blue Team Operations",
+    bio: "Hands-on testing of production systems - misconfigurations, insecure headers, and web application flaws turned into clear, actionable reports. Part of the discipline behind CYPHRA's methodology: authorized, documented, and built to hold up under scrutiny.",
     image: "/images/team/badu.png",
     cv: "/images/resumes/badu-cv.docx",
     short: "B",
@@ -99,12 +99,12 @@ const stats = [
 ];
 
 const locations = [
-  { city: "Lagos", country: "Nigeria", flag: "NG", image: "/images/locations/lagos.jpg", blurb: "Headquarters — enterprise, fintech & government engagements across West Africa.", service: "/services/vulnerability-assessment-and-penetration-testing" },
+  { city: "Lagos", country: "Nigeria", flag: "NG", image: "/images/locations/lagos.jpg", blurb: "Headquarters - enterprise, fintech & government engagements across West Africa.", service: "/services/vulnerability-assessment-and-penetration-testing" },
   { city: "Abuja", country: "Nigeria", flag: "NG", image: "/images/locations/abuja.jpg", blurb: "Advisory & compliance practice serving institutions and public sector.", service: "/services/grc-advisory" },
-  { city: "Munich", country: "Germany", flag: "DE", image: "/images/locations/munich.jpg", blurb: "European operations — GRC, data protection, and penetration testing.", service: "/services/grc-advisory" },
+  { city: "Munich", country: "Germany", flag: "DE", image: "/images/locations/munich.jpg", blurb: "European operations - GRC, data protection, and penetration testing.", service: "/services/grc-advisory" },
   { city: "London", country: "United Kingdom", flag: "UK", image: "/images/locations/london.jpg", blurb: "Partnered delivery for UK & EU regulated organizations.", service: "/services/vulnerability-assessment-and-penetration-testing" },
   { city: "New York", country: "United States", flag: "US", image: "/images/locations/nyc.jpg", blurb: "Coverage for US clients across cloud security and red teaming.", service: "/services/vulnerability-assessment-and-penetration-testing" },
-  { city: "Accra", country: "Ghana", flag: "GH", image: "/images/locations/accra.jpg", blurb: "West African expansion — SOC advisory and security operations.", service: "/services/security-operations" },
+  { city: "Accra", country: "Ghana", flag: "GH", image: "/images/locations/accra.jpg", blurb: "West African expansion - SOC advisory and security operations.", service: "/services/security-operations" },
 ];
 
 const growthTabs = [
@@ -113,7 +113,7 @@ const growthTabs = [
     label: "Red Team",
     icon: Target,
     eyebrow: "Offensive Security",
-    tagline: "We attack like an adversary — before they do. Authorized, documented, and built to hold up under scrutiny.",
+    tagline: "We attack like an adversary - before they do. Authorized, documented, and built to hold up under scrutiny.",
     description:
       "Our offensive team simulates real-world attackers against your systems. From recon to exploitation, every engagement identifies the vulnerabilities that actually matter and validates them end-to-end.",
     items: [
@@ -121,7 +121,7 @@ const growthTabs = [
       { title: "Red Team Operations", desc: "Full-scope, multi-vector simulated attacks", icon: Crosshair },
       { title: "Web & API Security", desc: "Business-logic-driven application assessment", icon: Layers },
       { title: "Cloud Security Review", desc: "AWS, GCP, and Azure misconfiguration hunting", icon: Shield },
-      { title: "Wireless & Network Testing", desc: "Infrastructure compromise — internal and external", icon: Network },
+      { title: "Wireless & Network Testing", desc: "Infrastructure compromise - internal and external", icon: Network },
     ],
   },
   {
@@ -195,14 +195,14 @@ const whyCards = [
   {
     title: "We Identify Hidden Vulnerabilities",
     description:
-      "Manual, adversarial testing that finds what scanners miss — logic flaws, misconfigurations, and exploitable chains.",
+      "Manual, adversarial testing that finds what scanners miss - logic flaws, misconfigurations, and exploitable chains.",
     image: "/images/why/why1.jpg",
     alt: "Analyst probing systems in a darkened room",
   },
   {
     title: "We Reduce Attack Surface",
     description:
-      "Prioritized remediation that closes the real paths attackers take — not a generic checklist.",
+      "Prioritized remediation that closes the real paths attackers take - not a generic checklist.",
     image: "/images/why/why2.jpg",
     alt: "Hardened data center corridor",
   },
@@ -216,7 +216,7 @@ const whyCards = [
   {
     title: "Your Security Is Our Only Metric",
     description:
-      "We measure success by risk reduced and resilience built — not hours billed or pages delivered.",
+      "We measure success by risk reduced and resilience built - not hours billed or pages delivered.",
     image: "/images/why/why4.jpg",
     alt: "Analysts reviewing security dashboards",
   },
@@ -242,7 +242,7 @@ const processSteps = [
     kicker: "Discover",
     title: "Reconnaissance",
     description:
-      "We map your attack surface — domains, infrastructure, applications, cloud, and exposed services — and understand your business objectives.",
+      "We map your attack surface - domains, infrastructure, applications, cloud, and exposed services - and understand your business objectives.",
     icon: Radar,
   },
   {
@@ -258,7 +258,7 @@ const processSteps = [
     kicker: "Attack",
     title: "Exploitation & Validation",
     description:
-      "We validate vulnerabilities in a controlled, authorized way — chaining real-world attack paths to prove impact, not guess.",
+      "We validate vulnerabilities in a controlled, authorized way - chaining real-world attack paths to prove impact, not guess.",
     icon: Target,
   },
   {
@@ -300,14 +300,14 @@ const audiences = [
 
 const trustBadges = ["VAPT", "GRC Advisory", "SOC Operations", "Red Team", "ISO 27001 Aligned"];
 
-/* Hero live ops feed — interleaved red / blue / GRC stream */
+/* Hero live ops feed - interleaved red / blue / GRC stream */
 const heroStream: CodeLine[] = [
   { text: "[red] nmap -sS -sV -T4 target.corp --top-ports 1000", tone: "attack" },
   { text: "[blue] pkt 10.0.4.12:443 ⇄ 91.203.x.x  TLS 1.3 hs ok", tone: "net" },
   { text: "[red] param id=104 → probing injection points", tone: "attack" },
-  { text: "[grc] policy rbac/finance-portal.yaml — applying", tone: "ok" },
+  { text: "[grc] policy rbac/finance-portal.yaml - applying", tone: "ok" },
   { text: "[blue] SIEM rule TA0007: 14 beacon attempts blocked", tone: "net" },
-  { text: "[red] [!!] SQLi confirmed — chained to admin", tone: "warn" },
+  { text: "[red] [!!] SQLi confirmed - chained to admin", tone: "warn" },
   { text: "[grc] ISO 27001: 94 controls mapped · 0 majors", tone: "ok" },
   { text: "[blue] EDR quarantine: cobaltstrike.beacon.dll", tone: "warn" },
 ];
@@ -318,7 +318,7 @@ const heroChips = [
   { label: "24/7 SOC Monitoring", icon: Radar },
 ];
 
-/* Auto-code files — one per discipline, typed live in the rectangle viewer */
+/* Auto-code files - one per discipline, typed live in the rectangle viewer */
 
 const tabCodeFiles: Record<string, { file: string; status: string; lines: CodeLine[] }> = {
   red: {
@@ -384,25 +384,25 @@ const tabCodeFiles: Record<string, { file: string; status: string; lines: CodeLi
 const stepStreams: CodeLine[][] = [
   [
     { text: "nmap -sS -T4 --top-ports 1000 client.io", tone: "net" },
-    { text: "Discovered 10.0.4.12 — nginx 1.24.0 :443", tone: "dim" },
+    { text: "Discovered 10.0.4.12 - nginx 1.24.0 :443", tone: "dim" },
     { text: "subfinder -d client.io -silent → 47 hosts", tone: "net" },
     { text: "[+] 6 assets resolve to internal ranges", tone: "ok" },
   ],
   [
     { text: "whatweb https://api.client.io", tone: "net" },
     { text: "[200] AngularJS 1.7.9 · jQuery 3.4.1", tone: "dim" },
-    { text: "wafw00f: Cloudflare — bypass mapped", tone: "warn" },
-    { text: "[!] Drupal 9.5 flagged — 3 CVE candidates", tone: "attack" },
+    { text: "wafw00f: Cloudflare - bypass mapped", tone: "warn" },
+    { text: "[!] Drupal 9.5 flagged - 3 CVE candidates", tone: "attack" },
   ],
   [
     { text: "param id=104 → testing injection points", tone: "attack" },
     { text: "payload: ' OR 1=1 --  →  200 OK (0.4s)", tone: "attack" },
-    { text: "[!!] SQLi confirmed — read-only extraction", tone: "warn" },
+    { text: "[!!] SQLi confirmed - read-only extraction", tone: "warn" },
     { text: "chain: user → admin via IDOR + token reuse", tone: "attack" },
   ],
   [
     { text: "CVSS 9.1 · 4 High · 11 Medium findings filed", tone: "dim" },
-    { text: "remediation pack delivered — retest booked", tone: "ok" },
+    { text: "remediation pack delivered - retest booked", tone: "ok" },
     { text: "policy rbac/finance-portal.yaml", tone: "net" },
     { text: "role: auditor | allow: read:reports", tone: "ok" },
   ],
@@ -518,13 +518,13 @@ function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-fedsec-black overflow-hidden">
-      {/* fnz-style living puzzle gradient — moves by itself, hover steers it */}
+      {/* fnz-style living puzzle gradient - moves by itself, hover steers it */}
       <PuzzleGradient />
       <div className="absolute inset-0 grid-pattern opacity-[0.04]" />
 
       <div className="relative w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28">
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center">
-          {/* left — copy */}
+          {/* left - copy */}
           <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -532,10 +532,10 @@ function HeroSection() {
               transition={{ duration: 0.6 }}
               className="mb-8 flex"
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-fedsec-purple text-xs sm:text-sm font-medium font-[family-name:var(--font-accent)]">
+              {/* <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-fedsec-purple text-xs sm:text-sm font-medium font-[family-name:var(--font-accent)]">
                 <Shield size={14} />
                 Different Expertise. One Collective.
-              </span>
+              </span> */}
             </motion.div>
 
             <TouchMove strength={10}>
@@ -560,9 +560,9 @@ function HeroSection() {
               transition={{ duration: 0.9, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
               <TouchMove strength={6}>
-                <p className="text-base sm:text-lg md:text-xl text-white/50 max-w-xl mb-10 leading-relaxed font-[family-name:var(--font-body)]">
+                <p className="text-base sm:text-lg md:text-xl text-white/75 max-w-xl mb-10 leading-relaxed font-[family-name:var(--font-body)]">
                   A multidisciplinary cybersecurity collective. Red team and blue
-                  team, GRC and engineering — different expertise working as one
+                  team, GRC and engineering - different expertise working as one
                   to find the risk before it finds you.
                 </p>
               </TouchMove>
@@ -605,7 +605,7 @@ function HeroSection() {
             </motion.div>
           </div>
 
-          {/* right — live ops code sim */}
+          {/* right - live ops code sim */}
           <motion.div
             initial={{ opacity: 0, y: 40, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -616,7 +616,7 @@ function HeroSection() {
               <div className="rounded-[15px] bg-black/85 backdrop-blur-md">
                 <LiveCode
                   lines={heroStream}
-                  title="cyphra@ops:~ — live collective feed"
+                  title="cyphra@ops:~ - live collective feed"
                   interval={820}
                 />
               </div>
@@ -675,7 +675,7 @@ function PartnerLogosMarquee() {
   );
 }
 
-/* Numbers — "Our Numbers Do the Talking for Us" (socialander) */
+/* Numbers - "Our Numbers Do the Talking for Us" (socialander) */
 function NumbersSection() {
   return (
     <section className="relative py-24 md:py-28 bg-fedsec-black overflow-hidden">
@@ -696,7 +696,7 @@ function NumbersSection() {
               <span className="gradient-text">Proof, Not Promises</span>
             </h2>
           </Tremble>
-          <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
+          <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
             Different disciplines. One standard. Measured entirely on the risk we
             reduce and the resilience we build.
           </p>
@@ -718,7 +718,7 @@ function NumbersSection() {
               <p className="stat-orb-label font-semibold text-fedsec-purple font-[family-name:var(--font-accent)]">
                 {stat.label}
               </p>
-              <p className="stat-orb-note text-white/30 mt-1 hidden sm:block font-[family-name:var(--font-body)]">
+              <p className="stat-orb-note text-white/55 mt-1 hidden sm:block font-[family-name:var(--font-body)]">
                 {stat.note}
               </p>
             </motion.div>
@@ -729,13 +729,13 @@ function NumbersSection() {
   );
 }
 
-/* Where We Work (socialander global locations — white band) */
+/* Where We Work (socialander global locations - white band) */
 function LocationsSection() {
   return (
     <section className="py-24 md:py-28 bg-fedsec-white text-fedsec-gray-900 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(300px,380px)_1fr] gap-10 lg:gap-14 items-center mb-12">
-          {/* left column — smaller content */}
+          {/* left column - smaller content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -751,7 +751,7 @@ function LocationsSection() {
             </Tremble>
             <p className="text-base text-fedsec-gray-500 mt-4 leading-relaxed font-[family-name:var(--font-body)]">
               Delivered across multiple locations through a globally connected
-              team — consistent standards, reliable communication, and effective
+              team - consistent standards, reliable communication, and effective
               delivery regardless of region.
             </p>
             <p className="mt-6 hidden lg:flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-fedsec-gray-900/40 font-[family-name:var(--font-accent)]">
@@ -760,7 +760,7 @@ function LocationsSection() {
             </p>
           </motion.div>
 
-          {/* right — one straight horizontal line of city cards */}
+          {/* right - one straight horizontal line of city cards */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -840,9 +840,9 @@ function GrowthTabs() {
               <span className="gradient-text">GRC.</span>
             </h2>
           </Tremble>
-          <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
+          <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
             We combine offensive and defensive security perspectives with
-            governance, risk, and compliance — a super team of cybersecurity.
+            governance, risk, and compliance - a super team of cybersecurity.
           </p>
         </motion.div>
 
@@ -865,7 +865,7 @@ function GrowthTabs() {
                       : t.id === "blue"
                       ? "bg-fedsec-blue/20 border-fedsec-blue/50 text-fedsec-white glow-blue"
                       : "bg-fedsec-emerald/20 border-fedsec-emerald/50 text-fedsec-white glow-emerald"
-                    : "glass border-transparent text-white/40 hover:text-fedsec-white"
+                    : "glass border-transparent text-white/70 hover:text-fedsec-white"
                 }`}
               >
                 <span
@@ -894,7 +894,7 @@ function GrowthTabs() {
             transition={{ duration: 0.4 }}
             className="glass-strong rounded-2xl overflow-hidden"
           >
-            {/* rectangle auto-code viewer — the discipline's live file */}
+            {/* rectangle auto-code viewer - the discipline's live file */}
             <div className="relative p-4 sm:p-5 bg-gradient-to-br from-fedsec-purple/10 via-transparent to-fedsec-emerald/5">
               <div className="absolute top-4 left-4 z-10 flex items-center gap-2 sm:top-5 sm:left-5">
                 <span
@@ -941,7 +941,7 @@ function GrowthTabs() {
                   <h4 className="font-bold text-fedsec-white mb-2 font-[family-name:var(--font-heading)]">
                     {item.title}
                   </h4>
-                  <p className="text-sm text-white/40 leading-relaxed font-[family-name:var(--font-body)]">
+                  <p className="text-sm text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
                     {item.desc}
                   </p>
                 </motion.div>
@@ -954,7 +954,7 @@ function GrowthTabs() {
   );
 }
 
-/* Amazing Clients, Amazing Results — white band with folder-stack slider */
+/* Amazing Clients, Amazing Results - white band with folder-stack slider */
 function TestimonialFolderSlider() {
   const [idx, setIdx] = useState(0);
   const n = testimonials.length;
@@ -984,7 +984,7 @@ function TestimonialFolderSlider() {
             transition={{ type: "spring", stiffness: 180, damping: 26 }}
             className="absolute inset-x-0 top-6 bottom-0 will-change-transform"
           >
-            {/* folder tab — org icon identifies the client */}
+            {/* folder tab - org icon identifies the client */}
             <div className="ml-6 flex h-9 w-52 items-center gap-2.5 rounded-t-xl border border-b-0 border-black/10 bg-fedsec-gray-100 px-4">
               <span className="grid h-5 w-5 shrink-0 place-items-center rounded-md bg-gradient-to-br from-fedsec-purple to-fedsec-pink text-white">
                 <OrgIcon size={11} />
@@ -1083,7 +1083,7 @@ function ResultsSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
-          {/* client panel — image of the active client, synced with the folder stack */}
+          {/* client panel - image of the active client, synced with the folder stack */}
           <div className="lg:col-span-2">
             <div className="video-frame video-frame-light relative h-[340px] sm:h-[420px] lg:h-full lg:min-h-[460px] overflow-hidden">
               <AnimatePresence mode="sync">
@@ -1097,7 +1097,7 @@ function ResultsSection() {
                 >
                   <Image
                     src={active.image}
-                    alt={`${active.company} — ${active.place}`}
+                    alt={`${active.company} - ${active.place}`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover"
@@ -1144,9 +1144,9 @@ function ResultsSection() {
 }
 
 
-/* How We Do It — scroll wheel; nodes locked to the X / Y / −Y / −X axes.
+/* How We Do It - scroll wheel; nodes locked to the X / Y / −Y / −X axes.
  * Ring rotation carries each node to the top position while counter-rotation
- * keeps every icon upright — the formation never detaches from its circle. */
+ * keeps every icon upright - the formation never detaches from its circle. */
 function ProcessSection() {
   const wheelRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: wheelRef, offset: ["start start", "end end"] });
@@ -1227,7 +1227,7 @@ function ProcessSection() {
               />
             </motion.svg>
 
-            {/* rotating ring — nodes keep their circular formation */}
+            {/* rotating ring - nodes keep their circular formation */}
             <motion.div
               style={{ rotate, width: ringSize, height: ringSize }}
               className="absolute will-change-transform"
@@ -1267,7 +1267,7 @@ function ProcessSection() {
                                 ? "text-fedsec-purple"
                                 : state === "done"
                                   ? "text-fedsec-gray-500"
-                                  : "text-white/25"
+                                  : "text-white/50"
                             }`}
                           />
                         </div>
@@ -1276,8 +1276,8 @@ function ProcessSection() {
                             state === "current"
                               ? "text-fedsec-pink"
                               : state === "done"
-                                ? "text-white/40"
-                                : "text-white/25"
+                                ? "text-white/70"
+                                : "text-white/50"
                           }`}
                         >
                           {step.kicker}
@@ -1289,7 +1289,7 @@ function ProcessSection() {
               })}
             </motion.div>
 
-            {/* live ops terminal — the wheel's beating heart, fixed in the center */}
+            {/* live ops terminal - the wheel's beating heart, fixed in the center */}
             <motion.div
               key={active}
               initial={{ opacity: 0, scale: 0.94 }}
@@ -1315,7 +1315,7 @@ function ProcessSection() {
                   {processSteps[active].number} · {processSteps[active].title}
                 </span>
               </div>
-              <p className="mx-auto mt-2 max-w-[300px] md:max-w-sm text-center text-[11px] md:text-sm text-white/45 leading-relaxed font-[family-name:var(--font-body)]">
+              <p className="mx-auto mt-2 max-w-[300px] md:max-w-sm text-center text-xs md:text-sm text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
                 {processSteps[active].description}
               </p>
             </motion.div>
@@ -1345,8 +1345,8 @@ function WhyCyphra() {
               <span className="gradient-text">Entire Security Stack</span>
             </h2>
           </Tremble>
-          <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
-            A super team of cybersecurity — offense, defense, governance, and
+          <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
+            A super team of cybersecurity - offense, defense, governance, and
             engineering aligned precisely with your business objectives.
           </p>
         </motion.div>
@@ -1379,7 +1379,7 @@ function WhyCyphra() {
                 <h3 className="text-xl font-bold text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">
                   {item.title}
                 </h3>
-                <p className="text-sm text-white/40 leading-relaxed font-[family-name:var(--font-body)]">
+                <p className="text-sm text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
                   {item.description}
                 </p>
               </div>
@@ -1415,10 +1415,10 @@ function AboutCard() {
               <span className="gradient-text">Driven by Expertise.</span>
             </h2>
           </Tremble>
-          <p className="text-base md:text-lg text-white/40 max-w-3xl font-[family-name:var(--font-body)]">
-            CYPHRA — from <em>cipher</em>, the craft of keeping what matters
-            private, intact, and trusted. And like the color purple — blue
-            (defense) meeting red (offense) — we bring different disciplines
+          <p className="text-base md:text-lg text-white/70 max-w-3xl font-[family-name:var(--font-body)]">
+            CYPHRA - from <em>cipher</em>, the craft of keeping what matters
+            private, intact, and trusted. And like the color purple - blue
+            (defense) meeting red (offense) - we bring different disciplines
             together into one collective. The team below is that collective.
           </p>
         </motion.div>
@@ -1466,31 +1466,12 @@ function AboutCard() {
                   {member.bio}
                 </p>
                 <div className="flex items-center gap-3">
-                  {member.cv ? (
-                    <>
-                      <a
-                        href={member.cv}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-white/15 hover:bg-white/25 px-3 py-2 rounded-full transition-colors font-[family-name:var(--font-accent)]"
-                      >
-                        <FileCheck size={14} /> View CV
-                      </a>
-                      <Link
-                        href="/contact"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-fedsec-black bg-white hover:bg-fedsec-gray-100 px-3 py-2 rounded-full transition-colors font-[family-name:var(--font-accent)]"
-                      >
-                        Work with {member.short} <ArrowRight size={12} />
-                      </Link>
-                    </>
-                  ) : (
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-fedsec-black bg-white hover:bg-fedsec-gray-100 px-3 py-2 rounded-full transition-colors font-[family-name:var(--font-accent)]"
-                    >
-                      Work with {member.short} <ArrowRight size={12} />
-                    </Link>
-                  )}
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-fedsec-black bg-white hover:bg-fedsec-gray-100 px-3 py-2 rounded-full transition-colors font-[family-name:var(--font-accent)]"
+                  >
+                    Work with {member.short} <ArrowRight size={12} />
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -1535,7 +1516,7 @@ function AudiencesSection() {
               <span className="gradient-text">Businesses Need</span>
             </h2>
           </Tremble>
-          <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
+          <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
             Whatever stage you are at, if security is the goal, we have done
             this before.
           </p>
@@ -1557,7 +1538,7 @@ function AudiencesSection() {
               <h3 className="text-lg font-bold text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">
                 {a.title}
               </h3>
-              <p className="text-sm text-white/40 leading-relaxed font-[family-name:var(--font-body)]">
+              <p className="text-sm text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
                 {a.description}
               </p>
             </motion.div>
@@ -1568,7 +1549,7 @@ function AudiencesSection() {
   );
 }
 
-/* CTA — hero-style living gradient */
+/* CTA - hero-style living gradient */
 function CTASection() {
   return (
     <section className="relative py-24 md:py-32 bg-fedsec-black overflow-hidden">
@@ -1588,7 +1569,7 @@ function CTASection() {
               <span className="gradient-text">Not Just Another Firm</span>
             </h2>
           </Tremble>
-          <p className="text-base md:text-lg text-white/40 max-w-2xl mx-auto mb-10 font-[family-name:var(--font-body)]">
+          <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto mb-10 font-[family-name:var(--font-body)]">
             A super team of cybersecurity, one collective. Let us find the risk
             before the attacker does.
           </p>

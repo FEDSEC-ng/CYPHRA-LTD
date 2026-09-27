@@ -30,7 +30,7 @@ const features = [
     icon: <Headphones size={24} />,
     title: "Dedicated Support",
     description:
-      "Every client gets a dedicated point of contact and direct access to senior security professionals — no ticket queues.",
+      "Every client gets a dedicated point of contact and direct access to senior security professionals - no ticket queues.",
   },
   {
     icon: <Award size={24} />,

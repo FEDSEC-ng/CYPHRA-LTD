@@ -70,7 +70,7 @@ export default function Footer() {
             <div className="mb-5">
               <CyphraLogo />
             </div>
-            <p className="text-sm text-white/40 leading-relaxed mb-6 max-w-xs font-[family-name:var(--font-body)]">
+            <p className="text-sm text-white/70 leading-relaxed mb-6 max-w-xs font-[family-name:var(--font-body)]">
               {SITE.description}
             </p>
             <div className="flex items-center gap-2">
@@ -80,7 +80,7 @@ export default function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-xl bg-white/[0.04] flex items-center justify-center text-white/40 hover:bg-fedsec-purple hover:text-white transition-all duration-300"
+                  className="w-9 h-9 rounded-xl bg-white/[0.04] flex items-center justify-center text-white/70 hover:bg-fedsec-purple hover:text-white transition-all duration-300"
                   aria-label={s.label}
                 >
                   <s.icon />
@@ -91,7 +91,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="lg:col-span-4">
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-5 font-[family-name:var(--font-accent)]">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-white/55 mb-5 font-[family-name:var(--font-accent)]">
               Services
             </h4>
             <ul className="space-y-3">
@@ -99,7 +99,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/40 hover:text-white transition-colors font-[family-name:var(--font-body)]"
+                    className="text-sm text-white/70 hover:text-white transition-colors font-[family-name:var(--font-body)]"
                   >
                     {link.label}
                   </Link>
@@ -110,7 +110,7 @@ export default function Footer() {
 
           {/* Company */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-5 font-[family-name:var(--font-accent)]">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-white/55 mb-5 font-[family-name:var(--font-accent)]">
               Company
             </h4>
             <ul className="space-y-3">
@@ -118,7 +118,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/40 hover:text-white transition-colors font-[family-name:var(--font-body)]"
+                    className="text-sm text-white/70 hover:text-white transition-colors font-[family-name:var(--font-body)]"
                   >
                     {link.label}
                   </Link>
@@ -129,14 +129,14 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-5 font-[family-name:var(--font-accent)]">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-white/55 mb-5 font-[family-name:var(--font-accent)]">
               Contact
             </h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href={`mailto:${SITE.email}`}
-                  className="text-sm text-white/40 hover:text-white transition-colors font-[family-name:var(--font-body)]"
+                  className="text-sm text-white/70 hover:text-white transition-colors font-[family-name:var(--font-body)]"
                 >
                   {SITE.email}
                 </a>
@@ -144,7 +144,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${SITE.phone}`}
-                  className="text-sm text-white/40 hover:text-white transition-colors font-[family-name:var(--font-body)]"
+                  className="text-sm text-white/70 hover:text-white transition-colors font-[family-name:var(--font-body)]"
                 >
                   {SITE.phone}
                 </a>
@@ -154,7 +154,7 @@ export default function Footer() {
                   href={SITE.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-white/40 hover:text-white transition-colors font-[family-name:var(--font-body)]"
+                  className="text-sm text-white/70 hover:text-white transition-colors font-[family-name:var(--font-body)]"
                 >
                   {SITE.url}
                 </a>
@@ -167,10 +167,10 @@ export default function Footer() {
       {/* Bottom */}
       <div className="border-t border-white/[0.04]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/25 font-[family-name:var(--font-body)]">
+          <p className="text-xs text-white/50 font-[family-name:var(--font-body)]">
             &copy; {new Date().getFullYear()} CYPHRA. All rights reserved.
           </p>
-          <p className="text-xs text-white/20 font-[family-name:var(--font-accent)] tracking-wide">
+          <p className="text-xs text-white/45 font-[family-name:var(--font-accent)] tracking-wide">
             Different Expertise. One Collective. Secure by Trust.
           </p>
         </div>

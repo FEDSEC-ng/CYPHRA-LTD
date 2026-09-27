@@ -5,7 +5,7 @@
 <br />
 <br />
 
-**CYPHRA LTD — Know Your Risk.**
+**CYPHRA LTD - Know Your Risk.**
 
 *Different Expertise. One Collective. Secure by Trust.*
 
@@ -31,7 +31,7 @@
 
 ## What this is
 
-This is the public website for **[CYPHRA LTD](https://cyphraltd.tech)** — a multidisciplinary cybersecurity firm. The name comes from *cipher*, the craft of protecting what matters. Purple (blue defense meeting red offense) represents different disciplines integrated into one collective.
+This is the public website for **[CYPHRA LTD](https://cyphraltd.tech)** - a multidisciplinary cybersecurity firm. The name comes from *cipher*, the craft of protecting what matters. Purple (blue defense meeting red offense) represents different disciplines integrated into one collective.
 
 CYPHRA operates as an extension of the client's team: offensive specialists, defensive engineers, and governance advisors working as one. Six core services:
 
@@ -42,7 +42,7 @@ CYPHRA operates as an extension of the client's team: offensive specialists, def
 5. Security Operations
 6. Incident Response
 
-The site covers services, case studies, blogs, the team collective, and contact — with delivery locations in Lagos (HQ), Abuja, Munich, London, New York, and Accra.
+The site covers services, case studies, blogs, the team collective, and contact - with delivery locations in Lagos (HQ), Abuja, Munich, London, New York, and Accra.
 
 <br />
 
@@ -66,7 +66,7 @@ Lucide React          Clean consistent iconography
 Self-hosted fonts     ClashDisplay (headings), Satoshi (body), JetBrains Mono (accents)
 ```
 
-No runtime font CDN — all type ships with the build via `next/font/local`.
+No runtime font CDN - all type ships with the build via `next/font/local`.
 
 <br />
 
@@ -131,11 +131,11 @@ public/
 
 ## Design decisions
 
-**Colors that mean something.** Purple (`#662f90`) is blue defense meeting red offense — disciplines integrated into one collective. Pink (`#da1a5d`) signals urgency and action. Black and white keep everything grounded and serious.
+**Colors that mean something.** Purple (`#662f90`) is blue defense meeting red offense - disciplines integrated into one collective. Pink (`#da1a5d`) signals urgency and action. Black and white keep everything grounded and serious.
 
 **Scroll animations on every section.** Subtle fade ups and scale ins that guide the eye, built with spring physics (`damping: 40, stiffness: 200`) so motion feels natural, never bouncy.
 
-**Typography with intent.** ClashDisplay for headings, Satoshi for body, JetBrains Mono for terminal/code accents — all self-hosted, no external requests.
+**Typography with intent.** ClashDisplay for headings, Satoshi for body, JetBrains Mono for terminal/code accents - all self-hosted, no external requests.
 
 **Real content, no placeholders.** Services, case files, team bios, CVs, and credentials are all real. To update content, edit the typed files in `src/lib/data/`.
 

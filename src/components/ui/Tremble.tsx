@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
 
 /**
- * Tremble — socialander-style subtle shake that plays each time the element
+ * Tremble - socialander-style subtle shake that plays each time the element
  * enters the viewport. Implemented purely with framer variants (no effect
  * state), so it re-triggers on every entry and reverses safely.
  */

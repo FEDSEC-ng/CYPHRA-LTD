@@ -7,8 +7,8 @@ import "./globals.css";
 
 /**
  * Typography system (v2):
- *  - Headings: Clash Display — sculptural, contemporary display face
- *  - Body/UI:  Satoshi — crisp geometric grotesque, warm and human
+ *  - Headings: Clash Display - sculptural, contemporary display face
+ *  - Body/UI:  Satoshi - crisp geometric grotesque, warm and human
  *  - Code:     JetBrains Mono
  * Self-hosted via next/font/local (no runtime CDN dependency).
  */

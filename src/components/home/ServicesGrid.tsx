@@ -35,7 +35,7 @@ export default function ServicesGrid() {
         <SectionHeading
           label="What We Do"
           title="Comprehensive Security Services"
-          description="Our multidisciplinary approach covers every aspect of cybersecurity — from identifying vulnerabilities to building resilient security programs."
+          description="Our multidisciplinary approach covers every aspect of cybersecurity - from identifying vulnerabilities to building resilient security programs."
         />
 
         <motion.div

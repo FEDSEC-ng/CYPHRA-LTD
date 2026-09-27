@@ -33,8 +33,18 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you for reaching out! We will get back to you shortly.");
-    setFormState({ name: "", email: "", phone: "", company: "", service: "", message: "" });
+    const subject = `Website enquiry from ${formState.name}${formState.company ? ` (${formState.company})` : ""}`;
+    const body = [
+      `Name: ${formState.name}`,
+      `Email: ${formState.email}`,
+      formState.phone ? `Phone: ${formState.phone}` : "",
+      formState.company ? `Company: ${formState.company}` : "",
+      "",
+      formState.message,
+    ]
+      .filter((line) => line !== "")
+      .join("\n");
+    window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -85,7 +95,19 @@ export default function ContactPage() {
                 </div>
                 <h2 className="text-3xl md:text-4xl font-normal text-fedsec-white leading-tight mb-4 font-[family-name:var(--font-heading)]">Book Security Call</h2>
                 <p className="text-lg text-fedsec-gray-300 leading-relaxed mb-8">Schedule a free consultation call with our cybersecurity experts. Discuss your security challenges, explore solutions, and get expert recommendations tailored to your organization.</p>
-                <div><Button href="#" size="lg">Book Free Call <Calendar className="ml-2" size={18} /></Button></div>
+                <div className="flex flex-wrap gap-3">
+                  <Button href={`tel:${SITE.phone}`} size="lg" showArrow={false}>
+                    <Phone size={18} /> Call Us
+                  </Button>
+                  <Button
+                    href={`mailto:${SITE.email}?subject=${encodeURIComponent("Request: Free Security Call")}&body=${encodeURIComponent("Hello CYPHRA,\n\nI would like to book a free security call.\n\nName: \nCompany: \nPreferred date/time: \nWhat I need help with: \n\nThank you.")}`}
+                    variant="outline"
+                    size="lg"
+                    showArrow={false}
+                  >
+                    <Mail size={18} /> Request by Email
+                  </Button>
+                </div>
               </div>
               <div className="relative hidden lg:block min-h-[400px]">
                 <Image src="/images/protexy/contact/contact-call.png" alt="Book a security consultation" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
@@ -136,6 +158,9 @@ export default function ContactPage() {
                   <textarea required rows={5} value={formState.message} onChange={(e) => setFormState({ ...formState, message: e.target.value })} className="w-full px-4 py-3 bg-fedsec-gray-50 border border-fedsec-gray-200 rounded-xl text-fedsec-gray-900 focus:border-fedsec-purple focus:ring-2 focus:ring-fedsec-purple/20 outline-none transition-all resize-none" placeholder="Tell us about your security needs..." />
                 </div>
                 <Button type="submit" size="lg" className="w-full">Send Message</Button>
+                <p className="text-xs text-fedsec-gray-400 text-center font-[family-name:var(--font-body)]">
+                  This opens your mail app with the message addressed to {SITE.email} - just hit send.
+                </p>
               </form>
             </motion.div>
           </div>

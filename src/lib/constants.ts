@@ -1,6 +1,6 @@
 export const SITE = {
   name: "CYPHRA",
-  title: "CYPHRA — Multidisciplinary Cybersecurity Firm",
+  title: "CYPHRA - Multidisciplinary Cybersecurity Firm",
   description:
     "CYPHRA is a multidisciplinary cybersecurity firm built on trust, expertise, and collaboration. We help organizations identify vulnerabilities, understand risk, strengthen security, and make informed decisions.",
   tagline: "KNOW YOUR RISK",

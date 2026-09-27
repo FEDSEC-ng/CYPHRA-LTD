@@ -107,7 +107,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Technology",
     title: "CloudSync",
     challenge:
-      "CloudSync Technologies was migrating its entire infrastructure from on-premise data centers to a multi-cloud environment. The migration presented security risks at every stage — from data in transit to cloud misconfiguration to identity management sprawl.",
+      "CloudSync Technologies was migrating its entire infrastructure from on-premise data centers to a multi-cloud environment. The migration presented security risks at every stage - from data in transit to cloud misconfiguration to identity management sprawl.",
     solution:
       "Embedded within CloudSync's migration team to provide security architecture review, cloud security configuration validation, and continuous security testing throughout the migration.",
     results: [

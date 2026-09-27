@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { toneClass, type CodeLine } from "./LiveCode";
 
 /**
- * AutoCodeViewer — rectangle "mini autocode" editor window.
+ * AutoCodeViewer - rectangle "mini autocode" editor window.
  * Types a code file character-by-character into a syntax-tinted editor with
  * line numbers, IDE chrome, and a status bar, then holds and loops.
  * Respects prefers-reduced-motion (renders the full file statically).
@@ -38,7 +38,7 @@ export default function AutoCodeViewer({
     const step = () => {
       const line = lines[li];
       if (!line) {
-        // finished the file — hold, then restart
+        // finished the file - hold, then restart
         timer = setTimeout(() => {
           li = 0;
           ci = 0;
@@ -111,7 +111,7 @@ export default function AutoCodeViewer({
 
       {/* status bar */}
       <div className="flex items-center justify-between border-t border-white/10 bg-white/[0.02] px-4 py-2">
-        <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/30">
+        <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/50">
           {status}
         </span>
         <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-fedsec-purple-light">

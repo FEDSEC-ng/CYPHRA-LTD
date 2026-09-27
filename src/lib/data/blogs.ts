@@ -16,9 +16,9 @@ export const blogs: BlogPost[] = [
     slug: "why-zero-trust-security-matters-today",
     title: "Why zero trust security matters today",
     excerpt:
-      "Cloud Security — Modern enterprises rely heavily on cloud infrastructure to manage operations, store sensitive information, and support digital services across global environments.",
+      "Cloud Security - Modern enterprises rely heavily on cloud infrastructure to manage operations, store sensitive information, and support digital services across global environments.",
     content:
-      "Cloud Security — Modern enterprises rely heavily on cloud infrastructure to manage operations, store sensitive information, and support digital services across global environments. While cloud technology improves flexibility, scalability, and operational efficiency, it also introduces new cybersecurity challenges that organizations must address to maintain secure and reliable systems. Protecting cloud environments has become essential for preventing unauthorized access, data breaches, ransomware attacks, and infrastructure vulnerabilities that can disrupt critical business operations.",
+      "Cloud Security - Modern enterprises rely heavily on cloud infrastructure to manage operations, store sensitive information, and support digital services across global environments. While cloud technology improves flexibility, scalability, and operational efficiency, it also introduces new cybersecurity challenges that organizations must address to maintain secure and reliable systems. Protecting cloud environments has become essential for preventing unauthorized access, data breaches, ransomware attacks, and infrastructure vulnerabilities that can disrupt critical business operations.",
     category: "Cloud Security",
     date: "2026-05-17",
     readTime: "8 min read",

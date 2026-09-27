@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, FileCheck, Shield } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import WordByWordReveal from "@/components/ui/WordByWordReveal";
 import CTABanner from "@/components/ui/CTABanner";
 import Tremble from "@/components/ui/Tremble";
@@ -14,7 +14,7 @@ const springTransition = { type: "spring" as const, damping: 40, stiffness: 200 
 const team = [
   {
     name: "Nwachukwu Francis O.",
-    role: "Founder / Tech Lead",
+    role: "Founder/Tech Lead",
     bio: "Cybersecurity analyst and CTF player ranked in TryHackMe's top 2%, with hands-on experience spanning network security, threat analysis, and SOC operations. Holds SOC Level 1, APIsec Certified Practitioner, Practical Ethical Hacking, Cisco Network Defense, and HCIA Cloud Security credentials. Leads CYPHRA's technical bench and brand.",
     image: "/images/team/francis.png",
     cv: null,
@@ -22,15 +22,15 @@ const team = [
   },
   {
     name: "Abang Obed",
-    role: "Lead Security Engineer",
-    bio: "Six years across security operations, application security, offensive security, and detection engineering — spanning web, API, mobile, network, cloud, and Windows internals. Secured government infrastructure at Nigeria's National Emergency Management Agency, holds CPTS, and has been credited on GitHub's and X's official security advisory programs.",
+    role: "Offensive Security & Red Team Operations",
+    bio: "Six years across security operations, application security, offensive security, and detection engineering - spanning web, API, mobile, network, cloud, and Windows internals. Secured government infrastructure at Nigeria's National Emergency Management Agency, holds CPTS, and has been credited on GitHub's and X's official security advisory programs.",
     image: "/images/team/obed.png",
     cv: "/images/resumes/obed-cv.pdf",
     credentials: "CPTS · NEMA · GitHub/X Advisories",
   },
   {
     name: "Ridwan Adebayo",
-    role: "Penetration Tester",
+    role: "Penetration Tester & Cloud Engineer",
     bio: "Cybersecurity adviser and penetration tester with five+ years in offensive security, vulnerability research, and security program advisory. Advises Nigeria's Police Force National Cyber Crime Center and leads penetration testing across government systems. 35+ accepted bug bounty reports; eCPPT, eWPT, CNSP, and Google Associate Cloud Engineer certified.",
     image: "/images/team/ridwan.png",
     cv: "/images/resumes/ridwan-cv.pdf",
@@ -38,24 +38,24 @@ const team = [
   },
   {
     name: "Agnes Akpa",
-    role: "Cyber Security Analyst",
-    bio: "Operates at the intersection of technical security, risk governance, and business strategy — application development, cloud security, DevSecOps, and blockchain security awareness. Head of Security at FiatRouter, previously Cloud Computing Intern with NITDA's IT Hub. (ISC)² Certified in Cybersecurity, DevSecOps, and Google Cybersecurity certified.",
+    role: "DevSecOps & GRC",
+    bio: "Operates at the intersection of technical security, risk governance, and business strategy - application development, cloud security, DevSecOps, and blockchain security awareness. Head of Security at FiatRouter, previously Cloud Computing Intern with NITDA's IT Hub. (ISC)² Certified in Cybersecurity, DevSecOps, and Google Cybersecurity certified.",
     image: "/images/team/agnes.png",
     cv: "/images/resumes/agnes-cv.docx",
     credentials: "(ISC)² CC · DevSecOps · Google Cyber",
   },
   {
     name: "Isah Dauda",
-    role: "Full-Stack Developer & Security Researcher",
-    bio: "Researcher and full-stack blockchain engineer who audits from the inside out — tracing vulnerabilities through architecture and business logic rather than relying on scanners. CAP and CNSP certified, hunts bounties across Cantina, YesWeHack, and Bugcrowd, and has competed in public audit contests including on the XRP Ledger.",
+    role: "Full Stack Developer & Security Researcher",
+    bio: "Researcher and full-stack blockchain engineer who audits from the inside out - tracing vulnerabilities through architecture and business logic rather than relying on scanners. CAP and CNSP certified, hunts bounties across Cantina, YesWeHack, and Bugcrowd, and has competed in public audit contests including on the XRP Ledger.",
     image: "/images/team/isah-v2.png",
     cv: "/images/resumes/isah-cv.pdf",
     credentials: "CAP · CNSP · TCM",
   },
   {
     name: "Badu Zaccheaus J.",
-    role: "Cyber Security Analyst",
-    bio: "Cybersecurity analyst with hands-on experience testing production systems — uncovering misconfigurations, insecure headers, and web application flaws, and turning findings into clear, actionable reports for stakeholders. Part of the discipline behind CYPHRA's methodology: authorized, documented, and built to hold up under scrutiny.",
+    role: "Cyber Security Analyst & Blue Team Operations",
+    bio: "Cybersecurity analyst with hands-on experience testing production systems - uncovering misconfigurations, insecure headers, and web application flaws, and turning findings into clear, actionable reports for stakeholders. Part of the discipline behind CYPHRA's methodology: authorized, documented, and built to hold up under scrutiny.",
     image: "/images/team/badu.png",
     cv: "/images/resumes/badu-cv.docx",
     credentials: "Web App Testing · Methodical Reporting",
@@ -111,7 +111,7 @@ const purpose = [
   {
     tag: "Why we exist",
     title: "Risk found before it becomes a threat.",
-    body: "We exist to make effective cybersecurity more accessible, practical, and actionable — helping organizations identify risks before they become serious threats.",
+    body: "We exist to make effective cybersecurity more accessible, practical, and actionable - helping organizations identify risks before they become serious threats.",
   },
   {
     tag: "Our mission",
@@ -142,14 +142,14 @@ const whoWeAre = [
   {
     tag: "Who we are",
     title: "Not a vendor. A collective on your bench.",
-    body: "CYPHRA operates as an extension of your team — offensive specialists, defensive engineers, and governance advisors who sit with you, think with you, and build with you. One engagement or a full security program, the collective works as one.",
+    body: "CYPHRA operates as an extension of your team - offensive specialists, defensive engineers, and governance advisors who sit with you, think with you, and build with you. One engagement or a full security program, the collective works as one.",
     image: "/images/why/why4.jpg",
     alt: "Analysts reviewing security dashboards",
   },
   {
     tag: "What we believe",
     title: "Security is measured in risk reduced, not pages delivered.",
-    body: "We keep reports short, findings honest, and guidance practical. Every recommendation is sized to your environment and maturity — so your team can actually implement it, and your defenses actually improve.",
+    body: "We keep reports short, findings honest, and guidance practical. Every recommendation is sized to your environment and maturity - so your team can actually implement it, and your defenses actually improve.",
     image: "/images/why/why5.jpg",
     alt: "Modern enterprise architecture review",
   },
@@ -212,7 +212,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Purpose — why we exist / mission / vision (from the brand book) */}
+      {/* Purpose - why we exist / mission / vision (from the brand book) */}
       <section className="py-20 md:py-24 bg-fedsec-black border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -229,14 +229,14 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold text-fedsec-white mt-4 mb-3 font-[family-name:var(--font-heading)] leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-sm text-white/45 leading-relaxed font-[family-name:var(--font-body)]">
+                <p className="text-sm text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
                   {item.body}
                 </p>
               </motion.div>
             ))}
           </div>
 
-          {/* Our future — where the collective is headed (brand book) */}
+          {/* Our future - where the collective is headed (brand book) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -247,8 +247,8 @@ export default function AboutPage() {
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
               <p className="shrink-0 text-sm font-bold text-fedsec-white font-[family-name:var(--font-heading)] md:w-44">
                 Built for the long run.
-                <span className="block text-xs font-medium text-white/40 mt-1 font-[family-name:var(--font-body)]">
-                  Deeper expertise, stronger partnerships — our capabilities keep growing.
+                <span className="block text-xs font-medium text-white/70 mt-1 font-[family-name:var(--font-body)]">
+                  Deeper expertise, stronger partnerships - our capabilities keep growing.
                 </span>
               </p>
               <div className="flex flex-wrap gap-2">
@@ -266,7 +266,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Who we are — alternating image/copy rows (socialander-style) */}
+      {/* Who we are - alternating image/copy rows (socialander-style) */}
       <section className="py-20 md:py-28 bg-fedsec-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 md:space-y-24">
           {whoWeAre.map((row, i) => {
@@ -298,7 +298,7 @@ export default function AboutPage() {
                       {row.title}
                     </h3>
                   </Tremble>
-                  <p className="text-base md:text-lg text-white/50 leading-relaxed max-w-xl mb-8 font-[family-name:var(--font-body)]">
+                  <p className="text-base md:text-lg text-white/75 leading-relaxed max-w-xl mb-8 font-[family-name:var(--font-body)]">
                     {row.body}
                   </p>
                   <Link href="/services" className="grow-pill grow-pill-outline growable">
@@ -323,11 +323,11 @@ export default function AboutPage() {
               Different Expertise.{" "}
               <span className="gradient-text">One Collective.</span>
             </h2>
-            <p className="text-lg text-white/50 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-white/75 max-w-3xl mx-auto leading-relaxed">
               CYPHRA was born from a simple idea: cybersecurity is stronger when
               different areas of expertise work together. Our name comes from
-              the <strong className="text-white">cipher</strong> — the craft of protecting what matters.
-              Purple — the coming together of blue (defense) and red (offense) —
+              the <strong className="text-white">cipher</strong> - the craft of protecting what matters.
+              Purple - the coming together of blue (defense) and red (offense) -
               represents the integration of different disciplines into one
               collective.
             </p>
@@ -339,7 +339,7 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">
                   {value.title}
                 </h3>
-                <p className="text-sm text-white/40 leading-relaxed font-[family-name:var(--font-body)]">
+                <p className="text-sm text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
                   {value.description}
                 </p>
                 <div className="mt-5">
@@ -366,7 +366,7 @@ export default function AboutPage() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h4 className="font-bold text-fedsec-white mb-2 font-[family-name:var(--font-heading)]">{step.title}</h4>
-                  <p className="text-xs text-white/40 leading-relaxed font-[family-name:var(--font-body)]">{step.desc}</p>
+                  <p className="text-sm text-white/70 leading-relaxed font-[family-name:var(--font-body)]">{step.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -382,9 +382,9 @@ export default function AboutPage() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-fedsec-white mb-6 font-[family-name:var(--font-heading)]">
               Experts You Can Trust
             </h2>
-            <p className="text-lg text-white/50 max-w-2xl mx-auto">
+            <p className="text-lg text-white/75 max-w-2xl mx-auto">
               Offense and defense, governance and engineering. A super team of
-              cybersecurity — hover a specialist to see their story.
+              cybersecurity - hover a specialist to see their story.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
@@ -395,18 +395,15 @@ export default function AboutPage() {
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <h3 className="text-lg font-bold text-white mb-1 font-[family-name:var(--font-heading)]">{member.name}</h3>
                   <p className="text-sm text-fedsec-pink font-semibold font-[family-name:var(--font-accent)]">{member.role}</p>
-                  <p className="text-xs text-white/40 mt-2 hidden sm:block">{member.credentials}</p>
+                  <p className="text-xs text-white/70 mt-2 hidden sm:block">{member.credentials}</p>
                 </div>
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {member.cv ? (
-                    <a href={member.cv} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-fedsec-purple/90 backdrop-blur px-3 py-2 rounded-full font-[family-name:var(--font-accent)]">
-                      <FileCheck size={14} /> CV
-                    </a>
-                  ) : (
-                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-fedsec-purple/90 backdrop-blur px-3 py-2 rounded-full font-[family-name:var(--font-accent)]">
-                      <Shield size={14} /> Lead
-                    </span>
-                  )}
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-fedsec-purple/90 backdrop-blur px-3 py-2 rounded-full font-[family-name:var(--font-accent)]"
+                  >
+                    Work with us <ArrowRight size={14} />
+                  </Link>
                 </div>
               </motion.div>
             ))}

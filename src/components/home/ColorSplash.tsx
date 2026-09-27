@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 /**
- * ColorSplash — socialander-style mouse-following gradient glow.
+ * ColorSplash - socialander-style mouse-following gradient glow.
  * Two translucent radial glows (purple leads, pink trails slower) that lerp
  * toward the cursor inside the parent section and fade out on leave.
  *

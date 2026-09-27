@@ -57,7 +57,7 @@ const pillarOrder = ["Red Team", "Blue Team", "GRC"] as const;
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero — living gradient, same language as the homepage */}
+      {/* Hero - living gradient, same language as the homepage */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-fedsec-gray-900 overflow-hidden">
         <PuzzleGradient base="none" opacity={0.6} blobCount={5} />
         <div className="absolute inset-0 grid-pattern opacity-[0.03]" />
@@ -77,9 +77,9 @@ export default function ServicesPage() {
                 <span className="gradient-text">three pillars</span>
               </h1>
             </Tremble>
-            <p className="text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed mb-10">
+            <p className="text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed mb-10">
               Offense. Defense. Governance. We attack like adversaries, defend
-              around the clock, and align security with your business — as one
+              around the clock, and align security with your business - as one
               collective. Here is what that looks like across our core services.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -132,7 +132,7 @@ export default function ServicesPage() {
                         {meta.tagline}
                       </h2>
                     </Tremble>
-                    <p className="text-lg text-white/50 max-w-2xl">{meta.subtitle}</p>
+                    <p className="text-lg text-white/75 max-w-2xl">{meta.subtitle}</p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -184,7 +184,7 @@ export default function ServicesPage() {
                             {service.title}
                           </h3>
                         </Tremble>
-                        <p className="text-white/50 text-base md:text-lg leading-relaxed mb-8 max-w-xl font-[family-name:var(--font-body)]">
+                        <p className="text-white/75 text-base md:text-lg leading-relaxed mb-8 max-w-xl font-[family-name:var(--font-body)]">
                           {service.shortDescription}
                         </p>
                         <div className="flex flex-wrap items-center gap-4">
@@ -198,7 +198,7 @@ export default function ServicesPage() {
                             {service.marqueeBadges.slice(0, 2).map((b) => (
                               <span
                                 key={b}
-                                className="px-3 py-1.5 rounded-full glass text-[11px] font-semibold text-white/50 font-[family-name:var(--font-accent)]"
+                                className="px-3 py-1.5 rounded-full glass text-[11px] font-semibold text-white/75 font-[family-name:var(--font-accent)]"
                               >
                                 {b}
                               </span>

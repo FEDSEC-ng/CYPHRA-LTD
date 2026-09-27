@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, FileCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import WordByWordReveal from "@/components/ui/WordByWordReveal";
 import CTABanner from "@/components/ui/CTABanner";
 import ScrollingBadges from "@/components/ui/ScrollingBadges";
@@ -30,7 +30,7 @@ export default function TeamPage() {
               <span className="inline-block mb-4 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-fedsec-purple bg-fedsec-purple/10 rounded-full font-[family-name:var(--font-accent)]">Our team</span>
               <WordByWordReveal text="Different expertise. One collective." className="text-4xl md:text-6xl lg:text-7xl font-bold text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]" tag="h1" />
               <p className="text-lg md:text-xl text-fedsec-gray-400 max-w-xl leading-relaxed mb-8">
-                Meet the CYPHRA collective — offensive and defensive specialists,
+                Meet the CYPHRA collective - offensive and defensive specialists,
                 governance and engineering minds working as one team to protect
                 your business.
               </p>
@@ -67,14 +67,12 @@ export default function TeamPage() {
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <h3 className="text-lg font-bold text-white mb-1 font-[family-name:var(--font-heading)]">{member.name}</h3>
                   <p className="text-sm text-fedsec-pink font-semibold font-[family-name:var(--font-accent)]">{member.role}</p>
-                  <p className="text-xs text-white/40 mt-2">{member.credentials}</p>
+                  <p className="text-xs text-white/70 mt-2">{member.credentials}</p>
                 </div>
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {member.cv ? (
-                    <a href={member.cv} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-fedsec-purple/90 backdrop-blur px-3 py-2 rounded-full font-[family-name:var(--font-accent)]">
-                      <FileCheck size={14} /> View CV
-                    </a>
-                  ) : null}
+                  <a href="/contact" className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-fedsec-purple/90 backdrop-blur px-3 py-2 rounded-full font-[family-name:var(--font-accent)]">
+                    Work with us <ArrowRight size={14} />
+                  </a>
                 </div>
               </motion.div>
             ))}

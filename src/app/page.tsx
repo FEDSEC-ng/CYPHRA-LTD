@@ -90,7 +90,7 @@ const team = [
 ];
 
 const stats = [
-  { target: 8, suffix: "+", label: "Security Experts", note: "One multidisciplinary collective" },
+  { target: 6, suffix: "", label: "Security Experts", note: "One multidisciplinary collective" },
   { target: 190, prefix: "$", suffix: "M+", label: "Client Risk Reduced", note: "Across every engagement" },
   { target: 35, suffix: "+", label: "Acceptance Reports", note: "On Bugcrowd & YesWeHack" },
   { target: 12, suffix: "+", label: "Countries Served", note: "Enterprise to startup" },

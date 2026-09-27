@@ -94,7 +94,7 @@ const values = [
 ];
 
 const stats = [
-  { value: "8", suffix: "+", label: "Security experts" },
+  { value: "6", suffix: "", label: "Security experts" },
   { value: "12", suffix: "+", label: "Countries covered" },
   { value: "190", prefix: "$", suffix: "M+", label: "Client risk reduced" },
 ];

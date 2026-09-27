@@ -1,11 +1,11 @@
 <div align="center">
 
-<img src="public/images/fedsec-logo-white.png" alt="FEDSEC" width="180" />
+<img src="public/images/cyphra-logo-white.png" alt="CYPHRA LTD" width="180" />
 
 <br />
 <br />
 
-**Active defense for organizations that refuse to be victims.**
+**KNOW YOUR RISK for organizations that refuse to be victims.**
 
 <br />
 
@@ -24,7 +24,7 @@
 
 ## What this is
 
-This is the public facing website for **FEDSEC**. A cybersecurity company that builds AI powered defense systems for organizations across finance, healthcare, government, and technology. We detect threats before they become breaches. We secure infrastructure before attackers find it. We respond when things go wrong.
+This is the public facing website for **CYPHRA LTD**. A cybersecurity company that builds AI powered defense systems for organizations across finance, healthcare, government, and technology. We detect threats before they become breaches. We secure infrastructure before attackers find it. We respond when things go wrong.
 
 This site was built to communicate that clearly.
 
@@ -55,7 +55,7 @@ Google Fonts         Inter Tight for headings, Inter for body, Manrope for accen
 
 ```bash
 # clone the repository
-git clone git@github.com:FEDSEC-ng/FedSec-LTD.git
+git clone git@github.com:FEDSEC-ng/FEDSEC-LTD.git
 
 # install dependencies
 npm install
@@ -129,7 +129,7 @@ Every transition uses `damping: 40, stiffness: 200, mass: 1`. This gives us smoo
 
 ## Content
 
-The site ships with six services, seven team members, six blog posts, and six case studies. All content is real and specific to FEDSEC. Nothing is placeholder. Nothing is lorem ipsum.
+The site ships with six services, seven team members, six blog posts, and six case studies. All content is real and specific to CYPHRA LTD. Nothing is placeholder. Nothing is lorem ipsum.
 
 If you need to update content, edit the files in `src/lib/data/`. Each file exports typed arrays that the pages consume directly.
 
@@ -149,7 +149,7 @@ The output in `.next/` can be deployed to Vercel, Netlify, or any static hosting
 
 ## Who built this
 
-**FEDSEC** is a cybersecurity firm based in Nigeria. We protect organizations from cyber threats using AI driven detection, rapid response, and proactive defense strategies.
+**CYPHRA LTD** is a cybersecurity firm based in Nigeria. We protect organizations from cyber threats using AI driven detection, rapid response, and proactive defense strategies.
 
 This website was designed to reflect the quality of that work.
 
@@ -161,6 +161,6 @@ This website was designed to reflect the quality of that work.
 
 <div align="center">
 
-**FEDSEC** · Active Defense
+**CYPHRA LTD** · Know Your Risk
 
 </div>

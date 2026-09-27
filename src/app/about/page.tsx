@@ -48,8 +48,8 @@ const team = [
     name: "Isah Dauda",
     role: "Full-Stack Developer & Security Researcher",
     bio: "Researcher and full-stack blockchain engineer who audits from the inside out — tracing vulnerabilities through architecture and business logic rather than relying on scanners. CAP and CNSP certified, hunts bounties across Cantina, YesWeHack, and Bugcrowd, and has competed in public audit contests including on the XRP Ledger.",
-    image: "/images/team/isah.png",
-    cv: null,
+    image: "/images/team/isah-v2.png",
+    cv: "/images/resumes/isah-cv.pdf",
     credentials: "CAP · CNSP · XRP Ledger Audits",
   },
   {

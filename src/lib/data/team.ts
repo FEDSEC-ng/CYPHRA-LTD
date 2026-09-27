@@ -42,9 +42,9 @@ export const team: TeamMember[] = [
   },
   {
     name: "Isah Dauda",
-    role: "Full Stack Developer & Security Researcher",
+    role: "Blockchain Engineer & Security Researcher",
     bio: "A researcher and full stack blockchain engineer who audits from the inside out — tracing vulnerabilities through architecture and business logic rather than relying on scanners alone. Holds CAP and CNSP certifications, actively hunts bounties across Cantina, YesWeHack, and Bugcrowd, and has competed in public audit contests on protocols like the XRP Ledger. His work bridges Web2 and Web3 attack surfaces, giving CYPHRA coverage in an area most traditional security firms can't touch.",
-    image: "/images/team/isah.png",
+    image: "/images/team/isah-v2.png",
     cv: "/images/resumes/isah-cv.pdf",
     credentials: "CAP · CNSP · Web2/Web3 Audits",
   },

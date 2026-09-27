@@ -128,7 +128,7 @@ export default function ContactPage() {
               <div className="p-6 bg-fedsec-gray-900 rounded-2xl">
                 <h3 className="text-lg font-normal text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">{SITE.founder}</h3>
                 <p className="text-sm text-fedsec-purple font-semibold mb-2 font-[family-name:var(--font-accent)]">{SITE.founderRole}</p>
-                <p className="text-sm text-fedsec-gray-400 leading-relaxed">Built on the principle of trust, CYPHRA is committed to professionalism, confidentiality, continuous learning, and responsible security practices.</p>
+                <p className="text-base text-fedsec-gray-400 leading-relaxed">Built on the principle of trust, CYPHRA is committed to professionalism, confidentiality, continuous learning, and responsible security practices.</p>
               </div>
             </motion.div>
             <motion.div variants={slideInRight} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="lg:col-span-3">
@@ -158,7 +158,7 @@ export default function ContactPage() {
                   <textarea required rows={5} value={formState.message} onChange={(e) => setFormState({ ...formState, message: e.target.value })} className="w-full px-4 py-3 bg-fedsec-gray-50 border border-fedsec-gray-200 rounded-xl text-fedsec-gray-900 focus:border-fedsec-purple focus:ring-2 focus:ring-fedsec-purple/20 outline-none transition-all resize-none" placeholder="Tell us about your security needs..." />
                 </div>
                 <Button type="submit" size="lg" className="w-full">Send Message</Button>
-                <p className="text-xs text-fedsec-gray-400 text-center font-[family-name:var(--font-body)]">
+                <p className="text-sm text-fedsec-gray-400 text-center font-[family-name:var(--font-body)]">
                   This opens your mail app with the message addressed to {SITE.email} - just hit send.
                 </p>
               </form>

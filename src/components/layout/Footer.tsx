@@ -70,7 +70,7 @@ export default function Footer() {
             <div className="mb-5">
               <CyphraLogo />
             </div>
-            <p className="text-sm text-white/70 leading-relaxed mb-6 max-w-xs font-[family-name:var(--font-body)]">
+            <p className="text-base text-white/70 leading-relaxed mb-6 max-w-xs font-[family-name:var(--font-body)]">
               {SITE.description}
             </p>
             <div className="flex items-center gap-2">
@@ -99,7 +99,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/70 hover:text-white transition-colors font-[family-name:var(--font-body)]"
+                    className="text-[15px] text-white/70 hover:text-white transition-colors font-[family-name:var(--font-body)]"
                   >
                     {link.label}
                   </Link>
@@ -118,7 +118,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/70 hover:text-white transition-colors font-[family-name:var(--font-body)]"
+                    className="text-[15px] text-white/70 hover:text-white transition-colors font-[family-name:var(--font-body)]"
                   >
                     {link.label}
                   </Link>
@@ -136,7 +136,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${SITE.email}`}
-                  className="text-sm text-white/70 hover:text-white transition-colors font-[family-name:var(--font-body)]"
+                  className="text-[15px] text-white/70 hover:text-white transition-colors font-[family-name:var(--font-body)]"
                 >
                   {SITE.email}
                 </a>
@@ -144,7 +144,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${SITE.phone}`}
-                  className="text-sm text-white/70 hover:text-white transition-colors font-[family-name:var(--font-body)]"
+                  className="text-[15px] text-white/70 hover:text-white transition-colors font-[family-name:var(--font-body)]"
                 >
                   {SITE.phone}
                 </a>
@@ -154,7 +154,7 @@ export default function Footer() {
                   href={SITE.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-white/70 hover:text-white transition-colors font-[family-name:var(--font-body)]"
+                  className="text-[15px] text-white/70 hover:text-white transition-colors font-[family-name:var(--font-body)]"
                 >
                   {SITE.url}
                 </a>

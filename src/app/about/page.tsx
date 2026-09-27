@@ -229,7 +229,7 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold text-fedsec-white mt-4 mb-3 font-[family-name:var(--font-heading)] leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-sm text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
+                <p className="text-base text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
                   {item.body}
                 </p>
               </motion.div>
@@ -339,7 +339,7 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">
                   {value.title}
                 </h3>
-                <p className="text-sm text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
+                <p className="text-base text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
                   {value.description}
                 </p>
                 <div className="mt-5">

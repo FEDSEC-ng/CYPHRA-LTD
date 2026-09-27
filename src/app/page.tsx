@@ -941,7 +941,7 @@ function GrowthTabs() {
                   <h4 className="font-bold text-fedsec-white mb-2 font-[family-name:var(--font-heading)]">
                     {item.title}
                   </h4>
-                  <p className="text-sm text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
+                  <p className="text-base text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
                     {item.desc}
                   </p>
                 </motion.div>
@@ -1315,7 +1315,7 @@ function ProcessSection() {
                   {processSteps[active].number} · {processSteps[active].title}
                 </span>
               </div>
-              <p className="mx-auto mt-2 max-w-[300px] md:max-w-sm text-center text-xs md:text-sm text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
+              <p className="mx-auto mt-2 max-w-[300px] md:max-w-sm text-center text-xs md:text-base text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
                 {processSteps[active].description}
               </p>
             </motion.div>
@@ -1379,7 +1379,7 @@ function WhyCyphra() {
                 <h3 className="text-xl font-bold text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">
                   {item.title}
                 </h3>
-                <p className="text-sm text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
+                <p className="text-base text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
                   {item.description}
                 </p>
               </div>
@@ -1538,7 +1538,7 @@ function AudiencesSection() {
               <h3 className="text-lg font-bold text-fedsec-white mb-3 font-[family-name:var(--font-heading)]">
                 {a.title}
               </h3>
-              <p className="text-sm text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
+              <p className="text-base text-white/70 leading-relaxed font-[family-name:var(--font-body)]">
                 {a.description}
               </p>
             </motion.div>

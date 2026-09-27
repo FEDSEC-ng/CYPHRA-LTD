@@ -50,7 +50,7 @@ const team = [
     bio: "Researcher and full-stack blockchain engineer who audits from the inside out — tracing vulnerabilities through architecture and business logic rather than relying on scanners. CAP and CNSP certified, hunts bounties across Cantina, YesWeHack, and Bugcrowd, and has competed in public audit contests including on the XRP Ledger.",
     image: "/images/team/isah-v2.png",
     cv: "/images/resumes/isah-cv.pdf",
-    credentials: "CAP · CNSP · XRP Ledger Audits",
+    credentials: "CAP · CNSP · TCM",
   },
   {
     name: "Badu Zaccheaus J.",
@@ -199,13 +199,13 @@ export default function AboutPage() {
       {/* Stats */}
       <section className="py-16 bg-fedsec-black border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 w-full max-w-md sm:max-w-none mx-auto">
             {stats.map((stat, index) => (
-              <motion.div key={stat.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ ...springTransition, delay: index * 0.1 }} className="text-center stat-orb p-8">
-                <div className="text-4xl md:text-5xl font-bold text-fedsec-white mb-2 font-[family-name:var(--font-heading)]">
+              <motion.div key={stat.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ ...springTransition, delay: index * 0.1 }} className="text-center stat-orb">
+                <div className="stat-orb-value font-bold text-fedsec-white mb-1.5 font-[family-name:var(--font-heading)]">
                   {stat.prefix || ""}{stat.value}{stat.suffix}
                 </div>
-                <div className="text-sm text-fedsec-purple font-[family-name:var(--font-accent)]">{stat.label}</div>
+                <div className="stat-orb-label text-fedsec-purple font-[family-name:var(--font-accent)]">{stat.label}</div>
               </motion.div>
             ))}
           </div>

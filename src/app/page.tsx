@@ -710,15 +710,15 @@ function NumbersSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.06 }}
-              className="stat-orb p-6 md:p-8 text-center hover:border-fedsec-purple/30 transition-colors duration-300"
+              className="stat-orb text-center hover:border-fedsec-purple/30 transition-colors duration-300"
             >
-              <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-fedsec-white mb-2 font-[family-name:var(--font-heading)]">
+              <p className="stat-orb-value font-bold text-fedsec-white mb-1.5 font-[family-name:var(--font-heading)]">
                 <AnimatedCounter target={stat.target} prefix={stat.prefix || ""} suffix={stat.suffix} />
               </p>
-              <p className="text-sm font-semibold text-fedsec-purple font-[family-name:var(--font-accent)]">
+              <p className="stat-orb-label font-semibold text-fedsec-purple font-[family-name:var(--font-accent)]">
                 {stat.label}
               </p>
-              <p className="text-xs text-white/30 mt-1 hidden sm:block font-[family-name:var(--font-body)]">
+              <p className="stat-orb-note text-white/30 mt-1 hidden sm:block font-[family-name:var(--font-body)]">
                 {stat.note}
               </p>
             </motion.div>

@@ -54,7 +54,7 @@ export const services: Service[] = [
       {
         title: "Network Penetration Testing",
         description:
-          "We simulate real-world attacks against your network infrastructure to identify weaknesses in firewalls, routers, switches, and network configurations. Our testing covers both internal and external network segments.",
+          "We simulate real world attacks against your network infrastructure to identify weaknesses in firewalls, routers, switches, and network configurations. Our testing covers both internal and external network segments.",
         image: "/images/protexy/services/feature1.png",
       },
       {
@@ -66,13 +66,13 @@ export const services: Service[] = [
       {
         title: "Mobile Application Testing",
         description:
-          "Security assessment of iOS and Android applications covering data storage, communication security, authentication, and platform-specific vulnerabilities.",
+          "Security assessment of iOS and Android applications covering data storage, communication security, authentication, and platform specific vulnerabilities.",
         image: "/images/protexy/services/feature3.png",
       },
       {
         title: "Cloud Infrastructure Testing",
         description:
-          "Evaluation of cloud environments across AWS, Azure, and GCP covering misconfigurations, access controls, and cloud-native security risks.",
+          "Evaluation of cloud environments across AWS, Azure, and GCP covering misconfigurations, access controls, and cloud native security risks.",
         image: "/images/protexy/services/feature4.png",
       },
     ],
@@ -85,7 +85,7 @@ export const services: Service[] = [
       {
         title: "Discover & Exploit",
         description:
-          "Identify vulnerabilities and attempt controlled exploitation to validate real-world impact.",
+          "Identify vulnerabilities and attempt controlled exploitation to validate real world impact.",
       },
       {
         title: "Report & Remediate",
@@ -161,7 +161,7 @@ export const services: Service[] = [
       {
         title: "Compliance Management",
         description:
-          "End-to-end compliance management from gap analysis through certification, ensuring your organization meets all applicable regulatory and industry standards.",
+          "End to end compliance management from gap analysis through certification, ensuring your organization meets all applicable regulatory and industry standards.",
         image: "/images/protexy/services/feature2.png",
       },
       {
@@ -219,9 +219,9 @@ export const services: Service[] = [
     slug: "network-security",
     title: "Network Security",
     shortDescription:
-      "End-to-end network security solutions to protect your infrastructure from unauthorized access, malware, and network-based attacks.",
+      "End to end network security solutions to protect your infrastructure from unauthorized access, malware, and network based attacks.",
     fullDescription:
-      "Our network security services provide comprehensive protection for your network infrastructure. We design, implement, and monitor security controls that defend against unauthorized access, data exfiltration, and network-based attacks.",
+      "Our network security services provide comprehensive protection for your network infrastructure. We design, implement, and monitor security controls that defend against unauthorized access, data exfiltration, and network based attacks.",
     icon: "Cloud",
     marqueeBadges: [
       "Network Defense",
@@ -262,19 +262,19 @@ export const services: Service[] = [
       {
         title: "Network Segmentation",
         description:
-          "Strategic network segmentation and micro-segmentation to contain threats and limit lateral movement within your infrastructure.",
+          "Strategic network segmentation and micro segmentation to contain threats and limit lateral movement within your infrastructure.",
         image: "/images/protexy/services/feature2.png",
       },
       {
         title: "VPN & Remote Access Security",
         description:
-          "Secure remote access solutions with multi-factor authentication and encrypted tunnels for distributed workforces.",
+          "Secure remote access solutions with multi factor authentication and encrypted tunnels for distributed workforces.",
         image: "/images/protexy/services/feature3.png",
       },
       {
         title: "Network Monitoring & Alerting",
         description:
-          "Real-time network visibility with automated alerting for suspicious traffic patterns, unauthorized devices, and potential security incidents.",
+          "Real time network visibility with automated alerting for suspicious traffic patterns, unauthorized devices, and potential security incidents.",
         image: "/images/protexy/services/feature4.png",
       },
     ],
@@ -333,7 +333,7 @@ export const services: Service[] = [
       "We embed security into your development process, from threat modeling and secure design to code review and automated security testing in your CI/CD pipeline.",
     benefits: [
       {
-        title: "Shift-Left Security",
+        title: "Shift Left Security",
         description:
           "Integrate security early in the development lifecycle to reduce costs and catch vulnerabilities before production.",
       },
@@ -436,7 +436,7 @@ export const services: Service[] = [
       {
         title: "24/7 Monitoring",
         description:
-          "Round-the-clock security monitoring across your infrastructure with rapid alerting on security events.",
+          "Round the clock security monitoring across your infrastructure with rapid alerting on security events.",
       },
       {
         title: "Threat Detection",
@@ -476,7 +476,7 @@ export const services: Service[] = [
       {
         title: "Security Dashboards",
         description:
-          "Real-time security dashboards and reporting that provide visibility into your security posture and key risk indicators.",
+          "Real time security dashboards and reporting that provide visibility into your security posture and key risk indicators.",
         image: "/images/protexy/services/feature4.png",
       },
     ],
@@ -547,7 +547,7 @@ export const services: Service[] = [
       {
         title: "Evidence Preservation",
         description:
-          "Chain-of-custody evidence handling to support legal proceedings and regulatory reporting.",
+          "Chain of custody evidence handling to support legal proceedings and regulatory reporting.",
       },
       {
         title: "Recovery Support",

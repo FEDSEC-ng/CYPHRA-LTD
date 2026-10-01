@@ -18,7 +18,7 @@ const features = [
     icon: <Shield size={24} />,
     title: "Proven Methodology",
     description:
-      "Battle-tested processes refined through hundreds of engagements across industries and threat landscapes.",
+      "Battle tested processes refined through hundreds of engagements across industries and threat landscapes.",
   },
   {
     icon: <Clock size={24} />,
@@ -30,7 +30,7 @@ const features = [
     icon: <Headphones size={24} />,
     title: "Dedicated Support",
     description:
-      "Every client gets a dedicated point of contact and direct access to senior security professionals - no ticket queues.",
+      "Every client gets a dedicated point of contact and direct access to senior security professionals. No ticket queues.",
   },
   {
     icon: <Award size={24} />,
@@ -48,7 +48,7 @@ const features = [
     icon: <Lock size={24} />,
     title: "Confidential by Design",
     description:
-      "We handle your data with the same rigor we bring to securing it. NDA-backed, SOC-aware, and trust-focused.",
+      "We handle your data with the same rigor we bring to securing it. Backed by NDAs, SOC aware, and trust focused.",
   },
 ];
 

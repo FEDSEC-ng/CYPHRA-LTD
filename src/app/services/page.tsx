@@ -79,7 +79,7 @@ export default function ServicesPage() {
             </Tremble>
             <p className="text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed mb-10">
               Offense. Defense. Governance. We attack like adversaries, defend
-              around the clock, and align security with your business - as one
+              around the clock, and align security with your business as one
               collective. Here is what that looks like across our core services.
             </p>
             <div className="flex flex-wrap gap-3">

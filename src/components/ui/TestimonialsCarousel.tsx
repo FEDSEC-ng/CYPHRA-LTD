@@ -14,21 +14,21 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "Working with the team transformed the way we approach cybersecurity. Their AI-powered monitoring and rapid response capabilities helped us identify potential threats before they could impact our operations",
+      "Working with the team transformed the way we approach cybersecurity. Their AI powered monitoring and rapid response capabilities helped us identify potential threats before they could impact our operations",
     name: "Olivia Bennett",
     role: "IT Director, NexaBank",
     avatar: "/images/protexy/team/avatar-olivia.png",
   },
   {
     quote:
-      "The cybersecurity solutions delivered exceeded our expectations. The real-time monitoring and automated incident response have significantly reduced our security risks and improved overall operational stability.",
+      "The cybersecurity solutions delivered exceeded our expectations. The real time monitoring and automated incident response have significantly reduced our security risks and improved overall operational stability.",
     name: "Adebayo O.",
     role: "CTO, SecureTech",
     avatar: "/images/protexy/team/avatar-james.png",
   },
   {
     quote:
-      "AI-powered monitoring transformed cybersecurity, preventing threats before disrupting business operations completely.",
+      "AI powered monitoring transformed cybersecurity, preventing threats before disrupting business operations completely.",
     name: "Emeka N.",
     role: "CISO, SafeNet",
     avatar: "/images/protexy/team/avatar-emma.png",

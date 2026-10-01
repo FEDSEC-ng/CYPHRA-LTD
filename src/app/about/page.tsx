@@ -15,7 +15,7 @@ const team = [
   {
     name: "Nwachukwu Francis O.",
     role: "Founder/Tech Lead",
-    bio: "Cybersecurity analyst and CTF player ranked in TryHackMe's top 2%, with hands-on experience spanning network security, threat analysis, and SOC operations. Holds SOC Level 1, APIsec Certified Practitioner, Practical Ethical Hacking, Cisco Network Defense, and HCIA Cloud Security credentials. Leads CYPHRA's technical bench and brand.",
+    bio: "Cybersecurity analyst and CTF player ranked in TryHackMe's top 2%, with hands on experience spanning network security, threat analysis, and SOC operations. Holds SOC Level 1, APIsec Certified Practitioner, Practical Ethical Hacking, Cisco Network Defense, and HCIA Cloud Security credentials. Leads CYPHRA's technical bench and brand.",
     image: "/images/team/francis.png",
     cv: null,
     credentials: "TryHackMe Top 2% · SOC L1 · APIsec · CNSP",
@@ -23,7 +23,7 @@ const team = [
   {
     name: "Abang Obed",
     role: "Offensive Security & Red Team Operations",
-    bio: "Six years across security operations, application security, offensive security, and detection engineering - spanning web, API, mobile, network, cloud, and Windows internals. Secured government infrastructure at Nigeria's National Emergency Management Agency, holds CPTS, and has been credited on GitHub's and X's official security advisory programs.",
+    bio: "Six years across security operations, application security, offensive security, and detection engineering: spanning web, API, mobile, network, cloud, and Windows internals. Secured government infrastructure at Nigeria's National Emergency Management Agency, holds CPTS, and has been credited on GitHub's and X's official security advisory programs.",
     image: "/images/team/obed.png",
     cv: "/images/resumes/obed-cv.pdf",
     credentials: "CPTS · NEMA · GitHub/X Advisories",
@@ -39,7 +39,7 @@ const team = [
   {
     name: "Agnes Akpa",
     role: "DevSecOps & GRC",
-    bio: "Operates at the intersection of technical security, risk governance, and business strategy - application development, cloud security, DevSecOps, and blockchain security awareness. Head of Security at FiatRouter, previously Cloud Computing Intern with NITDA's IT Hub. (ISC)² Certified in Cybersecurity, DevSecOps, and Google Cybersecurity certified.",
+    bio: "Operates at the intersection of technical security, risk governance, and business strategy: application development, cloud security, DevSecOps, and blockchain security awareness. Head of Security at FiatRouter, previously Cloud Computing Intern with NITDA's IT Hub. (ISC)² Certified in Cybersecurity, DevSecOps, and Google Cybersecurity certified.",
     image: "/images/team/agnes.png",
     cv: "/images/resumes/agnes-cv.docx",
     credentials: "(ISC)² CC · DevSecOps · Google Cyber",
@@ -47,7 +47,7 @@ const team = [
   {
     name: "Isah Dauda",
     role: "Full Stack Developer & Security Researcher",
-    bio: "Researcher and full-stack blockchain engineer who audits from the inside out - tracing vulnerabilities through architecture and business logic rather than relying on scanners. CAP and CNSP certified, hunts bounties across Cantina, YesWeHack, and Bugcrowd, and has competed in public audit contests including on the XRP Ledger.",
+    bio: "Researcher and full stack blockchain engineer who audits from the inside out: tracing vulnerabilities through architecture and business logic rather than relying on scanners. CAP and CNSP certified, hunts bounties across Cantina, YesWeHack, and Bugcrowd, and has competed in public audit contests including on the XRP Ledger.",
     image: "/images/team/isah-v2.png",
     cv: "/images/resumes/isah-cv.pdf",
     credentials: "CAP · CNSP · TCM",
@@ -55,7 +55,7 @@ const team = [
   {
     name: "Badu Zaccheaus J.",
     role: "Cyber Security Analyst & Blue Team Operations",
-    bio: "Cybersecurity analyst with hands-on experience testing production systems - uncovering misconfigurations, insecure headers, and web application flaws, and turning findings into clear, actionable reports for stakeholders. Part of the discipline behind CYPHRA's methodology: authorized, documented, and built to hold up under scrutiny.",
+    bio: "Cybersecurity analyst with hands on experience testing production systems: uncovering misconfigurations, insecure headers, and web application flaws, and turning findings into clear, actionable reports for stakeholders. Part of the discipline behind CYPHRA's methodology: authorized, documented, and built to hold up under scrutiny.",
     image: "/images/team/badu.png",
     cv: "/images/resumes/badu-cv.docx",
     credentials: "Web App Testing · Methodical Reporting",
@@ -111,7 +111,7 @@ const purpose = [
   {
     tag: "Why we exist",
     title: "Risk found before it becomes a threat.",
-    body: "We exist to make effective cybersecurity more accessible, practical, and actionable - helping organizations identify risks before they become serious threats.",
+    body: "We exist to make effective cybersecurity more accessible, practical, and actionable: helping organizations identify risks before they become serious threats.",
   },
   {
     tag: "Our mission",
@@ -142,14 +142,14 @@ const whoWeAre = [
   {
     tag: "Who we are",
     title: "Not a vendor. A collective on your bench.",
-    body: "CYPHRA operates as an extension of your team - offensive specialists, defensive engineers, and governance advisors who sit with you, think with you, and build with you. One engagement or a full security program, the collective works as one.",
+    body: "CYPHRA operates as an extension of your team: offensive specialists, defensive engineers, and governance advisors who sit with you, think with you, and build with you. One engagement or a full security program, the collective works as one.",
     image: "/images/why/why4.jpg",
     alt: "Analysts reviewing security dashboards",
   },
   {
     tag: "What we believe",
     title: "Security is measured in risk reduced, not pages delivered.",
-    body: "We keep reports short, findings honest, and guidance practical. Every recommendation is sized to your environment and maturity - so your team can actually implement it, and your defenses actually improve.",
+    body: "We keep reports short, findings honest, and guidance practical. Every recommendation is sized to your environment and maturity, so your team can actually implement it, and your defenses actually improve.",
     image: "/images/why/why5.jpg",
     alt: "Modern enterprise architecture review",
   },
@@ -248,7 +248,7 @@ export default function AboutPage() {
               <p className="shrink-0 text-sm font-bold text-fedsec-white font-[family-name:var(--font-heading)] md:w-44">
                 Built for the long run.
                 <span className="block text-xs font-medium text-white/70 mt-1 font-[family-name:var(--font-body)]">
-                  Deeper expertise, stronger partnerships - our capabilities keep growing.
+                  Deeper expertise, stronger partnerships: our capabilities keep growing.
                 </span>
               </p>
               <div className="flex flex-wrap gap-2">
@@ -326,8 +326,8 @@ export default function AboutPage() {
             <p className="text-lg text-white/75 max-w-3xl mx-auto leading-relaxed">
               CYPHRA was born from a simple idea: cybersecurity is stronger when
               different areas of expertise work together. Our name comes from
-              the <strong className="text-white">cipher</strong> - the craft of protecting what matters.
-              Purple - the coming together of blue (defense) and red (offense) -
+              the <strong className="text-white">cipher</strong>, the craft of protecting what matters.
+              Purple: the coming together of blue (defense) and red (offense),
               represents the integration of different disciplines into one
               collective.
             </p>
@@ -384,7 +384,7 @@ export default function AboutPage() {
             </h2>
             <p className="text-lg text-white/75 max-w-2xl mx-auto">
               Offense and defense, governance and engineering. A super team of
-              cybersecurity - hover a specialist to see their story.
+              cybersecurity. Hover a specialist to see their story.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">

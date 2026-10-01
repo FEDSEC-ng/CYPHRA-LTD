@@ -24,7 +24,7 @@ type CaseStudy = {
 
 const caseStudies: CaseStudy[] = [
   {
-    name: "SOC Build-Out, Zero to Detection",
+    name: "SOC Build Out, Zero to Detection",
     industry: "Financial Services",
     location: "Nigeria",
     description:
@@ -35,7 +35,7 @@ const caseStudies: CaseStudy[] = [
     industry: "Technology",
     location: "United Kingdom",
     description:
-      "Full-stack security assessment of a SaaS platform, uncovering business-logic flaws and critical API vulnerabilities.",
+      "Full stack security assessment of a SaaS platform, uncovering business logic flaws and critical API vulnerabilities.",
   },
   {
     name: "ISO 27001 Compliance Program",
@@ -49,14 +49,14 @@ const caseStudies: CaseStudy[] = [
     industry: "Enterprise",
     location: "Nigeria",
     description:
-      "Zero-trust architecture review, firewall segmentation, and continuous monitoring across a corporate estate.",
+      "Zero trust architecture review, firewall segmentation, and continuous monitoring across a corporate estate.",
   },
   {
-    name: "E-Commerce Platform Protection",
-    industry: "E-Commerce",
+    name: "Ecommerce Platform Protection",
+    industry: "Ecommerce",
     location: "United States",
     description:
-      "Application, API, and cloud infrastructure security for a high-traffic retail platform.",
+      "Application, API, and cloud infrastructure security for a high traffic retail platform.",
   },
   {
     name: "Government Cybersecurity Framework",

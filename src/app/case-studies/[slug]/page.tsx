@@ -28,7 +28,7 @@ const contentSections = [
   {
     title: "System Protection",
     description:
-      "Comprehensive system protection measures were implemented including real-time monitoring, automated threat response, and continuous security validation to ensure maximum uptime and data integrity across all platforms.",
+      "Comprehensive system protection measures were implemented including real time monitoring, automated threat response, and continuous security validation to ensure maximum uptime and data integrity across all platforms.",
     image: "/images/protexy/case-studies/case-content3.png",
   },
   {

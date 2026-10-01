@@ -47,7 +47,7 @@ export default function AboutPreview() {
             {[
               {
                 icon: <Shield size={24} />,
-                title: "Trust-First Approach",
+                title: "Trust First Approach",
                 desc: "Every recommendation is grounded in your actual risk landscape, not vendor relationships.",
               },
               {
@@ -57,7 +57,7 @@ export default function AboutPreview() {
               },
               {
                 icon: <Target size={24} />,
-                title: "Business-Aligned Security",
+                title: "Business Aligned Security",
                 desc: "Security programs designed to support your business objectives, not hinder them.",
               },
               {

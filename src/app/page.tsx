@@ -74,7 +74,7 @@ const team = [
   {
     name: "Isah Dauda",
     role: "Full Stack Developer & Security Researcher",
-    bio: "Full-stack blockchain engineer who audits from the inside out. CAP and CNSP certified, hunts on Cantina, YesWeHack, and Bugcrowd, including XRP Ledger audit contests.",
+    bio: "Full stack blockchain engineer who audits from the inside out. CAP and CNSP certified, hunts on Cantina, YesWeHack, and Bugcrowd, including XRP Ledger audit contests.",
     image: "/images/team/isah-v2.png",
     cv: "/images/resumes/isah-cv.pdf",
     short: "I",
@@ -82,7 +82,7 @@ const team = [
   {
     name: "Badu Zaccheaus J.",
     role: "Cyber Security Analyst & Blue Team Operations",
-    bio: "Hands-on testing of production systems - misconfigurations, insecure headers, and web application flaws turned into clear, actionable reports. Part of the discipline behind CYPHRA's methodology: authorized, documented, and built to hold up under scrutiny.",
+    bio: "Hands on testing of production systems: misconfigurations, insecure headers, and web application flaws turned into clear, actionable reports. Part of the discipline behind CYPHRA's methodology: authorized, documented, and built to hold up under scrutiny.",
     image: "/images/team/badu.png",
     cv: "/images/resumes/badu-cv.docx",
     short: "B",
@@ -94,17 +94,17 @@ const stats = [
   { target: 190, prefix: "$", suffix: "M+", label: "Client Risk Reduced", note: "Across every engagement" },
   { target: 35, suffix: "+", label: "Acceptance Reports", note: "On Bugcrowd & YesWeHack" },
   { target: 12, suffix: "+", label: "Countries Served", note: "Enterprise to startup" },
-  { target: 200, suffix: "+", label: "Engagements Delivered", note: "VAPT to SOC build-out" },
+  { target: 200, suffix: "+", label: "Engagements Delivered", note: "VAPT to SOC build out" },
   { target: 24, suffix: "/7", label: "SOC Monitoring", note: "Always watching" },
 ];
 
 const locations = [
-  { city: "Lagos", country: "Nigeria", flag: "NG", image: "/images/locations/lagos.jpg", blurb: "Headquarters - enterprise, fintech & government engagements across West Africa.", service: "/services/vulnerability-assessment-and-penetration-testing" },
+  { city: "Lagos", country: "Nigeria", flag: "NG", image: "/images/locations/lagos.jpg", blurb: "Headquarters: enterprise, fintech & government engagements across West Africa.", service: "/services/vulnerability-assessment-and-penetration-testing" },
   { city: "Abuja", country: "Nigeria", flag: "NG", image: "/images/locations/abuja.jpg", blurb: "Advisory & compliance practice serving institutions and public sector.", service: "/services/grc-advisory" },
-  { city: "Munich", country: "Germany", flag: "DE", image: "/images/locations/munich.jpg", blurb: "European operations - GRC, data protection, and penetration testing.", service: "/services/grc-advisory" },
+  { city: "Munich", country: "Germany", flag: "DE", image: "/images/locations/munich.jpg", blurb: "European operations: GRC, data protection, and penetration testing.", service: "/services/grc-advisory" },
   { city: "London", country: "United Kingdom", flag: "UK", image: "/images/locations/london.jpg", blurb: "Partnered delivery for UK & EU regulated organizations.", service: "/services/vulnerability-assessment-and-penetration-testing" },
   { city: "New York", country: "United States", flag: "US", image: "/images/locations/nyc.jpg", blurb: "Coverage for US clients across cloud security and red teaming.", service: "/services/vulnerability-assessment-and-penetration-testing" },
-  { city: "Accra", country: "Ghana", flag: "GH", image: "/images/locations/accra.jpg", blurb: "West African expansion - SOC advisory and security operations.", service: "/services/security-operations" },
+  { city: "Accra", country: "Ghana", flag: "GH", image: "/images/locations/accra.jpg", blurb: "West African expansion: SOC advisory and security operations.", service: "/services/security-operations" },
 ];
 
 const growthTabs = [
@@ -113,15 +113,15 @@ const growthTabs = [
     label: "Red Team",
     icon: Target,
     eyebrow: "Offensive Security",
-    tagline: "We attack like an adversary - before they do. Authorized, documented, and built to hold up under scrutiny.",
+      tagline: "We attack like an adversary would, before they do. Authorized, documented, and built to hold up under scrutiny.",
     description:
-      "Our offensive team simulates real-world attackers against your systems. From recon to exploitation, every engagement identifies the vulnerabilities that actually matter and validates them end-to-end.",
+      "Our offensive team simulates real world attackers against your systems. From recon to exploitation, every engagement identifies the vulnerabilities that actually matter and validates them end to end.",
     items: [
       { title: "Penetration Testing & VAPT", desc: "Network, web, mobile, API, and cloud penetration testing", icon: Target },
-      { title: "Red Team Operations", desc: "Full-scope, multi-vector simulated attacks", icon: Crosshair },
-      { title: "Web & API Security", desc: "Business-logic-driven application assessment", icon: Layers },
+      { title: "Red Team Operations", desc: "Full scope, multiple vector simulated attacks", icon: Crosshair },
+      { title: "Web & API Security", desc: "Application assessment driven by business logic", icon: Layers },
       { title: "Cloud Security Review", desc: "AWS, GCP, and Azure misconfiguration hunting", icon: Shield },
-      { title: "Wireless & Network Testing", desc: "Infrastructure compromise - internal and external", icon: Network },
+      { title: "Wireless & Network Testing", desc: "Infrastructure compromise, internal and external", icon: Network },
     ],
   },
   {
@@ -135,9 +135,9 @@ const growthTabs = [
     items: [
       { title: "Security Operations (SOC)", desc: "24/7 monitoring with MITRE ATT&CK mapping", icon: Radar },
       { title: "Security Analysis", desc: "Log and event analysis, threat detection", icon: Eye },
-      { title: "Network Security", desc: "Firewall, SD-WAN, and zero-trust hardening", icon: Lock },
+      { title: "Network Security", desc: "Firewall, SD WAN, and zero trust hardening", icon: Lock },
       { title: "Incident Response", desc: "Containment, forensics, and recovery", icon: Zap },
-      { title: "Threat Detection Engineering", desc: "Detection use cases and SIEM build-out", icon: Terminal },
+      { title: "Threat Detection Engineering", desc: "Detection use cases and SIEM build out", icon: Terminal },
     ],
   },
   {
@@ -147,11 +147,11 @@ const growthTabs = [
     eyebrow: "Governance, Risk & Compliance",
     tagline: "We translate cyber risk into the language your board actually acts on.",
     description:
-      "Our GRC discipline helps organizations understand security requirements, close gaps, and build programs that align compliance, business objectives, and real-world security operations.",
+      "Our GRC discipline helps organizations understand security requirements, close gaps, and build programs that align compliance, business objectives, and real world security operations.",
     items: [
       { title: "GRC Advisory", desc: "Risk frameworks aligned to business goals", icon: Shield },
       { title: "Compliance Readiness", desc: "ISO 27001, SOC 2, PCI DSS, GDPR programs", icon: FileCheck },
-      { title: "Security Architecture", desc: "Secure design and system-architecture review", icon: Building2 },
+      { title: "Security Architecture", desc: "Secure design and system architecture review", icon: Building2 },
       { title: "Policy & Governance", desc: "Policies, controls, and security programs", icon: Layers },
       { title: "Education & Awareness", desc: "Training that changes behavior", icon: GraduationCap },
     ],
@@ -195,14 +195,14 @@ const whyCards = [
   {
     title: "We Identify Hidden Vulnerabilities",
     description:
-      "Manual, adversarial testing that finds what scanners miss - logic flaws, misconfigurations, and exploitable chains.",
+      "Manual, adversarial testing that finds what scanners miss: logic flaws, misconfigurations, and exploitable chains.",
     image: "/images/why/why1.jpg",
     alt: "Analyst probing systems in a darkened room",
   },
   {
     title: "We Reduce Attack Surface",
     description:
-      "Prioritized remediation that closes the real paths attackers take - not a generic checklist.",
+      "Prioritized remediation that closes the real paths attackers take, not a generic checklist.",
     image: "/images/why/why2.jpg",
     alt: "Hardened data center corridor",
   },
@@ -216,14 +216,14 @@ const whyCards = [
   {
     title: "Your Security Is Our Only Metric",
     description:
-      "We measure success by risk reduced and resilience built - not hours billed or pages delivered.",
+      "We measure success by risk reduced and resilience built, not hours billed or pages delivered.",
     image: "/images/why/why4.jpg",
     alt: "Analysts reviewing security dashboards",
   },
   {
-    title: "Long-Term Security Maturity",
+    title: "Long Term Security Maturity",
     description:
-      "Programs designed for where your business is three years from now, not a three-month engagement.",
+      "Programs designed for where your business is three years from now, not a three month engagement.",
     image: "/images/why/why5.jpg",
     alt: "Modern enterprise architecture",
   },
@@ -242,7 +242,7 @@ const processSteps = [
     kicker: "Discover",
     title: "Reconnaissance",
     description:
-      "We map your attack surface - domains, infrastructure, applications, cloud, and exposed services - and understand your business objectives.",
+      "We map your attack surface: domains, infrastructure, applications, cloud, and exposed services, and understand your business objectives.",
     icon: Radar,
   },
   {
@@ -258,7 +258,7 @@ const processSteps = [
     kicker: "Attack",
     title: "Exploitation & Validation",
     description:
-      "We validate vulnerabilities in a controlled, authorized way - chaining real-world attack paths to prove impact, not guess.",
+      "We validate vulnerabilities in a controlled, authorized way: chaining real world attack paths to prove impact, not guess.",
     icon: Target,
   },
   {
@@ -275,25 +275,25 @@ const audiences = [
   {
     title: "Startups and Founders",
     description:
-      "You are building from scratch and every dollar needs to work. We help early-stage companies build a secure foundation and attract their first enterprise contracts.",
+      "You are building from scratch and every dollar needs to work. We help early stage companies build a secure foundation and attract their first enterprise contracts.",
     icon: Rocket,
   },
   {
     title: "Growing Businesses",
     description:
-      "You have product-market fit and want security that scales. We come in as a strategic partner building detection, testing, and compliance programs that compound over time.",
+      "You have product market fit and want security that scales. We come in as a strategic partner building detection, testing, and compliance programs that compound over time.",
     icon: Briefcase,
   },
   {
     title: "Enterprise & Institutions",
     description:
-      "You operate at scale across markets and stakeholders. We handle multi-country assessments, enterprise GRC programs, and SOC operations where stakes are high.",
+      "You operate at scale across markets and stakeholders. We handle assessments across multiple countries, enterprise GRC programs, and SOC operations where stakes are high.",
     icon: Building2,
   },
   {
     title: "NGOs & Public Sector",
     description:
-      "Your audience is donors, constituents, and communities. We deliver compliance-aware, budget-efficient security that balances reach and credibility.",
+      "Your audience is donors, constituents, and communities. We deliver compliance aware, budget efficient security that balances reach and credibility.",
     icon: HeartHandshake,
   },
 ];

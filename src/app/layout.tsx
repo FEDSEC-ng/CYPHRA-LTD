@@ -42,7 +42,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CYPHRA - Know Your Risk | Multidisciplinary Cybersecurity Firm",
+    title: "CYPHRA: Know Your Risk | Multidisciplinary Cybersecurity Firm",
   description:
     "Different Expertise. One Collective. Secure by Trust. CYPHRA delivers VAPT, GRC advisory, network security, software security, security operations, and incident response services.",
   keywords: [
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     "know your risk",
   ],
   openGraph: {
-    title: "CYPHRA - Know Your Risk | Multidisciplinary Cybersecurity Firm",
+  title: "CYPHRA: Know Your Risk | Multidisciplinary Cybersecurity Firm",
     description:
       "Different Expertise. One Collective. Secure by Trust. Cybersecurity that delivers results.",
     type: "website",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CYPHRA - Know Your Risk",
+    title: "CYPHRA: Know Your Risk",
     description:
       "Different Expertise. One Collective. Secure by Trust. Cybersecurity that delivers results.",
   },

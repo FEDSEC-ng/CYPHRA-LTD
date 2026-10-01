@@ -20,17 +20,17 @@ export const caseStudies: CaseStudy[] = [
     industry: "Financial Services",
     title: "FinSecure",
     challenge:
-      "NexaBank partnered with our cybersecurity team to strengthen its digital infrastructure and improve protection across critical banking systems. The organization faced increasing risks from evolving cyber threats, unauthorized access attempts, and network vulnerabilities affecting operational security and customer trust. Our goal was to implement a scalable cybersecurity strategy powered by AI-driven threat detection, continuous monitoring, and rapid incident response systems.",
+      "NexaBank partnered with our cybersecurity team to strengthen its digital infrastructure and improve protection across critical banking systems. The organization faced increasing risks from evolving cyber threats, unauthorized access attempts, and network vulnerabilities affecting operational security and customer trust. Our goal was to implement a scalable cybersecurity strategy powered by AI driven threat detection, continuous monitoring, and rapid incident response systems.",
     solution:
-      "Implemented AI-powered threat detection systems, improved real-time network monitoring capabilities, reduced security risks across critical infrastructure, strengthened customer data protection measures, enhanced incident response and recovery speed, increased visibility into suspicious network activity, and built a scalable long-term security framework.",
+      "Implemented AI powered threat detection systems, improved real time network monitoring capabilities, reduced security risks across critical infrastructure, strengthened customer data protection measures, enhanced incident response and recovery speed, increased visibility into suspicious network activity, and built a scalable long term security framework.",
     results: [
-      "Implemented AI-powered threat detection systems Improved",
-      "Improved real-time network monitoring capabilities",
+      "Implemented AI powered threat detection systems Improved",
+      "Improved real time network monitoring capabilities",
       "Reduced security risks across critical infrastructure",
       "Strengthened customer data protection measures",
       "Enhanced incident response and recovery speed",
       "Increased visibility into suspicious network activity",
-      "Built a scalable long-term security framework",
+      "Built a scalable long term security framework",
     ],
     services: ["Cloud Security", "Threat Monitoring", "Incident Response"],
     image: "/images/protexy/case-studies/case-hero.png",
@@ -107,7 +107,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Technology",
     title: "CloudSync",
     challenge:
-      "CloudSync Technologies was migrating its entire infrastructure from on-premise data centers to a multi-cloud environment. The migration presented security risks at every stage - from data in transit to cloud misconfiguration to identity management sprawl.",
+      "CloudSync Technologies was migrating its entire infrastructure from on premise data centers to a multi cloud environment. The migration presented security risks at every stage: from data in transit to cloud misconfiguration to identity management sprawl.",
     solution:
       "Embedded within CloudSync's migration team to provide security architecture review, cloud security configuration validation, and continuous security testing throughout the migration.",
     results: [

@@ -113,7 +113,7 @@ export default function BlogDetailPage() {
             >
               <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden order-2 md:order-1">
                 <Image
-                  src="/images/protexy/blogs/blog-body2.png"
+                  src={blog.bodyImage}
                   alt={blog.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -202,10 +202,7 @@ export default function BlogDetailPage() {
                 >
                   <div className="relative h-40 overflow-hidden">
                     <Image
-                      src={
-                        relatedBlog.image ||
-                        `/images/protexy/blogs/blog-related${relatedBlogs.indexOf(relatedBlog) + 1}.png`
-                      }
+                      src={relatedBlog.image}
                       alt={relatedBlog.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"

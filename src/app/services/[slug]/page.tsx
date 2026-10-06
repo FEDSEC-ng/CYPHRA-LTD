@@ -15,11 +15,15 @@ import {
   slideInRight,
 } from "@/lib/animations";
 
-const overviewImages = [
-  "/images/protexy/services/service-overview1.png",
-  "/images/protexy/services/service-overview2.png",
-  "/images/protexy/services/service-overview3.png",
-];
+const overviewImages: Record<string, string> = {
+  "vulnerability-assessment-and-penetration-testing":
+    "/images/services/svc-bluebox.jpg",
+  "grc-advisory": "/images/services/svc-phone.jpg",
+  "network-security": "/images/services/svc-racks.jpg",
+  "software-security": "/images/services/svc-code.jpg",
+  "security-operations": "/images/services/svc-engineer.jpg",
+  "incident-response": "/images/services/svc-signing.jpg",
+};
 
 export default function ServiceDetailPage() {
   const params = useParams();
@@ -45,7 +49,8 @@ export default function ServiceDetailPage() {
     );
   }
 
-  const overviewImage = overviewImages[serviceIndex % overviewImages.length];
+  const overviewImage =
+    overviewImages[service.slug] || "/images/services/svc-bluebox.jpg";
 
   return (
     <>
@@ -292,7 +297,7 @@ export default function ServiceDetailPage() {
               className="relative rounded-2xl overflow-hidden aspect-[4/3]"
             >
               <Image
-                src="/images/protexy/services/contact-cta.png"
+                src="/images/services/svc-cta.jpg"
                 alt="Contact us"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

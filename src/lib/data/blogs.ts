@@ -9,6 +9,7 @@ export interface BlogPost {
   author: string;
   authorRole: string;
   image: string;
+  bodyImage: string;
 }
 
 export const blogs: BlogPost[] = [
@@ -25,6 +26,7 @@ export const blogs: BlogPost[] = [
     author: "Nwachukwu Francis O.",
     authorRole: "Founder/Tech Lead",
     image: "/images/blogs/blog-zero-trust.jpg",
+    bodyImage: "/images/services/svc-bluebox.jpg",
   },
   {
     slug: "securing-cloud-environments-for-modern-enterprises",
@@ -39,6 +41,7 @@ export const blogs: BlogPost[] = [
     author: "Agnes Akpa",
     authorRole: "DevSecOps & GRC",
     image: "/images/blogs/blog-cloud-security.jpg",
+    bodyImage: "/images/services/svc-racks.jpg",
   },
   {
     slug: "preventing-threats-through-early-detection",
@@ -53,6 +56,7 @@ export const blogs: BlogPost[] = [
     author: "Ridwan Adebayo",
     authorRole: "Penetration Tester & Cloud Engineer",
     image: "/images/blogs/blog-threat-detection.jpg",
+    bodyImage: "/images/services/svc-cables.jpg",
   },
   {
     slug: "building-safer-networks-with-zero-trust",
@@ -67,6 +71,7 @@ export const blogs: BlogPost[] = [
     author: "Isah Dauda",
     authorRole: "Full Stack Developer & Security Researcher",
     image: "/images/blogs/blog-access-control.jpg",
+    bodyImage: "/images/services/svc-document.jpg",
   },
   {
     slug: "how-ai-improves-threat-detection-and-response-time",
@@ -81,6 +86,7 @@ export const blogs: BlogPost[] = [
     author: "Abang Obed",
     authorRole: "Offensive Security & Red Team Operations",
     image: "/images/blogs/blog-ai-security.jpg",
+    bodyImage: "/images/services/svc-code.jpg",
   },
   {
     slug: "why-zero-trust-security-matters-today-2",
@@ -95,5 +101,6 @@ export const blogs: BlogPost[] = [
     author: "Agnes Akpa",
     authorRole: "DevSecOps & GRC",
     image: "/images/blogs/blog-soc-monitoring.jpg",
+    bodyImage: "/images/services/svc-meeting.jpg",
   },
 ];

@@ -63,7 +63,7 @@ export default function CaseStudiesListPage() {
                 >
                   <div className="relative rounded-2xl overflow-hidden aspect-[4/3] mb-6">
                     <Image
-                      src={caseImages[cs.slug] || "/images/protexy/cases/case1.png"}
+                      src={caseImages[cs.slug] || "/images/disclosures/tesla-odata.png"}
                       alt={cs.client}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

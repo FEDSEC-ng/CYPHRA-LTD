@@ -17,25 +17,25 @@ const contentSections = [
     title: "Threat Impact",
     description:
       "Advanced threat analysis and detection capabilities identified critical vulnerabilities across the digital infrastructure, enabling rapid response to emerging cyber risks and protecting sensitive business operations from sophisticated attack vectors.",
-    image: "/images/protexy/case-studies/case-content1.png",
+    image: "/images/blogs/blog-ai-security.jpg",
   },
   {
     title: "Infrastructure Growth",
     description:
       "Scalable security architecture was designed and deployed to support rapid infrastructure expansion while maintaining robust protection across cloud environments, network systems, and critical business applications.",
-    image: "/images/protexy/case-studies/case-content2.png",
+    image: "/images/services/svc-racks.jpg",
   },
   {
     title: "System Protection",
     description:
       "Comprehensive system protection measures were implemented including real time monitoring, automated threat response, and continuous security validation to ensure maximum uptime and data integrity across all platforms.",
-    image: "/images/protexy/case-studies/case-content3.png",
+    image: "/images/blogs/blog-soc-monitoring.jpg",
   },
   {
     title: "Risk Reduction",
     description:
       "Strategic risk reduction initiatives delivered measurable improvements in security posture, reducing attack surface exposure and establishing a resilient defense framework aligned with industry compliance standards.",
-    image: "/images/protexy/case-studies/case-content4.png",
+    image: "/images/services/svc-signing.jpg",
   },
 ];
 
@@ -155,7 +155,7 @@ export default function CaseStudyDetailPage() {
               className="relative h-80 md:h-[450px] rounded-2xl overflow-hidden"
             >
               <Image
-                src="/images/protexy/case-studies/case-overview1.png"
+                src="/images/services/svc-cables.jpg"
                 alt={`${study.title} overview`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -177,7 +177,7 @@ export default function CaseStudyDetailPage() {
               className="order-2 lg:order-1 relative h-80 md:h-[450px] rounded-2xl overflow-hidden"
             >
               <Image
-                src="/images/protexy/case-studies/case-overview2.png"
+                src="/images/services/svc-code.jpg"
                 alt={`${study.title} results`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

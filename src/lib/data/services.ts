@@ -55,25 +55,25 @@ export const services: Service[] = [
         title: "Network Penetration Testing",
         description:
           "We simulate real world attacks against your network infrastructure to identify weaknesses in firewalls, routers, switches, and network configurations. Our testing covers both internal and external network segments.",
-        image: "/images/protexy/services/feature1.png",
+        image: "/images/services/svc-cables.jpg",
       },
       {
         title: "Web Application Testing",
         description:
           "Comprehensive security testing of web applications covering OWASP Top 10 vulnerabilities, business logic flaws, API security, and authentication mechanisms.",
-        image: "/images/protexy/services/feature2.png",
+        image: "/images/services/svc-code.jpg",
       },
       {
         title: "Mobile Application Testing",
         description:
           "Security assessment of iOS and Android applications covering data storage, communication security, authentication, and platform specific vulnerabilities.",
-        image: "/images/protexy/services/feature3.png",
+        image: "/images/services/svc-phone.jpg",
       },
       {
         title: "Cloud Infrastructure Testing",
         description:
           "Evaluation of cloud environments across AWS, Azure, and GCP covering misconfigurations, access controls, and cloud native security risks.",
-        image: "/images/protexy/services/feature4.png",
+        image: "/images/services/svc-racks.jpg",
       },
     ],
     processSteps: [
@@ -156,25 +156,25 @@ export const services: Service[] = [
         title: "Risk Assessment",
         description:
           "Systematic identification and evaluation of cybersecurity risks across your organization, providing a clear picture of your risk landscape and prioritized remediation roadmap.",
-        image: "/images/protexy/services/feature1.png",
+        image: "/images/services/svc-metrics.jpg",
       },
       {
         title: "Compliance Management",
         description:
           "End to end compliance management from gap analysis through certification, ensuring your organization meets all applicable regulatory and industry standards.",
-        image: "/images/protexy/services/feature2.png",
+        image: "/images/services/svc-signing.jpg",
       },
       {
         title: "Policy & Procedure Development",
         description:
           "Development of comprehensive security policies, standards, and procedures that establish clear guidelines for protecting organizational assets.",
-        image: "/images/protexy/services/feature3.png",
+        image: "/images/services/svc-meeting.jpg",
       },
       {
         title: "Audit Support",
         description:
           "Expert guidance and preparation support for security audits, helping your organization demonstrate compliance and address auditor findings effectively.",
-        image: "/images/protexy/services/feature4.png",
+        image: "/images/services/svc-document.jpg",
       },
     ],
     processSteps: [
@@ -257,25 +257,25 @@ export const services: Service[] = [
         title: "Firewall & IDS/IPS Management",
         description:
           "Configuration, management, and optimization of firewalls, intrusion detection, and prevention systems to create robust perimeter defenses.",
-        image: "/images/protexy/services/feature1.png",
+        image: "/images/services/svc-bluebox.jpg",
       },
       {
         title: "Network Segmentation",
         description:
           "Strategic network segmentation and micro segmentation to contain threats and limit lateral movement within your infrastructure.",
-        image: "/images/protexy/services/feature2.png",
+        image: "/images/services/svc-cables.jpg",
       },
       {
         title: "VPN & Remote Access Security",
         description:
           "Secure remote access solutions with multi factor authentication and encrypted tunnels for distributed workforces.",
-        image: "/images/protexy/services/feature3.png",
+        image: "/images/blogs/blog-zero-trust.jpg",
       },
       {
         title: "Network Monitoring & Alerting",
         description:
           "Real time network visibility with automated alerting for suspicious traffic patterns, unauthorized devices, and potential security incidents.",
-        image: "/images/protexy/services/feature4.png",
+        image: "/images/blogs/blog-soc-monitoring.jpg",
       },
     ],
     processSteps: [
@@ -358,25 +358,25 @@ export const services: Service[] = [
         title: "Secure Code Review",
         description:
           "Thorough manual and automated review of application source code to identify security vulnerabilities, logic flaws, and insecure coding patterns.",
-        image: "/images/protexy/services/feature1.png",
+        image: "/images/services/svc-screencode.jpg",
       },
       {
         title: "Threat Modeling",
         description:
           "Systematic identification of threats and attack vectors during the design phase to build security into applications from the start.",
-        image: "/images/protexy/services/feature2.png",
+        image: "/images/services/svc-codescreen.jpg",
       },
       {
         title: "DevSecOps Implementation",
         description:
           "Integration of security tools and practices into your CI/CD pipeline for automated security testing, dependency scanning, and container security.",
-        image: "/images/protexy/services/feature3.png",
+        image: "/images/services/svc-engineer.jpg",
       },
       {
         title: "API Security Testing",
         description:
           "Comprehensive security testing of REST, GraphQL, and SOAP APIs covering authentication, authorization, data validation, and rate limiting.",
-        image: "/images/protexy/services/feature4.png",
+        image: "/images/services/svc-analysis.jpg",
       },
     ],
     processSteps: [
@@ -459,25 +459,25 @@ export const services: Service[] = [
         title: "SIEM Management",
         description:
           "Deployment and management of Security Information and Event Management platforms with custom detection rules and correlation logic.",
-        image: "/images/protexy/services/feature1.png",
+        image: "/images/services/svc-racks.jpg",
       },
       {
         title: "Threat Intelligence",
         description:
           "Integration of threat intelligence feeds and feeds to enrich detection capabilities and provide context for security events.",
-        image: "/images/protexy/services/feature2.png",
+        image: "/images/blogs/blog-threat-detection.jpg",
       },
       {
         title: "Log Management",
         description:
           "Centralized log collection, parsing, and analysis across all security devices, servers, and applications.",
-        image: "/images/protexy/services/feature3.png",
+        image: "/images/services/svc-bluebox.jpg",
       },
       {
         title: "Security Dashboards",
         description:
           "Real time security dashboards and reporting that provide visibility into your security posture and key risk indicators.",
-        image: "/images/protexy/services/feature4.png",
+        image: "/images/services/svc-metrics.jpg",
       },
     ],
     processSteps: [
@@ -560,25 +560,25 @@ export const services: Service[] = [
         title: "Incident Triage",
         description:
           "Immediate assessment and classification of security incidents to determine severity, scope, and appropriate response actions.",
-        image: "/images/protexy/services/feature1.png",
+        image: "/images/services/svc-analysis.jpg",
       },
       {
         title: "Malware Analysis",
         description:
           "Static and dynamic analysis of malware samples to understand functionality, indicators of compromise, and development attribution.",
-        image: "/images/protexy/services/feature2.png",
+        image: "/images/services/svc-hoodie.jpg",
       },
       {
         title: "Forensic Investigation",
         description:
           "Comprehensive forensic analysis of affected systems, networks, and logs to reconstruct attack timelines and identify all compromised assets.",
-        image: "/images/protexy/services/feature3.png",
+        image: "/images/services/svc-codescreen.jpg",
       },
       {
         title: "Recovery & Hardening",
         description:
           "Systematic restoration of affected systems with additional hardening measures to prevent similar incidents in the future.",
-        image: "/images/protexy/services/feature4.png",
+        image: "/images/services/svc-meeting.jpg",
       },
     ],
     processSteps: [

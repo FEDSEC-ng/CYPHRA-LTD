@@ -88,15 +88,16 @@ export default function BlogDetailPage() {
               className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
             >
               <div>
-                <p className="text-lg text-fedsec-gray-600 leading-relaxed">
+                <p className="text-lg text-fedsec-gray-600 leading-relaxed text-center">
                   {blog.content}
                 </p>
               </div>
               <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/protexy/blogs/blog-body1.png"
+                  src={blog.image}
                   alt={blog.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -115,11 +116,12 @@ export default function BlogDetailPage() {
                   src="/images/protexy/blogs/blog-body2.png"
                   alt={blog.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
               <div className="order-1 md:order-2">
-                <p className="text-lg text-fedsec-gray-600 leading-relaxed">
+                <p className="text-lg text-fedsec-gray-600 leading-relaxed text-center">
                   {blog.excerpt}
                 </p>
               </div>
@@ -143,14 +145,9 @@ export default function BlogDetailPage() {
             }
             transition={{ type: "spring", damping: 40, stiffness: 200 }}
           >
-            <div className="text-6xl font-normal text-fedsec-purple/20 mb-4 font-[family-name:var(--font-heading)]">
-              &ldquo;
-            </div>
-            <blockquote className="text-xl md:text-2xl text-fedsec-gray-700 leading-relaxed mb-6 italic font-[family-name:var(--font-heading)]">
-              CYPHRA&apos;s cybersecurity solutions transformed our approach to
-              cloud security. Their team delivered exceptional results and
-              provided ongoing support throughout the entire engagement.
-            </blockquote>
+            <p className="text-sm font-semibold uppercase tracking-widest text-fedsec-pink mb-4 font-[family-name:var(--font-accent)]">
+              Written by
+            </p>
             <div className="flex items-center justify-center gap-3">
               <div className="w-10 h-10 rounded-full bg-fedsec-purple/20 flex items-center justify-center text-fedsec-purple font-normal font-[family-name:var(--font-heading)]">
                 {blog.author.charAt(0)}
@@ -160,7 +157,7 @@ export default function BlogDetailPage() {
                   {blog.author}
                 </p>
                 <p className="text-xs text-fedsec-gray-400 font-[family-name:var(--font-accent)]">
-                  {blog.authorRole}
+                  {blog.authorRole}, CYPHRA
                 </p>
               </div>
             </div>
@@ -211,6 +208,7 @@ export default function BlogDetailPage() {
                       }
                       alt={relatedBlog.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>

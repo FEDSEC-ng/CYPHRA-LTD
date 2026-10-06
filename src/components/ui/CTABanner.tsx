@@ -12,6 +12,7 @@ export default function CTABanner() {
           src="/images/protexy/cta/cta-bg.png"
           alt="CTA Background"
           fill
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-fedsec-gray-900/80" />

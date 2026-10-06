@@ -125,6 +125,7 @@ export default function ServiceDetailPage() {
                 src={overviewImage}
                 alt={service.title}
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </motion.div>
@@ -229,6 +230,7 @@ export default function ServiceDetailPage() {
                     src={feature.image}
                     alt={feature.title}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </motion.div>
@@ -267,6 +269,7 @@ export default function ServiceDetailPage() {
                     src="/images/team/francis.png"
                     alt="Nwachukwu Francis O."
                     fill
+                    sizes="56px"
                     className="object-cover"
                   />
                 </div>
@@ -292,6 +295,7 @@ export default function ServiceDetailPage() {
                 src="/images/protexy/services/contact-cta.png"
                 alt="Contact us"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </motion.div>

@@ -104,6 +104,7 @@ export default function CaseStudyDetailPage() {
               src={study.image}
               alt={study.title}
               fill
+              sizes="100vw"
               className="object-cover"
               priority
             />
@@ -119,6 +120,7 @@ export default function CaseStudyDetailPage() {
               variants={slideInLeft}
               initial="hidden"
               animate={overviewInView ? "visible" : "hidden"}
+              className="text-center"
             >
               <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-purple font-[family-name:var(--font-accent)]">
                 Project Overview
@@ -126,7 +128,7 @@ export default function CaseStudyDetailPage() {
               <h2 className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
                 The Challenge
               </h2>
-              <p className="text-lg text-fedsec-gray-600 leading-relaxed mb-8">
+              <p className="text-lg text-fedsec-gray-600 leading-relaxed mb-8 text-center">
                 {study.challenge}
               </p>
               <div className="space-y-3">
@@ -156,6 +158,7 @@ export default function CaseStudyDetailPage() {
                 src="/images/protexy/case-studies/case-overview1.png"
                 alt={`${study.title} overview`}
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </motion.div>
@@ -177,6 +180,7 @@ export default function CaseStudyDetailPage() {
                 src="/images/protexy/case-studies/case-overview2.png"
                 alt={`${study.title} results`}
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </motion.div>
@@ -184,7 +188,7 @@ export default function CaseStudyDetailPage() {
               variants={slideInRight}
               initial="hidden"
               animate={resultsInView ? "visible" : "hidden"}
-              className="order-1 lg:order-2"
+              className="order-1 lg:order-2 text-center"
             >
               <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-purple font-[family-name:var(--font-accent)]">
                 Our Solution
@@ -192,7 +196,7 @@ export default function CaseStudyDetailPage() {
               <h2 className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
                 Security Results
               </h2>
-              <p className="text-lg text-fedsec-gray-600 leading-relaxed">
+              <p className="text-lg text-fedsec-gray-600 leading-relaxed text-center">
                 {study.solution}
               </p>
             </motion.div>
@@ -240,6 +244,7 @@ export default function CaseStudyDetailPage() {
                     src={section.image}
                     alt={section.title}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </div>
@@ -287,7 +292,7 @@ export default function CaseStudyDetailPage() {
         </div>
       </section>
 
-      {/* Testimonial Quote Section */}
+      {/* Full Writeup Section */}
       <section
         ref={testimonialRef}
         className="py-16 md:py-24 bg-fedsec-gray-50"
@@ -302,27 +307,22 @@ export default function CaseStudyDetailPage() {
             }
             transition={{ type: "spring", damping: 40, stiffness: 200 }}
           >
-            <div className="text-6xl font-normal text-fedsec-purple/20 mb-4 font-[family-name:var(--font-heading)]">
-              &ldquo;
-            </div>
-            <blockquote className="text-xl md:text-2xl text-fedsec-gray-700 leading-relaxed mb-6 italic font-[family-name:var(--font-heading)]">
-              CYPHRA delivered a comprehensive security transformation that
-              exceeded our expectations. Their team provided exceptional
-              expertise and ongoing support throughout the entire engagement.
-            </blockquote>
-            <div className="flex items-center justify-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-fedsec-purple/20 flex items-center justify-center text-fedsec-purple font-normal font-[family-name:var(--font-heading)]">
-                {study.client.charAt(0)}
-              </div>
-              <div className="text-left">
-                <p className="text-sm font-normal text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
-                  {study.client}
-                </p>
-                <p className="text-xs text-fedsec-gray-400 font-[family-name:var(--font-accent)]">
-                  {study.industry}
-                </p>
-              </div>
-            </div>
+            <p className="text-sm font-semibold uppercase tracking-widest text-fedsec-pink mb-4 font-[family-name:var(--font-accent)]">
+              Full Writeup
+            </p>
+            <p className="text-xl md:text-2xl text-fedsec-gray-700 leading-relaxed mb-8 font-[family-name:var(--font-heading)]">
+              Researched and disclosed by Ridwan Adebayo. Read every step,
+              payload, and takeaway on Medium.
+            </p>
+            <a
+              href={study.mediumUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-fedsec-purple px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-fedsec-purple-light font-[family-name:var(--font-accent)]"
+            >
+              Read on Medium
+              <ArrowLeft size={16} className="rotate-180" />
+            </a>
           </motion.div>
         </div>
       </section>
@@ -346,7 +346,7 @@ export default function CaseStudyDetailPage() {
           <SectionHeading
             label="More Work"
             title="Related Case Studies"
-            description="Explore how we've helped other organizations achieve their security objectives."
+            description="The other paid disclosure by our researcher."
             align="left"
           />
           <motion.div
@@ -367,6 +367,7 @@ export default function CaseStudyDetailPage() {
                       src={relatedStudy.image}
                       alt={relatedStudy.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>

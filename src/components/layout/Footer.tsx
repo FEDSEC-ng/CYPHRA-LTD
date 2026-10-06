@@ -68,7 +68,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-4">
             <div className="mb-5">
-              <CyphraLogo />
+              <CyphraLogo variant="white" />
             </div>
             <p className="text-base text-white/70 leading-relaxed mb-6 max-w-xs font-[family-name:var(--font-body)]">
               {SITE.description}

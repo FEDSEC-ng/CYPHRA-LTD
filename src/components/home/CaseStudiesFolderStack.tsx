@@ -20,55 +20,42 @@ type CaseStudy = {
   industry: string;
   location: string;
   description: string;
+  image: string;
+  slug: string;
 };
 
 const caseStudies: CaseStudy[] = [
   {
-    name: "SOC Build Out, Zero to Detection",
-    industry: "Financial Services",
-    location: "Nigeria",
+    name: "Tesla OData Wildcards to Employee Directory",
+    industry: "Automotive",
+    location: "$2,000 bounty",
     description:
-      "Designed and built a bank's SOC from scratch - SIEM/SOAR platforms and 200+ detection use cases mapped to MITRE ATT&CK.",
+      "Wildcard queries exposed the internal employee directory plus developer emails, backend schemas, and global ticket counts. Triaged as P2.",
+    image: "/images/disclosures/tesla-odata.png",
+    slug: "tesla-odata-wildcards",
   },
   {
-    name: "Web & API Security Assessment",
+    name: "Supabase Auth Bypass to Admin",
     industry: "Technology",
-    location: "United Kingdom",
+    location: "$1,800 bounty",
     description:
-      "Full stack security assessment of a SaaS platform, uncovering business logic flaws and critical API vulnerabilities.",
+      "Auto confirmed signups plus client controlled metadata gave admin over a partner tenant. Scored CVSS 9.1 Critical.",
+    image: "/images/disclosures/supabase-auth.png",
+    slug: "supabase-auth-bypass",
   },
   {
-    name: "ISO 27001 Compliance Program",
-    industry: "Healthcare",
-    location: "Germany",
+    name: "Luxury SSO Chain to Broken Access",
+    industry: "Retail",
+    location: "Paid per environment",
     description:
-      "GRC advisory establishing auditable security governance, controls, and documentation toward certification.",
-  },
-  {
-    name: "Enterprise Network Hardening",
-    industry: "Enterprise",
-    location: "Nigeria",
-    description:
-      "Zero trust architecture review, firewall segmentation, and continuous monitoring across a corporate estate.",
-  },
-  {
-    name: "Ecommerce Platform Protection",
-    industry: "Ecommerce",
-    location: "United States",
-    description:
-      "Application, API, and cloud infrastructure security for a high traffic retail platform.",
-  },
-  {
-    name: "Government Cybersecurity Framework",
-    industry: "Government",
-    location: "Ghana",
-    description:
-      "SOC advisory and security operations setup for a national digital transformation initiative.",
+      "Exposed config plus open SSO gave token access, and one unguarded microservice allowed injection across INT, PRP, and PRD.",
+    image: "/images/disclosures/luxury-sso.jpg",
+    slug: "luxury-sso-chain",
   },
 ];
 
 /**
- * CaseStudiesFolderStack - "Real Clients. Real Results."
+ * CaseStudiesFolderStack - "Real Findings. Real Bounties."
  *
  * A pinned, scroll-driven folder stack. Every visual state is a pure function
  * of scrollYProgress (no discrete card state, no whileInView on cards), so the
@@ -147,7 +134,7 @@ function FolderCard({
       </div>
 
       <Link
-        href="/case-studies"
+        href={`/case-studies/${cs.slug}`}
         className="group relative block overflow-hidden rounded-2xl rounded-tl-none border border-white/10 bg-fedsec-gray-900 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.45)]"
       >
         <div className="grid h-[560px] grid-cols-1 md:h-[620px] md:grid-cols-[1fr_1.05fr]">
@@ -172,7 +159,7 @@ function FolderCard({
           {/* visual */}
           <div className="relative order-1 h-40 md:order-2 md:h-full">
             <Image
-              src={`/images/protexy/cases/case${(index % 6) + 1}.png`}
+              src={cs.image}
               alt={cs.name}
               fill
               sizes="(max-width: 768px) 92vw, 46vw"
@@ -220,7 +207,7 @@ export default function CaseStudiesFolderStack() {
           className="flex flex-col md:flex-row md:items-end md:justify-between"
         >
           <div>
-            <span className="section-tag">Real Clients. Real Results.</span>
+            <span className="section-tag">Findings, Clients, Results, Bounties</span>
             <Tremble className="mt-4">
               <h2 className="max-w-3xl text-3xl font-bold tracking-tight md:text-5xl lg:text-[56px] font-[family-name:var(--font-heading)]">
                 We Let the Work <span className="gradient-text">Speak for Itself</span>

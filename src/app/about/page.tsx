@@ -94,9 +94,9 @@ const values = [
 ];
 
 const stats = [
-  { value: "6", suffix: "", label: "Security experts" },
-  { value: "12", suffix: "+", label: "Countries covered" },
-  { value: "190", prefix: "$", suffix: "M+", label: "Client risk reduced" },
+  { value: "3,800", prefix: "$", suffix: "+", label: "Bounty earnings" },
+  { value: "3", suffix: "", label: "Accepted disclosures" },
+  { value: "9.1", suffix: "", label: "Highest CVSS score" },
 ];
 
 const approach = [

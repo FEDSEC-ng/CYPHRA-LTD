@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/images/cyphra-logo-white.png" alt="CYPHRA LTD" width="180" />
+<img src="public/images/cyphra-logo-black.png" alt="CYPHRA LTD" width="180" />
 
 <br />
 <br />

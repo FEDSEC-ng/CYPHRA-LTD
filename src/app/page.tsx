@@ -11,7 +11,7 @@ import {
   Search,
   Layers,
   Zap,
-  Quote,
+  FileSearch,
   Crosshair,
   Radar,
   Target,
@@ -25,8 +25,9 @@ import {
   Rocket,
   Briefcase,
   HeartHandshake,
-  Landmark,
-  Cloud,
+  Bug,
+  KeyRound,
+  Fingerprint,
 } from "lucide-react";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import AutoCodeViewer from "@/components/home/AutoCodeViewer";
@@ -89,13 +90,18 @@ const team = [
   },
 ];
 
-const stats = [
-  { target: 6, suffix: "", label: "Security Experts", note: "One multidisciplinary collective" },
-  { target: 190, prefix: "$", suffix: "M+", label: "Client Risk Reduced", note: "Across every engagement" },
-  { target: 35, suffix: "+", label: "Acceptance Reports", note: "On Bugcrowd & YesWeHack" },
-  { target: 12, suffix: "+", label: "Countries Served", note: "Enterprise to startup" },
-  { target: 200, suffix: "+", label: "Engagements Delivered", note: "VAPT to SOC build out" },
-  { target: 24, suffix: "/7", label: "SOC Monitoring", note: "Always watching" },
+const stats: {
+  target?: number;
+  display?: string;
+  prefix?: string;
+  suffix?: string;
+  label: string;
+  note: string;
+}[] = [
+  { target: 3800, prefix: "$", suffix: "+", label: "Bounty Earnings", note: "Across 2 disclosures" },
+  { target: 3, suffix: "", label: "Accepted Disclosures", note: "Tesla, SaaS, luxury brand" },
+  { display: "9.1", label: "Highest CVSS Score", note: "Critical severity finding" },
+  { display: "P2", label: "Tesla Severity", note: "High impact triage" },
 ];
 
 const locations = [
@@ -158,36 +164,36 @@ const growthTabs = [
   },
 ];
 
-const testimonials = [
+const disclosures = [
   {
-    quote:
-      "CYPHRA transformed our approach to security. Their team identified critical vulnerabilities we had missed for years and provided a clear roadmap for remediation.",
-    author: "Chief Technology Officer",
-    company: "FinSecure Capital",
-    tag: "VAPT · Nigeria",
-    icon: Landmark,
-    image: "/images/locations/lagos.jpg",
-    place: "Lagos, Nigeria",
+    summary:
+      "Wildcard queries on a partner portal exposed the internal employee directory, including personal mobile numbers, reporting lines, office locations, and internal group memberships. Two companion flaws leaked developer emails with full schema docs plus global ticket counts. Triaged as P2 and paid $2,000.",
+    researcher: "Ridwan Adebayo (CyberR)",
+    program: "Tesla",
+    tag: "BOLA · $2,000 bounty",
+    icon: Bug,
+    image: "/images/disclosures/tesla-odata.png",
+    place: "Bug bounty program",
   },
   {
-    quote:
-      "The penetration testing engagement was thorough, professional, and delivered actionable results. CYPHRA's team went above and beyond to help us understand and prioritize findings.",
-    author: "Head of Engineering",
-    company: "CloudSync Technologies",
-    tag: "Web & API Security · UK",
-    icon: Cloud,
-    image: "/images/locations/london.jpg",
-    place: "London, United Kingdom",
+    summary:
+      "An auto confirmed signup flaw issued valid sessions without inbox access, and client controlled metadata led straight to admin. Scored CVSS 9.1 and paid $1,800 after successful reproduction.",
+    researcher: "Ridwan Adebayo (CyberR)",
+    program: "Enterprise SaaS",
+    tag: "Auth bypass · CVSS 9.1 · $1,800",
+    icon: KeyRound,
+    image: "/images/disclosures/supabase-auth.png",
+    place: "Bug bounty program",
   },
   {
-    quote:
-      "Their GRC advisory services helped us achieve ISO 27001 certification in record time. The team understood our business needs and designed a program that actually works for us.",
-    author: "Chief Information Security Officer",
-    company: "NexaBank",
-    tag: "GRC · Germany",
-    icon: Building2,
-    image: "/images/locations/munich.jpg",
-    place: "Munich, Germany",
+    summary:
+      "An exposed frontend config leaked API secrets plus a login ID with zero authorization checks, so any LINE account holder got a valid token. One unguarded microservice allowed data injection, and the same flaw lived in INT, PRP, and PRD, earning a payout per environment.",
+    researcher: "Ridwan Adebayo (CyberR)",
+    program: "Luxury Brand",
+    tag: "SSO chain · 3 envs paid",
+    icon: Fingerprint,
+    image: "/images/disclosures/luxury-sso.jpg",
+    place: "Bug bounty program",
   },
 ];
 
@@ -314,7 +320,7 @@ const heroStream: CodeLine[] = [
 
 const heroChips = [
   { label: "TryHackMe Top 2%", icon: Crosshair },
-  { label: "35+ Accepted Reports", icon: FileCheck },
+  { label: "$3,800+ Bounties Earned", icon: FileCheck },
   { label: "24/7 SOC Monitoring", icon: Radar },
 ];
 
@@ -647,34 +653,6 @@ function HeroSection() {
   );
 }
 
-function PartnerLogosMarquee() {
-  const items = [
-    "Google", "X", "Tesla", "HackerOne", "Microsoft", "Amazon",
-    "Netflix", "Stripe", "Cloudflare", "Meta", "Airbnb", "Slack",
-  ];
-  return (
-    <section className="py-10 border-y border-fedsec-gray-900/10 bg-fedsec-white overflow-hidden">
-      <p className="text-center text-[11px] font-bold uppercase tracking-[0.3em] text-fedsec-gray-900/50 mb-6 font-[family-name:var(--font-accent)]">
-        Trusted by security teams at
-      </p>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-16 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-          <div className="flex items-center gap-16 shrink-0 animate-marquee">
-            {[...items, ...items, ...items].map((client, i) => (
-              <span
-                key={`${client}-${i}`}
-                className="text-2xl md:text-3xl font-black tracking-tight text-fedsec-gray-900/45 whitespace-nowrap transition-colors duration-300 hover:text-fedsec-gray-900/80 font-[family-name:var(--font-heading)] cursor-default"
-              >
-                {client}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* Numbers - "Our Numbers Do the Talking for Us" (socialander) */
 function NumbersSection() {
   return (
@@ -702,7 +680,7 @@ function NumbersSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -713,7 +691,9 @@ function NumbersSection() {
               className="stat-orb text-center hover:border-fedsec-purple/30 transition-colors duration-300"
             >
               <p className="stat-orb-value font-bold text-fedsec-white mb-1.5 font-[family-name:var(--font-heading)]">
-                <AnimatedCounter target={stat.target} prefix={stat.prefix || ""} suffix={stat.suffix} />
+                {stat.display ?? (
+                  <AnimatedCounter target={stat.target ?? 0} prefix={stat.prefix || ""} suffix={stat.suffix || ""} />
+                )}
               </p>
               <p className="stat-orb-label font-semibold text-fedsec-purple font-[family-name:var(--font-accent)]">
                 {stat.label}
@@ -954,10 +934,10 @@ function GrowthTabs() {
   );
 }
 
-/* Amazing Clients, Amazing Results - white band with folder-stack slider */
+/* Real Findings, Real Bounties - white band with folder-stack slider */
 function TestimonialFolderSlider() {
   const [idx, setIdx] = useState(0);
-  const n = testimonials.length;
+  const n = disclosures.length;
   const go = (dir: number) => setIdx((i) => (i + dir + n) % n);
 
   // keep the client-image panel in sync
@@ -967,13 +947,13 @@ function TestimonialFolderSlider() {
 
   return (
     <div className="relative h-[460px] sm:h-[420px]">
-      {testimonials.map((t, i) => {
+      {disclosures.map((t, i) => {
         const depth = (i - idx + n) % n; // 0 = front
         const hidden = depth > 2;
         const OrgIcon = t.icon;
         return (
           <motion.div
-            key={t.company}
+            key={t.program}
             animate={{
               y: depth === 0 ? 0 : depth * -22,
               scale: depth === 0 ? 1 : 1 - depth * 0.04,
@@ -990,21 +970,21 @@ function TestimonialFolderSlider() {
                 <OrgIcon size={11} />
               </span>
               <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-fedsec-gray-900/55">
-                Client File {String(i + 1).padStart(2, "0")}
+                Finding File {String(i + 1).padStart(2, "0")}
               </span>
             </div>
             <div className="relative h-[calc(100%-2.25rem)] rounded-2xl rounded-tl-none border border-black/10 bg-white p-7 sm:p-9 shadow-[0_30px_60px_-25px_rgba(0,0,0,0.25)] flex flex-col">
-              <Quote size={26} className="text-fedsec-purple mb-4" />
-              <p className="text-fedsec-gray-600 leading-relaxed mb-6 italic flex-1 font-[family-name:var(--font-body)]">
-                &ldquo;{t.quote}&rdquo;
+              <FileSearch size={26} className="text-fedsec-purple mb-4" />
+              <p className="text-fedsec-gray-600 leading-relaxed mb-6 flex-1 font-[family-name:var(--font-body)]">
+                {t.summary}
               </p>
               <div className="flex items-center justify-between flex-wrap gap-2">
                 <div>
                   <p className="font-bold text-fedsec-gray-900 text-sm font-[family-name:var(--font-heading)]">
-                    {t.author}
+                    {t.researcher}
                   </p>
                   <p className="text-sm text-fedsec-pink font-[family-name:var(--font-accent)]">
-                    {t.company}
+                    {t.program}
                   </p>
                 </div>
                 <span className="font-mono text-xs text-fedsec-gray-900/40">
@@ -1019,11 +999,11 @@ function TestimonialFolderSlider() {
       {/* controls */}
       <div className="absolute -bottom-12 left-0 right-0 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          {testimonials.map((t, i) => (
+          {disclosures.map((t, i) => (
             <button
-              key={t.company}
+              key={t.program}
               onClick={() => setIdx(i)}
-              aria-label={`Show testimonial ${i + 1}`}
+              aria-label={`Show finding ${i + 1}`}
               className={`h-2 rounded-full transition-all duration-300 ${
                 i === idx ? "w-7 bg-fedsec-pink" : "w-2 bg-fedsec-gray-900/20 hover:bg-fedsec-gray-900/40"
               }`}
@@ -1033,14 +1013,14 @@ function TestimonialFolderSlider() {
         <div className="flex items-center gap-3">
           <button
             onClick={() => go(-1)}
-            aria-label="Previous testimonial"
+              aria-label="Previous finding"
             className="w-11 h-11 rounded-full border border-black/15 bg-white flex items-center justify-center text-fedsec-gray-900 hover:bg-fedsec-purple hover:text-white hover:border-fedsec-purple transition-colors"
           >
             <ArrowRight size={17} className="rotate-180" />
           </button>
           <button
             onClick={() => go(1)}
-            aria-label="Next testimonial"
+              aria-label="Next finding"
             className="w-11 h-11 rounded-full border border-black/15 bg-white flex items-center justify-center text-fedsec-gray-900 hover:bg-fedsec-purple hover:text-white hover:border-fedsec-purple transition-colors"
           >
             <ArrowRight size={17} />
@@ -1053,7 +1033,7 @@ function TestimonialFolderSlider() {
 
 function ResultsSection() {
   const [idx, setIdx] = useState(0);
-  const active = testimonials[idx];
+  const active = disclosures[idx];
   const ActiveIcon = active.icon;
 
   // mirror the folder-slider navigation
@@ -1073,11 +1053,11 @@ function ResultsSection() {
           transition={{ duration: 0.7 }}
           className="mb-16"
         >
-          <span className="section-tag">Amazing Clients, Amazing Results</span>
+          <span className="section-tag">Findings, Clients, Results, Bounties</span>
           <Tremble className="mt-4">
             <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold tracking-tight font-[family-name:var(--font-heading)]">
-              Our Clients Have Seen How{" "}
-              <span className="gradient-text">We Deliver</span>
+              Proven Against{" "}
+              <span className="gradient-text">Real Targets</span>
             </h2>
           </Tremble>
         </motion.div>
@@ -1088,7 +1068,7 @@ function ResultsSection() {
             <div className="video-frame video-frame-light relative h-[340px] sm:h-[420px] lg:h-full lg:min-h-[460px] overflow-hidden">
               <AnimatePresence mode="sync">
                 <motion.div
-                  key={active.company}
+                  key={active.program}
                   initial={{ opacity: 0, scale: 1.04 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
@@ -1097,7 +1077,7 @@ function ResultsSection() {
                 >
                   <Image
                     src={active.image}
-                    alt={`${active.company} - ${active.place}`}
+                    alt={`${active.program} disclosure, ${active.place}`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover"
@@ -1114,22 +1094,22 @@ function ResultsSection() {
                 </span>
                 <div>
                   <p className="font-bold text-white text-xl font-[family-name:var(--font-heading)]">
-                    {active.company}
+                    {active.program}
                   </p>
                   <p className="text-sm text-white/70 font-[family-name:var(--font-accent)] mt-1">
-                    {active.author} · {active.place}
+                    {active.researcher} · {active.place}
                   </p>
                 </div>
               </div>
 
               <span className="absolute bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-white/60">
-                Client story {String(idx + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}
+                Disclosure {String(idx + 1).padStart(2, "0")} / {String(disclosures.length).padStart(2, "0")}
               </span>
             </div>
             <p className="mt-4 text-sm text-fedsec-gray-500 font-[family-name:var(--font-body)]">
-              Real engagements. Real outcomes. Every file in the stack is a
-              client who can tell you what working with the collective feels
-              like.
+              Real findings. Real bounties. Every file in the stack is a
+              disclosed report by our researcher, paid and closed by the
+              program.
             </p>
           </div>
 
@@ -1600,7 +1580,6 @@ export default function Home() {
     <>
       <CursorFollow />
       <HeroSection />
-      <PartnerLogosMarquee />
       <NumbersSection />
       <LocationsSection />
       <GrowthTabs />

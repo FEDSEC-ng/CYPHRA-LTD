@@ -8,26 +8,22 @@ import { caseStudies } from "@/lib/data/case-studies";
 import CTABanner from "@/components/ui/CTABanner";
 
 const caseImages: Record<string, string> = {
-  finsecure: "/images/protexy/cases/case1.png",
-  vireon: "/images/protexy/cases/case2.png",
-  "medicore-systems": "/images/protexy/cases/case3.png",
-  nexabank: "/images/protexy/cases/case4.png",
-  cloudsync: "/images/protexy/cases/case5.png",
-  vertexhealth: "/images/protexy/cases/case6.png",
+  "tesla-odata-wildcards": "/images/disclosures/tesla-odata.png",
+  "supabase-auth-bypass": "/images/disclosures/supabase-auth.png",
 };
 
 const caseStats: Record<string, { value: string; label: string }[]> = {
-  nexabank: [
-    { value: "3.2M+", label: "Threats Blocked Annually" },
-    { value: "1.8B+", label: "Risks Mitigated Globally" },
+  "tesla-odata-wildcards": [
+    { value: "P2", label: "Tesla Severity" },
+    { value: "$2,000", label: "Bounty Paid" },
   ],
-  cloudsync: [
-    { value: "06Y", label: "Security Partnership" },
-    { value: "3.2M+", label: "Threats Blocked Annually" },
+  "supabase-auth-bypass": [
+    { value: "9.1", label: "CVSS Score" },
+    { value: "$1,800", label: "Bounty Paid" },
   ],
-  vertexhealth: [
-    { value: "99.9%", label: "System Uptime Maintained" },
-    { value: "08Y", label: "Security Success Timeline" },
+  "luxury-sso-chain": [
+    { value: "6.5", label: "CVSS Score" },
+    { value: "x3", label: "Paid Environments" },
   ],
 };
 
@@ -44,11 +40,11 @@ export default function CaseStudiesListPage() {
             className="text-center mb-16"
           >
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
-              Trusted protection for every business
+              Real findings. Real clients. Real results. Real bounties.
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg text-fedsec-gray-500 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
-              See how organizations across industries strengthened security
-              and reduced risk using our proactive defense solutions
+              Disclosed reports by our researcher Ridwan Adebayo, triaged and
+              paid by the programs. Read the full writeup on Medium.
             </motion.p>
           </motion.div>
 

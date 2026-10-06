@@ -48,7 +48,7 @@ export default function AnimatedCounter({
   return (
     <span ref={ref} className={`tabular-nums ${className}`}>
       {prefix}
-      {count}
+      {count.toLocaleString("en-US")}
       {suffix}
     </span>
   );

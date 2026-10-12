@@ -25,6 +25,18 @@ const caseStats: Record<string, { value: string; label: string }[]> = {
     { value: "6.5", label: "CVSS Score" },
     { value: "x3", label: "Paid Environments" },
   ],
+  "codesandbox-payment-replay": [
+    { value: "High", label: "Severity Triage" },
+    { value: "GHSA", label: "Credited Reporter" },
+  ],
+  "polyglot-upload-stored-xss": [
+    { value: "P3 S3", label: "Severity Set" },
+    { value: "Kit", label: "Reproduction Delivered" },
+  ],
+  "dm-restriction-bypass": [
+    { value: "Review", label: "Preliminary Passed" },
+    { value: "Fixed", label: "Behavior Observed" },
+  ],
 };
 
 export default function CaseStudiesListPage() {

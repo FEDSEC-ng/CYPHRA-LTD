@@ -28,12 +28,16 @@ import {
   Bug,
   KeyRound,
   Fingerprint,
+  CreditCard,
+  FileUp,
+  MessageCircle,
 } from "lucide-react";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import AutoCodeViewer from "@/components/home/AutoCodeViewer";
 import CaseStudiesFolderStack from "@/components/home/CaseStudiesFolderStack";
 import ColorSplash from "@/components/home/ColorSplash";
 import LiveCode, { type CodeLine } from "@/components/home/LiveCode";
+import Memberships from "@/components/home/Memberships";
 import PuzzleGradient from "@/components/home/PuzzleGradient";
 import Tremble from "@/components/ui/Tremble";
 
@@ -99,7 +103,7 @@ const stats: {
   note: string;
 }[] = [
   { target: 3800, prefix: "$", suffix: "+", label: "Bounty Earnings", note: "Across 2 disclosures" },
-  { target: 3, suffix: "", label: "Accepted Disclosures", note: "Tesla, SaaS, luxury brand" },
+  { target: 6, suffix: "", label: "Accepted Disclosures", note: "Bounties, advisories, reports" },
   { display: "9.1", label: "Highest CVSS Score", note: "Critical severity finding" },
   { display: "P2", label: "Tesla Severity", note: "High impact triage" },
 ];
@@ -194,6 +198,36 @@ const disclosures = [
     icon: Fingerprint,
     image: "/images/disclosures/luxury-sso.jpg",
     place: "Bug bounty program",
+  },
+  {
+    summary:
+      "Replaying a settled checkout minted fresh compute credits without fresh payment. The missing idempotency check turned one purchase into endless machines, filed as a public advisory with video proof and formal credit.",
+    researcher: "Abang Obed (d3vobed)",
+    program: "CodeSandbox",
+    tag: "Payment replay · GHSA credited",
+    icon: CreditCard,
+    image: "/images/disclosures/case-payment-code.jpg",
+    place: "Security advisory",
+  },
+  {
+    summary:
+      "A file that is a valid archive and valid markup at once slips past upload checks as one thing and executes as the other. Built the payload generator plus minimal servers to reproduce it end to end, assessed P3 S3 with security review engaged.",
+    researcher: "Abang Obed",
+    program: "Major Browser Vendor",
+    tag: "Stored script path · P3 S3",
+    icon: FileUp,
+    image: "/images/disclosures/case-filetransfer.jpg",
+    place: "Responsible disclosure",
+  },
+  {
+    summary:
+      "A protected account that cannot be messaged directly still received messages through the mobile post sharing flow. Mapped the exact path with screenshots while the web flow stayed locked, and watched the behavior get fixed.",
+    researcher: "Abang Obed (obx)",
+    program: "Global Social Platform",
+    tag: "Access control · Under review",
+    icon: MessageCircle,
+    image: "/images/disclosures/case-dm-bypass.jpg",
+    place: "Responsible disclosure",
   },
 ];
 
@@ -1580,6 +1614,7 @@ export default function Home() {
     <>
       <CursorFollow />
       <HeroSection />
+      <Memberships />
       <NumbersSection />
       <LocationsSection />
       <GrowthTabs />

@@ -95,7 +95,7 @@ const values = [
 
 const stats = [
   { value: "3,800", prefix: "$", suffix: "+", label: "Bounty earnings" },
-  { value: "3", suffix: "", label: "Accepted disclosures" },
+  { value: "6", suffix: "", label: "Accepted disclosures" },
   { value: "9.1", suffix: "", label: "Highest CVSS score" },
 ];
 

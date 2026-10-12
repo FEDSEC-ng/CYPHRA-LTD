@@ -52,6 +52,33 @@ const caseStudies: CaseStudy[] = [
     image: "/images/disclosures/luxury-sso.jpg",
     slug: "luxury-sso-chain",
   },
+  {
+    name: "Payment Replay to Free Compute",
+    industry: "Developer Tools",
+    location: "GHSA credited",
+    description:
+      "Replaying a settled checkout minted fresh compute credits. Filed publicly with video proof and formal reporter credit.",
+    image: "/images/disclosures/case-payment-code.jpg",
+    slug: "codesandbox-payment-replay",
+  },
+  {
+    name: "Polyglot Upload to Stored Scripts",
+    industry: "Technology",
+    location: "P3 S3 triage",
+    description:
+      "A valid archive that opens as markup slips past upload checks and executes in the origin. Full reproduction kit delivered.",
+    image: "/images/disclosures/case-filetransfer.jpg",
+    slug: "polyglot-upload-stored-xss",
+  },
+  {
+    name: "Share Flow Restriction Bypass",
+    industry: "Social Media",
+    location: "Under review",
+    description:
+      "A protected account that blocks direct messages still received them through mobile post sharing. Fix observed in the wild.",
+    image: "/images/disclosures/case-dm-bypass.jpg",
+    slug: "dm-restriction-bypass",
+  },
 ];
 
 /**

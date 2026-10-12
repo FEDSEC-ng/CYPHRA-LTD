@@ -311,18 +311,35 @@ export default function CaseStudyDetailPage() {
               Full Writeup
             </p>
             <p className="text-xl md:text-2xl text-fedsec-gray-700 leading-relaxed mb-8 font-[family-name:var(--font-heading)]">
-              Researched and disclosed by Ridwan Adebayo. Read every step,
-              payload, and takeaway on Medium.
+              Researched and disclosed by {study.researcher || "our team"}.
+              Read every step, payload, and takeaway.
             </p>
-            <a
-              href={study.mediumUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-fedsec-purple px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-fedsec-purple-light font-[family-name:var(--font-accent)]"
-            >
-              Read on Medium
-              <ArrowLeft size={16} className="rotate-180" />
-            </a>
+            {study.mediumUrl ? (
+              <a
+                href={study.mediumUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-fedsec-purple px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-fedsec-purple-light font-[family-name:var(--font-accent)]"
+              >
+                {study.externalLabel || "Read on Medium"}
+                <ArrowLeft size={16} className="rotate-180" />
+              </a>
+            ) : (
+              <div>
+                <p className="text-base text-fedsec-gray-500 leading-relaxed mb-6 font-[family-name:var(--font-body)]">
+                  Responsible disclosure is still in progress, so technical
+                  details stay private for now. Vetted clients can review the
+                  full account under NDA.
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full bg-fedsec-purple px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-fedsec-purple-light font-[family-name:var(--font-accent)]"
+                >
+                  Ask about this work
+                  <ArrowLeft size={16} className="rotate-180" />
+                </Link>
+              </div>
+            )}
           </motion.div>
         </div>
       </section>

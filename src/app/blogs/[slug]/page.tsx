@@ -87,10 +87,15 @@ export default function BlogDetailPage() {
               transition={{ type: "spring", damping: 40, stiffness: 200, mass: 1 }}
               className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
             >
-              <div>
-                <p className="text-lg text-fedsec-gray-600 leading-relaxed text-center">
-                  {blog.content}
-                </p>
+              <div className="space-y-5">
+                {blog.content.map((para, i) => (
+                  <p
+                    key={i}
+                    className="text-lg text-fedsec-gray-600 leading-relaxed text-center"
+                  >
+                    {para}
+                  </p>
+                ))}
               </div>
               <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
                 <Image

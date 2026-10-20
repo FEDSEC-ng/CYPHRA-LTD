@@ -56,7 +56,7 @@ const certifications = [
   {
     badge: "/images/certifications/google-associate-cloud-engineer.png",
     alt: "Google Cloud Associate Cloud Engineer badge",
-    title: "Cloud Engineering",
+    title: "Associate Cloud Engineer",
     code: "ACE",
     issuer: "Google Cloud",
   },
@@ -84,7 +84,7 @@ const certifications = [
   {
     badge: "/images/certifications/google-associate-cloud-engineer.png",
     alt: "Google Cloud Certified Associate Cloud Engineer (Batch)",
-    title: "Cloud Engineering (Batch)",
+    title: "Associate Cloud Engineer",
     code: "ACE",
     issuer: "Google Cloud",
   },

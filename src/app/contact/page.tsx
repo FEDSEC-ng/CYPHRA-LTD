@@ -9,6 +9,7 @@ import Accordion from "@/components/ui/Accordion";
 import CTABanner from "@/components/ui/CTABanner";
 import WordByWordReveal from "@/components/ui/WordByWordReveal";
 import { SITE } from "@/lib/constants";
+import { SOCIAL_ITEMS } from "@/components/ui/SocialIcons";
 import { fadeInUp, staggerContainer, slideInLeft, slideInRight } from "@/lib/animations";
 
 const springTransition = { type: "spring" as const, damping: 40, stiffness: 200 };
@@ -79,6 +80,24 @@ export default function ContactPage() {
                   <p className="text-lg font-semibold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">{card.value}</p>
                 </div>
               </motion.a>
+            ))}
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ ...springTransition, delay: 0.15 }} className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
+            <span className="text-xs font-semibold uppercase tracking-widest text-fedsec-gray-400 font-[family-name:var(--font-accent)]">
+              Find us online
+            </span>
+            {SOCIAL_ITEMS.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                title={social.label}
+                className="w-10 h-10 rounded-xl bg-fedsec-white border border-fedsec-gray-200 flex items-center justify-center text-fedsec-gray-600 hover:bg-fedsec-purple hover:border-fedsec-purple hover:text-fedsec-white transition-all duration-300"
+              >
+                <social.icon size={18} />
+              </a>
             ))}
           </motion.div>
         </div>

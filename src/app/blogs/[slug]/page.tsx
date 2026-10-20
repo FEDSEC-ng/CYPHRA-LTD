@@ -43,12 +43,26 @@ export default function BlogDetailPage() {
     );
   }
 
+  const readMins = Math.max(
+    1,
+    Math.round(blog.content.join(" ").split(/\s+/).length / 200)
+  );
+
   return (
     <>
       {/* Blog Hero */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-fedsec-gray-900 overflow-hidden">
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-20 bg-fedsec-gray-900 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-fedsec-purple/20 via-transparent to-fedsec-pink/10" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-8">
+            <Link
+              href="/blogs"
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50 transition-colors hover:text-white font-[family-name:var(--font-accent)]"
+            >
+              <ArrowLeft size={14} />
+              All insights
+            </Link>
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,7 +74,7 @@ export default function BlogDetailPage() {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-fedsec-white leading-tight mb-6 font-[family-name:var(--font-heading)]">
               {blog.title}
             </h1>
-            <div className="flex items-center gap-4 text-sm text-fedsec-gray-400 font-[family-name:var(--font-accent)]">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-fedsec-gray-400 font-[family-name:var(--font-accent)]">
               <span>{blog.author}</span>
               <span>&middot;</span>
               <span>
@@ -70,67 +84,77 @@ export default function BlogDetailPage() {
                   year: "numeric",
                 })}
               </span>
+              <span>&middot;</span>
+              <span>{readMins} min read</span>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Blog Body with alternating text and images */}
-      <section className="py-16 md:py-20 bg-fedsec-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
-            {/* First content block with image on right */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ type: "spring", damping: 40, stiffness: 200, mass: 1 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
-            >
-              <div className="space-y-5">
-                {blog.content.map((para, i) => (
-                  <p
-                    key={i}
-                    className="text-lg text-fedsec-gray-600 leading-relaxed text-center"
-                  >
-                    {para}
-                  </p>
-                ))}
-              </div>
-              <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
-                <Image
-                  src={blog.image}
-                  alt={blog.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-            </motion.div>
+      {/* Article body */}
+      <section className="py-14 md:py-20 bg-fedsec-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden mb-10">
+            <Image
+              src={blog.image}
+              alt={blog.title}
+              fill
+              sizes="(max-width: 1024px) 100vw, 768px"
+              className="object-cover"
+              priority
+            />
+          </div>
 
-            {/* Second content block with image on left */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ type: "spring", damping: 40, stiffness: 200, mass: 1 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5 }}
+            className="space-y-6"
+          >
+            {blog.content.map((para, i) => (
+              <p
+                key={i}
+                className={
+                  i === 0
+                    ? "text-xl md:text-2xl leading-relaxed text-fedsec-gray-800 font-[family-name:var(--font-heading)]"
+                    : "text-lg leading-relaxed text-fedsec-gray-600 font-[family-name:var(--font-body)]"
+                }
+              >
+                {para}
+              </p>
+            ))}
+          </motion.div>
+
+          <blockquote className="mt-10 border-l-2 border-fedsec-purple pl-6 text-lg md:text-xl italic leading-relaxed text-fedsec-gray-700">
+            {blog.excerpt}
+          </blockquote>
+
+          <figure className="mt-12">
+            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
+              <Image
+                src={blog.bodyImage}
+                alt={blog.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 768px"
+                className="object-cover"
+              />
+            </div>
+          </figure>
+
+          <div className="mt-12 rounded-2xl border border-fedsec-gray-200 bg-fedsec-gray-50 p-6 text-center">
+            <p className="text-base font-bold text-fedsec-gray-900 font-[family-name:var(--font-heading)]">
+              Want help applying this to your own systems?
+            </p>
+            <p className="mt-2 text-sm text-fedsec-gray-500 font-[family-name:var(--font-body)]">
+              A short conversation is usually enough to tell where you stand.
+            </p>
+            <Link
+              href="/contact"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-fedsec-purple px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-fedsec-purple-light font-[family-name:var(--font-accent)]"
             >
-              <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden order-2 md:order-1">
-                <Image
-                  src={blog.bodyImage}
-                  alt={blog.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="order-1 md:order-2">
-                <p className="text-lg text-fedsec-gray-600 leading-relaxed text-center">
-                  {blog.excerpt}
-                </p>
-              </div>
-            </motion.div>
+              Talk to us <span aria-hidden="true">&rarr;</span>
+            </Link>
           </div>
         </div>
       </section>

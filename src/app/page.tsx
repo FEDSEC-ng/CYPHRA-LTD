@@ -36,9 +36,12 @@ import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import AutoCodeViewer from "@/components/home/AutoCodeViewer";
 import CaseStudiesFolderStack from "@/components/home/CaseStudiesFolderStack";
 import ColorSplash from "@/components/home/ColorSplash";
+import ExploreNext from "@/components/home/ExploreNext";
 import LiveCode, { type CodeLine } from "@/components/home/LiveCode";
 import Memberships from "@/components/home/Memberships";
+import Certifications from "@/components/home/Certifications";
 import PuzzleGradient from "@/components/home/PuzzleGradient";
+import StartHere from "@/components/home/StartHere";
 import Tremble from "@/components/ui/Tremble";
 
 /* ─── Data ─────────────────────────────────────────────── */
@@ -47,7 +50,7 @@ const team = [
   {
     name: "Nwachukwu Francis O.",
     role: "Founder/Tech Lead",
-    bio: "Cybersecurity analyst and CTF player ranked in TryHackMe's top 2%. Leads CYPHRA's technical bench across network security, threat analysis, and SOC operations.",
+    bio: "Cybersecurity analyst working across network security, threat analysis, and SOC operations. Leads CYPHRA's technical bench and brand.",
     image: "/images/team/francis.png",
     cv: null,
     short: "F",
@@ -353,7 +356,7 @@ const heroStream: CodeLine[] = [
 ];
 
 const heroChips = [
-  { label: "TryHackMe Top 2%", icon: Crosshair },
+  { label: "CPTS Certified", icon: Crosshair },
   { label: "$3,800+ Bounties Earned", icon: FileCheck },
   { label: "24/7 SOC Monitoring", icon: Radar },
 ];
@@ -1087,13 +1090,23 @@ function ResultsSection() {
           transition={{ duration: 0.7 }}
           className="mb-16"
         >
-          <span className="section-tag">Findings, Clients, Results, Bounties</span>
+          <span className="section-tag">Proof at a Glance</span>
           <Tremble className="mt-4">
             <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold tracking-tight font-[family-name:var(--font-heading)]">
               Proven Against{" "}
               <span className="gradient-text">Real Targets</span>
             </h2>
           </Tremble>
+          <p className="mt-4 max-w-xl text-base text-fedsec-gray-500 font-[family-name:var(--font-body)]">
+            Real reports, accepted and paid by the programs. Scroll on for the
+            full stories, explained in plain language.
+          </p>
+          <a
+            href="#full-stories"
+            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-fedsec-purple transition-all hover:gap-3 font-[family-name:var(--font-accent)]"
+          >
+            Read the full stories <ArrowRight size={14} />
+          </a>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
@@ -1142,7 +1155,7 @@ function ResultsSection() {
             </div>
             <p className="mt-4 text-sm text-fedsec-gray-500 font-[family-name:var(--font-body)]">
               Real findings. Real bounties. Every file in the stack is a
-              disclosed report by our researcher, paid and closed by the
+              disclosed report by our researchers, paid and closed by the
               program.
             </p>
           </div>
@@ -1201,7 +1214,7 @@ function ProcessSection() {
   const arcOffset = useTransform(spring, [0, 1], [ARC_C, ARC_C * (1 - 270 / 360)]);
 
   return (
-    <section className="py-24 md:py-32 bg-fedsec-gray-900 overflow-x-clip">
+    <section id="how-we-work" className="scroll-mt-24 py-24 md:py-32 bg-fedsec-gray-900 overflow-x-clip">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -1614,12 +1627,15 @@ export default function Home() {
     <>
       <CursorFollow />
       <HeroSection />
+      <StartHere />
       <Memberships />
+      <Certifications />
       <NumbersSection />
-      <LocationsSection />
       <GrowthTabs />
+      <LocationsSection />
       <ResultsSection />
       <CaseStudiesFolderStack />
+      <ExploreNext />
       <ProcessSection />
       <WhyCyphra />
       <AboutCard />

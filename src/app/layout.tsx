@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import { JetBrains_Mono } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import FloatingNav from "@/components/layout/FloatingNav";
+import { SITE, SOCIAL_LINKS } from "@/lib/constants";
 import "./globals.css";
 
 /**
@@ -89,9 +91,30 @@ export default function RootLayout({
       className={`${clashDisplay.variable} ${satoshi.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen flex flex-col antialiased bg-fedsec-black text-fedsec-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: SITE.name,
+              url: SITE.url,
+              logo: `${SITE.url}/images/cyphra-logo-black.png`,
+              email: SITE.email,
+              telephone: SITE.phone,
+              sameAs: [
+                SOCIAL_LINKS.linkedin,
+                SOCIAL_LINKS.x,
+                SOCIAL_LINKS.instagram,
+                SOCIAL_LINKS.linktree,
+              ],
+            }),
+          }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <FloatingNav />
       </body>
     </html>
   );

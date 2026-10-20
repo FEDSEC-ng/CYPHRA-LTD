@@ -7,11 +7,6 @@ import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
 import { caseStudies } from "@/lib/data/case-studies";
 import CTABanner from "@/components/ui/CTABanner";
 
-const caseImages: Record<string, string> = {
-  "tesla-odata-wildcards": "/images/disclosures/tesla-odata.png",
-  "supabase-auth-bypass": "/images/disclosures/supabase-auth.png",
-};
-
 const caseStats: Record<string, { value: string; label: string }[]> = {
   "tesla-odata-wildcards": [
     { value: "P2", label: "Tesla Severity" },
@@ -55,9 +50,38 @@ export default function CaseStudiesListPage() {
               Real findings. Real clients. Real results. Real bounties.
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg text-fedsec-gray-500 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
-              Disclosed reports by our researcher Ridwan Adebayo, triaged and
-              paid by the programs. Read the full writeup on Medium.
+              Disclosed reports by our researchers Ridwan Adebayo and Abang
+              Obed, triaged and paid by the programs. Every card starts with a
+              plain explanation, then the technical account.
             </motion.p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mx-auto mb-14 max-w-3xl rounded-2xl border border-fedsec-purple/15 bg-fedsec-purple/[0.04] p-6 md:p-8"
+          >
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-fedsec-purple font-[family-name:var(--font-accent)]">
+              What is a disclosure?
+            </p>
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
+              {[
+                "We find a security flaw in a live product.",
+                "We report it privately to the vendor, not the public.",
+                "The vendor fixes it, and many programs pay for the report.",
+              ].map((line, i) => (
+                <div key={line} className="flex gap-3">
+                  <span className="font-mono text-xs font-bold text-fedsec-purple">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p className="text-sm leading-relaxed text-fedsec-gray-600 font-[family-name:var(--font-body)]">
+                    {line}
+                  </p>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
           <motion.div
@@ -75,21 +99,33 @@ export default function CaseStudiesListPage() {
                 >
                   <div className="relative rounded-2xl overflow-hidden aspect-[4/3] mb-6">
                     <Image
-                      src={caseImages[cs.slug] || "/images/disclosures/tesla-odata.png"}
-                      alt={cs.client}
+                      src={cs.image}
+                      alt={cs.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
+                  <div className="mb-3 flex items-center gap-2">
+                    <span className="rounded-full bg-fedsec-purple/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-fedsec-purple font-[family-name:var(--font-accent)]">
+                      {cs.category}
+                    </span>
+                    <span className="text-xs text-fedsec-gray-400 font-[family-name:var(--font-accent)]">
+                      {cs.date}
+                    </span>
+                  </div>
                   <h3 className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 mb-2 font-[family-name:var(--font-heading)] group-hover:text-fedsec-purple transition-colors">
                     {cs.client}
                   </h3>
-                  <p className="text-sm text-fedsec-gray-500 leading-relaxed mb-4">
+                  <p className="text-sm text-fedsec-gray-500 leading-relaxed mb-3">
                     {cs.title}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-fedsec-purple font-[family-name:var(--font-accent)] group-hover:gap-3 transition-all">
-                    View details <span className="text-lg">&rarr;</span>
+                  <p className="rounded-xl bg-fedsec-gray-50 p-3 text-sm leading-relaxed text-fedsec-gray-700 font-[family-name:var(--font-body)]">
+                    <span className="font-bold text-fedsec-purple">In plain terms: </span>
+                    {cs.plain}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-fedsec-purple font-[family-name:var(--font-accent)] group-hover:gap-3 transition-all">
+                    Read the story <span className="text-lg">&rarr;</span>
                   </span>
                   {caseStats[cs.slug] && (
                     <div className="grid grid-cols-2 gap-4 mt-6">

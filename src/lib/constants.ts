@@ -13,15 +13,16 @@ export const SITE = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
+  { label: "Work", href: "/case-studies" },
+  { label: "Insights", href: "/blogs" },
+  { label: "About", href: "/about" },
   { label: "Team", href: "/team" },
-  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const SOCIAL_LINKS = {
-  facebook: "https://www.facebook.com/",
-  twitter: "https://x.com/",
-  linkedin: "https://www.linkedin.com/",
-  youtube: "https://www.youtube.com/",
+  x: "https://x.com/CyphraLTD",
+  instagram: "https://www.instagram.com/cyphra_ltd/",
+  linkedin: "https://www.linkedin.com/company/cyphra-ltd/",
+  linktree: "https://linktr.ee/Cyphraltd",
 } as const;

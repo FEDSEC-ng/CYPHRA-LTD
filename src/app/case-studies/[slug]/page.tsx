@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Info } from "lucide-react";
 import { useRef } from "react";
 import { caseStudies } from "@/lib/data/case-studies";
 import Badge from "@/components/ui/Badge";
@@ -12,39 +12,15 @@ import CTABanner from "@/components/ui/CTABanner";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { fadeInUp, slideInLeft, slideInRight, staggerContainer } from "@/lib/animations";
 
-const contentSections = [
-  {
-    title: "Threat Impact",
-    description:
-      "Advanced threat analysis and detection capabilities identified critical vulnerabilities across the digital infrastructure, enabling rapid response to emerging cyber risks and protecting sensitive business operations from sophisticated attack vectors.",
-    image: "/images/blogs/blog-ai-security.jpg",
-  },
-  {
-    title: "Infrastructure Growth",
-    description:
-      "Scalable security architecture was designed and deployed to support rapid infrastructure expansion while maintaining robust protection across cloud environments, network systems, and critical business applications.",
-    image: "/images/services/svc-racks.jpg",
-  },
-  {
-    title: "System Protection",
-    description:
-      "Comprehensive system protection measures were implemented including real time monitoring, automated threat response, and continuous security validation to ensure maximum uptime and data integrity across all platforms.",
-    image: "/images/blogs/blog-soc-monitoring.jpg",
-  },
-  {
-    title: "Risk Reduction",
-    description:
-      "Strategic risk reduction initiatives delivered measurable improvements in security posture, reducing attack surface exposure and establishing a resilient defense framework aligned with industry compliance standards.",
-    image: "/images/services/svc-signing.jpg",
-  },
-];
-
 export default function CaseStudyDetailPage() {
   const params = useParams();
   const slug = params.slug as string;
   const study = caseStudies.find((s) => s.slug === slug);
+  const currentIndex = caseStudies.findIndex((s) => s.slug === slug);
 
   const relatedStudies = caseStudies.filter((s) => s.slug !== slug).slice(0, 2);
+  const prevStudy = caseStudies[(currentIndex - 1 + caseStudies.length) % caseStudies.length];
+  const nextStudy = caseStudies[(currentIndex + 1) % caseStudies.length];
 
   const overviewRef = useRef(null);
   const overviewInView = useInView(overviewRef, { once: true, margin: "-100px" });
@@ -74,9 +50,18 @@ export default function CaseStudyDetailPage() {
   return (
     <>
       {/* Case Study Hero */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-fedsec-gray-900 overflow-hidden">
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-20 bg-fedsec-gray-900 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-fedsec-purple/20 via-transparent to-fedsec-pink/10" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 flex justify-center">
+            <Link
+              href="/case-studies"
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/50 transition-colors hover:text-white font-[family-name:var(--font-accent)]"
+            >
+              <ArrowLeft size={14} />
+              All work
+            </Link>
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -112,8 +97,59 @@ export default function CaseStudyDetailPage() {
         </div>
       </section>
 
+      {/* Plain English Summary */}
+      <section className="py-14 md:py-20 bg-fedsec-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5 }}
+            className="rounded-2xl border border-fedsec-purple/20 bg-fedsec-purple/[0.04] p-7 md:p-9"
+          >
+            <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-fedsec-purple font-[family-name:var(--font-accent)]">
+              <Info size={14} /> In plain English
+            </p>
+            <p className="mt-3 text-xl md:text-2xl leading-relaxed text-fedsec-gray-800 font-[family-name:var(--font-heading)]">
+              {study.plain}
+            </p>
+            <p className="mt-4 text-sm text-fedsec-gray-500 font-[family-name:var(--font-body)]">
+              The technical account follows below, for readers who want the detail.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* What This Means For You */}
+      <section className="pb-16 md:pb-24 bg-fedsec-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-xs font-bold uppercase tracking-[0.22em] text-fedsec-pink font-[family-name:var(--font-accent)]">
+            Three lessons any team can use
+          </p>
+          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
+            {study.takeaways.map((takeaway, i) => (
+              <motion.div
+                key={takeaway}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.06 }}
+                className="rounded-2xl border border-fedsec-gray-200 bg-fedsec-gray-50 p-6"
+              >
+                <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-fedsec-purple">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="mt-3 text-base leading-relaxed text-fedsec-gray-700 font-[family-name:var(--font-body)]">
+                  {takeaway}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Project Overview Section */}
-      <section ref={overviewRef} className="py-16 md:py-24 bg-fedsec-white">
+      <section ref={overviewRef} className="py-16 md:py-24 bg-fedsec-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -123,7 +159,7 @@ export default function CaseStudyDetailPage() {
               className="text-center"
             >
               <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-fedsec-purple font-[family-name:var(--font-accent)]">
-                Project Overview
+                The Technical Detail
               </span>
               <h2 className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
                 The Challenge
@@ -131,12 +167,9 @@ export default function CaseStudyDetailPage() {
               <p className="text-lg text-fedsec-gray-600 leading-relaxed mb-8 text-center">
                 {study.challenge}
               </p>
-              <div className="space-y-3">
+              <div className="space-y-3 text-left">
                 {study.results.map((result) => (
-                  <div
-                    key={result}
-                    className="flex items-start gap-3"
-                  >
+                  <div key={result} className="flex items-start gap-3">
                     <CheckCircle2
                       size={20}
                       className="text-fedsec-purple mt-0.5 flex-shrink-0"
@@ -167,7 +200,7 @@ export default function CaseStudyDetailPage() {
       </section>
 
       {/* Security Results Section */}
-      <section ref={resultsRef} className="py-16 md:py-24 bg-fedsec-gray-50">
+      <section ref={resultsRef} className="py-16 md:py-24 bg-fedsec-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -194,63 +227,13 @@ export default function CaseStudyDetailPage() {
                 Our Solution
               </span>
               <h2 className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 mb-6 font-[family-name:var(--font-heading)]">
-                Security Results
+                How We Proved It
               </h2>
               <p className="text-lg text-fedsec-gray-600 leading-relaxed text-center">
                 {study.solution}
               </p>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* 4 Content Sections */}
-      <section className="py-16 md:py-24 bg-fedsec-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="space-y-20"
-          >
-            {contentSections.map((section, index) => (
-              <motion.div
-                key={section.title}
-                variants={fadeInUp}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 !== 0 ? "lg:direction-rtl" : ""
-                }`}
-              >
-                <div className={index % 2 !== 0 ? "lg:order-2" : ""}>
-                  <div className="w-14 h-14 rounded-xl bg-fedsec-purple/10 flex items-center justify-center mb-6">
-                    <span className="text-2xl font-normal text-fedsec-purple font-[family-name:var(--font-heading)]">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-normal text-fedsec-gray-900 mb-4 font-[family-name:var(--font-heading)]">
-                    {section.title}
-                  </h3>
-                  <p className="text-lg text-fedsec-gray-600 leading-relaxed">
-                    {section.description}
-                  </p>
-                </div>
-                <div
-                  className={`relative h-72 md:h-96 rounded-2xl overflow-hidden ${
-                    index % 2 !== 0 ? "lg:order-1" : ""
-                  }`}
-                >
-                  <Image
-                    src={section.image}
-                    alt={section.title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </section>
 
@@ -293,18 +276,11 @@ export default function CaseStudyDetailPage() {
       </section>
 
       {/* Full Writeup Section */}
-      <section
-        ref={testimonialRef}
-        className="py-16 md:py-24 bg-fedsec-gray-50"
-      >
+      <section ref={testimonialRef} className="py-16 md:py-24 bg-fedsec-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={
-              testimonialInView
-                ? { opacity: 1, y: 0 }
-                : { opacity: 0, y: 30 }
-            }
+            animate={testimonialInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ type: "spring", damping: 40, stiffness: 200 }}
           >
             <p className="text-sm font-semibold uppercase tracking-widest text-fedsec-pink mb-4 font-[family-name:var(--font-accent)]">
@@ -322,7 +298,7 @@ export default function CaseStudyDetailPage() {
                 className="inline-flex items-center gap-2 rounded-full bg-fedsec-purple px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-fedsec-purple-light font-[family-name:var(--font-accent)]"
               >
                 {study.externalLabel || "Read on Medium"}
-                <ArrowLeft size={16} className="rotate-180" />
+                <ArrowRight size={16} />
               </a>
             ) : (
               <div>
@@ -336,7 +312,7 @@ export default function CaseStudyDetailPage() {
                   className="inline-flex items-center gap-2 rounded-full bg-fedsec-purple px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-fedsec-purple-light font-[family-name:var(--font-accent)]"
                 >
                   Ask about this work
-                  <ArrowLeft size={16} className="rotate-180" />
+                  <ArrowRight size={16} />
                 </Link>
               </div>
             )}
@@ -344,16 +320,41 @@ export default function CaseStudyDetailPage() {
         </div>
       </section>
 
-      {/* Go Back Button */}
-      <section className="py-12 bg-fedsec-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/case-studies"
-            className="inline-flex items-center gap-2 text-sm text-fedsec-gray-500 hover:text-fedsec-purple transition-colors font-[family-name:var(--font-accent)]"
-          >
-            <ArrowLeft size={16} />
-            Go Back
-          </Link>
+      {/* Previous and Next */}
+      <section className="py-12 bg-fedsec-white border-t border-fedsec-gray-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <Link
+              href={`/case-studies/${prevStudy.slug}`}
+              className="group rounded-2xl border border-fedsec-gray-200 p-5 transition-colors hover:border-fedsec-purple/40"
+            >
+              <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-fedsec-gray-400 font-[family-name:var(--font-accent)]">
+                <ArrowLeft size={13} /> Previous case
+              </span>
+              <p className="mt-2 text-base font-bold text-fedsec-gray-900 transition-colors group-hover:text-fedsec-purple font-[family-name:var(--font-heading)]">
+                {prevStudy.title}
+              </p>
+            </Link>
+            <Link
+              href={`/case-studies/${nextStudy.slug}`}
+              className="group rounded-2xl border border-fedsec-gray-200 p-5 text-right transition-colors hover:border-fedsec-purple/40"
+            >
+              <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-fedsec-gray-400 font-[family-name:var(--font-accent)]">
+                Next case <ArrowRight size={13} />
+              </span>
+              <p className="mt-2 text-base font-bold text-fedsec-gray-900 transition-colors group-hover:text-fedsec-purple font-[family-name:var(--font-heading)]">
+                {nextStudy.title}
+              </p>
+            </Link>
+          </div>
+          <div className="mt-6 text-center">
+            <Link
+              href="/case-studies"
+              className="inline-flex items-center gap-2 text-sm text-fedsec-gray-500 transition-colors hover:text-fedsec-purple font-[family-name:var(--font-accent)]"
+            >
+              <ArrowLeft size={15} /> All case studies
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -363,7 +364,7 @@ export default function CaseStudyDetailPage() {
           <SectionHeading
             label="More Work"
             title="Related Case Studies"
-            description="The other paid disclosure by our researcher."
+            description="More disclosures from our researchers."
             align="left"
           />
           <motion.div
@@ -400,7 +401,7 @@ export default function CaseStudyDetailPage() {
                       {relatedStudy.title}
                     </h3>
                     <p className="text-sm text-fedsec-gray-500 leading-relaxed line-clamp-3">
-                      {relatedStudy.challenge}
+                      {relatedStudy.plain}
                     </p>
                   </div>
                 </Link>

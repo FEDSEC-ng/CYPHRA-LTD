@@ -82,7 +82,7 @@ const certifications = [
     issuer: "APIsec University",
   },
   {
-    badge: "/images/certifications/google-associate-cloud-engineer.png",
+    badge: "/images/certifications/google-associate-cloud-engineer-batch.png",
     alt: "Google Cloud Certified Associate Cloud Engineer (Batch)",
     title: "Cloud Engineering (Batch)",
     code: "ACE",

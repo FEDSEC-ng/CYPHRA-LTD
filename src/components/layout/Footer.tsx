@@ -130,9 +130,14 @@ export default function Footer() {
       {/* Bottom */}
       <div className="border-t border-white/[0.04]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/50 font-[family-name:var(--font-body)]">
-            &copy; {new Date().getFullYear()} CYPHRA. All rights reserved.
-          </p>
+          <div className="text-center md:text-left">
+            <p className="text-xs text-white/50 font-[family-name:var(--font-body)]">
+              &copy; {new Date().getFullYear()} CYPHRA. All rights reserved.
+            </p>
+            <p className="mt-1 text-xs text-white/35 font-[family-name:var(--font-body)]">
+              {SITE.legalName} · RC {SITE.rcNumber} · Registered in Nigeria
+            </p>
+          </div>
           <p className="text-xs text-white/45 font-[family-name:var(--font-accent)] tracking-wide">
             Different Expertise. One Collective. Secure by Trust.
           </p>

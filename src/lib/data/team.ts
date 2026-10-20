@@ -3,7 +3,6 @@ export interface TeamMember {
   role: string;
   bio: string;
   image: string;
-  cv?: string | null;
   credentials?: string;
 }
 
@@ -11,33 +10,29 @@ export const team: TeamMember[] = [
   {
     name: "Nwachukwu Francis O.",
     role: "Founder/Tech Lead",
-    bio: "A cybersecurity analyst with hands-on experience spanning network security, threat analysis, and SOC operations across infrastructure, professional, and forensic environments. Francis leads CYPHRA's technical bench and brand, holding SOC Level 1, APIsec Certified Practitioner, Practical Ethical Hacking, Cisco Network Defense, and HCIA Cloud Security credentials.",
+    bio: "A cybersecurity analyst with hands-on experience spanning network security, threat analysis, and SOC operations across infrastructure, professional, and forensic environments. Francis leads CYPHRA's technical bench and brand, holding SOC Level 1, APIsec Certified Practitioner, Practical Ethical Hacking, Cisco Network Defense, and HCIA Cloud Security credentials. He is an individual member of the Cyber Security Experts Association of Nigeria (CSEAN).",
     image: "/images/team/francis.png",
-    cv: null,
-    credentials: "SOC L1 · APIsec · HCIA Cloud",
+    credentials: "CSEAN · SOC L1 · APIsec · HCIA Cloud",
   },
   {
     name: "Abang Obed",
     role: "Offensive Security & Red Team Operations",
     bio: "Six years across security operations, application security, offensive security, and detection engineering - spanning web, API, mobile, network, cloud, and Windows internals. Secured government infrastructure at Nigeria's National Emergency Management Agency, holds CPTS, and has been credited on GitHub's and X's official security advisory programs.",
     image: "/images/team/obed.png",
-    cv: "/images/resumes/obed-cv.pdf",
     credentials: "CPTS · GitHub/X Advisories",
   },
   {
     name: "Ridwan Adebayo",
     role: "Penetration Tester & Cloud Engineer",
-    bio: "Cybersecurity adviser and penetration tester with five+ years in offensive security, vulnerability research, and security program advisory. Advises Nigeria's Police Force National Cyber Crime Center and leads penetration testing across government systems. 35+ accepted bug bounty reports; eCPPT, eWPT, CNSP certified.",
+    bio: "Cybersecurity adviser and penetration tester with five+ years in offensive security, vulnerability research, and security program advisory. Advises Nigeria's Police Force National Cyber Crime Center and leads penetration testing across government systems. 35+ accepted bug bounty reports; eCPPT, eWPT, CNSP certified. He is an individual member of the Cyber Security Experts Association of Nigeria (CSEAN).",
     image: "/images/team/ridwan.png",
-    cv: "/images/resumes/ridwan-cv.pdf",
-    credentials: "eCPPT · eWPT · CNSP · 35+ Bounties",
+    credentials: "CSEAN · eCPPT · eWPT · CNSP · 35+ Bounties",
   },
   {
     name: "Agnes Akpa",
     role: "DevSecOps & GRC",
     bio: "Operates at the intersection of technical security, risk governance, and business strategy - application development, cloud security, and blockchain security awareness. Head of Security at FiatRouter, previously Cloud Computing Intern with NITDA's IT Hub. (ISC)² Certified in Cybersecurity and DevSecOps certified.",
     image: "/images/team/agnes.png",
-    cv: "/images/resumes/agnes-cv.docx",
     credentials: "(ISC)² CC · Google Cyber · DevSecOps",
   },
   {
@@ -45,7 +40,6 @@ export const team: TeamMember[] = [
     role: "Full Stack Developer & Security Researcher",
     bio: "A researcher and full stack blockchain engineer who audits from the inside out - tracing vulnerabilities through architecture and business logic rather than relying on scanners alone. Holds CAP and CNSP certifications, actively hunts bounties across Cantina, YesWeHack, and Bugcrowd, and has competed in public audit contests on protocols like the XRP Ledger. His work bridges Web2 and Web3 attack surfaces, giving CYPHRA coverage in an area most traditional security firms can't touch.",
     image: "/images/team/isah-v2.png",
-    cv: "/images/resumes/isah-cv.pdf",
     credentials: "CAP · CNSP",
   },
   {
@@ -53,7 +47,6 @@ export const team: TeamMember[] = [
     role: "Cyber Security Analyst & Blue Team Operations",
     bio: "Cybersecurity analyst with hands on experience testing production systems: uncovering misconfigurations, insecure headers, and web application flaws, and turning findings into clear, actionable reports for stakeholders. Part of the discipline behind CYPHRA's methodology: authorized, documented, and built to hold up under scrutiny.",
     image: "/images/team/badu.png",
-    cv: "/images/resumes/badu-cv.docx",
     credentials: "Blue Team Operations · Reporting",
   },
 ];

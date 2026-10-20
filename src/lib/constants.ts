@@ -10,6 +10,8 @@ export const SITE = {
   founder: "Nwachukwu Francis O.",
   founderRole: "Founder & Cybersecurity Professional",
   ceo: "Nwachukwu Francis O.",
+  legalName: "CYPHRA LTD",
+  rcNumber: "9910674",
 } as const;
 
 export const NAV_LINKS = [

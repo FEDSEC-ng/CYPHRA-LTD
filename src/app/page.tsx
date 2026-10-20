@@ -50,9 +50,8 @@ const team = [
   {
     name: "Nwachukwu Francis O.",
     role: "Founder/Tech Lead",
-    bio: "Cybersecurity analyst working across network security, threat analysis, and SOC operations. Leads CYPHRA's technical bench and brand.",
+    bio: "Cybersecurity analyst working across network security, threat analysis, and SOC operations. Leads CYPHRA's technical bench and brand. Individual member of the Cyber Security Experts Association of Nigeria (CSEAN).",
     image: "/images/team/francis.png",
-    cv: null,
     short: "F",
   },
   {
@@ -60,15 +59,13 @@ const team = [
     role: "Offensive Security & Red Team Operations",
     bio: "Six years across security operations, application security, offensive security, and detection engineering. CPTS certified, credited on GitHub and X security advisories.",
     image: "/images/team/obed.png",
-    cv: "/images/resumes/obed-cv.pdf",
     short: "O",
   },
   {
     name: "Ridwan Adebayo",
     role: "Penetration Tester & Cloud Engineer",
-    bio: "Five+ years in offensive security. Advises Nigeria's Police Force National Cyber Crime Center, 35+ accepted bug bounty reports across Bugcrowd and YesWeHack.",
+    bio: "Five+ years in offensive security. Advises Nigeria's Police Force National Cyber Crime Center, 35+ accepted bug bounty reports across Bugcrowd and YesWeHack. Individual member of the Cyber Security Experts Association of Nigeria (CSEAN).",
     image: "/images/team/ridwan.png",
-    cv: "/images/resumes/ridwan-cv.pdf",
     short: "R",
   },
   {
@@ -76,7 +73,6 @@ const team = [
     role: "DevSecOps & GRC",
     bio: "Head of Security at FiatRouter. Blends technical depth with risk governance and business alignment. (ISC)2 Certified in Cybersecurity, DevSecOps, and Google Cybersecurity certified.",
     image: "/images/team/agnes.png",
-    cv: "/images/resumes/agnes-cv.docx",
     short: "A",
   },
   {
@@ -84,7 +80,6 @@ const team = [
     role: "Full Stack Developer & Security Researcher",
     bio: "Full stack blockchain engineer who audits from the inside out. CAP and CNSP certified, hunts on Cantina, YesWeHack, and Bugcrowd, including XRP Ledger audit contests.",
     image: "/images/team/isah-v2.png",
-    cv: "/images/resumes/isah-cv.pdf",
     short: "I",
   },
   {
@@ -92,7 +87,6 @@ const team = [
     role: "Cyber Security Analyst & Blue Team Operations",
     bio: "Hands on testing of production systems: misconfigurations, insecure headers, and web application flaws turned into clear, actionable reports. Part of the discipline behind CYPHRA's methodology: authorized, documented, and built to hold up under scrutiny.",
     image: "/images/team/badu.png",
-    cv: "/images/resumes/badu-cv.docx",
     short: "B",
   },
 ];

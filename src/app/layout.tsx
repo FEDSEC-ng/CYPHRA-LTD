@@ -98,6 +98,12 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: SITE.name,
+              legalName: SITE.legalName,
+              identifier: {
+                "@type": "PropertyValue",
+                name: "Company Registration Number",
+                value: SITE.rcNumber,
+              },
               url: SITE.url,
               logo: `${SITE.url}/images/cyphra-logo-black.png`,
               email: SITE.email,

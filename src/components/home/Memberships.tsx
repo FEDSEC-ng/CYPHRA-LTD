@@ -28,8 +28,9 @@ export default function Memberships() {
             Recognized by the Bodies That Set the Standard
           </h2>
           <p className="mt-4 text-base md:text-lg text-fedsec-gray-500 max-w-2xl mx-auto font-[family-name:var(--font-body)]">
-            Our researchers hold individual membership with the Cyber Security
-            Experts Association of Nigeria, the national umbrella body for
+            Founder Nwachukwu Francis O. and penetration tester Ridwan Adebayo
+            hold individual membership with the Cyber Security Experts
+            Association of Nigeria, the national umbrella body for
             cybersecurity professionals.
           </p>
         </motion.div>

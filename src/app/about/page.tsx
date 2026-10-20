@@ -17,9 +17,9 @@ const team = [
   {
     name: "Nwachukwu Francis O.",
     role: "Founder/Tech Lead",
-    bio: "Cybersecurity analyst working across network security, threat analysis, and SOC operations. Holds SOC Level 1, APIsec Certified Practitioner, Practical Ethical Hacking, Cisco Network Defense, and HCIA Cloud Security credentials. An individual member of the Cyber Security Experts Association of Nigeria (CSEAN), he leads CYPHRA's technical bench and brand.",
+    bio: "Cybersecurity analyst working across network security, threat analysis, and SOC operations. Holds SOC Level 1, APIsec Certified Practitioner, Certified API Security Analyst, Practical Ethical Hacking, Cisco Network Defense, and HCIA Cloud Security credentials. An individual member of the Cyber Security Experts Association of Nigeria (CSEAN), he leads CYPHRA's technical bench and brand.",
     image: "/images/team/francis.png",
-    credentials: "CSEAN · SOC L1 · APIsec · HCIA Cloud",
+    credentials: "CSEAN · CASA · ACP · SOC L1",
   },
   {
     name: "Abang Obed",

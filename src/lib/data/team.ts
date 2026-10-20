@@ -10,9 +10,9 @@ export const team: TeamMember[] = [
   {
     name: "Nwachukwu Francis O.",
     role: "Founder/Tech Lead",
-    bio: "A cybersecurity analyst with hands-on experience spanning network security, threat analysis, and SOC operations across infrastructure, professional, and forensic environments. Francis leads CYPHRA's technical bench and brand, holding SOC Level 1, APIsec Certified Practitioner, Practical Ethical Hacking, Cisco Network Defense, and HCIA Cloud Security credentials. He is an individual member of the Cyber Security Experts Association of Nigeria (CSEAN).",
+    bio: "A cybersecurity analyst with hands-on experience spanning network security, threat analysis, and SOC operations across infrastructure, professional, and forensic environments. Francis leads CYPHRA's technical bench and brand, holding SOC Level 1, APIsec Certified Practitioner, Certified API Security Analyst, Practical Ethical Hacking, Cisco Network Defense, and HCIA Cloud Security credentials. He is an individual member of the Cyber Security Experts Association of Nigeria (CSEAN).",
     image: "/images/team/francis.png",
-    credentials: "CSEAN · SOC L1 · APIsec · HCIA Cloud",
+    credentials: "CSEAN · CASA · ACP · SOC L1",
   },
   {
     name: "Abang Obed",

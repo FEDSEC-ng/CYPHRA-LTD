@@ -80,8 +80,7 @@ const certifications = [
     title: "API Security Analysis",
     code: "CASA",
     issuer: "APIsec University",
-  },
-];
+  },\n  {\n    badge: "/images/certifications/google-associate-cloud-engineer.png",\n    alt: "Google Cloud Certified Associate Cloud Engineer (Batch)",\n    title: "Cloud Engineering (Batch)",\n    code: "ACE",\n    issuer: "Google Cloud",\n  },\n];
 
 export default function Certifications({ dark = false }: { dark?: boolean }) {
   return (

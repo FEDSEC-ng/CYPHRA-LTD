@@ -74,6 +74,13 @@ const certifications = [
     code: "ACP",
     issuer: "APIsec University",
   },
+  {
+    badge: "/images/certifications/apisec-casa.png",
+    alt: "APIsec Certified API Security Analyst badge",
+    title: "API Security Analysis",
+    code: "CASA",
+    issuer: "APIsec University",
+  },
 ];
 
 export default function Certifications({ dark = false }: { dark?: boolean }) {
@@ -111,14 +118,14 @@ export default function Certifications({ dark = false }: { dark?: boolean }) {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-5">
           {certifications.map((cert, index) => (
             <motion.div
               key={cert.badge}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45, delay: (index % 5) * 0.05 }}
+              transition={{ duration: 0.45, delay: (index % 6) * 0.05 }}
               className={`flex flex-col items-center rounded-2xl border px-4 py-5 text-center ${
                 dark
                   ? "bg-white/[0.03] border-white/10"

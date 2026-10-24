@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { SITE } from "@/lib/constants";
 
 const members = [
   {
@@ -9,6 +10,12 @@ const members = [
     full: "Cyber Security Experts Association of Nigeria",
     logo: "/images/partners/csean-logo.png",
     href: "https://csean.org.ng",
+  },
+  {
+    name: "NGX",
+    full: "Nigerian Exchange Group",
+    logo: "/images/partners/ngx-logo.png",
+    href: "https://www.ngxgroup.com",
   },
 ];
 
@@ -31,12 +38,15 @@ export default function Memberships() {
             Founder Nwachukwu Francis O. and penetration tester Ridwan Adebayo
             hold individual membership with the Cyber Security Experts
             Association of Nigeria, the national umbrella body for
-            cybersecurity professionals.
+            cybersecurity professionals. {SITE.legalName} is also recognized by
+            NGX Regulation Limited to conduct vulnerability assessment and
+            penetration testing exercises on the online trading portals of
+            Trading License Holders in the Nigerian capital market.
           </p>
         </motion.div>
       </div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center">
+        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-10 md:gap-x-20">
           {members.map((m) => (
             <a
               key={m.name}

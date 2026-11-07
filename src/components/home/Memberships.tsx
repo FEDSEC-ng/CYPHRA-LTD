@@ -6,6 +6,12 @@ import { SITE } from "@/lib/constants";
 
 const members = [
   {
+    name: "CAC",
+    full: "Corporate Affairs Commission, Nigeria",
+    logo: "/images/partners/cac-logo.png",
+    href: "https://www.cac.gov.ng",
+  },
+  {
     name: "CSEAN",
     full: "Cyber Security Experts Association of Nigeria",
     logo: "/images/partners/csean-logo.png",
@@ -38,10 +44,12 @@ export default function Memberships() {
             Founder Nwachukwu Francis O. and penetration tester Ridwan Adebayo
             hold individual membership with the Cyber Security Experts
             Association of Nigeria, the national umbrella body for
-            cybersecurity professionals. {SITE.legalName} is also recognized by
-            NGX Regulation Limited to conduct vulnerability assessment and
-            penetration testing exercises on the online trading portals of
-            Trading License Holders in the Nigerian capital market.
+            cybersecurity professionals. {SITE.legalName} is registered with
+            the Corporate Affairs Commission, Nigeria under RC{" "}
+            {SITE.rcNumber}, and is also recognized by NGX Regulation Limited
+            to conduct vulnerability assessment and penetration testing
+            exercises on the online trading portals of Trading License
+            Holders in the Nigerian capital market.
           </p>
         </motion.div>
       </div>

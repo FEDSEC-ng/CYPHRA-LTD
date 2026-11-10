@@ -51,10 +51,10 @@ export default function Header() {
               );
             })}
             <Link
-              href="/contact"
+              href="/contact?service=penetration-testing"
               className="ml-4 grow-pill !h-10 !min-w-[140px] !text-sm !px-5"
             >
-              <span className="pill-label">Talk to us</span>
+              <span className="pill-label">Get a pentest quote</span>
               <span className="pill-icon !w-8 !h-8">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -110,11 +110,11 @@ export default function Header() {
               })}
               <div className="pt-3 px-4">
                 <Link
-                  href="/contact"
+                  href="/contact?service=penetration-testing"
                   onClick={() => setIsOpen(false)}
                   className="grow-pill !w-full justify-center"
                 >
-                  <span className="pill-label text-center">Talk to us</span>
+                  <span className="pill-label text-center">Get a pentest quote</span>
                   <span className="pill-icon !w-8 !h-8">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14M12 5l7 7-7 7"/>

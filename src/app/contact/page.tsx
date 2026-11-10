@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Calendar, Clock } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Accordion from "@/components/ui/Accordion";
@@ -13,6 +13,17 @@ import { SOCIAL_ITEMS } from "@/components/ui/SocialIcons";
 import { fadeInUp, staggerContainer, slideInLeft, slideInRight } from "@/lib/animations";
 
 const springTransition = { type: "spring" as const, damping: 40, stiffness: 200 };
+
+const PENTEST_QUOTE_TEMPLATE = `Hi CYPHRA,
+
+I'd like a quote for a penetration test.
+
+Scope (web app, mobile, network, cloud, etc.): 
+Number of assets / users: 
+Preferred timeline: 
+Compliance needs (PCI DSS, ISO 27001, SOC 2, etc.): 
+
+Additional notes: `;
 
 const contactCards = [
   { icon: <Mail size={24} />, label: "Email", value: SITE.email, href: `mailto:${SITE.email}` },
@@ -32,14 +43,34 @@ const faqItems = [
 export default function ContactPage() {
   const [formState, setFormState] = useState({ name: "", email: "", phone: "", company: "", service: "", message: "" });
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get("service");
+    const intent = params.get("intent");
+    const isPentestQuote = service === "penetration-testing" || intent === "pentest-quote";
+    if (!isPentestQuote) return;
+    setFormState((prev) => ({
+      ...prev,
+      service: "Vulnerability Assessment & Penetration Testing",
+      message: PENTEST_QUOTE_TEMPLATE,
+    }));
+    const timer = setTimeout(() => {
+      document.getElementById("quote-form")?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 400);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `Website enquiry from ${formState.name}${formState.company ? ` (${formState.company})` : ""}`;
+    const subject = formState.service
+      ? `Pentest quote request from ${formState.name}${formState.company ? ` (${formState.company})` : ""}`
+      : `Website enquiry from ${formState.name}${formState.company ? ` (${formState.company})` : ""}`;
     const body = [
       `Name: ${formState.name}`,
       `Email: ${formState.email}`,
       formState.phone ? `Phone: ${formState.phone}` : "",
       formState.company ? `Company: ${formState.company}` : "",
+      formState.service ? `Service: ${formState.service}` : "",
       "",
       formState.message,
     ]
@@ -151,7 +182,7 @@ export default function ContactPage() {
               </div>
             </motion.div>
             <motion.div variants={slideInRight} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="lg:col-span-3">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form id="quote-form" onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-fedsec-gray-700 mb-2 font-[family-name:var(--font-accent)]">Full Name</label>

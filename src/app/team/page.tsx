@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import WordByWordReveal from "@/components/ui/WordByWordReveal";
 import CTABanner from "@/components/ui/CTABanner";
+import PentestQuoteCTA from "@/components/ui/PentestQuoteCTA";
 import ScrollingBadges from "@/components/ui/ScrollingBadges";
 import { team } from "@/lib/data/team";
 
@@ -79,6 +80,8 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
+
+      <PentestQuoteCTA />
 
       <CTABanner />
     </>

@@ -9,14 +9,20 @@ import Accordion from "@/components/ui/Accordion";
 import CTABanner from "@/components/ui/CTABanner";
 import WordByWordReveal from "@/components/ui/WordByWordReveal";
 import { SITE } from "@/lib/constants";
+import { services } from "@/lib/data/services";
 import { SOCIAL_ITEMS } from "@/components/ui/SocialIcons";
 import { fadeInUp, staggerContainer, slideInLeft, slideInRight } from "@/lib/animations";
 
 const springTransition = { type: "spring" as const, damping: 40, stiffness: 200 };
 
-const PENTEST_QUOTE_TEMPLATE = `Hi CYPHRA,
+const serviceOptions = services.map((service) => `- ${service.title}`).join("\n");
 
-I'd like a quote for a penetration test.
+const QUOTE_TEMPLATE = `Hi CYPHRA,
+
+I'd like a quote for one or more of your services:
+
+${serviceOptions}
+- Multiple services / not sure yet
 
 Scope (web app, mobile, network, cloud, etc.): 
 Number of assets / users: 
@@ -41,20 +47,16 @@ const faqItems = [
 ];
 
 export default function ContactPage() {
-  const [formState, setFormState] = useState({ name: "", email: "", phone: "", company: "", service: "", message: "" });
+  const [formState, setFormState] = useState({ name: "", email: "", phone: "", company: "", message: "" });
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const service = params.get("service");
     const intent = params.get("intent");
-    const isPentestQuote = service === "penetration-testing" || intent === "pentest-quote";
-    if (!isPentestQuote) return;
-    setFormState((prev) => ({
-      ...prev,
-      service: "Vulnerability Assessment & Penetration Testing",
-      message: PENTEST_QUOTE_TEMPLATE,
-    }));
+    const isQuote = service === "penetration-testing" || intent === "pentest-quote" || intent === "quote";
+    if (!isQuote) return;
     const timer = setTimeout(() => {
+      setFormState((prev) => ({ ...prev, message: QUOTE_TEMPLATE }));
       document.getElementById("quote-form")?.scrollIntoView({ behavior: "smooth", block: "center" });
     }, 400);
     return () => clearTimeout(timer);
@@ -62,15 +64,19 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = formState.service
-      ? `Pentest quote request from ${formState.name}${formState.company ? ` (${formState.company})` : ""}`
+    const params = new URLSearchParams(window.location.search);
+    const isQuote =
+      params.get("service") === "penetration-testing" ||
+      params.get("intent") === "pentest-quote" ||
+      params.get("intent") === "quote";
+    const subject = isQuote
+      ? `Quote request from ${formState.name}${formState.company ? ` (${formState.company})` : ""}`
       : `Website enquiry from ${formState.name}${formState.company ? ` (${formState.company})` : ""}`;
     const body = [
       `Name: ${formState.name}`,
       `Email: ${formState.email}`,
       formState.phone ? `Phone: ${formState.phone}` : "",
       formState.company ? `Company: ${formState.company}` : "",
-      formState.service ? `Service: ${formState.service}` : "",
       "",
       formState.message,
     ]
